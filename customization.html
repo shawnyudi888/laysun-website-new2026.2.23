@@ -3,86 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design & Customization | Laysun - Bespoke Greenery Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Design & Customization | Laysun - Architectural-Grade Artificial Greenery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --forest-green: #2D5A3D;
+            --forest-dark: #1E3D2A;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --pure-white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-gray: #666666;
+            --border-light: #E5E5E5;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --forest-green: #2D5A3D;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--leaf-white);
-            color: var(--dark-gray);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Header */
-        .sticky-header {
-            position: sticky;
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
             top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
             background: rgba(45, 90, 61, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
-        .container {
+
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        .header-content {
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            text-decoration: none;
             letter-spacing: 2px;
         }
-        
-        .logo span {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 2.5rem;
+            align-items: center;
         }
-        
+
         .nav-menu a {
-            color: white;
+            color: var(--pure-white);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: color 0.3s;
             position: relative;
         }
-        
-        .nav-menu a:hover {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -93,21 +101,115 @@
             background: var(--champagne-gold);
             transition: width 0.3s;
         }
-        
+
         .nav-menu a:hover::after {
             width: 100%;
         }
-        
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lang-switch {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--pure-white);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--champagne-gold);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--pure-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            min-width: 150px;
+        }
+
+        .lang-switch:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .lang-option:hover {
+            background: var(--leaf-white);
+            color: var(--forest-green);
+        }
+
+        .inquiry-basket {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .basket-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--pure-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .basket-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
-            padding: 100px 0;
-            text-align: center;
-            color: white;
+            height: 70vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -116,717 +218,1304 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 100px;
+            background-size: 300px;
             opacity: 0.3;
         }
-        
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 2rem;
             max-width: 900px;
-            margin: 0 auto;
         }
-        
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            border: 1px solid var(--champagne-gold);
+            color: var(--champagne-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
         .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
             line-height: 1.2;
         }
-        
-        .hero .highlight {
-            color: var(--champagne-gold);
-        }
-        
+
         .hero p {
-            font-size: 18px;
-            font-weight: 300;
+            font-size: 1.25rem;
             opacity: 0.9;
-            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 2rem;
         }
-        
+
+        .highlight-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
         /* Section Common */
         .section {
-            padding: 100px 0;
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
-        .section-title {
+
+        .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 4rem;
         }
-        
-        .section-title h2 {
-            font-size: 36px;
-            font-weight: 700;
+
+        .section-header h2 {
+            font-size: 2.5rem;
             color: var(--forest-green);
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
         }
-        
-        .section-title p {
-            color: var(--medium-gray);
-            font-size: 16px;
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
-            line-height: 1.8;
         }
-        
+
         /* Design Agency Section */
-        .design-agency {
-            background: white;
+        .agency-section {
+            background: var(--pure-white);
         }
-        
-        .agency-content {
+
+        .agency-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 4rem;
             align-items: center;
         }
-        
-        .agency-text h3 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 25px;
-        }
-        
-        .agency-text p {
-            font-size: 15px;
-            line-height: 1.9;
-            color: var(--medium-gray);
-            margin-bottom: 20px;
-        }
-        
-        .agency-image {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+
+        .agency-visual {
+            position: relative;
             height: 500px;
+            background: linear-gradient(135deg, var(--leaf-white) 0%, #e8e6e1 100%);
+            border-radius: 8px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
-        .agency-image::before {
-            content: 'Design Studio';
-            color: #999;
-            font-size: 16px;
-        }
-        
-        /* Process Timeline */
-        .process-section {
-            background: var(--leaf-white);
-        }
-        
-        .process-timeline {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .process-timeline::before {
-            content: '';
+
+        .agency-visual::before {
+            content: 'DESIGN STUDIO';
             position: absolute;
-            top: 40px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--champagne-gold);
+            font-size: 4rem;
+            color: rgba(45, 90, 61, 0.05);
+            font-weight: 700;
+            letter-spacing: 10px;
+            transform: rotate(-90deg);
+            left: -50px;
         }
-        
-        .process-step {
+
+        .visual-content {
             text-align: center;
-            position: relative;
-            flex: 1;
+            padding: 2rem;
         }
-        
-        .step-number {
-            width: 80px;
-            height: 80px;
+
+        .design-icon {
+            width: 120px;
+            height: 120px;
             background: var(--forest-green);
-            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 auto 20px;
+            margin: 0 auto 2rem;
             position: relative;
-            z-index: 1;
         }
-        
-        .process-step h4 {
-            font-size: 16px;
-            font-weight: 600;
+
+        .design-icon::before {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 2px solid var(--champagne-gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+        .agency-content h3 {
+            font-size: 2rem;
             color: var(--forest-green);
-            margin-bottom: 10px;
+            margin-bottom: 1.5rem;
         }
-        
-        .process-step p {
-            font-size: 13px;
-            color: var(--medium-gray);
-            max-width: 200px;
-            margin: 0 auto;
-        }
-        
-        /* AI Section */
-        .ai-section {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .ai-section .section-title h2 {
-            color: white;
-        }
-        
-        .ai-section .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .ai-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        
-        .ai-card {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-        }
-        
-        .ai-icon {
-            font-size: 48px;
-            margin-bottom: 25px;
-        }
-        
-        .ai-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--champagne-gold);
-        }
-        
-        .ai-card p {
-            font-size: 14px;
+
+        .agency-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
             line-height: 1.8;
-            opacity: 0.9;
         }
-        
-        /* Customization Form Section */
-        .custom-form-section {
-            background: white;
+
+        .capability-list {
+            list-style: none;
+            margin-top: 2rem;
         }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .form-container h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 10px;
-        }
-        
-        .form-container > p {
-            color: var(--medium-gray);
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--forest-green);
-            margin-bottom: 8px;
-        }
-        
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--forest-green);
-        }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .file-upload {
-            border: 2px dashed #ccc;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .file-upload:hover {
-            border-color: var(--forest-green);
-            background: var(--leaf-white);
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--champagne-gold);
-            color: white;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: var(--champagne-dark);
-        }
-        
-        .benefits-list {
-            background: var(--leaf-white);
-            padding: 40px;
-        }
-        
-        .benefits-list h4 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 25px;
-        }
-        
-        .benefit-item {
+
+        .capability-list li {
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--leaf-white);
+            border-radius: 8px;
+            border-left: 3px solid var(--champagne-gold);
         }
-        
-        .benefit-item:last-child {
-            border-bottom: none;
-        }
-        
-        .benefit-icon {
+
+        .capability-list .icon {
             width: 40px;
             height: 40px;
-            background: var(--champagne-gold);
-            color: white;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
             flex-shrink: 0;
         }
-        
-        .benefit-item div strong {
-            display: block;
+
+        /* AI Section */
+        .ai-section {
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-green) 100%);
+            color: var(--pure-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 200px;
+        }
+
+        .ai-section .section-header h2 {
+            color: var(--pure-white);
+        }
+
+        .ai-section .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .ai-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--champagne-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .ai-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ai-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Process Timeline */
+        .process-section {
+            background: var(--leaf-white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--forest-green), var(--champagne-gold));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 400px;
+            position: relative;
+            margin-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 0;
+            margin-left: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--champagne-gold);
+            border-radius: 50%;
+            border: 4px solid var(--pure-white);
+            box-shadow: 0 0 0 3px var(--champagne-gold);
+            z-index: 1;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -40px;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(45, 90, 61, 0.1);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-item:nth-child(even) .timeline-number {
+            top: auto;
+            bottom: -40px;
+        }
+
+        .timeline-content h3 {
             color: var(--forest-green);
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
         }
-        
-        .benefit-item div p {
-            font-size: 14px;
-            color: var(--medium-gray);
+
+        .timeline-content .duration {
+            color: var(--champagne-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
         }
-        
+
+        /* Mobile Timeline */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 80px;
+                padding-right: 0;
+            }
+            
+            .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .timeline-number {
+                left: 80px;
+                transform: none;
+            }
+        }
+
+        /* Case Studies */
+        .cases-section {
+            background: var(--pure-white);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .case-card {
+            position: relative;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .case-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+            transition: transform 0.5s;
+        }
+
+        .case-card:hover .case-image {
+            transform: scale(1.1);
+        }
+
+        .case-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(45,90,61,0.95), transparent);
+            color: var(--pure-white);
+            padding: 2rem;
+            transform: translateY(60px);
+            transition: transform 0.3s;
+        }
+
+        .case-card:hover .case-overlay {
+            transform: translateY(0);
+        }
+
+        .case-tag {
+            display: inline-block;
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201,169,97,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+            color: var(--pure-white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--pure-white);
+            border: 2px solid var(--pure-white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--pure-white);
+            color: var(--forest-green);
+        }
+
         /* Footer */
-        .footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 80px 0 30px;
+        footer {
+            background: var(--forest-dark);
+            color: var(--pure-white);
+            padding: 4rem 2rem 2rem;
         }
-        
+
         .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
-        
-        .footer-section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 25px;
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             color: var(--champagne-gold);
         }
-        
-        .footer-section ul {
+
+        .footer-col ul {
             list-style: none;
         }
-        
-        .footer-section ul li {
-            margin-bottom: 12px;
+
+        .footer-col li {
+            margin-bottom: 0.75rem;
         }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
-        .footer-section a:hover {
+
+        .footer-col a:hover {
             color: var(--champagne-gold);
         }
-        
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pure-white);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--champagne-gold);
+            border-color: var(--champagne-gold);
+        }
+
+        /* Inquiry Basket Panel */
+        .basket-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--pure-white);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .basket-panel.active {
+            right: 0;
+        }
+
+        .basket-header {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
+
+        .basket-header h3 {
+            font-size: 1.2rem;
         }
-        
-        .footer-logo span {
-            color: var(--champagne-gold);
+
+        .close-basket {
+            background: none;
+            border: none;
+            color: var(--pure-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
-        .copyright {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
+
+        .basket-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
         }
-        
-        /* Mobile Responsive */
+
+        .empty-basket {
+            text-align: center;
+            color: var(--text-gray);
+            padding: 3rem 0;
+        }
+
+        .basket-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .basket-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: var(--leaf-white);
+        }
+
+        .basket-item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .basket-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .basket-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            background: var(--leaf-white);
+        }
+
+        .basket-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 0.75rem;
+            transition: background 0.3s;
+        }
+
+        .basket-btn:hover {
+            background: var(--forest-dark);
+        }
+
+        .basket-btn.gold {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+        }
+
+        .basket-btn.gold:hover {
+            opacity: 0.9;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .agency-grid,
+            .ai-grid,
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agency-visual {
+                height: 300px;
+            }
+            
+            .highlight-stats {
+                gap: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
             .hero h1 {
-                font-size: 28px;
+                font-size: 2rem;
             }
             
-            .agency-content,
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .process-timeline {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .process-timeline::before {
-                display: none;
-            }
-            
-            .ai-grid {
-                grid-template-columns: 1fr;
+            .stat-number {
+                font-size: 2rem;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
+            
+            .basket-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                padding-right: 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">LAY<span>SUN</span></div>
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="customization.html">Customization</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="customization.html">Design & Customization</a></li>
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="lang-switch">
+                    <button class="lang-btn">
+                        <span>EN</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
+                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
+                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
+                    </div>
+                </div>
+
+                <div class="inquiry-basket" onclick="toggleBasket()">
+                    <svg class="basket-icon" viewBox="0 0 24 24">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="basket-count" id="basketCount">0</span>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>From Concept to Canopy: <span class="highlight">Bespoke Greenery</span> Engineered for Professionals</h1>
-                <p>48h Rapid Prototyping and Architectural-Grade Customization. We don't just manufacture; we co-create.</p>
+        <div class="hero-content">
+            <div class="hero-badge">Bespoke Solutions</div>
+            <h1>FROM CONCEPT TO CANOPY</h1>
+            <p>Bespoke Greenery Engineered for Professionals. Where your vision meets our Architectural-Grade precision.</p>
+            
+            <div class="highlight-stats">
+                <div class="stat-item">
+                    <span class="stat-number">48H</span>
+                    <div class="stat-label">Rapid Prototyping</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3D</span>
+                    <div class="stat-label">AI-Driven Design</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">360°</span>
+                    <div class="stat-label">Visual Impact</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Design Agency Section -->
-    <section class="section design-agency">
-        <div class="container">
-            <div class="agency-content">
-                <div class="agency-text">
-                    <h3>Design Agency Background</h3>
-                    <p>At Laysun, we understand that for landscape architects and commercial developers, a "standard" product isn't always enough. Our Design & Customization Hub is built to bridge the gap between imaginative vision and structural reality.</p>
-                    
-                    <p>Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections. We don't just follow the greenery trend; we define it.</p>
-                    
-                    <p>Every custom piece is vetted by our Design Agency to ensure it aligns with upcoming aesthetic shifts in international hospitality and retail sectors — so your project stays ahead of the curve, not just on time.</p>
+    <section class="section agency-section">
+        <div class="agency-grid">
+            <div class="agency-visual animate-in">
+                <div class="visual-content">
+                    <div class="design-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--pure-white);">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                            <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 style="color: var(--forest-green); font-size: 1.5rem;">Design Agency Intelligence</h3>
                 </div>
-                <div class="agency-image"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="section process-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Custom Service Process</h2>
-                <p>From initial concept to final installation, we guide you through every step</p>
             </div>
             
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h4>Consultation</h4>
-                    <p>Discuss your vision, requirements, and project specifications with our experts</p>
-                </div>
+            <div class="agency-content animate-in">
+                <h3>Design-Led Innovation Meets Manufacturing Precision</h3>
+                <p>At Laysun, we don't just manufacture; we co-create. Our in-house Design Agency transforms global aesthetic trends into market-winning botanical collections using AI-driven forecasting and 3D modeling.</p>
+                <p>While others simply copy nature, we reimagine it. Every custom piece is vetted by our design team to ensure alignment with upcoming aesthetic shifts in international hospitality and retail sectors.</p>
                 
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h4>3D Modeling</h4>
-                    <p>AI-enhanced design and 3D visualization of your bespoke greenery</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h4>Prototyping</h4>
-                    <p>48h rapid prototyping — physical samples delivered for approval</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h4>Production</h4>
-                    <p>Full-scale manufacturing with rigorous quality control</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <h4>Delivery</h4>
-                    <p>Global logistics and on-site installation support</p>
-                </div>
+                <ul class="capability-list">
+                    <li>
+                        <div class="icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>AI-Enhanced Trend Alignment</strong>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Predictive analytics for next-season aesthetics</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>3D Modeling & Visualization</strong>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Photorealistic renders before production</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Global Aesthetic Intelligence</strong>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Regional trend adaptation for local markets</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- AI Section -->
     <section class="section ai-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>AI-Driven Research & Development</h2>
-                <p>Leveraging cutting-edge technology to predict trends and optimize designs</p>
+        <div class="section-header animate-in">
+            <h2>AI-Driven Research & Development</h2>
+            <p>Leveraging cutting-edge artificial intelligence to revolutionize botanical design and predict market trends before they emerge.</p>
+        </div>
+
+        <div class="ai-grid">
+            <div class="ai-card animate-in">
+                <div class="ai-icon">🎯</div>
+                <h3>Trend Forecasting Engine</h3>
+                <p>Our proprietary AI analyzes global design publications, social media trends, and architectural projects to predict color palettes, forms, and species demand 12-18 months ahead.</p>
             </div>
             
-            <div class="ai-grid">
-                <div class="ai-card">
-                    <div class="ai-icon">🤖</div>
-                    <h3>Trend Forecasting</h3>
-                    <p>AI algorithms analyze global design trends to predict the next big movements in botanical aesthetics</p>
+            <div class="ai-card animate-in">
+                <div class="ai-icon">🧬</div>
+                <h3>Generative Design</h3>
+                <p>Machine learning algorithms generate thousands of botanical variations, optimizing for aesthetic appeal, structural integrity, and manufacturing efficiency simultaneously.</p>
+            </div>
+            
+            <div class="ai-card animate-in">
+                <div class="ai-icon">⚡</div>
+                <h3>Rapid Prototyping</h3>
+                <p>AI-assisted 3D printing and CNC machining reduce prototype development from weeks to 48 hours, accelerating your project timeline.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="section process-section">
+        <div class="section-header animate-in">
+            <h2>Custom Service Process</h2>
+            <p>From initial concept to final installation, our streamlined process ensures Architectural-Grade results at every stage.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">01</div>
+                <div class="timeline-content">
+                    <h3>Discovery & Consultation</h3>
+                    <span class="duration">Day 1-2</span>
+                    <p>We begin with understanding your vision, spatial requirements, and brand identity. Our design team conducts site analysis and mood board development.</p>
                 </div>
-                
-                <div class="ai-card">
-                    <div class="ai-icon">🎨</div>
-                    <h3>3D Visualization</h3>
-                    <p>Photorealistic 3D renders allow you to see your custom piece before production begins</p>
+            </div>
+
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">02</div>
+                <div class="timeline-content">
+                    <h3>AI-Enhanced Concept Design</h3>
+                    <span class="duration">Day 3-5</span>
+                    <p>Our AI engine generates multiple design iterations. You receive photorealistic 3D renders and material samples for review.</p>
                 </div>
-                
-                <div class="ai-card">
-                    <div class="ai-icon">⚡</div>
-                    <h3>Rapid Iteration</h3>
-                    <p>Machine learning optimizes designs for manufacturing efficiency without compromising aesthetics</p>
+            </div>
+
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">03</div>
+                <div class="timeline-content">
+                    <h3>48H Rapid Prototyping</h3>
+                    <span class="duration">Day 6-7</span>
+                    <p>Physical prototype creation using advanced 3D printing and hand-finishing techniques. Review and refine before full production.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">04</div>
+                <div class="timeline-content">
+                    <h3>Engineering & Compliance</h3>
+                    <span class="duration">Day 8-14</span>
+                    <p>Structural engineering for safety, fire retardancy integration (NFPA 701/B1), and UV stabilization testing for outdoor applications.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">05</div>
+                <div class="timeline-content">
+                    <h3>Production & Quality Control</h3>
+                    <span class="duration">Day 15-30</span>
+                    <p>Full-scale manufacturing with batch testing. Each piece undergoes rigorous quality checks against Architectural-Grade standards.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item animate-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-number">06</div>
+                <div class="timeline-content">
+                    <h3>Global Delivery & Installation</h3>
+                    <span class="duration">Day 31-45</span>
+                    <p>Optimized logistics for safe transport. Optional installation support and final on-site adjustments for perfect presentation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Customization Form Section -->
-    <section class="section custom-form-section">
-        <div class="container">
-            <div class="form-grid">
-                <div class="form-container">
-                    <h3>Start Your Bespoke Project</h3>
-                    <p>Consult with our design experts. We typically respond within 24 hours.</p>
-                    
-                    <form id="customForm" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label class="form-label">Full Name *</label>
-                            <input type="text" class="form-input" name="fullName" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Company *</label>
-                            <input type="text" class="form-input" name="company" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Email *</label>
-                            <input type="email" class="form-input" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Project Type</label>
-                            <select class="form-select" name="projectType">
-                                <option value="">Select Type</option>
-                                <option value="hotel">Hotel/Hospitality</option>
-                                <option value="retail">Retail Space</option>
-                                <option value="office">Corporate Office</option>
-                                <option value="residential">Residential</option>
-                                <option value="outdoor">Outdoor Landscape</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Customization Requirements</label>
-                            <textarea class="form-textarea" name="requirements" placeholder="Describe your vision: dimensions, style, specific features..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Upload Design References</label>
-                            <div class="file-upload" onclick="document.getElementById('fileInput').click()">
-                                <input type="file" id="fileInput" multiple style="display: none;">
-                                <p style="color: #999; font-size: 14px;">Click to upload sketches, mood boards, or reference images</p>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Request Design Consultation</button>
-                    </form>
+    <!-- Case Studies -->
+    <section class="section cases-section">
+        <div class="section-header animate-in">
+            <h2>Custom Case Studies</h2>
+            <p>Explore how we've transformed unique visions into Architectural-Grade reality for global clients.</p>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-card animate-in">
+                <div class="case-image"></div>
+                <div class="case-overlay">
+                    <span class="case-tag">Hospitality</span>
+                    <h3>Dubai Luxury Hotel</h3>
+                    <p>12ft custom IFR Olive Trees with integrated lighting systems for grand lobby installation.</p>
                 </div>
-                
-                <div class="benefits-list">
-                    <h4>The Laysun Bespoke Advantage</h4>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">⏱️</div>
-                        <div>
-                            <strong>48h Rapid Prototyping</strong>
-                            <p>Initial physical samples or 3D renders delivered within 48 hours</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🎯</div>
-                        <div>
-                            <strong>Architectural-Grade Precision</strong>
-                            <p>Granular customization across morphology, performance, and integration</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🔥</div>
-                        <div>
-                            <strong>Performance Engineering</strong>
-                            <p>Built-in Fire Retardancy (NFPA 701/B1) or Outdoor UV Stability (5000h+)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🌍</div>
-                        <div>
-                            <strong>Trend Alignment</strong>
-                            <p>Every piece vetted against global hospitality and retail trends</p>
-                        </div>
-                    </div>
+            </div>
+
+            <div class="case-card animate-in">
+                <div class="case-image" style="background: linear-gradient(135deg, #c9c9c9 0%, #a8a8a8 100%);"></div>
+                <div class="case-overlay">
+                    <span class="case-tag">Retail</span>
+                    <h3>Global Flagship Store</h3>
+                    <p>Seasonal rotating collection of 50+ bespoke species with PDQ-optimized packaging.</p>
                 </div>
+            </div>
+
+            <div class="case-card animate-in">
+                <div class="case-image" style="background: linear-gradient(135deg, #b8b8b8 0%, #969696 100%);"></div>
+                <div class="case-overlay">
+                    <span class="case-tag">Outdoor</span>
+                    <h3>Mediterranean Resort</h3>
+                    <p>UV-Stable 5000h+ custom Palm series engineered for extreme coastal conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content animate-in">
+            <h2>START YOUR BESPOKE PROJECT</h2>
+            <p>Ready to transform your space with custom Architectural-Grade greenery? Our design experts are standing by to bring your vision to life.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">CONSULT WITH AN EXPERT</a>
+                <a href="contact.html" class="btn btn-secondary">UPLOAD YOUR DESIGN BRIEF</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
-                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
-                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
-                        <li><a href="customization.html">Custom Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="products.html">Signature Series</a></li>
-                        <li><a href="products.html">Retail Ready</a></li>
-                        <li><a href="products.html">Fire Retardant</a></li>
-                        <li><a href="products.html">UV Stable</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="capabilities.html">Compliance</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="contact.html">Get in Touch</a></li>
-                        <li><a href="#">Request Quote</a></li>
-                        <li><a href="#">Download Catalog</a></li>
-                        <li><a href="#">Find a Rep</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Design & Customization</a></li>
+                </ul>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">LAY<span>SUN</span></div>
-                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            <div class="footer-col">
+                <h4>Core Services</h4>
+                <ul>
+                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
+                    <li><a href="solutions.html">Commercial Interiors</a></li>
+                    <li><a href="solutions.html">Outdoor Engineering</a></li>
+                    <li><a href="customization.html">Bespoke Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Product Catalog</a></li>
+                    <li><a href="#">Technical Specifications</a></li>
+                    <li><a href="#">Compliance Certificates</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Inquiry Basket Panel -->
+    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
+    <div class="basket-panel" id="basketPanel">
+        <div class="basket-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-basket" onclick="toggleBasket()">×</button>
+        </div>
+        <div class="basket-body" id="basketBody">
+            <div class="empty-basket">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your inquiry list is empty.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+            </div>
+        </div>
+        <div class="basket-footer">
+            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
+            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </div>
+
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your inquiry! Our design team will contact you within 24 hours to discuss your bespoke project.');
-            event.target.reset();
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switch
+        function changeLang(lang) {
+            console.log('Switching to language:', lang);
+            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
         }
+
+        // Inquiry Basket Logic
+        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
+        
+        function updateBasketCount() {
+            document.getElementById('basketCount').textContent = basketItems.length;
+        }
+
+        function toggleBasket() {
+            const panel = document.getElementById('basketPanel');
+            const overlay = document.getElementById('overlay');
+            panel.classList.toggle('active');
+            overlay.classList.toggle('active');
+            renderBasket();
+        }
+
+        function renderBasket() {
+            const body = document.getElementById('basketBody');
+            if (basketItems.length === 0) {
+                body.innerHTML = `
+                    <div class="empty-basket">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <p>Your inquiry list is empty.</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+                    </div>
+                `;
+            } else {
+                body.innerHTML = basketItems.map((item, index) => `
+                    <div class="basket-item">
+                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
+                        <div class="basket-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.specs || ''}</p>
+                            <p style="color: var(--champagne-gold); font-weight: 600;">${item.id}</p>
+                        </div>
+                        <button onclick="removeItem(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">×</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function removeItem(index) {
+            basketItems.splice(index, 1);
+            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
+            updateBasketCount();
+            renderBasket();
+        }
+
+        function downloadSpecs() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+        }
+
+        function submitInquiry() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            window.location.href = 'contact.html';
+        }
+
+        // Initialize
+        updateBasketCount();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
