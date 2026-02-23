@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Laysun - Architectural-Grade Artificial Greenery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --forest-green: #2D5A3D;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #999999;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--leaf-white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(45, 90, 61, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Section Common Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--forest-green);
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Brand Story Section */
+        .brand-story {
+            background: white;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .story-text h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        
+        .story-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-image::before {
+            content: 'Factory & Design Studio';
+            color: #999;
+            font-size: 16px;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--leaf-white);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--champagne-gold);
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-left: 4px solid var(--forest-green);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            max-width: 400px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid var(--forest-green);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--forest-green);
+            color: white;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+        
+        /* Global Presence Section */
+        .global-section {
+            background: white;
+        }
+        
+        .global-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .global-map {
+            background: linear-gradient(135deg, #f0f4f1 0%, #e0e8e3 100%);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .global-map::before {
+            content: 'Global Presence Map';
+            color: #999;
+            font-size: 16px;
+        }
+        
+        .global-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--leaf-white);
+            border: 1px solid #e8e8e8;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--forest-green);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Core Values Section */
+        .values-section {
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .values-section .section-title h2 {
+            color: white;
+        }
+        
+        .values-section .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 25px;
+            color: var(--champagne-gold);
+        }
+        
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+        
+        .value-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background: var(--leaf-white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .team-photo::before {
+            content: 'Photo';
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .team-member h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--forest-green);
+        }
+        
+        .btn-white:hover {
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--champagne-gold);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--forest-green);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--champagne-gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .copyright {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .story-content,
+            .global-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .timeline-year {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .global-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">LAY<span>SUN</span></div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Beyond Replicas: Designing the Future of Artificial Horticulture, Globally</h1>
+                <p>Where Design Agency Intelligence Meets Manufacturing Precision</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section class="section brand-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>The Laysun Difference: The Double-Engine Strategy</h3>
+                    <p>For over 20 years, Laysun has been more than just a manufacturer — we are a global solution provider where botanical art meets industrial engineering. Born from a vision to bring nature's soul into the built environment, we have evolved into a dual-engine powerhouse: a high-end Design Agency and a large-scale Manufacturing Hub.</p>
+                    
+                    <p>While others simply copy nature, we reimagine it. Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections. We don't just follow the greenery trend; we define it for the world's leading retailers and commercial developers.</p>
+                    
+                    <p>Operating out of our 10,000㎡ precision facility, we harmonize traditional craftsmanship with modern automation. Every leaf texture and trunk silhouette is an Architectural-Grade masterpiece, engineered to meet the world's strictest compliance standards — including BSCI, SEDEX for ethical sourcing, and NFPA 701, B1 for fire safety.</p>
+                    
+                    <p>At Laysun, we don't just supply plants. We deliver the certainty of quality, the edge of design, and the reliability of a global supply chain.</p>
+                </div>
+                <div class="story-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+                <p>Two decades of innovation, growth, and global expansion</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>Laysun established in Ningbo, China, with a vision to bridge botanical art and industrial engineering.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>First major export contracts with European retailers. Established quality control systems meeting EU standards.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>Design Agency Launch</h3>
+                        <p>In-house design studio established. Introduced AI-driven trend forecasting and 3D prototyping capabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>10,000㎡ Facility</h3>
+                        <p>State-of-the-art manufacturing hub launched. Achieved BSCI and SEDEX certification for ethical sourcing.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h3>Compliance Leadership</h3>
+                        <p>Full NFPA 701 and B1 fire safety certification. Became preferred supplier for major hospitality brands.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <h3>Global Brand</h3>
+                        <p>Serving 50+ countries with Architectural-Grade solutions. Industry leader in sustainable artificial horticulture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence Section -->
+    <section class="section global-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Presence</h2>
+                <p>Strategic locations ensuring seamless service worldwide</p>
+            </div>
+            
+            <div class="global-content">
+                <div class="global-map"></div>
+                
+                <div class="global-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Countries Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10,000㎡</span>
+                        <span class="stat-label">Production Facility</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Global Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.5%</span>
+                        <span class="stat-label">On-Time Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every decision we make</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎨</div>
+                    <h3>Design Intelligence</h3>
+                    <p>We leverage AI-driven insights and global trend forecasting to create products that define markets, not just follow them.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚙️</div>
+                    <h3>Engineering Excellence</h3>
+                    <p>From 5000h+ UV stability to NFPA 701 fire retardancy, we build for the world's toughest environments and standards.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌿</div>
+                    <h3>Sustainable Innovation</h3>
+                    <p>Extended product lifecycles reduce waste. Eco-friendly materials and processes minimize environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Leadership Team</h2>
+                <p>Experienced professionals driving global growth</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h4>CEO & Founder</h4>
+                    <p>Strategic Vision</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h4>Design Director</h4>
+                    <p>Creative Excellence</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h4>Operations Director</h4>
+                    <p>Global Supply Chain</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-photo"></div>
+                    <h4>Compliance Manager</h4>
+                    <p>Quality Assurance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Partner With Laysun</h2>
+            <p>Experience the certainty of quality, the edge of design, and the reliability of a global supply chain.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Start Your Project</a>
+                <a href="products.html" class="btn btn-outline">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="#">Big-Box Retail</a></li>
+                        <li><a href="#">Commercial Interiors</a></li>
+                        <li><a href="#">Outdoor Engineering</a></li>
+                        <li><a href="#">Custom Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Signature Series</a></li>
+                        <li><a href="#">Retail Ready</a></li>
+                        <li><a href="#">Fire Retardant</a></li>
+                        <li><a href="#">UV Stable</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Capabilities</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#">Request Quote</a></li>
+                        <li><a href="#">Download Catalog</a></li>
+                        <li><a href="#">Find a Rep</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">LAY<span>SUN</span></div>
+                <div class="copyright">© 2026 Laysun Horticulture. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
