@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - LaySun Architectural Grade Artificial Plants</title>
+    
+    <!-- Font: Montserrat only (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --forest-green: #2D5A3D;
+            --forest-green-90: rgba(45, 90, 61, 0.9);
+            --champagne-gold: #C9A961;
+            --champagne-gold-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: var(--leaf-white);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Navigation: 14px, Bold, letter-spacing 0.1em, line-height 1.2 */
+        .nav-menu a {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .sub-nav a {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        /* Sticky Transparent Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .header.scrolled {
+            background: var(--forest-green-90);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .inquiry-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--champagne-gold);
+            color: var(--forest-green);
+            font-size: 11px;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 0;
+            position: relative;
+        }
+
+        /* Hero H1: 32px/20px, Bold, letter-spacing 0.1em, line-height 1.2, ALL CAPS */
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Subtitle: 16px, Medium, line-height 1.5 */
+        .hero p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Filter label: 13px, SemiBold */
+        .filter-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: end;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* Filter select: 14px */
+        .filter-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .clear-filters {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: underline;
+            margin-left: auto;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Section title: 20px/16px, Bold, letter-spacing 0.08em, line-height 1.3 */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1.3;
+            color: var(--forest-green);
+            text-transform: uppercase;
+        }
+
+        /* Results count: 13px */
+        .results-count {
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Product badge: 11px, Bold */
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--champagne-gold);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .product-badge.retail { background: #e74c3c; }
+        .product-badge.fire { background: #c0392b; }
+        .product-badge.uv { background: #2980b9; }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-actions {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+
+        /* CTA button: 14px, Bold, letter-spacing 0.05em */
+        .add-to-inquiry {
+            width: auto;
+            padding: 0 1rem;
+            border-radius: 20px;
+            background: var(--forest-green);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .add-to-inquiry:hover {
+            background: var(--champagne-gold);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        /* Series label: 11px, SemiBold, uppercase */
+        .product-series {
+            font-size: 11px;
+            color: var(--champagne-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Product name: 18px/16px, SemiBold, line-height 1.4 */
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Spec tags: 13px */
+        .product-specs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .spec-tag {
+            font-size: 13px;
+            color: var(--text-gray);
+            background: var(--leaf-white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* Size info: 14px */
+        .product-size {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .product-cert {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .cert-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .cert-uv { background: #2980b9; }
+        .cert-fire { background: #c0392b; }
+        .cert-retail { background: #e74c3c; }
+
+        /* Inquiry Sidebar */
+        .inquiry-sidebar {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 400px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inquiry-sidebar.open {
+            right: 0;
+        }
+
+        .inquiry-header {
+            background: var(--forest-green);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Sidebar title: 20px, Bold */
+        .inquiry-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .inquiry-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .inquiry-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .inquiry-item-image {
+            width: 80px;
+            height: 80px;
+            background: var(--leaf-white);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .inquiry-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .inquiry-item-details {
+            flex: 1;
+        }
+
+        /* Item name: 14px, SemiBold */
+        .inquiry-item-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Specs: 13px */
+        .inquiry-item-specs {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #ddd;
+            background: var(--white);
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .qty-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 0.25rem;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .remove-item {
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        .inquiry-footer {
+            padding: 1.5rem;
+            border-top: 2px solid var(--leaf-white);
+            background: var(--white);
+        }
+
+        .inquiry-note {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            resize: vertical;
+            min-height: 80px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .inquiry-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Secondary button: 13px, Regular */
+        .btn-secondary {
+            flex: 1;
+            padding: 0.875rem;
+            border: 2px solid var(--forest-green);
+            background: var(--white);
+            color: var(--forest-green);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        /* Primary button: 14px, Bold, letter-spacing 0.05em */
+        .btn-primary {
+            flex: 2;
+            padding: 0.875rem;
+            border: none;
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-gold-dark) 100%);
+            color: var(--white);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Button hover color inversion - AA standard */
+        .btn-secondary:hover {
+            background: var(--forest-green);
+            color: var(--white);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--forest-green);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+
+            .filter-row {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .inquiry-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, var(--leaf-white) 25%, #e8e6e1 50%, var(--leaf-white) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="laysun-homepage-v2.html" class="logo">LaySun</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="laysun-homepage-v2.html">Home</a></li>
+                    <li><a href="laysun-solutions.html">Solutions</a></li>
+                    <li><a href="laysun-products.html">Products</a></li>
+                    <li><a href="laysun-design.html">Design & Customization</a></li>
+                    <li><a href="laysun-capabilities.html">Capabilities</a></li>
+                    <li><a href="laysun-about.html">About Us</a></li>
+                    <li><a href="laysun-contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <button class="icon-btn" onclick="toggleSearch()" title="Search">🔍</button>
+                <button class="icon-btn" onclick="toggleLanguage()" title="Language">EN</button>
+                <button class="icon-btn" onclick="toggleInquirySidebar()" title="Inquiry Basket">
+                    🛒
+                    <span class="inquiry-badge" id="inquiryCount">0</span>
+                </button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Architectural Grade Artificial Plants</h1>
+            <p>20 core products across 4 series, engineered for global B2B procurement</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label class="filter-label">Standard Compliance</label>
+                    <select class="filter-select" id="filterCompliance" onchange="applyFilters()">
+                        <option value="">All Standards</option>
+                        <option value="uv_protected">UV Protected (5000h+)</option>
+                        <option value="fire_retardant">Fire Retardant (NFPA 701/B1)</option>
+                        <option value="retail_ready">Retail-Ready</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Application</label>
+                    <select class="filter-select" id="filterApplication" onchange="applyFilters()">
+                        <option value="">All Applications</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Height/Size</label>
+                    <select class="filter-select" id="filterSize" onchange="applyFilters()">
+                        <option value="">All Sizes</option>
+                        <option value="4-6ft">4-6ft / Desktop</option>
+                        <option value="7-9ft">7-9ft</option>
+                        <option value="10ft+">10ft+</option>
+                        <option value="custom">Custom Size</option>
+                    </select>
+                </div>
+                <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2 class="section-title">Core Product Collection</h2>
+            <span class="results-count" id="resultsCount">Showing all 20 products</span>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products rendered by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Inquiry Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleInquirySidebar()"></div>
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-sidebar" onclick="toggleInquirySidebar()">×</button>
+        </div>
+        <div class="inquiry-list" id="inquiryList">
+            <!-- Inquiry items rendered here -->
+        </div>
+        <div class="inquiry-footer">
+            <textarea class="inquiry-note" placeholder="Add project notes or specific requirements..."></textarea>
+            <div class="inquiry-actions">
+                <button class="btn-secondary" onclick="downloadSpecSheets()">
+                    📄 Download Specs
+                </button>
+                <button class="btn-primary" onclick="submitInquiry()">
+                    Submit Inquiry
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Added to inquiry basket</div>
+
+    <script>
+        // Product Data - 20 Core Products (English only)
+        const products = [
+            // Signature Series (5 products)
+            {
+                id: "01",
+                sku: "LS-OLV-MULTI-01",
+                name: "Multi-Stem Olive Tree",
+                series: "signature",
+                seriesLabel: "Signature Series",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["indoor", "outdoor"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 4, max: 9, unit: "ft", display: "4ft-9ft" },
+                    material: "Premium silk foliage, natural wood trunk",
+                    customizable: false
+                },
+                commercial: {
+                    moq: null,
+                    lead_time: "45-60 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-001"
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Multi-Stem_Olive_Tree_4-9ft.pdf",
+                    image: "assets/products/01/main.jpg"
+                },
+                solutions: ["large_retail", "commercial_indoor", "hospitality"],
+                isStar: true,
+                status: "active"
+            },
+            {
+                id: "02",
+                sku: "LS-BAN-TRV-02",
+                name: "Premium Traveler's Banana",
+                series: "signature",
+                seriesLabel: "Signature Series",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["commercial", "indoor", "outdoor"],
+                    size: ["10ft+"]
+                },
+                specifications: {
+                    height: { min: 7, max: null, unit: "ft", display: "7ft+" },
+                    material: "Engineered polymer, steel reinforced trunk",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 10,
+                    lead_time: "60 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-002"
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Premium_Traveler_s_Banana_7ft+.pdf",
+                    image: "assets/products/02/main.jpg"
+                },
+                solutions: ["commercial_indoor", "hospitality", "outdoor_resort"],
+                isStar: true,
+                status: "active"
+            },
+            {
+                id: "03",
+                sku: "LS-MAP-JPN-03",
+                name: "Bespoke Japanese Maple",
+                series: "signature",
+                seriesLabel: "Signature Series",
+                filters: {
+                    compliance: [],
+                    application: ["indoor"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 5, max: 8, unit: "ft", display: "5ft-8ft" },
+                    material: "Hand-painted silk, sculpted trunk",
+                    customizable: true,
+                    custom_options: ["trunk_shape", "foliage_density", "pot_selection"]
+                },
+                commercial: {
+                    moq: 5,
+                    lead_time: "90 days",
+                    fob_port: "Shenzhen"
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Bespoke_Japanese_Maple_5-8ft.pdf",
+                    image: "assets/products/03/main.jpg"
+                },
+                solutions: ["luxury_retail", "hospitality", "design_custom"],
+                isStar: true,
+                status: "active"
+            },
+            {
+                id: "13",
+                sku: "LS-OLV-SING-13",
+                name: "Single-Stem Olive Tree",
+                series: "signature",
+                seriesLabel: "Signature Series",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["indoor", "outdoor"],
+                    size: ["7-9ft", "10ft+"]
+                },
+                specifications: {
+                    height: { min: 6, max: 10, unit: "ft", display: "6ft-10ft" },
+                    material: "Premium silk, natural wood",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 5,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-013"
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Single-Stem_Olive_Tree_6-10ft.pdf",
+                    image: "assets/products/13/main.jpg"
+                },
+                solutions: ["large_retail", "commercial_indoor", "hospitality"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "14",
+                sku: "LS-FIC-PRM-14",
+                name: "Premium Fiddle Leaf Fig",
+                series: "signature",
+                seriesLabel: "Signature Series",
+                filters: {
+                    compliance: [],
+                    application: ["indoor"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 5, max: 7, unit: "ft", display: "5ft-7ft" },
+                    material: "Archival quality silk, sculpted trunk",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 5,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Premium_Fiddle_Leaf_Fig_5-7ft.pdf",
+                    image: "assets/products/14/main.jpg"
+                },
+                solutions: ["luxury_retail", "hospitality", "design_custom"],
+                isStar: false,
+                status: "active"
+            },
+
+            // Retail Ready Series (6 products)
+            {
+                id: "04",
+                sku: "LS-SUC-MINI-04",
+                name: "Set of Mini Succulents",
+                series: "retail",
+                seriesLabel: "Retail Ready",
+                filters: {
+                    compliance: ["retail_ready"],
+                    application: ["retail"],
+                    size: ["4-6ft"]
+                },
+                specifications: {
+                    height: { display: "Desktop" },
+                    material: "PE plastic, ceramic pot",
+                    set_quantity: 6,
+                    customizable: false
+                },
+                commercial: {
+                    moq: 500,
+                    lead_time: "30 days",
+                    fob_port: "Shenzhen"
+                },
+                retail: {
+                    upc: "123456789012",
+                    inner_carton: "6 sets",
+                    master_carton: "4 inner cartons",
+                    pdq_ready: true,
+                    pdq_dimensions: "24x16x12 inches"
+                },
+                compliance: {
+                    retail_ready: {
+                        barcode_type: "UPC-A",
+                        labeling: "Retail compliant",
+                        packaging: "PDQ display ready"
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Set_of_Mini_Succulents_Desktop.pdf",
+                    image: "assets/products/04/main.jpg"
+                },
+                solutions: ["large_retail", "seasonal_display"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "05",
+                sku: "LS-FIC-4FT-05",
+                name: "4ft Fiddle Leaf Fig",
+                series: "retail",
+                seriesLabel: "Retail Ready",
+                filters: {
+                    compliance: ["retail_ready"],
+                    application: ["retail"],
+                    size: ["4-6ft"]
+                },
+                specifications: {
+                    height: { display: "4ft" },
+                    material: "Premium silk, plastic pot",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 300,
+                    lead_time: "30 days",
+                    fob_port: "Shenzhen"
+                },
+                retail: {
+                    upc: "123456789013",
+                    inner_carton: "1 pc",
+                    master_carton: "4 pcs",
+                    color_box: true
+                },
+                compliance: {
+                    retail_ready: {
+                        barcode_type: "UPC-A",
+                        labeling: "Retail compliant"
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Fiddle_Leaf_Fig_4ft.pdf",
+                    image: "assets/products/05/main.jpg"
+                },
+                solutions: ["large_retail", "home_decor_retail"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "06",
+                sku: "LS-FRT-MIX-06",
+                name: "Artificial Fruit Trees",
+                series: "retail",
+                seriesLabel: "Retail Ready",
+                filters: {
+                    compliance: ["retail_ready"],
+                    application: ["retail"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 5, max: 7, unit: "ft", display: "5ft-7ft" },
+                    variants: ["Lemon", "Apple", "Orange"],
+                    material: "Silk foliage, plastic fruit",
+                    seasonal: true,
+                    customizable: false
+                },
+                commercial: {
+                    moq: 200,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                retail: {
+                    upc: "123456789014",
+                    seasonal_codes: ["SPR24", "FAL24"],
+                    pdq_ready: true
+                },
+                compliance: {
+                    retail_ready: {
+                        seasonal_program: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Artificial_Fruit_Trees_5-7ft.pdf",
+                    image: "assets/products/06/main.jpg"
+                },
+                solutions: ["large_retail", "seasonal_display"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "15",
+                sku: "LS-FIC-MIN-15",
+                name: "Mini Fiddle Leaf Fig",
+                series: "retail",
+                seriesLabel: "Retail Ready",
+                filters: {
+                    compliance: ["retail_ready"],
+                    application: ["retail"],
+                    size: ["4-6ft"]
+                },
+                specifications: {
+                    height: { display: "3ft" },
+                    material: "PE plastic, decorative pot",
+                    scale: "Miniature",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 500,
+                    lead_time: "30 days",
+                    fob_port: "Shenzhen"
+                },
+                retail: {
+                    upc: "123456789015",
+                    inner_carton: "6 pcs",
+                    master_carton: "6 inner",
+                    color_box: true
+                },
+                compliance: {
+                    retail_ready: true
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Mini_Fiddle_Leaf_Fig_3ft.pdf",
+                    image: "assets/products/15/main.jpg"
+                },
+                solutions: ["large_retail", "home_decor_retail"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "16",
+                sku: "LS-CTR-MIX-16",
+                name: "Artificial Citrus/Pomegranate",
+                series: "retail",
+                seriesLabel: "Retail Ready",
+                filters: {
+                    compliance: ["retail_ready"],
+                    application: ["retail"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 5, max: 7, unit: "ft", display: "5ft-7ft" },
+                    variants: ["Citrus", "Pomegranate"],
+                    material: "Silk foliage, weighted fruit",
+                    seasonal: true,
+                    customizable: false
+                },
+                commercial: {
+                    moq: 250,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                retail: {
+                    upc: "123456789016",
+                    seasonal_codes: ["FAL24", "WIN24"],
+                    pdq_ready: true
+                },
+                compliance: {
+                    retail_ready: {
+                        seasonal_program: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Artificial_Citrus_Pomegranate_Trees_5-7ft.pdf",
+                    image: "assets/products/16/main.jpg"
+                },
+                solutions: ["large_retail", "seasonal_display"],
+                isStar: false,
+                status: "active"
+            },
+
+            // Commercial Grade Series (6 products)
+            {
+                id: "07",
+                sku: "LS-GRW-VRT-07",
+                name: "Fire-Retardant Vertical Green Wall",
+                series: "commercial",
+                seriesLabel: "Commercial Grade",
+                filters: {
+                    compliance: ["fire_retardant"],
+                    application: ["commercial", "indoor"],
+                    size: ["custom"]
+                },
+                specifications: {
+                    height: { display: "Custom Size" },
+                    panel_size: "40x40cm",
+                    material: "Fire-retardant silk, modular panel system",
+                    installation: "Wall-mounted",
+                    customizable: true,
+                    custom_options: ["dimensions", "foliage_density", "irrigation_simulation"]
+                },
+                commercial: {
+                    moq: 50,
+                    lead_time: "60 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    fire_retardant: {
+                        standards: ["B1", "NFPA 701"],
+                        test_report: "NFPA-701-2024-007",
+                        bsci_id: "BSCI-12345",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Fire-Retardant_Vertical_Green_Wall_Custom.pdf",
+                    image: "assets/products/07/main.jpg"
+                },
+                solutions: ["commercial_indoor", "hospitality", "public_spaces"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "08",
+                sku: "LS-PLM-ARC-08",
+                name: "Large Areca Palm",
+                series: "commercial",
+                seriesLabel: "Commercial Grade",
+                filters: {
+                    compliance: [],
+                    application: ["commercial", "indoor"],
+                    size: ["7-9ft", "10ft+"]
+                },
+                specifications: {
+                    height: { min: 8, max: 10, unit: "ft", display: "8ft-10ft+" },
+                    material: "Commercial grade silk, weighted base",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 10,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Large_Areca_Palm_8-10ft+.pdf",
+                    image: "assets/products/08/main.jpg"
+                },
+                solutions: ["commercial_indoor", "hospitality", "corporate"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "09",
+                sku: "LS-TOB-BOX-09",
+                name: "Topiary Boxwood Ball",
+                series: "commercial",
+                seriesLabel: "Commercial Grade",
+                filters: {
+                    compliance: ["fire_retardant"],
+                    application: ["commercial", "indoor"],
+                    size: ["custom"]
+                },
+                specifications: {
+                    height: { display: "Custom Diameter" },
+                    diameter_range: "30cm-150cm",
+                    material: "Fire-retardant PE foliage",
+                    customizable: true,
+                    custom_options: ["diameter", "density", "base_type"]
+                },
+                commercial: {
+                    moq: 20,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    fire_retardant: {
+                        standards: ["B1", "NFPA 701"],
+                        test_report: "NFPA-701-2024-009",
+                        bsci_id: "BSCI-12345",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Topiary_Boxwood_Ball_Custom.pdf",
+                    image: "assets/products/09/main.jpg"
+                },
+                solutions: ["commercial_indoor", "public_spaces", "hospitality"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "17",
+                sku: "LS-VIN-POT-17",
+                name: "Fire-Retardant Pothos Vine",
+                series: "commercial",
+                seriesLabel: "Commercial Grade",
+                filters: {
+                    compliance: ["fire_retardant"],
+                    application: ["commercial", "indoor"],
+                    size: ["custom"]
+                },
+                specifications: {
+                    height: { display: "Custom Length" },
+                    length_range: "1m-10m",
+                    material: "Fire-retardant silk, flexible stem",
+                    application: "Wall/ceiling draping",
+                    customizable: true,
+                    custom_options: ["length", "density", "installation_hardware"]
+                },
+                commercial: {
+                    moq: 100,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    fire_retardant: {
+                        standards: ["B1", "NFPA 701"],
+                        test_report: "NFPA-701-2024-017",
+                        bsci_id: "BSCI-12345",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Fire-Retardant_Pothos_Vine_Custom.pdf",
+                    image: "assets/products/17/main.jpg"
+                },
+                solutions: ["commercial_indoor", "hospitality", "public_spaces"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "18",
+                sku: "LS-RUB-FIR-18",
+                name: "Fire-Retardant Rubber Plant",
+                series: "commercial",
+                seriesLabel: "Commercial Grade",
+                filters: {
+                    compliance: ["fire_retardant"],
+                    application: ["commercial", "indoor"],
+                    size: ["7-9ft"]
+                },
+                specifications: {
+                    height: { min: 7, max: 9, unit: "ft", display: "7ft-9ft" },
+                    material: "Fire-retardant silk, weighted base",
+                    leaf_texture: "Glossy",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 10,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    fire_retardant: {
+                        standards: ["B1", "NFPA 701"],
+                        test_report: "NFPA-701-2024-018",
+                        bsci_id: "BSCI-12345",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Fire-Retardant_Rubber_Plant_7-9ft.pdf",
+                    image: "assets/products/18/main.jpg"
+                },
+                solutions: ["commercial_indoor", "corporate", "hospitality"],
+                isStar: false,
+                status: "active"
+            },
+
+            // Outdoor Engineering Series (6 products)
+            {
+                id: "10",
+                sku: "LS-BAM-UVS-10",
+                name: "UV-Stable Bamboo",
+                series: "outdoor",
+                seriesLabel: "Outdoor Engineering",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["outdoor"],
+                    size: ["4-6ft", "7-9ft", "10ft+"]
+                },
+                specifications: {
+                    height: { min: 6, max: 10, unit: "ft", display: "6ft-10ft" },
+                    material: "UV-stable polymer, steel core",
+                    application: "Privacy screening",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 50,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-010",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_UV-Stable_Bamboo_6-10ft.pdf",
+                    image: "assets/products/10/main.jpg"
+                },
+                solutions: ["outdoor_resort", "landscape_design", "privacy_screening"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "11",
+                sku: "LS-CYP-OUT-11",
+                name: "Outdoor Cypress Column",
+                series: "outdoor",
+                seriesLabel: "Outdoor Engineering",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["outdoor"],
+                    size: ["7-9ft", "10ft+"]
+                },
+                specifications: {
+                    height: { min: 8, max: 12, unit: "ft", display: "8ft-12ft" },
+                    material: "UV-stable PE, internal steel frame",
+                    shape: "Column",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 20,
+                    lead_time: "60 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-011",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Outdoor_Cypress_Column_8-12ft.pdf",
+                    image: "assets/products/11/main.jpg"
+                },
+                solutions: ["outdoor_resort", "landscape_design", "commercial_outdoor"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "12",
+                sku: "LS-PLM-OUT-12",
+                name: "Commercial Outdoor Palm",
+                series: "outdoor",
+                seriesLabel: "Outdoor Engineering",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["outdoor", "commercial"],
+                    size: ["10ft+"]
+                },
+                specifications: {
+                    height: { display: "10ft+" },
+                    material: "Commercial grade UV polymer, galvanized steel trunk",
+                    base: "Concrete weighted",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 5,
+                    lead_time: "75 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-012",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_Commercial_Outdoor_Palm_10ft+.pdf",
+                    image: "assets/products/12/main.jpg"
+                },
+                solutions: ["outdoor_resort", "hospitality_outdoor", "commercial_outdoor"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "19",
+                sku: "LS-LAD-UVS-19",
+                name: "UV-Stable Lady Palm",
+                series: "outdoor",
+                seriesLabel: "Outdoor Engineering",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["outdoor"],
+                    size: ["4-6ft", "7-9ft"]
+                },
+                specifications: {
+                    height: { min: 5, max: 8, unit: "ft", display: "5ft-8ft" },
+                    material: "UV-stable PE, natural wood trunk",
+                    spread: "Wide",
+                    customizable: false
+                },
+                commercial: {
+                    moq: 20,
+                    lead_time: "45 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-019",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_UV-Stable_Lady_Palm_5-8ft.pdf",
+                    image: "assets/products/19/main.jpg"
+                },
+                solutions: ["outdoor_resort", "landscape_design", "small_spaces"],
+                isStar: false,
+                status: "active"
+            },
+            {
+                id: "20",
+                sku: "LS-COC-UVS-20",
+                name: "UV-Stable Coconut Palm",
+                series: "outdoor",
+                seriesLabel: "Outdoor Engineering",
+                filters: {
+                    compliance: ["uv_protected"],
+                    application: ["outdoor", "commercial"],
+                    size: ["10ft+"]
+                },
+                specifications: {
+                    height: { min: 10, max: 13, unit: "ft", display: "10ft-13ft" },
+                    material: "UV-stable polymer, steel reinforced trunk",
+                    features: ["Coconuts", "Textured trunk"],
+                    customizable: false
+                },
+                commercial: {
+                    moq: 3,
+                    lead_time: "75 days",
+                    fob_port: "Shenzhen"
+                },
+                compliance: {
+                    uv_protected: {
+                        test_standard: "ASTM G154",
+                        hours: 5000,
+                        certificate: "UV-2024-020",
+                        certificate_transparent: true
+                    }
+                },
+                assets: {
+                    spec_sheet: "Laysun_Product_Spec_UV-Stable_Coconut_Palm_10-13ft.pdf",
+                    image: "assets/products/20/main.jpg"
+                },
+                solutions: ["outdoor_resort", "hospitality_outdoor", "theme_parks"],
+                isStar: false,
+                status: "active"
+            }
+        ];
+
+        // Inquiry Basket State
+        let inquiryBasket = JSON.parse(sessionStorage.getItem('inquiryBasket')) || [];
+
+        // Render Products
+        function renderProducts(productList) {
+            const grid = document.getElementById('productsGrid');
+            const countLabel = document.getElementById('resultsCount');
+            
+            countLabel.textContent = `Showing ${productList.length} products`;
+            
+            grid.innerHTML = productList.map(product => {
+                const badges = [];
+                if (product.isStar) badges.push('<span class="product-badge">★ Star</span>');
+                if (product.filters.compliance.includes('retail_ready')) badges.push('<span class="product-badge retail">Retail-Ready</span>');
+                if (product.filters.compliance.includes('fire_retardant')) badges.push('<span class="product-badge fire">Fire-Retardant</span>');
+                if (product.filters.compliance.includes('uv_protected')) badges.push('<span class="product-badge uv">UV-Protected</span>');
+
+                const certIcons = [];
+                if (product.filters.compliance.includes('uv_protected')) certIcons.push('<span class="cert-icon cert-uv" title="UV Protected">UV</span>');
+                if (product.filters.compliance.includes('fire_retardant')) certIcons.push('<span class="cert-icon cert-fire" title="Fire Retardant">FR</span>');
+                if (product.filters.compliance.includes('retail_ready')) certIcons.push('<span class="cert-icon cert-retail" title="Retail Ready">RT</span>');
+
+                const metaInfo = product.moq ? `MOQ: ${product.moq}` : product.specifications.height.display;
+
+                return `
+                    <article class="product-card" data-id="${product.id}">
+                        ${badges.join('')}
+                        <div class="product-image">
+                            <img src="${product.assets.image}" alt="${product.name}" loading="lazy" onerror="this.src='assets/placeholder.jpg'">
+                            <div class="product-actions">
+                                <button class="action-btn" onclick="quickView('${product.id}')" title="Quick View">👁</button>
+                                <button class="action-btn add-to-inquiry" onclick="addToInquiry('${product.id}')" title="Add to Inquiry">
+                                    + Add to Inquiry
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-series">${product.seriesLabel}</div>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-specs">
+                                ${product.filters.application.map(app => `<span class="spec-tag">${app}</span>`).join('')}
+                                ${product.specifications.customizable ? '<span class="spec-tag">Customizable</span>' : ''}
+                            </div>
+                            <div class="product-meta">
+                                <span class="product-size">${metaInfo}</span>
+                                <div class="product-cert">
+                                    ${certIcons.join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Apply Filters
+        function applyFilters() {
+            const compliance = document.getElementById('filterCompliance').value;
+            const application = document.getElementById('filterApplication').value;
+            const size = document.getElementById('filterSize').value;
+
+            const filtered = products.filter(product => {
+                const matchCompliance = !compliance || product.filters.compliance.includes(compliance);
+                const matchApplication = !application || product.filters.application.includes(application);
+                const matchSize = !size || product.filters.size.includes(size);
+                
+                return matchCompliance && matchApplication && matchSize;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // Clear Filters
+        function clearFilters() {
+            document.getElementById('filterCompliance').value = '';
+            document.getElementById('filterApplication').value = '';
+            document.getElementById('filterSize').value = '';
+            renderProducts(products);
+        }
+
+        // Add to Inquiry (Ajax to Session)
+        function addToInquiry(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = inquiryBasket.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                inquiryBasket.push({
+                    id: product.id,
+                    sku: product.sku,
+                    name: product.name,
+                    series: product.series,
+                    height: product.specifications.height.display,
+                    spec_sheet: product.assets.spec_sheet,
+                    quantity: 1,
+                    notes: ''
+                });
+            }
+
+            sessionStorage.setItem('inquiryBasket', JSON.stringify(inquiryBasket));
+            updateInquiryCount();
+            showToast(`${product.name} added to inquiry`);
+            
+            const badge = document.querySelector('.inquiry-badge');
+            badge.style.transform = 'scale(1.3)';
+            setTimeout(() => badge.style.transform = 'scale(1)', 200);
+        }
+
+        // Update Inquiry Count
+        function updateInquiryCount() {
+            const count = inquiryBasket.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('inquiryCount').textContent = count;
+        }
+
+        // Toggle Inquiry Sidebar
+        function toggleInquirySidebar() {
+            const sidebar = document.getElementById('inquirySidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+            
+            if (sidebar.classList.contains('open')) {
+                renderInquiryList();
+            }
+        }
+
+        // Render Inquiry List
+        function renderInquiryList() {
+            const list = document.getElementById('inquiryList');
+            
+            if (inquiryBasket.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #999; padding: 2rem;">Your inquiry basket is empty</p>';
+                return;
+            }
+
+            list.innerHTML = inquiryBasket.map((item, index) => `
+                <div class="inquiry-item">
+                    <div class="inquiry-item-image">
+                        <img src="assets/products/${item.id}/main.jpg" alt="${item.name}" onerror="this.src='assets/placeholder.jpg'">
+                    </div>
+                    <div class="inquiry-item-details">
+                        <div class="inquiry-item-name">${item.name}</div>
+                        <div class="inquiry-item-specs">${item.height}</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <input type="number" class="qty-input" value="${item.quantity}" onchange="setQuantity(${index}, this.value)">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                    <span class="remove-item" onclick="removeItem(${index})">Remove</span>
+                </div>
+            `).join('');
+        }
+
+        // Update Quantity
+        function updateQuantity(index, delta) {
+            inquiryBasket[index].quantity += delta;
+            if (inquiryBasket[index].quantity <= 0) {
+                inquiryBasket.splice(index, 1);
+            }
+            sessionStorage.setItem('inquiryBasket', JSON.stringify(inquiryBasket));
+            updateInquiryCount();
+            renderInquiryList();
+        }
+
+        // Set Quantity
+        function setQuantity(index, value) {
+            const qty = parseInt(value) || 1;
+            inquiryBasket[index].quantity = qty;
+            if (qty <= 0) {
+                inquiryBasket.splice(index, 1);
+            }
+            sessionStorage.setItem('inquiryBasket', JSON.stringify(inquiryBasket));
+            updateInquiryCount();
+            renderInquiryList();
+        }
+
+        // Remove Item
+        function removeItem(index) {
+            inquiryBasket.splice(index, 1);
+            sessionStorage.setItem('inquiryBasket', JSON.stringify(inquiryBasket));
+            updateInquiryCount();
+            renderInquiryList();
+        }
+
+        // Download Spec Sheets (One-click)
+        function downloadSpecSheets() {
+            if (inquiryBasket.length === 0) {
+                showToast('Please add products first');
+                return;
+            }
+
+            const specs = inquiryBasket.map(item => item.spec_sheet);
+            const uniqueSpecs = [...new Set(specs)];
+            
+            uniqueSpecs.forEach((spec, i) => {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = `assets/specs/${spec}`;
+                    link.download = spec;
+                    link.click();
+                }, i * 500);
+            });
+
+            showToast(`Downloading ${uniqueSpecs.length} spec sheets...`);
+        }
+
+        // Submit Inquiry
+        function submitInquiry() {
+            if (inquiryBasket.length === 0) {
+                showToast('Please add products first');
+                return;
+            }
+
+            const note = document.querySelector('.inquiry-note').value;
+            const data = {
+                products: inquiryBasket,
+                note: note,
+                timestamp: new Date().toISOString()
+            };
+
+            console.log('Submitting inquiry:', data);
+            
+            inquiryBasket = [];
+            sessionStorage.removeItem('inquiryBasket');
+            updateInquiryCount();
+            renderInquiryList();
+            
+            showToast('Inquiry submitted successfully!');
+            setTimeout(() => toggleInquirySidebar(), 1500);
+        }
+
+        // Quick View
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            showToast(`Quick view: ${product.name}`);
+        }
+
+        // Show Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Toggle Search
+        function toggleSearch() {
+            showToast('Search functionality coming soon');
+        }
+
+        // Toggle Language
+        function toggleLanguage() {
+            showToast('Language switch: Multi-language plugin ready');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(products);
+            updateInquiryCount();
+            
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
