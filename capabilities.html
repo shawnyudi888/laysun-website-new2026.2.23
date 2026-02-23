@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capabilities & Compliance | Laysun - Global Manufacturing Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --forest-green: #2D5A3D;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--leaf-white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(45, 90, 61, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Section Common */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--forest-green);
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Manufacturing Section */
+        .manufacturing {
+            background: white;
+        }
+        
+        .manufacturing-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .manufacturing-text h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 25px;
+        }
+        
+        .manufacturing-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-box {
+            background: var(--leaf-white);
+            padding: 25px;
+            text-align: center;
+            border-left: 4px solid var(--champagne-gold);
+        }
+        
+        .stat-box .number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--forest-green);
+            display: block;
+        }
+        
+        .stat-box .label {
+            font-size: 13px;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .manufacturing-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .manufacturing-image::before {
+            content: '10,000㎡ Production Facility';
+            color: #999;
+            font-size: 16px;
+        }
+        
+        /* Compliance Section */
+        .compliance {
+            background: var(--leaf-white);
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .certificate-card {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            border: 2px solid #e8e8e8;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .certificate-card:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--forest-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+        
+        .certificate-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+        }
+        
+        .certificate-card p {
+            font-size: 13px;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+        
+        .cert-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--champagne-gold);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Supply Chain Section */
+        .supply-chain {
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .supply-chain .section-title h2 {
+            color: white;
+        }
+        
+        .supply-chain .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .map-container {
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .map-container::before {
+            content: 'Global Supply Chain Map';
+            color: rgba(255,255,255,0.6);
+            font-size: 18px;
+        }
+        
+        .supply-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .supply-feature {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .supply-feature h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--champagne-gold);
+        }
+        
+        .supply-feature p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Sustainability Section */
+        .sustainability {
+            background: white;
+        }
+        
+        .sustain-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .sustain-text h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 25px;
+        }
+        
+        .sustain-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .sustain-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .sustain-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 15px;
+        }
+        
+        .sustain-list li::before {
+            content: '♻️';
+            font-size: 24px;
+        }
+        
+        .sustain-image {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sustain-image::before {
+            content: 'Sustainability Initiatives';
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--forest-green);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--champagne-gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .copyright {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .manufacturing-content,
+            .sustain-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .stats-grid,
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .supply-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">LAY<span>SUN</span></div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="customization.html">Customization</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Capabilities & Compliance</h1>
+                <p>Industrial Precision at a Global Scale. Your Risk-Free Supply Chain Partner.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Section -->
+    <section class="section manufacturing">
+        <div class="container">
+            <div class="manufacturing-content">
+                <div class="manufacturing-text">
+                    <h3>Manufacturing Excellence</h3>
+                    <p>Operating from our 10,000㎡ state-of-the-art facility, Laysun harmonizes large-scale automation with artisanal detail. We don't just "make" artificial plants; we engineer them.</p>
+                    
+                    <p>Our production lines are optimized for consistency, durability, and speed, allowing us to manage high-volume retail orders and complex bespoke projects with equal precision. From 48h rapid prototyping to rigorous batch testing, every product leaving our floor is an "Architectural-Grade" asset.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="number">10,000㎡</span>
+                            <span class="label">Production Facility</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">99.5%</span>
+                            <span class="label">On-Time Delivery</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">48h</span>
+                            <span class="label">Rapid Prototyping</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">500+</span>
+                            <span class="label">Global Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="manufacturing-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="section compliance">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Compliance & Safety</h2>
+                <p>In the world of commercial procurement, beauty is nothing without safety and ethics. We strictly adhere to international standards.</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card" onclick="showCertDetail('bsci')">
+                    <div class="cert-icon">📋</div>
+                    <h3>BSCI</h3>
+                    <p>Business Social Compliance Initiative</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('sedex')">
+                    <div class="cert-icon">📋</div>
+                    <h3>SEDEX</h3>
+                    <p>Supplier Ethical Data Exchange</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('nfpa')">
+                    <div class="cert-icon">🔥</div>
+                    <h3>NFPA 701</h3>
+                    <p>Fire Retardant Standard USA</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('b1')">
+                    <div class="cert-icon">🔥</div>
+                    <h3>B1</h3>
+                    <p>Fire Retardant Standard Europe</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('uv')">
+                    <div class="cert-icon">☀️</div>
+                    <h3>UV 5000h+</h3>
+                    <p>Weathering Resistance Test</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('iso')">
+                    <div class="cert-icon">✓</div>
+                    <h3>ISO 9001</h3>
+                    <p>Quality Management System</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('reach')">
+                    <div class="cert-icon">🧪</div>
+                    <h3>REACH</h3>
+                    <p>Chemical Safety Compliance</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+                
+                <div class="certificate-card" onclick="showCertDetail('rohs')">
+                    <div class="cert-icon">🌿</div>
+                    <h3>RoHS</h3>
+                    <p>Hazardous Substances Control</p>
+                    <span class="cert-badge">View Certificate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supply Chain Section -->
+    <section class="section supply-chain">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Supply Chain & Delivery</h2>
+                <p>A seamless supply chain empowered by data, ensuring on-time delivery worldwide</p>
+            </div>
+            
+            <div class="map-container"></div>
+            
+            <div class="supply-features">
+                <div class="supply-feature">
+                    <h4>Strategic Logistics</h4>
+                    <p>Optimized shipping routes and container loading to reduce landed costs by up to 15%</p>
+                </div>
+                
+                <div class="supply-feature">
+                    <h4>Inventory Management</h4>
+                    <p>Data-driven forecasting ensures 99.5% on-time delivery for seasonal and core collections</p>
+                </div>
+                
+                <div class="supply-feature">
+                    <h4>Global Fulfillment</h4>
+                    <p>Distribution centers and logistics partners across North America, Europe, and Asia-Pacific</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="section sustainability">
+        <div class="container">
+            <div class="sustain-content">
+                <div class="sustain-text">
+                    <h3>Sustainability & Environmental Responsibility</h3>
+                    <p>At Laysun, we believe that exceptional design should not come at the expense of our planet. Our commitment to sustainability is woven into every aspect of our operations.</p>
+                    
+                    <p>By significantly extending the replacement cycle through superior engineering, we help project owners reduce waste and achieve long-term sustainability goals in their landscape investments.</p>
+                    
+                    <ul class="sustain-list">
+                        <li>Eco-friendly PE materials and recyclable packaging</li>
+                        <li>Water-based adhesives and low-VOC production processes</li>
+                        <li>Extended product lifecycle reducing replacement waste</li>
+                        <li>Carbon footprint optimization in logistics</li>
+                        <li>Continuous R&D in biodegradable materials</li>
+                    </ul>
+                </div>
+                <div class="sustain-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
+                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
+                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
+                        <li><a href="customization.html">Custom Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Signature Series</a></li>
+                        <li><a href="products.html">Retail Ready</a></li>
+                        <li><a href="products.html">Fire Retardant</a></li>
+                        <li><a href="products.html">UV Stable</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="capabilities.html">Compliance</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#">Request Quote</a></li>
+                        <li><a href="#">Download Catalog</a></li>
+                        <li><a href="#">Find a Rep</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">LAY<span>SUN</span></div>
+                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showCertDetail(cert) {
+            const certInfo = {
+                'bsci': 'BSCI ID: LAY-2024-BSCI-001\nAudit Date: 2024-03-15\nValid Until: 2026-03-14',
+                'sedex': 'SEDEX Member ID: ZC123456789\nAudit Type: 4-Pillar\nLast Audit: 2024-01-20',
+                'nfpa': 'NFPA 701 Test Report No.: NFPA-LAY-2024-001\nTest Date: 2024-02-10\nValid: Unlimited',
+                'b1': 'B1 Certificate No.: B1-DE-2024-456\nIssued: 2024-01-15\nValid Until: 2027-01-14',
+                'uv': 'UV Test Report: UV5000-LAY-2024\nTest Hours: 5000h+\nLab: SGS Shanghai',
+                'iso': 'ISO 9001:2015\nCertificate No.: ISO-LAY-2023\nValid Until: 2026-12-31',
+                'reach': 'REACH Registration No.: 01-2119457890-42\nCompliance Date: 2024-01-01',
+                'rohs': 'RoHS Certificate: ROHS-LAY-2024\nTested by: TUV SUD\nValid: Unlimited'
+            };
+            
+            alert('Certificate Details:\n\n' + certInfo[cert] + '\n\nClick to download full PDF certificate.');
+        }
+    </script>
+</body>
+</html>
