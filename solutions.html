@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Laysun - Architectural-Grade Artificial Greenery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --forest-green: #2D5A3D;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--leaf-white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(45, 90, 61, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Solutions Overview */
+        .solutions-overview {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--forest-green);
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .solution-card {
+            background: var(--leaf-white);
+            border: 1px solid #e8e8e8;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--champagne-gold);
+        }
+        
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--forest-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+        
+        .solution-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+        }
+        
+        .solution-card p {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .solution-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--champagne-gold);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* Solution Detail Sections */
+        .solution-detail {
+            padding: 100px 0;
+        }
+        
+        .solution-detail:nth-child(even) {
+            background: var(--leaf-white);
+        }
+        
+        .solution-detail:nth-child(odd) {
+            background: white;
+        }
+        
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .detail-content.reverse {
+            direction: rtl;
+        }
+        
+        .detail-content.reverse > * {
+            direction: ltr;
+        }
+        
+        .detail-text h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .detail-text .subtitle {
+            font-size: 18px;
+            color: var(--champagne-gold);
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: block;
+        }
+        
+        .detail-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .features-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            color: var(--champagne-gold);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .features-list li strong {
+            color: var(--forest-green);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .features-list li span {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+        
+        .detail-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detail-image::before {
+            content: attr(data-label);
+            color: #999;
+            font-size: 16px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--champagne-gold);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--champagne-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Case Study Section */
+        .case-study {
+            background: var(--forest-green);
+            color: white;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        
+        .case-study h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--champagne-gold);
+            margin-bottom: 15px;
+        }
+        
+        .case-study h5 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .case-study p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+            color: rgba(255,255,255,0.9) !important;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--forest-green);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--champagne-gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .copyright {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .detail-content.reverse {
+                direction: ltr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">LAY<span>SUN</span></div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Industry Solutions</h1>
+                <p>Solution-first approach for global B2B procurement. We don't just sell products — we solve challenges across retail, commercial, and outdoor landscapes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Overview -->
+    <section class="solutions-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Three Pillars of Excellence</h2>
+                <p>Each solution is engineered to address specific industry pain points — from logistics optimization to compliance assurance.</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-card" onclick="scrollToSection('retail')">
+                    <div class="solution-icon">🏪</div>
+                    <h3>Big-Box Retail</h3>
+                    <p>Optimized for turnover. Engineered for landed cost. Up to 15% savings on logistics.</p>
+                    <span class="solution-tag">Retail-Ready</span>
+                </div>
+                
+                <div class="solution-card" onclick="scrollToSection('commercial')">
+                    <div class="solution-icon">🏢</div>
+                    <h3>Commercial Interiors</h3>
+                    <p>Safety-first greenery for luxury hospitality and office spaces. NFPA 701/B1 certified.</p>
+                    <span class="solution-tag">Fire Retardant</span>
+                </div>
+                
+                <div class="solution-card" onclick="scrollToSection('outdoor')">
+                    <div class="solution-icon">🌴</div>
+                    <h3>Outdoor Engineering</h3>
+                    <p>Weather-resistant aesthetics that refuse to fade. 5000h+ UV stability guaranteed.</p>
+                    <span class="solution-tag">UV Stable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retail Solution Detail -->
+    <section class="solution-detail" id="retail">
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-text">
+                    <h2>Retail-Ready Solutions: Elevating Your Horticulture Category Performance</h2>
+                    <span class="subtitle">Optimized for High Turnover & Landed Cost — Up to 15% Savings</span>
+                    
+                    <p>In the competitive world of Big-Box retail, an artificial plant is more than a product — it's a logistical headache and a high-stakes shelf-space investment. Laysun understands the pressures of retail buyers: from shipping efficiency to compliance risks.</p>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <strong>Retail-Ready Packaging (RRP)</strong>
+                                <span>PDQ display boxes and bespoke color box designs that cut in-store labor by up to 30%</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Logistical Optimization</strong>
+                                <span>CBM reduction through optimized product structure — cut landed costs by up to 15%</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Strict Compliance & Ethical Sourcing</strong>
+                                <span>BSCI/SEDEX social audits and fire-retardant safety for bulletproof supply chains</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Inventory Stability</strong>
+                                <span>99.5% on-time delivery rate ensures seasonal launches are always in stock</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="cta-button">Discuss Your Retail Needs</a>
+                    
+                    <div class="case-study">
+                        <h4>Case Study</h4>
+                        <h5>Global Big-Box Retail Holiday Collection</h5>
+                        <p><strong>Location:</strong> North America<br>
+                        <strong>Challenge:</strong> Reducing logistical costs for high-volume seasonal SKU launches<br>
+                        <strong>Solution:</strong> Bespoke Retail-Ready Packaging reduced in-store assembly by 30% and optimized container loading by 15%</p>
+                    </div>
+                </div>
+                <div class="detail-image" data-label="Retail Solution Image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Solution Detail -->
+    <section class="solution-detail" id="commercial">
+        <div class="container">
+            <div class="detail-content reverse">
+                <div class="detail-text">
+                    <h2>Architectural Greenery for High-Traffic Commercial Interiors</h2>
+                    <span class="subtitle">Safety First: Inherently Fire Retardant Greenery (NFPA 701/B1)</span>
+                    
+                    <p>In modern commercial architecture — from luxury hotel lobbies to Grade-A office atriums — greenery is no longer a luxury; it is an essential element of biophilic design. However, the challenges of live plants often hinder grand visions. Laysun provides the bridge between botanical aesthetics and commercial feasibility.</p>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <strong>Safety First (Inherently Fire Retardant)</strong>
+                                <span>NFPA 701 (US) and B1 (Europe) certified. IFR technology integrated into material for life-long protection</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Operational Efficiency (Zero Maintenance)</strong>
+                                <span>Eliminate irrigation, pruning, and replacement costs. 10-year aesthetic lifespan, maintenance-free</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Custom Spatial Branding</strong>
+                                <span>Bespoke installations from 12ft statement trees to intricate green walls, aligned with your interior's DNA</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Hypoallergenic & Clean</strong>
+                                <span>Ideal for healthcare and hospitality — eliminates soil-borne pests, pollen, and humidity issues</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="cta-button">Explore Commercial Solutions</a>
+                    
+                    <div class="case-study">
+                        <h4>Case Study</h4>
+                        <h5>Dubai Luxury Hotel</h5>
+                        <p><strong>Location:</strong> Dubai, UAE<br>
+                        <strong>Challenge:</strong> Strict indoor fire safety regulations and 24/7 high-traffic environment<br>
+                        <strong>Solution:</strong> 12ft Inherently Fire Retardant Olive Trees certified to NFPA 701, ensuring zero-maintenance aesthetics</p>
+                    </div>
+                </div>
+                <div class="detail-image" data-label="Commercial Interior Image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outdoor Solution Detail -->
+    <section class="solution-detail" id="outdoor">
+        <div class="container">
+            <div class="detail-content">
+                <div class="detail-text">
+                    <h2>Engineered for the Elements: High-Performance Outdoor Landscapes</h2>
+                    <span class="subtitle">Engineered for the Elements: 5000h+ UV Stability</span>
+                    
+                    <p>Outdoor landscapes are the first touchpoint of any premium property, yet they are constantly under siege by UV radiation, humidity, and temperature fluctuations. Traditional artificial plants fail within months under the sun. Laysun's Outdoor Engineering Solution is built for the "New Normal" of global climates.</p>
+                    
+                    <ul class="features-list">
+                        <li>
+                            <div>
+                                <strong>Military-Grade UV Protection</strong>
+                                <span>Proprietary UV-Stable technology tested for 5000+ hours. Guaranteed color retention even in high-UV regions</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Thermal Resilience</strong>
+                                <span>Engineered to resist thermal expansion from desert heat to sub-zero winters, preventing cracking or brittleness</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Wind & Structural Integrity</strong>
+                                <span>Reinforced internal steel structures designed to withstand specific wind loads for public safety</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Eco-Conscious Durability</strong>
+                                <span>Extended replacement cycle reduces waste and achieves long-term sustainability goals</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="cta-button">Start Outdoor Project</a>
+                    
+                    <div class="case-study">
+                        <h4>Case Study</h4>
+                        <h5>Mediterranean Coastal Resort</h5>
+                        <p><strong>Location:</strong> Mediterranean Coast<br>
+                        <strong>Challenge:</strong> Extreme salt spray and intense UV radiation causing rapid fading<br>
+                        <strong>Solution:</strong> Custom UV-Stable Palm series maintaining color fidelity after 3 years of continuous exposure</p>
+                    </div>
+                </div>
+                <div class="detail-image" data-label="Outdoor Engineering Image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
+                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
+                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
+                        <li><a href="contact.html">Custom Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Signature Series</a></li>
+                        <li><a href="products.html">Retail Ready</a></li>
+                        <li><a href="products.html">Fire Retardant</a></li>
+                        <li><a href="products.html">UV Stable</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Capabilities</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#">Request Quote</a></li>
+                        <li><a href="#">Download Catalog</a></li>
+                        <li><a href="#">Find a Rep</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">LAY<span>SUN</span></div>
+                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
