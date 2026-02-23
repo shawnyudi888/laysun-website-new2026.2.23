@@ -4,85 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Laysun - Architectural-Grade Artificial Greenery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --forest-green: #2D5A3D;
+            --forest-dark: #1E3D2A;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --pure-white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-gray: #666666;
+            --border-light: #E5E5E5;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --forest-green: #2D5A3D;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--leaf-white);
-            color: var(--dark-gray);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Header */
-        .sticky-header {
-            position: sticky;
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
             top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
             background: rgba(45, 90, 61, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
-        .container {
+
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        .header-content {
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            text-decoration: none;
             letter-spacing: 2px;
         }
-        
-        .logo span {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 2.5rem;
+            align-items: center;
         }
-        
+
         .nav-menu a {
-            color: white;
+            color: var(--pure-white);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: color 0.3s;
             position: relative;
         }
-        
-        .nav-menu a:hover {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -93,21 +101,115 @@
             background: var(--champagne-gold);
             transition: width 0.3s;
         }
-        
+
         .nav-menu a:hover::after {
             width: 100%;
         }
-        
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lang-switch {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--pure-white);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--champagne-gold);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--pure-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            min-width: 150px;
+        }
+
+        .lang-switch:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .lang-option:hover {
+            background: var(--leaf-white);
+            color: var(--forest-green);
+        }
+
+        .inquiry-basket {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .basket-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--pure-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .basket-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
-            padding: 100px 0;
-            text-align: center;
-            color: white;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -116,900 +218,1444 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 100px;
+            background-size: 300px;
             opacity: 0.3;
         }
-        
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 2rem;
+            max-width: 800px;
         }
-        
+
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
         }
-        
+
         .hero p {
-            font-size: 18px;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            font-size: 1.1rem;
             opacity: 0.9;
+            font-weight: 300;
         }
-        
-        /* Filter Section */
-        .filter-section {
-            background: white;
-            padding: 40px 0;
-            border-bottom: 1px solid #e0e0e0;
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        /* Sidebar Filters */
+        .sidebar {
             position: sticky;
-            top: 70px;
-            z-index: 100;
+            top: 100px;
+            height: fit-content;
         }
-        
-        .filter-container {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            align-items: center;
+
+        .filter-section {
+            background: var(--pure-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        
-        .filter-label {
-            font-size: 12px;
-            font-weight: 600;
+
+        .filter-section h3 {
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
             color: var(--forest-green);
-        }
-        
-        .filter-select {
-            padding: 12px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s;
-            min-width: 200px;
-        }
-        
-        .filter-select:hover,
-        .filter-select:focus {
-            border-color: var(--forest-green);
-            outline: none;
-        }
-        
-        .filter-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-tag {
-            padding: 8px 16px;
-            background: var(--leaf-white);
-            border: 1px solid #ddd;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .filter-tag:hover,
-        .filter-tag.active {
-            background: var(--forest-green);
-            color: white;
-            border-color: var(--forest-green);
-        }
-        
-        .inquiry-basket-btn {
-            margin-left: auto;
-            background: var(--champagne-gold);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
         }
-        
-        .inquiry-basket-btn:hover {
-            background: var(--champagne-dark);
-            transform: translateY(-2px);
-        }
-        
-        .basket-count {
-            background: var(--forest-green);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+
+        .filter-option {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-        
-        /* Products Grid */
-        .products-section {
-            padding: 60px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--forest-green);
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            color: var(--medium-gray);
-            font-size: 16px;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background: white;
-            border: 1px solid #e8e8e8;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-card:hover {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-image::before {
-            content: 'Product Image';
-            color: #999;
-            font-size: 14px;
-        }
-        
-        .product-badges {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        
-        .badge {
-            padding: 5px 12px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .badge-uv {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .badge-fire {
-            background: #c9302c;
-            color: white;
-        }
-        
-        .badge-retail {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        .product-info {
-            padding: 25px;
-        }
-        
-        .product-category {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--champagne-gold);
-            margin-bottom: 8px;
-        }
-        
-        .product-name {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-        
-        .product-specs {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 13px;
-            color: var(--medium-gray);
-        }
-        
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .product-features {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .feature-tag {
-            padding: 4px 10px;
-            background: var(--leaf-white);
-            font-size: 11px;
-            color: var(--forest-green);
-            border: 1px solid #ddd;
-        }
-        
-        .product-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .btn {
-            flex: 1;
-            padding: 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
             cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-        }
-        
-        .btn-primary {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #1e3d2f;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--forest-green);
-            border: 2px solid var(--forest-green);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .add-to-basket {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            font-size: 20px;
-            color: var(--forest-green);
-        }
-        
-        .add-to-basket:hover {
-            background: var(--champagne-gold);
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 80px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-        
-        .footer-section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--champagne-gold);
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
             transition: color 0.3s;
         }
-        
-        .footer-section a:hover {
+
+        .filter-option:hover {
+            color: var(--forest-green);
+        }
+
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--forest-green);
+            cursor: pointer;
+        }
+
+        .filter-option label {
+            cursor: pointer;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .filter-count {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            background: var(--leaf-white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+        }
+
+        .clear-filters {
+            width: 100%;
+            padding: 0.75rem;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-gray);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .clear-filters:hover {
+            border-color: var(--forest-green);
+            color: var(--forest-green);
+        }
+
+        /* Product Grid */
+        .products-area {
+            min-height: 600px;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .results-count strong {
+            color: var(--forest-green);
+        }
+
+        .sort-dropdown {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            background: var(--pure-white);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%);
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-signature {
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+        }
+
+        .badge-retail {
+            background: var(--forest-green);
+            color: var(--pure-white);
+        }
+
+        .badge-fire {
+            background: #dc3545;
+            color: var(--pure-white);
+        }
+
+        .badge-uv {
+            background: #007bff;
+            color: var(--pure-white);
+        }
+
+        .quick-add {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--pure-white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-card:hover .quick-add {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quick-add:hover {
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-series {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-specs {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .product-id {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .product-link {
+            color: var(--forest-green);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.3s;
+        }
+
+        .product-link:hover {
             color: var(--champagne-gold);
         }
-        
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 4rem;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-light);
+            background: var(--pure-white);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            border-color: var(--forest-green);
+        }
+
+        /* Mobile Filter Toggle */
+        .mobile-filter-toggle {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--forest-dark);
+            color: var(--pure-white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--champagne-gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--champagne-gold);
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pure-white);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--champagne-gold);
+            border-color: var(--champagne-gold);
+        }
+
+        /* Inquiry Basket Panel */
+        .basket-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--pure-white);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .basket-panel.active {
+            right: 0;
+        }
+
+        .basket-header {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
+
+        .basket-header h3 {
+            font-size: 1.2rem;
         }
-        
-        .footer-logo span {
-            color: var(--champagne-gold);
+
+        .close-basket {
+            background: none;
+            border: none;
+            color: var(--pure-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
-        .copyright {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
+
+        .basket-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
         }
-        
-        /* Mobile Responsive */
+
+        .empty-basket {
+            text-align: center;
+            color: var(--text-gray);
+            padding: 3rem 0;
+        }
+
+        .basket-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .basket-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: var(--leaf-white);
+        }
+
+        .basket-item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .basket-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .basket-item-info .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .qty-control button {
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--border-light);
+            background: var(--pure-white);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .qty-control span {
+            font-size: 0.9rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: auto;
+        }
+
+        .basket-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            background: var(--leaf-white);
+        }
+
+        .basket-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 0.75rem;
+            transition: background 0.3s;
+        }
+
+        .basket-btn:hover {
+            background: var(--forest-dark);
+        }
+
+        .basket-btn.gold {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+        }
+
+        .basket-btn.gold:hover {
+            opacity: 0.9;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: fixed;
+                left: -300px;
+                top: 0;
+                width: 280px;
+                height: 100vh;
+                background: var(--pure-white);
+                z-index: 999;
+                overflow-y: auto;
+                padding: 2rem;
+                transition: left 0.3s;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .sidebar.active {
+                left: 0;
+            }
+            
+            .mobile-filter-toggle {
+                display: flex;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
             .hero h1 {
-                font-size: 32px;
-            }
-            
-            .filter-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .inquiry-basket-btn {
-                margin-left: 0;
-                justify-content: center;
+                font-size: 2rem;
             }
             
             .products-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
+            
+            .basket-panel {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">LAY<span>SUN</span></div>
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="customization.html">Design & Customization</a></li>
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="lang-switch">
+                    <button class="lang-btn">
+                        <span>EN</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
+                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
+                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
+                    </div>
+                </div>
+
+                <div class="inquiry-basket" onclick="toggleBasket()">
+                    <svg class="basket-icon" viewBox="0 0 24 24">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="basket-count" id="basketCount">0</span>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Our Collections</h1>
-                <p>Architectural-grade artificial greenery engineered for global commerce. From retail-ready solutions to commercial-grade installations.</p>
-            </div>
+        <div class="hero-content">
+            <h1>SIGNATURE COLLECTIONS</h1>
+            <p>20 Architectural-Grade Products. Engineered for the World's Toughest Environments.</p>
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-container">
-                <div class="filter-group">
-                    <label class="filter-label">Standard Compliance</label>
-                    <select class="filter-select" id="filter-compliance">
-                        <option value="all">All Standards</option>
-                        <option value="uv">UV Protected (2000h+)</option>
-                        <option value="fire">Fire Retardant (NFPA 701/B1)</option>
-                        <option value="retail">Retail-Ready</option>
-                        <option value="eco">Eco-Friendly</option>
-                    </select>
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar" id="sidebar">
+            <div class="filter-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    Standard Compliance
+                </h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="uv" value="uv" onchange="applyFilters()">
+                    <label for="uv">UV-Stable (2000h+)</label>
+                    <span class="filter-count">8</span>
                 </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Application</label>
-                    <select class="filter-select" id="filter-application">
-                        <option value="all">All Applications</option>
-                        <option value="indoor">Indoor</option>
-                        <option value="outdoor">Outdoor</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="retail">Retail</option>
-                    </select>
+                <div class="filter-option">
+                    <input type="checkbox" id="fire" value="fire" onchange="applyFilters()">
+                    <label for="fire">Fire-Retardant (NFPA 701/B1)</label>
+                    <span class="filter-count">6</span>
                 </div>
-                
-                <div class="filter-group">
-                    <label class="filter-label">Height/Size</label>
-                    <select class="filter-select" id="filter-height">
-                        <option value="all">All Sizes</option>
-                        <option value="small">Small (<4ft)</option>
-                        <option value="medium">Medium (4-9ft)</option>
-                        <option value="large">Large (>10ft)</option>
-                    </select>
+                <div class="filter-option">
+                    <input type="checkbox" id="retail" value="retail" onchange="applyFilters()">
+                    <label for="retail">Retail-Ready</label>
+                    <span class="filter-count">6</span>
                 </div>
-                
-                <button class="inquiry-basket-btn" onclick="openBasket()">
-                    <span>Project Inquiry</span>
-                    <span class="basket-count" id="basketCount">0</span>
-                </button>
             </div>
-        </div>
-    </section>
 
-    <!-- Products Section -->
-    <section class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Collections</h2>
-                <p>20 core SKUs engineered for performance, compliance, and aesthetic excellence</p>
+            <div class="filter-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                    </svg>
+                    Application
+                </h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="indoor" value="indoor" onchange="applyFilters()">
+                    <label for="indoor">Indoor</label>
+                    <span class="filter-count">14</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="outdoor" value="outdoor" onchange="applyFilters()">
+                    <label for="outdoor">Outdoor</label>
+                    <span class="filter-count">8</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="commercial" value="commercial" onchange="applyFilters()">
+                    <label for="commercial">Commercial</label>
+                    <span class="filter-count">12</span>
+                </div>
             </div>
-            
+
+            <div class="filter-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Height/Size
+                </h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="small" value="small" onchange="applyFilters()">
+                    <label for="small">Small (&lt;4ft)</label>
+                    <span class="filter-count">3</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="medium" value="medium" onchange="applyFilters()">
+                    <label for="medium">Medium (4-9ft)</label>
+                    <span class="filter-count">10</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="large" value="large" onchange="applyFilters()">
+                    <label for="large">Large (&gt;10ft)</label>
+                    <span class="filter-count">7</span>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Series
+                </h3>
+                <div class="filter-option">
+                    <input type="checkbox" id="signature" value="signature" onchange="applyFilters()">
+                    <label for="signature">Signature Series</label>
+                    <span class="filter-count">5</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="retail-series" value="retail-series" onchange="applyFilters()">
+                    <label for="retail-series">Retail Ready</label>
+                    <span class="filter-count">6</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="commercial-series" value="commercial-series" onchange="applyFilters()">
+                    <label for="commercial-series">Commercial & Fire Retardant</label>
+                    <span class="filter-count">6</span>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="outdoor-series" value="outdoor-series" onchange="applyFilters()">
+                    <label for="outdoor-series">Outdoor & UV Engineering</label>
+                    <span class="filter-count">6</span>
+                </div>
+            </div>
+
+            <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+        </aside>
+
+        <!-- Products Area -->
+        <div class="products-area">
+            <div class="products-header">
+                <div class="results-count">
+                    Showing <strong id="showingCount">20</strong> of <strong>20</strong> products
+                </div>
+                <select class="sort-dropdown" onchange="sortProducts(this.value)">
+                    <option value="featured">Featured</option>
+                    <option value="name-asc">Name: A-Z</option>
+                    <option value="name-desc">Name: Z-A</option>
+                    <option value="height-asc">Height: Low to High</option>
+                    <option value="height-desc">Height: High to Low</option>
+                </select>
+            </div>
+
             <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded dynamically -->
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <span style="display: flex; align-items: center; padding: 0 0.5rem;">...</span>
+                <a href="#" class="page-btn">→</a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Mobile Filter Toggle -->
+    <div class="mobile-filter-toggle" onclick="toggleSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        Filters
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="#">Big-Box Retail</a></li>
-                        <li><a href="#">Commercial Interiors</a></li>
-                        <li><a href="#">Outdoor Engineering</a></li>
-                        <li><a href="#">Custom Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="#">Signature Series</a></li>
-                        <li><a href="#">Retail Ready</a></li>
-                        <li><a href="#">Fire Retardant</a></li>
-                        <li><a href="#">UV Stable</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="#">Capabilities</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="contact.html">Get in Touch</a></li>
-                        <li><a href="#">Request Quote</a></li>
-                        <li><a href="#">Download Catalog</a></li>
-                        <li><a href="#">Find a Rep</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Design & Customization</a></li>
+                </ul>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">LAY<span>SUN</span></div>
-                <div class="copyright">© 2026 Laysun Horticulture. All Rights Reserved.</div>
+            <div class="footer-col">
+                <h4>Core Services</h4>
+                <ul>
+                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
+                    <li><a href="solutions.html">Commercial Interiors</a></li>
+                    <li><a href="solutions.html">Outdoor Engineering</a></li>
+                    <li><a href="customization.html">Bespoke Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Product Catalog</a></li>
+                    <li><a href="#">Technical Specifications</a></li>
+                    <li><a href="#">Compliance Certificates</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Inquiry Basket Panel -->
+    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
+    <div class="basket-panel" id="basketPanel">
+        <div class="basket-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-basket" onclick="toggleBasket()">×</button>
+        </div>
+        <div class="basket-body" id="basketBody">
+            <div class="empty-basket">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your inquiry list is empty.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+            </div>
+        </div>
+        <div class="basket-footer">
+            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
+            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </div>
+
     <script>
-        // Product Data - 20 Core SKUs
+        // Product Data - 20 Core Products
         const products = [
             {
                 id: 'LS-2026-001',
                 name: 'Multi-Stem Olive Tree',
-                category: 'Signature Series',
+                series: 'Signature Series',
                 height: '4ft - 9ft',
+                heightCategory: 'medium',
                 compliance: ['uv'],
                 application: ['indoor', 'commercial'],
-                features: ['Natural Wood Trunk', '360° Visual Impact'],
-                image: 'LS-2026-001_Main.jpg'
+                seriesFilter: 'signature',
+                specs: 'Natural Wood Trunk • 360° Visual Impact',
+                badge: 'signature'
             },
             {
                 id: 'LS-2026-002',
                 name: 'Premium Traveler\'s Banana',
-                category: 'Signature Series',
+                series: 'Signature Series',
                 height: '7ft+',
+                heightCategory: 'large',
                 compliance: ['uv'],
                 application: ['indoor', 'outdoor', 'commercial'],
-                features: ['Commercial Grade', 'Dual Scene'],
-                image: 'LS-2026-002_Main.jpg'
+                seriesFilter: 'signature',
+                specs: 'Commercial Grade • Dual Scene',
+                badge: 'signature'
             },
             {
                 id: 'LS-2026-003',
                 name: 'Bespoke Japanese Maple',
-                category: 'Signature Series',
+                series: 'Signature Series',
                 height: '5ft - 8ft',
+                heightCategory: 'medium',
                 compliance: [],
-                application: ['indoor'],
-                features: ['Bespoke Design', 'Architectural Grade'],
-                image: 'LS-2026-003_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'signature',
+                specs: 'Bespoke Design • Architectural Grade',
+                badge: 'signature'
             },
             {
                 id: 'LS-2026-004',
                 name: 'Set of Mini Succulents',
-                category: 'Retail Ready',
+                series: 'Retail Ready',
                 height: 'Desktop',
+                heightCategory: 'small',
                 compliance: ['retail'],
-                application: ['retail', 'indoor'],
-                features: ['PDQ Packaging', 'MOQ: 100 PCS'],
-                image: 'LS-2026-004_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'retail-series',
+                specs: 'PDQ Packaging • MOQ: 100 PCS',
+                badge: 'retail'
             },
             {
                 id: 'LS-2026-005',
                 name: '4ft Fiddle Leaf Fig',
-                category: 'Retail Ready',
+                series: 'Retail Ready',
                 height: '4ft',
+                heightCategory: 'medium',
                 compliance: ['retail'],
-                application: ['retail', 'indoor'],
-                features: ['Barcode Ready', 'Color Box'],
-                image: 'LS-2026-005_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'retail-series',
+                specs: 'Barcode Ready • Color Box',
+                badge: 'retail'
             },
             {
                 id: 'LS-2026-006',
                 name: 'Artificial Fruit Trees',
-                category: 'Retail Ready',
+                series: 'Retail Ready',
                 height: '5ft - 7ft',
+                heightCategory: 'medium',
                 compliance: ['retail'],
-                application: ['retail', 'indoor'],
-                features: ['Seasonal Decor', 'High Turnover'],
-                image: 'LS-2026-006_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'retail-series',
+                specs: 'Seasonal Decor • High Turnover',
+                badge: 'retail'
             },
             {
                 id: 'LS-2026-007',
                 name: 'Fire-Retardant Vertical Green Wall',
-                category: 'Commercial & Fire Retardant',
-                height: 'Custom',
+                series: 'Commercial & Fire Retardant',
+                height: 'Custom Size',
+                heightCategory: 'large',
                 compliance: ['fire'],
                 application: ['indoor', 'commercial'],
-                features: ['NFPA 701', 'B1 Certified'],
-                image: 'LS-2026-007_Main.jpg'
+                seriesFilter: 'commercial-series',
+                specs: 'NFPA 701 • B1 Certified',
+                badge: 'fire'
             },
             {
                 id: 'LS-2026-008',
                 name: 'Large Areca Palm',
-                category: 'Commercial & Fire Retardant',
+                series: 'Commercial & Fire Retardant',
                 height: '8ft - 10ft+',
+                heightCategory: 'large',
                 compliance: [],
                 application: ['indoor', 'commercial'],
-                features: ['Commercial Engineered', 'Hotel Grade'],
-                image: 'LS-2026-008_Main.jpg'
+                seriesFilter: 'commercial-series',
+                specs: 'Commercial Engineered • Hotel Grade',
+                badge: 'fire'
             },
             {
                 id: 'LS-2026-009',
                 name: 'Topiary Boxwood Ball',
-                category: 'Commercial & Fire Retardant',
+                series: 'Commercial & Fire Retardant',
                 height: 'Custom Diameter',
+                heightCategory: 'medium',
                 compliance: ['fire'],
                 application: ['indoor', 'commercial'],
-                features: ['NFPA 701', 'Public Space Ready'],
-                image: 'LS-2026-009_Main.jpg'
+                seriesFilter: 'commercial-series',
+                specs: 'NFPA 701 • Public Space Ready',
+                badge: 'fire'
             },
             {
                 id: 'LS-2026-010',
                 name: 'UV-Stable Bamboo',
-                category: 'Outdoor & UV Engineering',
+                series: 'Outdoor & UV Engineering',
                 height: '6ft - 10ft',
+                heightCategory: 'medium',
                 compliance: ['uv'],
                 application: ['outdoor', 'commercial'],
-                features: ['2000h+ UV Test', 'Outdoor Barrier'],
-                image: 'LS-2026-010_Main.jpg'
+                seriesFilter: 'outdoor-series',
+                specs: '2000h+ UV Test • Outdoor Barrier',
+                badge: 'uv'
             },
             {
                 id: 'LS-2026-011',
                 name: 'Outdoor Cypress Column',
-                category: 'Outdoor & UV Engineering',
+                series: 'Outdoor & UV Engineering',
                 height: '8ft - 12ft',
+                heightCategory: 'large',
                 compliance: ['uv'],
                 application: ['outdoor', 'commercial'],
-                features: ['2000h+ UV Test', 'Engineered Grade'],
-                image: 'LS-2026-011_Main.jpg'
+                seriesFilter: 'outdoor-series',
+                specs: '2000h+ UV Test • Engineered Grade',
+                badge: 'uv'
             },
             {
                 id: 'LS-2026-012',
                 name: 'Commercial Outdoor Palm',
-                category: 'Outdoor & UV Engineering',
+                series: 'Outdoor & UV Engineering',
                 height: '10ft+',
+                heightCategory: 'large',
                 compliance: ['uv'],
                 application: ['outdoor', 'commercial'],
-                features: ['2000h+ UV Test', 'Resort Grade'],
-                image: 'LS-2026-012_Main.jpg'
+                seriesFilter: 'outdoor-series',
+                specs: '2000h+ UV Test • Resort Grade',
+                badge: 'uv'
             },
             {
                 id: 'LS-2026-013',
                 name: 'Single-Stem Olive Tree',
-                category: 'Signature Series',
+                series: 'Signature Series',
                 height: '6ft - 10ft',
+                heightCategory: 'large',
                 compliance: ['uv'],
                 application: ['indoor', 'commercial'],
-                features: ['Natural Wood', 'Architectural'],
-                image: 'LS-2026-013_Main.jpg'
+                seriesFilter: 'signature',
+                specs: 'Natural Wood • Architectural',
+                badge: 'signature'
             },
             {
                 id: 'LS-2026-014',
                 name: 'Premium Fiddle Leaf Fig',
-                category: 'Signature Series',
+                series: 'Signature Series',
                 height: '5ft - 7ft',
+                heightCategory: 'medium',
                 compliance: [],
-                application: ['indoor'],
-                features: ['High Fidelity', 'Designer Choice'],
-                image: 'LS-2026-014_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'signature',
+                specs: 'High Fidelity • Designer Choice',
+                badge: 'signature'
             },
             {
                 id: 'LS-2026-015',
                 name: 'Mini Fiddle Leaf Fig',
-                category: 'Retail Ready',
+                series: 'Retail Ready',
                 height: '3ft',
+                heightCategory: 'small',
                 compliance: ['retail'],
-                application: ['retail', 'indoor'],
-                features: ['Compact Size', 'Display Ready'],
-                image: 'LS-2026-015_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'retail-series',
+                specs: 'Compact Size • Display Ready',
+                badge: 'retail'
             },
             {
                 id: 'LS-2026-016',
                 name: 'Artificial Citrus Trees',
-                category: 'Retail Ready',
+                series: 'Retail Ready',
                 height: '5ft - 7ft',
+                heightCategory: 'medium',
                 compliance: ['retail'],
-                application: ['retail', 'indoor'],
-                features: ['Seasonal', 'Pomegranate'],
-                image: 'LS-2026-016_Main.jpg'
+                application: ['indoor', 'commercial'],
+                seriesFilter: 'retail-series',
+                specs: 'Seasonal • Pomegranate',
+                badge: 'retail'
             },
             {
                 id: 'LS-2026-017',
                 name: 'Fire-Retardant Pothos Vine',
-                category: 'Commercial & Fire Retardant',
+                series: 'Commercial & Fire Retardant',
                 height: 'Custom Length',
+                heightCategory: 'medium',
                 compliance: ['fire'],
                 application: ['indoor', 'commercial'],
-                features: ['NFPA 701', 'Wall Decor'],
-                image: 'LS-2026-017_Main.jpg'
+                seriesFilter: 'commercial-series',
+                specs: 'NFPA 701 • Wall Decor',
+                badge: 'fire'
             },
             {
                 id: 'LS-2026-018',
                 name: 'Fire-Retardant Rubber Plant',
-                category: 'Commercial & Fire Retardant',
+                series: 'Commercial & Fire Retardant',
                 height: '7ft - 9ft',
+                heightCategory: 'large',
                 compliance: ['fire'],
                 application: ['indoor', 'commercial'],
-                features: ['NFPA 701', 'Hotel Lobby'],
-                image: 'LS-2026-018_Main.jpg'
+                seriesFilter: 'commercial-series',
+                specs: 'NFPA 701 • Hotel Lobby',
+                badge: 'fire'
             },
             {
                 id: 'LS-2026-019',
                 name: 'UV-Stable Lady Palm',
-                category: 'Outdoor & UV Engineering',
+                series: 'Outdoor & UV Engineering',
                 height: '5ft - 8ft',
+                heightCategory: 'medium',
                 compliance: ['uv'],
-                application: ['outdoor'],
-                features: ['2000h+ UV Test', 'Compact'],
-                image: 'LS-2026-019_Main.jpg'
+                application: ['outdoor', 'commercial'],
+                seriesFilter: 'outdoor-series',
+                specs: '2000h+ UV Test • Compact',
+                badge: 'uv'
             },
             {
                 id: 'LS-2026-020',
                 name: 'UV-Stable Coconut Palm',
-                category: 'Outdoor & UV Engineering',
+                series: 'Outdoor & UV Engineering',
                 height: '10ft - 13ft',
+                heightCategory: 'large',
                 compliance: ['uv'],
                 application: ['outdoor', 'commercial'],
-                features: ['2000h+ UV Test', 'Large Scale'],
-                image: 'LS-2026-020_Main.jpg'
+                seriesFilter: 'outdoor-series',
+                specs: '2000h+ UV Test • Large Scale',
+                badge: 'uv'
             }
         ];
 
-        let basket = [];
-        let currentFilters = {
-            compliance: 'all',
-            application: 'all',
-            height: 'all'
-        };
+        let filteredProducts = [...products];
+        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateBasketCount();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
         // Render Products
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
+            const showingCount = document.getElementById('showingCount');
             
-            const filtered = products.filter(product => {
-                if (currentFilters.compliance !== 'all') {
-                    if (!product.compliance.includes(currentFilters.compliance)) return false;
-                }
-                if (currentFilters.application !== 'all') {
-                    if (!product.application.includes(currentFilters.application)) return false;
-                }
-                // Height filter logic simplified for demo
-                if (currentFilters.height !== 'all') {
-                    // Implementation would parse height ranges
-                }
-                return true;
-            });
+            showingCount.textContent = filteredProducts.length;
             
-            filtered.forEach(product => {
-                const card = createProductCard(product);
-                grid.appendChild(card);
-            });
-        }
-
-        function createProductCard(product) {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            
-            const badges = product.compliance.map(c => {
-                const classes = {
-                    'uv': 'badge-uv',
-                    'fire': 'badge-fire',
-                    'retail': 'badge-retail',
-                    'eco': 'badge-uv'
-                };
-                const labels = {
-                    'uv': 'UV Stable',
-                    'fire': 'Fire Retardant',
-                    'retail': 'Retail Ready',
-                    'eco': 'Eco-Friendly'
-                };
-                return `<span class="badge ${classes[c] || 'badge-uv'}">${labels[c] || c}</span>`;
-            }).join('');
-            
-            card.innerHTML = `
-                <div class="product-image">
-                    <div class="product-badges">${badges}</div>
-                    <button class="add-to-basket" onclick="addToBasket('${product.id}')" title="Add to Inquiry">+</button>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">${product.category}</div>
-                    <h3 class="product-name">${product.name}</h3>
-                    <div class="product-specs">
-                        <span class="spec-item">📏 ${product.height}</span>
-                        <span class="spec-item">🏷️ ${product.id}</span>
-                    </div>
-                    <div class="product-features">
-                        ${product.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-secondary">View Details</a>
-                        <button class="btn btn-primary" onclick="addToBasket('${product.id}')">Add to Inquiry</button>
-                    </div>
-                </div>
-            `;
-            
-            return card;
-        }
-
-        // Filter Event Listeners
-        document.getElementById('filter-compliance').addEventListener('change', (e) => {
-            currentFilters.compliance = e.target.value;
-            renderProducts();
-        });
-
-        document.getElementById('filter-application').addEventListener('change', (e) => {
-            currentFilters.application = e.target.value;
-            renderProducts();
-        });
-
-        document.getElementById('filter-height').addEventListener('change', (e) => {
-            currentFilters.height = e.target.value;
-            renderProducts();
-        });
-
-        // Basket Functions
-        function addToBasket(productId) {
-            if (!basket.includes(productId)) {
-                basket.push(productId);
-                updateBasketCount();
-                alert('Product added to inquiry basket!');
-            } else {
-                alert('Product already in basket!');
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-gray);">No products match your selected filters.</div>';
+                return;
             }
+            
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" data-id="${product.id}">
+                    <div class="product-image">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%); display: flex; align-items: center; justify-content: center; color: var(--text-gray);">
+                            ${product.name}
+                        </div>
+                        <div class="product-badges">
+                            ${product.badge === 'signature' ? '<span class="badge badge-signature">Signature</span>' : ''}
+                            ${product.badge === 'retail' ? '<span class="badge badge-retail">Retail Ready</span>' : ''}
+                            ${product.badge === 'fire' ? '<span class="badge badge-fire">Fire Retardant</span>' : ''}
+                            ${product.badge === 'uv' ? '<span class="badge badge-uv">UV-Stable</span>' : ''}
+                        </div>
+                        <button class="quick-add" onclick="addToBasket('${product.id}')" title="Add to Inquiry">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-series">${product.series}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-specs">${product.specs}</p>
+                        <div class="product-meta">
+                            <span class="product-id">${product.id}</span>
+                            <a href="#" class="product-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
+        // Apply Filters
+        function applyFilters() {
+            const checkedFilters = {
+                compliance: Array.from(document.querySelectorAll('input[value="uv"], input[value="fire"], input[value="retail"]')).filter(cb => cb.checked).map(cb => cb.value),
+                application: Array.from(document.querySelectorAll('input[value="indoor"], input[value="outdoor"], input[value="commercial"]')).filter(cb => cb.checked).map(cb => cb.value),
+                height: Array.from(document.querySelectorAll('input[value="small"], input[value="medium"], input[value="large"]')).filter(cb => cb.checked).map(cb => cb.value),
+                series: Array.from(document.querySelectorAll('input[value="signature"], input[value="retail-series"], input[value="commercial-series"], input[value="outdoor-series"]')).filter(cb => cb.checked).map(cb => cb.value)
+            };
+
+            filteredProducts = products.filter(product => {
+                const matchCompliance = checkedFilters.compliance.length === 0 || checkedFilters.compliance.some(c => product.compliance.includes(c));
+                const matchApplication = checkedFilters.application.length === 0 || checkedFilters.application.some(a => product.application.includes(a));
+                const matchHeight = checkedFilters.height.length === 0 || checkedFilters.height.includes(product.heightCategory);
+                const matchSeries = checkedFilters.series.length === 0 || checkedFilters.series.includes(product.seriesFilter);
+                
+                return matchCompliance && matchApplication && matchHeight && matchSeries;
+            });
+
+            renderProducts();
+        }
+
+        // Clear Filters
+        function clearFilters() {
+            document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
+            filteredProducts = [...products];
+            renderProducts();
+        }
+
+        // Sort Products
+        function sortProducts(sortValue) {
+            switch(sortValue) {
+                case 'name-asc':
+                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'name-desc':
+                    filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+                    break;
+                case 'height-asc':
+                    filteredProducts.sort((a, b) => getHeightValue(a.heightCategory) - getHeightValue(b.heightCategory));
+                    break;
+                case 'height-desc':
+                    filteredProducts.sort((a, b) => getHeightValue(b.heightCategory) - getHeightValue(a.heightCategory));
+                    break;
+                default:
+                    filteredProducts = [...products];
+                    applyFilters();
+                    return;
+            }
+            renderProducts();
+        }
+
+        function getHeightValue(category) {
+            const values = { small: 1, medium: 2, large: 3 };
+            return values[category] || 0;
+        }
+
+        // Mobile Sidebar Toggle
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Language switch
+        function changeLang(lang) {
+            console.log('Switching to language:', lang);
+            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
+        }
+
+        // Inquiry Basket Functions
         function updateBasketCount() {
-            document.getElementById('basketCount').textContent = basket.length;
+            const count = basketItems.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('basketCount').textContent = count;
         }
 
-        function openBasket() {
-            if (basket.length === 0) {
-                alert('Your inquiry list is empty. Start exploring our collections.');
+        function toggleBasket() {
+            const panel = document.getElementById('basketPanel');
+            const overlay = document.getElementById('overlay');
+            panel.classList.toggle('active');
+            overlay.classList.toggle('active');
+            renderBasket();
+        }
+
+        function addToBasket(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = basketItems.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.qty++;
             } else {
-                alert(`Inquiry Basket: ${basket.length} items\n${basket.join(', ')}\n\nProceed to contact page to submit inquiry.`);
+                basketItems.push({
+                    id: product.id,
+                    name: product.name,
+                    specs: product.height,
+                    qty: 1,
+                    image: null
+                });
+            }
+            
+            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
+            updateBasketCount();
+            
+            // Visual feedback
+            const btn = document.querySelector(`[data-id="${productId}"] .quick-add`);
+            btn.style.background = '#25D366';
+            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            setTimeout(() => {
+                btn.style.background = '';
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>';
+            }, 1000);
+        }
+
+        function renderBasket() {
+            const body = document.getElementById('basketBody');
+            if (basketItems.length === 0) {
+                body.innerHTML = `
+                    <div class="empty-basket">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <p>Your inquiry list is empty.</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+                    </div>
+                `;
+            } else {
+                body.innerHTML = basketItems.map((item, index) => `
+                    <div class="basket-item">
+                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
+                        <div class="basket-item-info" style="flex: 1;">
+                            <h4>${item.name}</h4>
+                            <p>${item.specs}</p>
+                            <div class="qty-control">
+                                <button onclick="updateQty(${index}, -1)">-</button>
+                                <span>${item.qty}</span>
+                                <button onclick="updateQty(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeItem(${index})">×</button>
+                    </div>
+                `).join('');
             }
         }
 
-        // Initial Render
-        renderProducts();
+        function updateQty(index, change) {
+            basketItems[index].qty += change;
+            if (basketItems[index].qty <= 0) {
+                basketItems.splice(index, 1);
+            }
+            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
+            updateBasketCount();
+            renderBasket();
+        }
+
+        function removeItem(index) {
+            basketItems.splice(index, 1);
+            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
+            updateBasketCount();
+            renderBasket();
+        }
+
+        function downloadSpecs() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+        }
+
+        function submitInquiry() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            window.location.href = 'contact.html';
+        }
     </script>
 </body>
 </html>
