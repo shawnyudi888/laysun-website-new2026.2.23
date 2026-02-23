@@ -4,86 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Laysun - Architectural-Grade Artificial Greenery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --forest-green: #2D5A3D;
+            --forest-dark: #1E3D2A;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --pure-white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-gray: #666666;
+            --border-light: #E5E5E5;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --forest-green: #2D5A3D;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-            --light-gray: #999999;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--leaf-white);
-            color: var(--dark-gray);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Header */
-        .sticky-header {
-            position: sticky;
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
             top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
             background: rgba(45, 90, 61, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        
-        .container {
+
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        .header-content {
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            text-decoration: none;
             letter-spacing: 2px;
         }
-        
-        .logo span {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 2.5rem;
+            align-items: center;
         }
-        
+
         .nav-menu a {
-            color: white;
+            color: var(--pure-white);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: color 0.3s;
             position: relative;
         }
-        
-        .nav-menu a:hover {
-            color: var(--champagne-gold);
-        }
-        
+
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -94,21 +101,115 @@
             background: var(--champagne-gold);
             transition: width 0.3s;
         }
-        
+
         .nav-menu a:hover::after {
             width: 100%;
         }
-        
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lang-switch {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--pure-white);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--champagne-gold);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--pure-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            min-width: 150px;
+        }
+
+        .lang-switch:hover .lang-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .lang-option:hover {
+            background: var(--leaf-white);
+            color: var(--forest-green);
+        }
+
+        .inquiry-basket {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .basket-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--pure-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .basket-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
-            padding: 100px 0;
-            text-align: center;
-            color: white;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -117,843 +218,1213 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 100px;
+            background-size: 300px;
             opacity: 0.3;
         }
-        
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 2rem;
+            max-width: 800px;
         }
-        
+
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            font-weight: 500;
         }
-        
+
         .hero p {
-            font-size: 18px;
-            font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.2rem;
             opacity: 0.9;
+            font-weight: 300;
         }
-        
+
         /* Contact Section */
         .contact-section {
-            padding: 80px 0;
-            background: white;
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 4rem;
+            margin-bottom: 4rem;
         }
-        
-        /* Form Styles */
-        .form-container h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--forest-green);
-            margin-bottom: 10px;
-            letter-spacing: 0.05em;
+
+        /* Contact Cards */
+        .contact-card {
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
-        .form-container > p {
-            color: var(--medium-gray);
-            margin-bottom: 40px;
-            font-size: 15px;
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
         }
-        
-        .form-group {
-            margin-bottom: 25px;
+
+        .card-header {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .form-label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--forest-green);
-            margin-bottom: 8px;
-        }
-        
-        .form-input,
-        .form-select,
-        .form-textarea {
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            transition: all 0.3s;
-            background: white;
+            height: 100%;
+            background: radial-gradient(circle, rgba(201,169,97,0.2) 0%, transparent 70%);
         }
-        
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--forest-green);
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
         }
-        
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
+
+        .card-header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 300;
         }
-        
-        .form-select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23333" d="M6 9L1 4h10z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 15px center;
+
+        .card-body {
+            padding: 2rem;
         }
-        
-        .file-upload {
-            border: 2px dashed #ccc;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .file-upload:hover {
-            border-color: var(--forest-green);
-            background: var(--leaf-white);
-        }
-        
-        .file-upload-text {
-            font-size: 14px;
-            color: var(--medium-gray);
-        }
-        
-        .file-upload-text span {
-            color: var(--forest-green);
-            font-weight: 600;
-        }
-        
-        .checkbox-group {
+
+        .info-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
         }
-        
-        .checkbox-group input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            accent-color: var(--forest-green);
-        }
-        
-        .checkbox-group label {
-            font-size: 14px;
-            color: var(--medium-gray);
-            line-height: 1.6;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--champagne-gold);
-            color: white;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: var(--champagne-dark);
-            transform: translateY(-2px);
-        }
-        
-        /* Contact Info Sidebar */
-        .contact-info h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--forest-green);
-            margin-bottom: 30px;
-            letter-spacing: 0.05em;
-        }
-        
-        .location-card {
-            background: var(--leaf-white);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--champagne-gold);
-        }
-        
-        .location-card h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .location-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--forest-green);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            border-radius: 4px;
-        }
-        
-        .location-type {
-            font-size: 12px;
-            color: var(--champagne-gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .location-details {
-            list-style: none;
-        }
-        
-        .location-details li {
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: var(--medium-gray);
-            line-height: 1.7;
-        }
-        
-        .location-details li strong {
-            color: var(--dark-gray);
-            display: block;
-            margin-bottom: 3px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .map-container {
-            height: 180px;
-            background: linear-gradient(135deg, #e0e8e3 0%, #d0e0d5 100%);
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
-            border: 1px dashed #ccc;
-        }
-        
-        /* Quick Contact Section */
-        .quick-contact {
-            background: var(--forest-green);
-            color: white;
-            padding: 30px;
-            margin-top: 30px;
-        }
-        
-        .quick-contact h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: var(--champagne-gold);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-        
-        .contact-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .contact-method:last-child {
+
+        .info-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.1);
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--leaf-white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             flex-shrink: 0;
-        }
-        
-        .contact-method div {
-            flex: 1;
-        }
-        
-        .contact-method div strong {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: white;
-        }
-        
-        .contact-method div span {
-            font-size: 13px;
-            opacity: 0.8;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .contact-method div a {
-            color: var(--champagne-gold);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        .contact-method div a:hover {
-            text-decoration: underline;
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #25D366;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: all 0.3s;
-            border-radius: 4px;
-        }
-        
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-        
-        /* Response Time Section */
-        .response-section {
-            background: white;
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid #e8e8e8;
-        }
-        
-        .response-section h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 15px;
-        }
-        
-        .response-section p {
-            color: var(--medium-gray);
-            font-size: 16px;
-        }
-        
-        .response-time {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 25px;
-            padding: 20px 40px;
-            background: var(--leaf-white);
-            border: 2px solid var(--champagne-gold);
-        }
-        
-        .response-time-icon {
-            font-size: 32px;
-        }
-        
-        .response-time-text {
-            text-align: left;
-        }
-        
-        .response-time-text strong {
-            display: block;
-            font-size: 18px;
             color: var(--forest-green);
         }
-        
-        .response-time-text span {
-            font-size: 14px;
-            color: var(--medium-gray);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 80px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-        
-        .footer-section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
+
+        .info-content h4 {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--champagne-gold);
+            letter-spacing: 0.5px;
         }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
+
+        .info-content p, .info-content a {
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 1rem;
             transition: color 0.3s;
         }
-        
-        .footer-section a:hover {
+
+        .info-content a:hover {
             color: var(--champagne-gold);
         }
-        
+
+        .badge {
+            display: inline-block;
+            background: var(--champagne-gold);
+            color: var(--pure-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .badge-outline {
+            background: transparent;
+            border: 1px solid var(--champagne-gold);
+            color: var(--champagne-gold);
+        }
+
+        /* Map Container */
+        .map-container {
+            height: 250px;
+            background: var(--leaf-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--pure-white);
+            padding: 4rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-section h3 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        label .optional {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: var(--pure-white);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+            box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            border: 2px dashed var(--border-light);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text-gray);
+        }
+
+        .file-upload:hover .file-upload-label {
+            border-color: var(--champagne-gold);
+            background: var(--leaf-white);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+            color: var(--pure-white);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Quick Connect */
+        .quick-connect {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .quick-connect-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .quick-connect h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-connect p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #25D366;
+            color: var(--pure-white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn.secondary {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .whatsapp-btn.secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .whatsapp-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .whatsapp-info span {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--forest-dark);
+            color: var(--pure-white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--champagne-gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--champagne-gold);
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pure-white);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--champagne-gold);
+            border-color: var(--champagne-gold);
+        }
+
+        /* Inquiry Basket Panel */
+        .basket-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--pure-white);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .basket-panel.active {
+            right: 0;
+        }
+
+        .basket-header {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
+
+        .basket-header h3 {
+            font-size: 1.2rem;
         }
-        
-        .footer-logo span {
-            color: var(--champagne-gold);
+
+        .close-basket {
+            background: none;
+            border: none;
+            color: var(--pure-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
-        .copyright {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
+
+        .basket-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
         }
-        
-        /* Mobile Responsive */
+
+        .empty-basket {
+            text-align: center;
+            color: var(--text-gray);
+            padding: 3rem 0;
+        }
+
+        .basket-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .basket-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: var(--leaf-white);
+        }
+
+        .basket-item-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .basket-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .basket-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            background: var(--leaf-white);
+        }
+
+        .basket-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 0.75rem;
+            transition: background 0.3s;
+        }
+
+        .basket-btn:hover {
+            background: var(--forest-dark);
+        }
+
+        .basket-btn.gold {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+        }
+
+        .basket-btn.gold:hover {
+            opacity: 0.9;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-connect-inner {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             
             .hero h1 {
-                font-size: 32px;
+                font-size: 2rem;
             }
             
-            .contact-grid {
+            .form-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
             
-            .form-row {
-                grid-template-columns: 1fr;
+            .form-section {
+                padding: 2rem;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
+            
+            .basket-panel {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">LAY<span>SUN</span></div>
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="customization.html">Design & Customization</a></li>
+                <li><a href="capabilities.html">Capabilities</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="lang-switch">
+                    <button class="lang-btn">
+                        <span>EN</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
+                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
+                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
+                    </div>
+                </div>
+
+                <div class="inquiry-basket" onclick="toggleBasket()">
+                    <svg class="basket-icon" viewBox="0 0 24 24">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="basket-count" id="basketCount">0</span>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Get In Touch</h1>
-                <p>Ready to elevate your space with Architectural-Grade greenery? Our solution experts are here to help.</p>
-            </div>
+        <div class="hero-content">
+            <h1>GET IN TOUCH</h1>
+            <p>Ready to elevate your space with Architectural-Grade greenery? Our solution experts are here to help.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="form-container">
-                    <h2>Project Inquiry</h2>
-                    <p>Fill out the form below and our team will respond within 12 working hours.</p>
-                    
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">First Name *</label>
-                                <input type="text" class="form-input" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Last Name *</label>
-                                <input type="text" class="form-input" name="lastName" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Email *</label>
-                                <input type="email" class="form-input" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" class="form-input" name="phone">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Company Name *</label>
-                                <input type="text" class="form-input" name="company" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Company Website</label>
-                                <input type="url" class="form-input" name="website" placeholder="https://">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Project Type</label>
-                                <select class="form-select" name="projectType">
-                                    <option value="">Select Project Type</option>
-                                    <option value="retail">Big-Box Retail</option>
-                                    <option value="commercial">Commercial Interior</option>
-                                    <option value="outdoor">Outdoor Engineering</option>
-                                    <option value="custom">Custom Project</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Estimated Start Date</label>
-                                <select class="form-select" name="startDate">
-                                    <option value="">Select Timeframe</option>
-                                    <option value="immediate">Immediate</option>
-                                    <option value="1-3months">1-3 Months</option>
-                                    <option value="3-6months">3-6 Months</option>
-                                    <option value="6months+">6+ Months</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Message *</label>
-                            <textarea class="form-textarea" name="message" placeholder="Tell us about your project requirements..." required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Upload Design Files</label>
-                            <div class="file-upload" onclick="document.getElementById('fileInput').click()">
-                                <input type="file" id="fileInput" multiple style="display: none;" onchange="handleFileSelect(this)">
-                                <p class="file-upload-text">
-                                    <span>Click to upload</span> or drag and drop<br>
-                                    PDF, DWG, JPG up to 20MB
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="newsletter" name="newsletter">
-                                <label for="newsletter">Subscribe to our quarterly trend reports and industry insights.</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="privacy" name="privacy" required>
-                                <label for="privacy">I agree to the privacy policy and consent to being contacted regarding my inquiry. *</label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Inquiry</button>
-                    </form>
+        <div class="section-header animate-in">
+            <h2>Global Presence, Local Expertise</h2>
+            <p>Connect with our regional teams for specialized support tailored to your market and project requirements.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- USA Office -->
+            <div class="contact-card animate-in">
+                <div class="card-header">
+                    <h3>🇺🇸 USA Office</h3>
+                    <p class="subtitle">For North America Wholesale Inquiries</p>
                 </div>
-                
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3>Our Locations</h3>
-                    
-                    <!-- US Office -->
-                    <div class="location-card">
-                        <span class="location-type">For North America Wholesale Inquiries</span>
-                        <h4>
-                            <span class="location-icon">🇺🇸</span>
-                            USA Office
-                        </h4>
-                        <ul class="location-details">
-                            <li>
-                                <strong>Phone</strong>
-                                +1 213-829-8485<br>
-                                <span style="font-size: 12px; color: #999;">PST / UTC-8 | Working Hours: 9:00-18:00</span>
-                            </li>
-                            <li>
-                                <strong>Email</strong>
-                                <a href="mailto:info@laysun.co" style="color: var(--forest-green); text-decoration: none;">info@laysun.co</a><br>
-                                <span style="font-size: 12px; color: #999;">Reply within 12 working hours</span>
-                            </li>
-                            <li>
-                                <strong>WhatsApp</strong>
-                                <a href="https://wa.me/12138298485" target="_blank" style="color: #25D366; font-weight: 600;">+1 213-829-8485</a><br>
-                                <span style="font-size: 12px; color: #999;">24H Quick Responses</span>
-                            </li>
-                        </ul>
-                        <div class="map-container">Google Maps Embed - Los Angeles</div>
-                    </div>
-                    
-                    <!-- China Factory -->
-                    <div class="location-card">
-                        <span class="location-type">For Custom Project & Factory Direct Communication</span>
-                        <h4>
-                            <span class="location-icon">🇨🇳</span>
-                            China Factory
-                        </h4>
-                        <ul class="location-details">
-                            <li>
-                                <strong>Address</strong>
-                                No. 25 Qiangfeng Road, Qishi Town, Dongguan City, Guangdong Province, China<br>
-                                <span style="font-size: 12px; color: #999; margin-top: 5px; display: block;">
-                                    📍 1.5h from Shenzhen Bao'an International Airport<br>
-                                    📍 1.5h from Guangzhou Baiyun International Airport
-                                </span>
-                            </li>
-                            <li>
-                                <strong>Phone</strong>
-                                +86 138-0250-5260<br>
-                                <span style="font-size: 12px; color: #999;">CST / UTC+8 | Working Hours: 9:00-18:00</span>
-                            </li>
-                            <li>
-                                <strong>Email</strong>
-                                <a href="mailto:sales@laysun.co" style="color: var(--forest-green); text-decoration: none;">sales@laysun.co</a><br>
-                                <span style="font-size: 12px; color: #999;">Reply within 12 working hours</span>
-                            </li>
-                            <li>
-                                <strong>WhatsApp</strong>
-                                <a href="https://wa.me/8613802505260" target="_blank" style="color: #25D366; font-weight: 600;">+86 138-0250-5260</a><br>
-                                <span style="font-size: 12px; color: #999;">24H Quick Responses</span>
-                            </li>
-                        </ul>
-                        <div class="map-container">Google Maps Embed - Dongguan</div>
-                    </div>
-                    
-                    <!-- Quick Contact -->
-                    <div class="quick-contact">
-                        <h4>Instant Connect</h4>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">💬</div>
-                            <div>
-                                <strong>WhatsApp Business (USA)</strong>
-                                <span>24H Quick Responses | PST Timezone</span>
-                                <a href="https://wa.me/12138298485" class="whatsapp-btn" target="_blank">
-                                    Chat Now
-                                </a>
-                            </div>
+                <div class="card-body">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
                         </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">💬</div>
-                            <div>
-                                <strong>WhatsApp Business (China)</strong>
-                                <span>24H Quick Responses | CST Timezone</span>
-                                <a href="https://wa.me/8613802505260" class="whatsapp-btn" target="_blank">
-                                    Chat Now
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <strong>General Inquiries</strong>
-                                <span>For all other questions</span>
-                                <a href="mailto:info@laysun.co">info@laysun.co</a>
-                            </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+12138298485">+1 213-829-8485</a>
+                            <span class="badge">PST / UTC-8 | 9:00-18:00</span>
                         </div>
                     </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:info@laysun.co">info@laysun.co</a>
+                            <span class="badge badge-outline">Reply within 12 working hours</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
+                            <span class="badge">24H Quick Responses</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        class="map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220363292!2d-118.2427666847865!3d34.05223398060604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c648fa1d4803%3A0xdec27bf11f9fd336!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2scn!4v1645000000000!5m2!1sen!2scn"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- China Factory -->
+            <div class="contact-card animate-in">
+                <div class="card-header">
+                    <h3>🇨🇳 China Factory</h3>
+                    <p class="subtitle">For Custom Project & Factory Direct Communication</p>
+                </div>
+                <div class="card-body">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Address</h4>
+                            <p>No. 25 Qiangfeng Road, Qishi Town<br>Dongguan City, Guangdong Province, China</p>
+                            <span class="badge">1.5h from Shenzhen Bao'an Airport</span>
+                            <span class="badge" style="margin-top: 0.25rem;">1.5h from Guangzhou Baiyun Airport</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+8613802505260">+86 138-0250-5260</a>
+                            <span class="badge">CST / UTC+8 | 9:00-18:00</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:sales@laysun.co">sales@laysun.co</a>
+                            <span class="badge badge-outline">Reply within 12 working hours</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
+                            <span class="badge">24H Quick Responses</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        class="map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935220.9641717483!2d113.33893205!3d23.08247315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34025597c495289b%3A0x84682c74a35a2d8!2sDongguan%2C%20Guangdong%20Province%2C%20China!5e0!3m2!1sen!2sus!4v1645000000000!5m2!1sen!2sus"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
+
+        <!-- Project Inquiry Form -->
+        <div class="form-section animate-in">
+            <h3>Project Inquiry Center</h3>
+            <p class="subtitle">Fill out the form below and our team will respond within 12 working hours.</p>
+            
+            <form id="projectForm" onsubmit="handleSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country/Region *</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Project Type <span class="optional">(Optional)</span></label>
+                        <select id="projectType" name="projectType">
+                            <option value="">Select Project Type</option>
+                            <option value="retail">Big-Box Retail</option>
+                            <option value="commercial">Commercial Real Estate</option>
+                            <option value="outdoor">Outdoor Engineering</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="custom">Custom Design</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Company Website <span class="optional">(Optional)</span></label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Estimated Project Start Date <span class="optional">(Optional)</span></label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" placeholder="Please describe your project requirements, including product types, quantities, specifications, and any specific compliance needs..." required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Attach Files <span class="optional">(Optional)</span></label>
+                        <div class="file-upload">
+                            <input type="file" id="attachments" name="attachments" multiple accept=".pdf,.jpg,.png,.dwg,.skp">
+                            <div class="file-upload-label">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3.2-3.5-5.6-6.8-5.6-3.7 0-6.7 3-6.9 6.7-.1 1.5.4 2.9 1.3 4.1"></path>
+                                    <path d="M12 12v9"></path>
+                                    <path d="M16 16l-4-4-4 4"></path>
+                                </svg>
+                                <span>Click to upload design files, mood boards, or technical specifications (PDF, JPG, PNG, DWG, SKP)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
+            </form>
+        </div>
     </section>
 
-    <!-- Response Time Section -->
-    <section class="response-section">
-        <div class="container">
-            <h2>Our Commitment to You</h2>
-            <p>We understand that timing is critical in commercial projects.</p>
-            
-            <div class="response-time">
-                <span class="response-time-icon">⚡</span>
-                <div class="response-time-text">
-                    <strong>12-Hour Response Guarantee</strong>
-                    <span>Initial consultation reply within 12 working hours</span>
+    <!-- Quick Connect Section -->
+    <section class="quick-connect">
+        <div class="quick-connect-inner">
+            <div>
+                <h3>Instant Connect</h3>
+                <p>Need immediate assistance? Connect with our regional teams directly via WhatsApp Business for 24-hour quick responses.</p>
+                <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--champagne-gold);">12H</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">Response Guarantee</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--champagne-gold);">24/7</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">WhatsApp Support</div>
+                    </div>
                 </div>
+            </div>
+            <div class="whatsapp-btns">
+                <a href="https://wa.me/12138298485" class="whatsapp-btn" target="_blank">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <div class="whatsapp-info">
+                        <h4>WhatsApp Business (USA)</h4>
+                        <span>24H Quick Responses | PST Timezone</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/8613802505260" class="whatsapp-btn secondary" target="_blank">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <div class="whatsapp-info">
+                        <h4>WhatsApp Business (China)</h4>
+                        <span>24H Quick Responses | CST Timezone</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="#">Big-Box Retail</a></li>
-                        <li><a href="#">Commercial Interiors</a></li>
-                        <li><a href="#">Outdoor Engineering</a></li>
-                        <li><a href="#">Custom Projects</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="#">Signature Series</a></li>
-                        <li><a href="#">Retail Ready</a></li>
-                        <li><a href="#">Fire Retardant</a></li>
-                        <li><a href="#">UV Stable</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="#">Capabilities</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="contact.html">Get in Touch</a></li>
-                        <li><a href="#">Request Quote</a></li>
-                        <li><a href="#">Download Catalog</a></li>
-                        <li><a href="#">Find a Rep</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Design & Customization</a></li>
+                </ul>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">LAY<span>SUN</span></div>
-                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            <div class="footer-col">
+                <h4>Core Services</h4>
+                <ul>
+                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
+                    <li><a href="solutions.html">Commercial Interiors</a></li>
+                    <li><a href="solutions.html">Outdoor Engineering</a></li>
+                    <li><a href="customization.html">Bespoke Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Product Catalog</a></li>
+                    <li><a href="#">Technical Specifications</a></li>
+                    <li><a href="#">Compliance Certificates</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Inquiry Basket Panel -->
+    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
+    <div class="basket-panel" id="basketPanel">
+        <div class="basket-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-basket" onclick="toggleBasket()">×</button>
+        </div>
+        <div class="basket-body" id="basketBody">
+            <div class="empty-basket">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your inquiry list is empty.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+            </div>
+        </div>
+        <div class="basket-footer">
+            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
+            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </div>
+
     <script>
-        // Form Submission Handler
-        function handleSubmit(event) {
-            event.preventDefault();
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switch
+        function changeLang(lang) {
+            console.log('Switching to language:', lang);
+            // Implementation for language switching
+            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
+        }
+
+        // Inquiry Basket Logic
+        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
+        
+        function updateBasketCount() {
+            document.getElementById('basketCount').textContent = basketItems.length;
+        }
+
+        function toggleBasket() {
+            const panel = document.getElementById('basketPanel');
+            const overlay = document.getElementById('overlay');
+            panel.classList.toggle('active');
+            overlay.classList.toggle('active');
+            renderBasket();
+        }
+
+        function renderBasket() {
+            const body = document.getElementById('basketBody');
+            if (basketItems.length === 0) {
+                body.innerHTML = `
+                    <div class="empty-basket">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <p>Your inquiry list is empty.</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+                    </div>
+                `;
+            } else {
+                body.innerHTML = basketItems.map((item, index) => `
+                    <div class="basket-item">
+                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
+                        <div class="basket-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.specs || ''}</p>
+                            <p style="color: var(--champagne-gold); font-weight: 600;">${item.id}</p>
+                        </div>
+                        <button onclick="removeItem(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">×</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function removeItem(index) {
+            basketItems.splice(index, 1);
+            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
+            updateBasketCount();
+            renderBasket();
+        }
+
+        function downloadSpecs() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+        }
+
+        function submitInquiry() {
+            if (basketItems.length === 0) {
+                alert('Please add products to your inquiry list first.');
+                return;
+            }
+            toggleBasket();
+            document.getElementById('message').focus();
+            document.getElementById('message').value = 'I am interested in the following products:\n' + 
+                basketItems.map(item => `- ${item.name} (${item.id})`).join('\n') + 
+                '\n\nPlease provide quotation and lead time information.';
+        }
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
             
-            const formData = new FormData(event.target);
+            const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
             
-            // Simulate form submission
-            console.log('Form Data:', data);
+            console.log('Form submitted:', data);
             
-            alert('Thank you for your inquiry!\n\nOur solution experts will contact you within 12 working hours.\n\nReference ID: LAY-' + Date.now().toString().slice(-6));
+            // Show success message
+            alert('Inquiry Sent Successfully!\n\nOur experts will contact you within 12 working hours.\n\nReference ID: LAY-' + Date.now().toString().slice(-6));
             
             // Reset form
-            event.target.reset();
+            e.target.reset();
         }
-        
-        // File Upload Handler
-        function handleFileSelect(input) {
-            const files = input.files;
+
+        // File upload display
+        document.getElementById('attachments').addEventListener('change', function(e) {
+            const files = e.target.files;
             if (files.length > 0) {
-                const fileNames = Array.from(files).map(f => f.name).join(', ');
-                document.querySelector('.file-upload-text').innerHTML = 
-                    `<span>Selected files:</span><br>${fileNames}`;
+                const label = document.querySelector('.file-upload-label span');
+                label.textContent = files.length + ' file(s) selected: ' + Array.from(files).map(f => f.name).join(', ');
             }
-        }
-        
-        // Drag and drop for file upload
-        const fileUpload = document.querySelector('.file-upload');
-        
-        fileUpload.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            fileUpload.style.borderColor = '#2D5A3D';
-            fileUpload.style.background = '#F7F5F0';
         });
-        
-        fileUpload.addEventListener('dragleave', (e) => {
-            e.preventDefault();
-            fileUpload.style.borderColor = '#ccc';
-            fileUpload.style.background = 'white';
-        });
-        
-        fileUpload.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileUpload.style.borderColor = '#ccc';
-            fileUpload.style.background = 'white';
-            
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                const fileNames = Array.from(files).map(f => f.name).join(', ');
-                document.querySelector('.file-upload-text').innerHTML = 
-                    `<span>Selected files:</span><br>${fileNames}`;
-            }
+
+        // Initialize
+        updateBasketCount();
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
         });
     </script>
 </body>
