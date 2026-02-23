@@ -98,6 +98,231 @@
             width: 100%;
         }
         
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 5px;
+            background: rgba(255,255,255,0.1);
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+        
+        .lang-btn:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .lang-btn.active {
+            background: var(--champagne-gold);
+            color: white;
+        }
+        
+        /* Global Inquiry Basket */
+        .inquiry-basket-global {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            background: var(--champagne-gold);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .inquiry-basket-global:hover {
+            background: var(--champagne-dark);
+            transform: scale(1.1);
+        }
+        
+        .basket-icon {
+            font-size: 20px;
+        }
+        
+        .basket-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        /* Basket Dropdown */
+        .basket-dropdown {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 30px;
+            width: 380px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1001;
+        }
+        
+        .basket-dropdown.active {
+            display: block;
+        }
+        
+        .basket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .basket-header h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .clear-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 5px 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .clear-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .basket-items {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+        
+        .empty-basket {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            padding: 30px 0;
+        }
+        
+        .basket-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .basket-item-image {
+            width: 60px;
+            height: 60px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #999;
+        }
+        
+        .basket-item-info {
+            flex: 1;
+        }
+        
+        .basket-item-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+        
+        .basket-item-id {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .basket-item-remove {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+        }
+        
+        .basket-footer {
+            padding: 20px;
+            background: var(--leaf-white);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .download-specs-btn,
+        .submit-inquiry-btn {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+        }
+        
+        .download-specs-btn {
+            background: white;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+        
+        .download-specs-btn:hover {
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .submit-inquiry-btn {
+            background: var(--champagne-gold);
+            color: white;
+        }
+        
+        .submit-inquiry-btn:hover {
+            background: var(--champagne-dark);
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
@@ -296,6 +521,79 @@
             letter-spacing: 0.05em;
         }
         
+        /* Certificate Modal */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cert-modal.active {
+            display: flex;
+        }
+        
+        .cert-modal-content {
+            background: white;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .cert-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--medium-gray);
+        }
+        
+        .cert-modal-close:hover {
+            color: var(--forest-green);
+        }
+        
+        .cert-modal h3 {
+            font-size: 24px;
+            color: var(--forest-green);
+            margin-bottom: 20px;
+        }
+        
+        .cert-detail {
+            margin-bottom: 15px;
+        }
+        
+        .cert-detail strong {
+            display: block;
+            color: var(--forest-green);
+            margin-bottom: 5px;
+        }
+        
+        .cert-detail p {
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+        
+        .download-cert-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--champagne-gold);
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
         /* Supply Chain Section */
         .supply-chain {
             background: var(--forest-green);
@@ -317,12 +615,33 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
         }
         
         .map-container::before {
-            content: 'Global Supply Chain Map';
-            color: rgba(255,255,255,0.6);
-            font-size: 18px;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><rect fill="rgba(255,255,255,0.1)" x="150" y="100" width="200" height="150" rx="20"/><rect fill="rgba(255,255,255,0.1)" x="450" y="80" width="150" height="200" rx="20"/><rect fill="rgba(255,255,255,0.1)" x="650" y="120" width="250" height="180" rx="20"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .map-overlay {
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .map-overlay h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .map-overlay p {
+            opacity: 0.9;
         }
         
         .supply-features {
@@ -392,8 +711,10 @@
         }
         
         .sustain-list li::before {
-            content: '♻️';
-            font-size: 24px;
+            content: '✓';
+            color: var(--champagne-gold);
+            font-weight: 700;
+            font-size: 20px;
         }
         
         .sustain-image {
@@ -475,6 +796,50 @@
             color: rgba(255,255,255,0.6);
         }
         
+        /* RTL Support for Arabic */
+        body[lang="ar"] {
+            direction: rtl;
+        }
+        
+        body[lang="ar"] .nav-menu {
+            flex-direction: row-reverse;
+        }
+        
+        body[lang="ar"] .basket-dropdown {
+            right: auto;
+            left: 30px;
+        }
+        
+        body[lang="ar"] .manufacturing-content,
+        body[lang="ar"] .sustain-content {
+            direction: rtl;
+        }
+        
+        body[lang="ar"] .stat-box {
+            border-left: none;
+            border-right: 4px solid var(--champagne-gold);
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 90px;
+            right: 30px;
+            background: var(--forest-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 10000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-menu {
@@ -504,6 +869,11 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+            
+            .basket-dropdown {
+                width: 90%;
+                right: 5%;
+            }
         }
     </style>
 </head>
@@ -513,6 +883,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">LAY<span>SUN</span></div>
+                
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="index.html">Home</a></li>
@@ -524,6 +895,36 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                
+                <div class="header-actions">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                        <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
+                        <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+                    </div>
+                    
+                    <!-- Global Inquiry Basket -->
+                    <div class="inquiry-basket-global" onclick="toggleBasket()">
+                        <span class="basket-icon">🛒</span>
+                        <span class="basket-count" id="globalBasketCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Basket Dropdown -->
+        <div class="basket-dropdown" id="basketDropdown">
+            <div class="basket-header">
+                <h4>Project Inquiry</h4>
+                <button onclick="clearBasket()" class="clear-btn">Clear</button>
+            </div>
+            <div class="basket-items" id="basketItems">
+                <p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>
+            </div>
+            <div class="basket-footer">
+                <button class="download-specs-btn" onclick="downloadSpecs()">Download Specs</button>
+                <a href="contact.html" class="submit-inquiry-btn">Submit Inquiry</a>
             </div>
         </div>
     </header>
@@ -544,7 +945,7 @@
             <div class="manufacturing-content">
                 <div class="manufacturing-text">
                     <h3>Manufacturing Excellence</h3>
-                    <p>Operating from our 10,000㎡ state-of-the-art facility, Laysun harmonizes large-scale automation with artisanal detail. We don't just "make" artificial plants; we engineer them.</p>
+                    <p>Operating from our 10,000㎡ state-of-the-art facility in Dongguan, China, Laysun harmonizes large-scale automation with artisanal detail. We don't just "make" artificial plants; we engineer them.</p>
                     
                     <p>Our production lines are optimized for consistency, durability, and speed, allowing us to manage high-volume retail orders and complex bespoke projects with equal precision. From 48h rapid prototyping to rigorous batch testing, every product leaving our floor is an "Architectural-Grade" asset.</p>
                     
@@ -581,56 +982,56 @@
             </div>
             
             <div class="certificates-grid">
-                <div class="certificate-card" onclick="showCertDetail('bsci')">
+                <div class="certificate-card" onclick="openCertModal('bsci')">
                     <div class="cert-icon">📋</div>
                     <h3>BSCI</h3>
                     <p>Business Social Compliance Initiative</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('sedex')">
+                <div class="certificate-card" onclick="openCertModal('sedex')">
                     <div class="cert-icon">📋</div>
                     <h3>SEDEX</h3>
                     <p>Supplier Ethical Data Exchange</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('nfpa')">
+                <div class="certificate-card" onclick="openCertModal('nfpa')">
                     <div class="cert-icon">🔥</div>
                     <h3>NFPA 701</h3>
                     <p>Fire Retardant Standard USA</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('b1')">
+                <div class="certificate-card" onclick="openCertModal('b1')">
                     <div class="cert-icon">🔥</div>
                     <h3>B1</h3>
                     <p>Fire Retardant Standard Europe</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('uv')">
+                <div class="certificate-card" onclick="openCertModal('uv')">
                     <div class="cert-icon">☀️</div>
                     <h3>UV 5000h+</h3>
                     <p>Weathering Resistance Test</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('iso')">
+                <div class="certificate-card" onclick="openCertModal('iso')">
                     <div class="cert-icon">✓</div>
                     <h3>ISO 9001</h3>
                     <p>Quality Management System</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('reach')">
+                <div class="certificate-card" onclick="openCertModal('reach')">
                     <div class="cert-icon">🧪</div>
                     <h3>REACH</h3>
                     <p>Chemical Safety Compliance</p>
                     <span class="cert-badge">View Certificate</span>
                 </div>
                 
-                <div class="certificate-card" onclick="showCertDetail('rohs')">
+                <div class="certificate-card" onclick="openCertModal('rohs')">
                     <div class="cert-icon">🌿</div>
                     <h3>RoHS</h3>
                     <p>Hazardous Substances Control</p>
@@ -640,6 +1041,16 @@
         </div>
     </section>
 
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="certModal">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close" onclick="closeCertModal()">×</span>
+            <h3 id="modalTitle">Certificate Details</h3>
+            <div id="modalContent"></div>
+            <button class="download-cert-btn" onclick="downloadCertificate()">Download PDF Certificate</button>
+        </div>
+    </div>
+
     <!-- Supply Chain Section -->
     <section class="section supply-chain">
         <div class="container">
@@ -648,7 +1059,12 @@
                 <p>A seamless supply chain empowered by data, ensuring on-time delivery worldwide</p>
             </div>
             
-            <div class="map-container"></div>
+            <div class="map-container">
+                <div class="map-overlay">
+                    <h3>Global Logistics Network</h3>
+                    <p>Strategic distribution centers across 3 continents</p>
+                </div>
+            </div>
             
             <div class="supply-features">
                 <div class="supply-feature">
@@ -745,20 +1161,239 @@
     </footer>
 
     <script>
-        function showCertDetail(cert) {
-            const certInfo = {
-                'bsci': 'BSCI ID: LAY-2024-BSCI-001\nAudit Date: 2024-03-15\nValid Until: 2026-03-14',
-                'sedex': 'SEDEX Member ID: ZC123456789\nAudit Type: 4-Pillar\nLast Audit: 2024-01-20',
-                'nfpa': 'NFPA 701 Test Report No.: NFPA-LAY-2024-001\nTest Date: 2024-02-10\nValid: Unlimited',
-                'b1': 'B1 Certificate No.: B1-DE-2024-456\nIssued: 2024-01-15\nValid Until: 2027-01-14',
-                'uv': 'UV Test Report: UV5000-LAY-2024\nTest Hours: 5000h+\nLab: SGS Shanghai',
-                'iso': 'ISO 9001:2015\nCertificate No.: ISO-LAY-2023\nValid Until: 2026-12-31',
-                'reach': 'REACH Registration No.: 01-2119457890-42\nCompliance Date: 2024-01-01',
-                'rohs': 'RoHS Certificate: ROHS-LAY-2024\nTested by: TUV SUD\nValid: Unlimited'
-            };
+        // Global Inquiry Basket System
+        let inquiryBasket = JSON.parse(localStorage.getItem('laysunBasket')) || [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBasketDisplay();
             
-            alert('Certificate Details:\n\n' + certInfo[cert] + '\n\nClick to download full PDF certificate.');
+            document.addEventListener('click', function(e) {
+                const basket = document.getElementById('basketDropdown');
+                const basketBtn = document.querySelector('.inquiry-basket-global');
+                if (basket && !basket.contains(e.target) && !basketBtn.contains(e.target)) {
+                    basket.classList.remove('active');
+                }
+            });
+        });
+
+        function addToBasket(productId, productName, productImage = '') {
+            if (!inquiryBasket.find(item => item.id === productId)) {
+                inquiryBasket.push({
+                    id: productId,
+                    name: productName,
+                    image: productImage,
+                    addedAt: new Date().toISOString()
+                });
+                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
+                updateBasketDisplay();
+                showNotification(productName + ' added to inquiry basket');
+            } else {
+                showNotification('Product already in basket', 'warning');
+            }
         }
+
+        function removeFromBasket(productId) {
+            inquiryBasket = inquiryBasket.filter(item => item.id !== productId);
+            localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
+            updateBasketDisplay();
+        }
+
+        function clearBasket() {
+            if (confirm('Clear all items from inquiry basket?')) {
+                inquiryBasket = [];
+                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
+                updateBasketDisplay();
+            }
+        }
+
+        function updateBasketDisplay() {
+            const countEl = document.getElementById('globalBasketCount');
+            const itemsEl = document.getElementById('basketItems');
+            
+            if (countEl) countEl.textContent = inquiryBasket.length;
+            
+            if (itemsEl) {
+                if (inquiryBasket.length === 0) {
+                    itemsEl.innerHTML = '<p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>';
+                } else {
+                    itemsEl.innerHTML = inquiryBasket.map(item => `
+                        <div class="basket-item">
+                            <div class="basket-item-image">${item.image ? '' : 'IMG'}</div>
+                            <div class="basket-item-info">
+                                <div class="basket-item-name">${item.name}</div>
+                                <div class="basket-item-id">${item.id}</div>
+                            </div>
+                            <button class="basket-item-remove" onclick="removeFromBasket('${item.id}')">×</button>
+                        </div>
+                    `).join('');
+                }
+            }
+        }
+
+        function toggleBasket() {
+            const dropdown = document.getElementById('basketDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+            }
+        }
+
+        function downloadSpecs() {
+            if (inquiryBasket.length === 0) {
+                alert('Please add products to your inquiry basket first.');
+                return;
+            }
+            
+            const productIds = inquiryBasket.map(item => item.id).join(', ');
+            alert('Generating specification sheet for:\n\n' + productIds + '\n\nIn a real implementation, this would download a PDF with all product specifications.');
+        }
+
+        function showNotification(message, type = 'success') {
+            const notif = document.createElement('div');
+            notif.className = 'notification';
+            notif.style.background = type === 'success' ? '#2D5A3D' : '#e74c3c';
+            notif.textContent = message;
+            document.body.appendChild(notif);
+            
+            setTimeout(() => {
+                notif.remove();
+            }, 3000);
+        }
+
+        // Certificate Modal
+        const certData = {
+            'bsci': {
+                title: 'BSCI Certificate',
+                details: [
+                    { label: 'BSCI ID', value: 'LAY-2024-BSCI-001' },
+                    { label: 'Audit Date', value: 'March 15, 2024' },
+                    { label: 'Valid Until', value: 'March 14, 2026' },
+                    { label: 'Audit Type', value: 'Full Audit' },
+                    { label: 'Rating', value: 'A - Outstanding Compliance' }
+                ]
+            },
+            'sedex': {
+                title: 'SEDEX Certificate',
+                details: [
+                    { label: 'SEDEX Member ID', value: 'ZC123456789' },
+                    { label: 'Audit Type', value: '4-Pillar SMETA' },
+                    { label: 'Last Audit', value: 'January 20, 2024' },
+                    { label: 'Next Audit Due', value: 'January 20, 2025' },
+                    { label: 'Status', value: 'Active Member' }
+                ]
+            },
+            'nfpa': {
+                title: 'NFPA 701 Certificate',
+                details: [
+                    { label: 'Test Report No.', value: 'NFPA-LAY-2024-001' },
+                    { label: 'Test Date', value: 'February 10, 2024' },
+                    { label: 'Valid Until', value: 'Unlimited' },
+                    { label: 'Test Standard', value: 'NFPA 701 (2023 Edition)' },
+                    { label: 'Result', value: 'PASS - No flaming drip' }
+                ]
+            },
+            'b1': {
+                title: 'B1 Fire Classification',
+                details: [
+                    { label: 'Certificate No.', value: 'B1-DE-2024-456' },
+                    { label: 'Issued Date', value: 'January 15, 2024' },
+                    { label: 'Valid Until', value: 'January 14, 2027' },
+                    { label: 'Issuing Body', value: 'TÜV SÜD Germany' },
+                    { label: 'Classification', value: 'B1 - Schwer entflammbar' }
+                ]
+            },
+            'uv': {
+                title: 'UV Resistance Certificate',
+                details: [
+                    { label: 'Test Report', value: 'UV5000-LAY-2024' },
+                    { label: 'Test Hours', value: '5000+ hours' },
+                    { label: 'Test Lab', value: 'SGS Shanghai' },
+                    { label: 'Test Method', value: 'ASTM G154' },
+                    { label: 'Color Retention', value: '>95% after 5000h' }
+                ]
+            },
+            'iso': {
+                title: 'ISO 9001:2015 Certificate',
+                details: [
+                    { label: 'Certificate No.', value: 'ISO-LAY-2023' },
+                    { label: 'Issue Date', value: 'December 1, 2023' },
+                    { label: 'Valid Until', value: 'December 31, 2026' },
+                    { label: 'Scope', value: 'Design and manufacture of artificial plants' },
+                    { label: 'Certification Body', value: 'Bureau Veritas' }
+                ]
+            },
+            'reach': {
+                title: 'REACH Compliance',
+                details: [
+                    { label: 'Registration No.', value: '01-2119457890-42' },
+                    { label: 'Compliance Date', value: 'January 1, 2024' },
+                    { label: 'Last Update', value: 'SVHC List 2024' },
+                    { label: 'Status', value: 'Fully Compliant' },
+                    { label: 'Responsible', value: 'Only Representative EU' }
+                ]
+            },
+            'rohs': {
+                title: 'RoHS Certificate',
+                details: [
+                    { label: 'Certificate No.', value: 'ROHS-LAY-2024' },
+                    { label: 'Tested by', value: 'TÜV SÜD' },
+                    { label: 'Test Date', value: 'March 1, 2024' },
+                    { label: 'Directive', value: 'RoHS 2011/65/EU' },
+                    { label: 'Status', value: 'Compliant - All 10 substances' }
+                ]
+            }
+        };
+
+        function openCertModal(cert) {
+            const modal = document.getElementById('certModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            const data = certData[cert];
+            if (data) {
+                title.textContent = data.title;
+                content.innerHTML = data.details.map(d => `
+                    <div class="cert-detail">
+                        <strong>${d.label}</strong>
+                        <p>${d.value}</p>
+                    </div>
+                `).join('');
+                modal.classList.add('active');
+            }
+        }
+
+        function closeCertModal() {
+            document.getElementById('certModal').classList.remove('active');
+        }
+
+        function downloadCertificate() {
+            alert('In a real implementation, this would download the PDF certificate file.');
+        }
+
+        // Close modal on outside click
+        document.getElementById('certModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCertModal();
+            }
+        });
+
+        // Language Switching
+        function switchLanguage(lang) {
+            document.body.setAttribute('lang', lang);
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(lang)) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            localStorage.setItem('laysunLang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('laysunLang') || 'en';
+            switchLanguage(savedLang);
+        });
     </script>
 </body>
 </html>
