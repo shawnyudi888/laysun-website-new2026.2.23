@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design & Customization | Laysun - Bespoke Greenery Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --forest-green: #2D5A3D;
+            --champagne-gold: #C9A961;
+            --champagne-dark: #B8944F;
+            --leaf-white: #F7F5F0;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--leaf-white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: rgba(45, 90, 61, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .highlight {
+            color: var(--champagne-gold);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* Section Common */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--forest-green);
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Design Agency Section */
+        .design-agency {
+            background: white;
+        }
+        
+        .agency-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .agency-text h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 25px;
+        }
+        
+        .agency-text p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .agency-image {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .agency-image::before {
+            content: 'Design Studio';
+            color: #999;
+            font-size: 16px;
+        }
+        
+        /* Process Timeline */
+        .process-section {
+            background: var(--leaf-white);
+        }
+        
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--forest-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+        }
+        
+        .process-step p {
+            font-size: 13px;
+            color: var(--medium-gray);
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        /* AI Section */
+        .ai-section {
+            background: var(--forest-green);
+            color: white;
+        }
+        
+        .ai-section .section-title h2 {
+            color: white;
+        }
+        
+        .ai-section .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .ai-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .ai-icon {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+        
+        .ai-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--champagne-gold);
+        }
+        
+        .ai-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Customization Form Section */
+        .custom-form-section {
+            background: white;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .form-container h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+        }
+        
+        .form-container > p {
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--forest-green);
+            margin-bottom: 8px;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .file-upload {
+            border: 2px dashed #ccc;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .file-upload:hover {
+            border-color: var(--forest-green);
+            background: var(--leaf-white);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--champagne-gold);
+            color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--champagne-dark);
+        }
+        
+        .benefits-list {
+            background: var(--leaf-white);
+            padding: 40px;
+        }
+        
+        .benefits-list h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 25px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+        
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--champagne-gold);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-item div strong {
+            display: block;
+            color: var(--forest-green);
+            margin-bottom: 5px;
+        }
+        
+        .benefit-item div p {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--forest-green);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--champagne-gold);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: var(--champagne-gold);
+        }
+        
+        .copyright {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .agency-content,
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .process-timeline {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-timeline::before {
+                display: none;
+            }
+            
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">LAY<span>SUN</span></div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="customization.html">Customization</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>From Concept to Canopy: <span class="highlight">Bespoke Greenery</span> Engineered for Professionals</h1>
+                <p>48h Rapid Prototyping and Architectural-Grade Customization. We don't just manufacture; we co-create.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Agency Section -->
+    <section class="section design-agency">
+        <div class="container">
+            <div class="agency-content">
+                <div class="agency-text">
+                    <h3>Design Agency Background</h3>
+                    <p>At Laysun, we understand that for landscape architects and commercial developers, a "standard" product isn't always enough. Our Design & Customization Hub is built to bridge the gap between imaginative vision and structural reality.</p>
+                    
+                    <p>Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections. We don't just follow the greenery trend; we define it.</p>
+                    
+                    <p>Every custom piece is vetted by our Design Agency to ensure it aligns with upcoming aesthetic shifts in international hospitality and retail sectors — so your project stays ahead of the curve, not just on time.</p>
+                </div>
+                <div class="agency-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Custom Service Process</h2>
+                <p>From initial concept to final installation, we guide you through every step</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h4>Consultation</h4>
+                    <p>Discuss your vision, requirements, and project specifications with our experts</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h4>3D Modeling</h4>
+                    <p>AI-enhanced design and 3D visualization of your bespoke greenery</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h4>Prototyping</h4>
+                    <p>48h rapid prototyping — physical samples delivered for approval</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h4>Production</h4>
+                    <p>Full-scale manufacturing with rigorous quality control</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h4>Delivery</h4>
+                    <p>Global logistics and on-site installation support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="section ai-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI-Driven Research & Development</h2>
+                <p>Leveraging cutting-edge technology to predict trends and optimize designs</p>
+            </div>
+            
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-icon">🤖</div>
+                    <h3>Trend Forecasting</h3>
+                    <p>AI algorithms analyze global design trends to predict the next big movements in botanical aesthetics</p>
+                </div>
+                
+                <div class="ai-card">
+                    <div class="ai-icon">🎨</div>
+                    <h3>3D Visualization</h3>
+                    <p>Photorealistic 3D renders allow you to see your custom piece before production begins</p>
+                </div>
+                
+                <div class="ai-card">
+                    <div class="ai-icon">⚡</div>
+                    <h3>Rapid Iteration</h3>
+                    <p>Machine learning optimizes designs for manufacturing efficiency without compromising aesthetics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Form Section -->
+    <section class="section custom-form-section">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-container">
+                    <h3>Start Your Bespoke Project</h3>
+                    <p>Consult with our design experts. We typically respond within 24 hours.</p>
+                    
+                    <form id="customForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-input" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Company *</label>
+                            <input type="text" class="form-input" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-input" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Project Type</label>
+                            <select class="form-select" name="projectType">
+                                <option value="">Select Type</option>
+                                <option value="hotel">Hotel/Hospitality</option>
+                                <option value="retail">Retail Space</option>
+                                <option value="office">Corporate Office</option>
+                                <option value="residential">Residential</option>
+                                <option value="outdoor">Outdoor Landscape</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Customization Requirements</label>
+                            <textarea class="form-textarea" name="requirements" placeholder="Describe your vision: dimensions, style, specific features..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Upload Design References</label>
+                            <div class="file-upload" onclick="document.getElementById('fileInput').click()">
+                                <input type="file" id="fileInput" multiple style="display: none;">
+                                <p style="color: #999; font-size: 14px;">Click to upload sketches, mood boards, or reference images</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Request Design Consultation</button>
+                    </form>
+                </div>
+                
+                <div class="benefits-list">
+                    <h4>The Laysun Bespoke Advantage</h4>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⏱️</div>
+                        <div>
+                            <strong>48h Rapid Prototyping</strong>
+                            <p>Initial physical samples or 3D renders delivered within 48 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <div>
+                            <strong>Architectural-Grade Precision</strong>
+                            <p>Granular customization across morphology, performance, and integration</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔥</div>
+                        <div>
+                            <strong>Performance Engineering</strong>
+                            <p>Built-in Fire Retardancy (NFPA 701/B1) or Outdoor UV Stability (5000h+)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌍</div>
+                        <div>
+                            <strong>Trend Alignment</strong>
+                            <p>Every piece vetted against global hospitality and retail trends</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
+                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
+                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
+                        <li><a href="customization.html">Custom Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="products.html">Signature Series</a></li>
+                        <li><a href="products.html">Retail Ready</a></li>
+                        <li><a href="products.html">Fire Retardant</a></li>
+                        <li><a href="products.html">UV Stable</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="capabilities.html">Compliance</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#">Request Quote</a></li>
+                        <li><a href="#">Download Catalog</a></li>
+                        <li><a href="#">Find a Rep</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">LAY<span>SUN</span></div>
+                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your inquiry! Our design team will contact you within 24 hours to discuss your bespoke project.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
