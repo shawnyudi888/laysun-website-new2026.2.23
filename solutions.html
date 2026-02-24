@@ -4,1015 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commercial Greenery Solutions | Laysun Artificial Horticulture Systems</title>
-    <meta name="description" content="Tailored artificial horticulture solutions for hotels, retail, and commercial spaces. Explore our case studies including Luxury Hotel Los Angeles installation.">
-    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, hotel greenery solutions, retail artificial plants, fire safe artificial plants commercial">
-    
-    <!-- Fonts -->
+    <meta name="description" content="Tailored artificial greenery solutions for hotels, retail, commercial buildings, and outdoor applications. NFPA 701 certified, UV stable, and retail-ready.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Hotel & Hospitality Solutions",
-                "description": "Fire-retardant artificial plants for luxury hotels"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Retail Solutions",
-                "description": "Retail-ready artificial greenery systems"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Commercial Building Solutions",
-                "description": "Large-scale artificial horticulture for offices"
-            }
-        ]
-    }
-    </script>
-
-    <style>
-        :root {
-            --champagne-gold: #C9A961;
-            --champagne-gold-hover: #B8944F;
-            --forest-green: #1F3D2B;
-            --forest-green-hover: #2B533B;
-            --dark-gray: #5F6466;
-            --charcoal: #1A1A1A;
-            --light-gray: #F9F9F9;
-            --white: #FFFFFF;
-            --border-color: #E5E5E5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--charcoal);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--forest-green);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--champagne-gold);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--champagne-gold);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--champagne-gold);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .inquiry-btn {
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .inquiry-btn:hover {
-            background-color: var(--champagne-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
-        }
-
-        .inquiry-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--forest-green);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Hero Section */
-        .solutions-hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            color: var(--white);
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solutions-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .solutions-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .solutions-hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--champagne-gold-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            border: 2px solid white;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--forest-green);
-        }
-
-        /* Solutions Grid */
-        .solutions-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-bottom: 5rem;
-        }
-
-        .solution-card {
-            background-color: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 1px solid var(--border-color);
-        }
-
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .solution-image {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .solution-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .solution-card:hover .solution-image img {
-            transform: scale(1.1);
-        }
-
-        .solution-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(31, 61, 43, 0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            color: white;
-        }
-
-        .solution-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .solution-content {
-            padding: 2rem;
-        }
-
-        .solution-features {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .solution-features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--dark-gray);
-        }
-
-        .solution-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--champagne-gold);
-            font-weight: bold;
-        }
-
-        .solution-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--forest-green);
-            text-decoration: none;
-            font-weight: 600;
-            transition: gap 0.3s;
-        }
-
-        .solution-cta:hover {
-            gap: 1rem;
-            color: var(--champagne-gold);
-        }
-
-        /* Featured Case Study */
-        .case-study-section {
-            background-color: var(--light-gray);
-            padding: 5rem 2rem;
-        }
-
-        .case-study-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .case-study-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .case-study-header h2 {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .case-study-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-
-        .case-study-image {
-            position: relative;
-            min-height: 500px;
-        }
-
-        .case-study-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-        }
-
-        .case-study-badge {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            z-index: 2;
-        }
-
-        .case-study-content {
-            padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .case-study-content h3 {
-            font-size: 2rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .case-study-content .location {
-            color: var(--champagne-gold);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .case-study-content p {
-            color: var(--dark-gray);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .case-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .stat-item h4 {
-            font-size: 2rem;
-            color: var(--champagne-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            margin: 0;
-        }
-
-        .case-products {
-            margin-top: 2rem;
-        }
-
-        .case-products h4 {
-            margin-bottom: 1rem;
-            color: var(--forest-green);
-        }
-
-        .product-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .product-tag {
-            background-color: var(--light-gray);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Related Products Section */
-        .related-products {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .related-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .related-header h2 {
-            font-size: 2rem;
-            color: var(--forest-green);
-        }
-
-        .products-scroll {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-            scrollbar-width: thin;
-            scrollbar-color: var(--champagne-gold) var(--light-gray);
-        }
-
-        .products-scroll::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .products-scroll::-webkit-scrollbar-track {
-            background: var(--light-gray);
-            border-radius: 4px;
-        }
-
-        .products-scroll::-webkit-scrollbar-thumb {
-            background: var(--champagne-gold);
-            border-radius: 4px;
-        }
-
-        .product-mini-card {
-            min-width: 280px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
-        }
-
-        .product-mini-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-mini-info {
-            padding: 1.5rem;
-        }
-
-        .product-mini-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--charcoal);
-        }
-
-        .product-mini-info p {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-        }
-
-        .btn-small {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .btn-small:hover {
-            background-color: var(--champagne-gold-hover);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            padding: 5rem 2rem;
-            text-align: center;
-            color: white;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Inquiry Sidebar */
-        .inquiry-sidebar {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            max-width: 100%;
-            height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-            z-index: 3000;
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .inquiry-sidebar.active {
-            right: 0;
-        }
-
-        .inquiry-header {
-            background-color: var(--forest-green);
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close-inquiry {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .inquiry-items {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .inquiry-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .inquiry-item-details {
-            flex-grow: 1;
-        }
-
-        .inquiry-item h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .inquiry-item p {
-            font-size: 0.85rem;
-            color: var(--dark-gray);
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            color: #E74C3C;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .inquiry-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .submit-inquiry {
-            width: 100%;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-inquiry:hover {
-            background-color: var(--champagne-gold-hover);
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 2500;
-            display: none;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--charcoal);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-section h4 {
-            color: var(--champagne-gold);
-            margin-bottom: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 3rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .case-study-card {
-                grid-template-columns: 1fr;
-            }
-
-            .case-study-image {
-                min-height: 300px;
-            }
-
-            .solutions-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .case-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            nav ul {
-                display: none;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .solutions-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">LAY<span>SUN</span></a>
-            <nav>
-                <ul>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">LAYSUN</a>
+                <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="solutions.html" class="active">Solutions</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="customization.html">Customization</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="header-actions">
+                    <button class="btn-icon" id="inquiryBtn" aria-label="Project Inquiry">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span class="inquiry-badge" id="inquiryBadge">0</span>
+                    </button>
+                    <button class="btn-mobile" id="mobileMenuBtn" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </nav>
-            <div class="header-actions">
-                <button class="inquiry-btn" onclick="toggleInquiry()">
-                    Project Inquiry
-                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
-                </button>
-            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="solutions-hero">
-        <h1>Tailored Solutions for Every Space</h1>
-        <p>From luxury hotels to retail giants, we engineer artificial horticulture systems that meet the world's toughest standards while exceeding aesthetic expectations.</p>
-        <div class="hero-cta">
-            <a href="#solutions" class="btn-primary">Explore Solutions</a>
-            <a href="customization.html" class="btn-secondary">Start Custom Project</a>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solutions.html" class="active">Solutions</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="customization.html">Customization</a></li>
+            <li><a href="capabilities.html">Capabilities</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Tailored Solutions for Every Space</h1>
+            <p class="page-subtitle">From luxury hotels to retail giants, we engineer artificial horticulture systems that meet the world's toughest standards while exceeding aesthetic expectations.</p>
         </div>
     </section>
 
     <!-- Solutions Grid -->
-    <section class="solutions-container" id="solutions">
-        <div class="section-header">
-            <h2>Industry Solutions</h2>
-            <p>Specialized artificial greenery systems designed for the unique demands of each commercial environment</p>
-        </div>
+    <section class="solutions-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Industry Solutions</h2>
+                <p class="section-subtitle">Specialized artificial greenery systems designed for the unique demands of each commercial environment</p>
+            </div>
 
-        <div class="solutions-grid">
-            <!-- Hotel Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Luxury Hotel Lobby with Artificial Plants - Laysun Hospitality Solutions" loading="lazy">
-                    <div class="solution-overlay">
+            <div class="solutions-grid">
+                <!-- Hotels & Hospitality -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Luxury hotel with artificial greenery">
+                    </div>
+                    <div class="solution-content">
                         <h3>Hotels & Hospitality</h3>
-                        <p>Fire-safe elegance for luxury environments</p>
+                        <span class="solution-tag">Fire-safe elegance for luxury environments</span>
+                        <p>Create unforgettable first impressions with NFPA 701 certified artificial plants that maintain perfect aesthetics without compromising safety standards required by luxury hospitality venues.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> NFPA 701 Fire Retardant Certified</li>
+                            <li><i class="fas fa-check"></i> Zero maintenance requirements</li>
+                            <li><i class="fas fa-check"></i> Custom sizing for grand lobbies</li>
+                            <li><i class="fas fa-check"></i> Realistic appearance guaranteed</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Hotel Case Studies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>Create unforgettable first impressions with NFPA 701 certified artificial plants that maintain perfect aesthetics without compromising safety standards required by luxury hospitality venues.</p>
-                    <ul class="solution-features">
-                        <li>NFPA 701 Fire Retardant Certified</li>
-                        <li>Zero maintenance requirements</li>
-                        <li>Custom sizing for grand lobbies</li>
-                        <li>Realistic appearance guaranteed</li>
-                    </ul>
-                    <a href="case-study-hotel-la.html" class="solution-cta">View Hotel Case Studies →</a>
-                </div>
-            </article>
 
-            <!-- Retail Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Retail Store Interior with Artificial Plants - Laysun Retail Solutions" loading="lazy">
-                    <div class="solution-overlay">
+                <!-- Retail Spaces -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Retail store interior">
+                    </div>
+                    <div class="solution-content">
                         <h3>Retail Spaces</h3>
-                        <p>Retail-ready botanical merchandising</p>
+                        <span class="solution-tag">Retail-ready botanical merchandising</span>
+                        <p>Barcode-ready packaging and display-optimized designs that help retailers create immersive brand experiences while maintaining consistent quality across thousands of locations.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Retail-ready packaging & barcoding</li>
+                            <li><i class="fas fa-check"></i> UV stable for window displays</li>
+                            <li><i class="fas fa-check"></i> Scalable global fulfillment</li>
+                            <li><i class="fas fa-check"></i> Trend-forward designs</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Retail Case Studies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>Barcode-ready packaging and display-optimized designs that help retailers create immersive brand experiences while maintaining consistent quality across thousands of locations.</p>
-                    <ul class="solution-features">
-                        <li>Retail-ready packaging & barcoding</li>
-                        <li>UV stable for window displays</li>
-                        <li>Scalable global fulfillment</li>
-                        <li>Trend-forward designs</li>
-                    </ul>
-                    <a href="case-study-retail.html" class="solution-cta">View Retail Case Studies →</a>
-                </div>
-            </article>
 
-            <!-- Commercial Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Modern Office Building with Artificial Plants - Laysun Commercial Solutions" loading="lazy">
-                    <div class="solution-overlay">
+                <!-- Commercial Buildings -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Modern office building">
+                    </div>
+                    <div class="solution-content">
                         <h3>Commercial Buildings</h3>
-                        <p>Large-scale biophilic integration</p>
+                        <span class="solution-tag">Large-scale biophilic integration</span>
+                        <p>Architectural-grade solutions for corporate headquarters, mixed-use developments, and commercial complexes requiring consistent quality across extensive installations.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Large volume capabilities</li>
+                            <li><i class="fas fa-check"></i> Specification-grade documentation</li>
+                            <li><i class="fas fa-check"></i> LEED contribution support</li>
+                            <li><i class="fas fa-check"></i> Multi-site consistency</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Commercial Case Studies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>Architectural-grade solutions for corporate headquarters, mixed-use developments, and commercial complexes requiring consistent quality across extensive installations.</p>
-                    <ul class="solution-features">
-                        <li>Large volume capabilities</li>
-                        <li>Specification-grade documentation</li>
-                        <li>LEED contribution support</li>
-                        <li>Multi-site consistency</li>
-                    </ul>
-                    <a href="case-study-commercial.html" class="solution-cta">View Commercial Case Studies →</a>
-                </div>
-            </article>
 
-            <!-- Outdoor Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Outdoor Commercial Space with UV Resistant Artificial Plants" loading="lazy">
-                    <div class="solution-overlay">
+                <!-- Outdoor Applications -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Outdoor artificial plants">
+                    </div>
+                    <div class="solution-content">
                         <h3>Outdoor Applications</h3>
-                        <p>Weather-resistant exterior solutions</p>
+                        <span class="solution-tag">Weather-resistant exterior solutions</span>
+                        <p>UV-stable and weather-resistant artificial plants engineered to withstand harsh outdoor conditions while maintaining color fidelity and structural integrity for years.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> 5000h+ UV stability rating</li>
+                            <li><i class="fas fa-check"></i> Weather-resistant construction</li>
+                            <li><i class="fas fa-check"></i> Drainage-optimized bases</li>
+                            <li><i class="fas fa-check"></i> Wind-load tested</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Outdoor Case Studies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>UV-stable and weather-resistant artificial plants engineered to withstand harsh outdoor conditions while maintaining color fidelity and structural integrity for years.</p>
-                    <ul class="solution-features">
-                        <li>5000h+ UV stability rating</li>
-                        <li>Weather-resistant construction</li>
-                        <li>Drainage-optimized bases</li>
-                        <li>Wind-load tested</li>
-                    </ul>
-                    <a href="case-study-outdoor.html" class="solution-cta">View Outdoor Case Studies →</a>
-                </div>
-            </article>
 
-            <!-- Healthcare Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Hospital Interior with Artificial Plants - Laysun Healthcare Solutions" loading="lazy">
-                    <div class="solution-overlay">
+                <!-- Healthcare Facilities -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" alt="Healthcare facility interior">
+                    </div>
+                    <div class="solution-content">
                         <h3>Healthcare Facilities</h3>
-                        <p>Hypoallergenic healing environments</p>
+                        <span class="solution-tag">Hypoallergenic healing environments</span>
+                        <p>Create calming, maintenance-free environments that support patient wellbeing while meeting strict healthcare facility standards for cleanliness and safety.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Antimicrobial treatments available</li>
+                            <li><i class="fas fa-check"></i> Dust-resistant foliage</li>
+                            <li><i class="fas fa-check"></i> No pollen or allergens</li>
+                            <li><i class="fas fa-check"></i> Easy sanitization</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Healthcare Case Studies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>Create calming, maintenance-free environments that support patient wellbeing while meeting strict healthcare facility standards for cleanliness and safety.</p>
-                    <ul class="solution-features">
-                        <li>Antimicrobial treatments available</li>
-                        <li>Dust-resistant foliage</li>
-                        <li>No pollen or allergens</li>
-                        <li>Easy sanitization</li>
-                    </ul>
-                    <a href="case-study-healthcare.html" class="solution-cta">View Healthcare Case Studies →</a>
-                </div>
-            </article>
 
-            <!-- Event Solution -->
-            <article class="solution-card">
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Event Venue with Artificial Plants - Laysun Events Solutions" loading="lazy">
-                    <div class="solution-overlay">
+                <!-- Events & Exhibitions -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop" alt="Event space with decorations">
+                    </div>
+                    <div class="solution-content">
                         <h3>Events & Exhibitions</h3>
-                        <p>Temporary installations, permanent impact</p>
+                        <span class="solution-tag">Temporary installations, permanent impact</span>
+                        <p>Rental and purchase options for trade shows, corporate events, and temporary installations with rapid deployment and professional installation services.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Rental programs available</li>
+                            <li><i class="fas fa-check"></i> Rapid deployment</li>
+                            <li><i class="fas fa-check"></i> Installation services</li>
+                            <li><i class="fas fa-check"></i> Reusable designs</li>
+                        </ul>
+                        <a href="#" class="btn-text">View Events Portfolio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="solution-content">
-                    <p>Rental and purchase options for trade shows, corporate events, and temporary installations with rapid deployment and professional installation services.</p>
-                    <ul class="solution-features">
-                        <li>Rental programs available</li>
-                        <li>Rapid deployment</li>
-                        <li>Installation services</li>
-                        <li>Reusable designs</li>
-                    </ul>
-                    <a href="case-study-events.html" class="solution-cta">View Events Portfolio →</a>
-                </div>
-            </article>
+            </div>
         </div>
     </section>
 
     <!-- Featured Case Study -->
-    <section class="case-study-section">
-        <div class="case-study-container">
-            <div class="case-study-header">
-                <h2>Featured Case Study</h2>
-                <p>See how we transformed a luxury Los Angeles hotel with our signature artificial horticulture solutions</p>
+    <section class="case-study-section section-padding bg-light">
+        <div class="container">
+            <div class="case-study-header text-center">
+                <h2 class="section-title">Featured Case Study</h2>
+                <p class="section-subtitle">See how we transformed a luxury Los Angeles hotel with our signature artificial horticulture solutions</p>
             </div>
 
-            <article class="case-study-card">
+            <div class="case-study-card">
                 <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80" alt="Luxury Hotel Los Angeles Lobby with 9ft Artificial Olive Trees by Laysun" loading="lazy">
-                    <span class="case-study-badge">Featured Project</span>
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop" alt="Luxury hotel lobby">
+                    <div class="case-study-badge">Featured Project</div>
                 </div>
                 <div class="case-study-content">
-                    <span class="location">📍 Los Angeles, California</span>
+                    <div class="case-study-meta">
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, California</span>
+                    </div>
                     <h3>Luxury Hotel Los Angeles</h3>
                     <p>A prestigious five-star property in downtown Los Angeles required fire-retardant botanical solutions that met California's strict safety codes while delivering the luxury aesthetic their brand demanded. We installed custom 9-foot olive trees throughout the lobby and atrium spaces.</p>
                     
-                    <div class="case-stats">
-                        <div class="stat-item">
-                            <h4>100%</h4>
-                            <p>Maintenance Cost Reduction</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>$12K</h4>
-                            <p>Annual Savings</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>18 Mo</h4>
-                            <p>Zero Issues</p>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Maintenance Cost Reduction</span>
                         </div>
                     </div>
 
-                    <div class="case-products">
+                    <div class="products-used">
                         <h4>Products Used</h4>
                         <div class="product-tags">
                             <span class="product-tag">Signature Olive Tree 9ft</span>
@@ -1020,194 +224,160 @@
                             <span class="product-tag">Custom Planters</span>
                         </div>
                     </div>
-
-                    <div style="margin-top: 2rem;">
-                        <a href="case-study-hotel-la.html" class="btn-primary">Read Full Case Study</a>
-                    </div>
                 </div>
-            </article>
+            </div>
         </div>
     </section>
 
     <!-- Related Products -->
-    <section class="related-products">
-        <div class="related-header">
-            <h2>Products for Hospitality</h2>
-            <p>Explore our most popular solutions for hotel and commercial spaces</p>
-        </div>
-        
-        <div class="products-scroll">
-            <div class="product-mini-card">
-                <img src="https://images.unsplash.com/photo-1614594975525-e45852b8a0b5?w=600&q=80" alt="Signature Olive Tree 9ft">
-                <div class="product-mini-info">
-                    <h4>Signature Olive Tree 9ft</h4>
-                    <p>NFPA 701 Certified • UV Stable</p>
-                    <a href="product-detail.html?id=signature-olive-9ft" class="btn-small">View Details</a>
+    <section class="related-products section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Products for Hospitality</h2>
+                <p class="section-subtitle">Explore our most popular solutions for hotel and commercial spaces</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&h=800&fit=crop" alt="Olive Tree">
+                        <span class="product-badge">Signature</span>
+                    </div>
+                    <div class="product-info">
+                        <h4>Signature Olive Tree 9ft</h4>
+                        <p class="product-specs">NFPA 701 Certified • UV Stable</p>
+                        <a href="products.html" class="btn-text">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598880940371-c756e015fea1?w=600&h=800&fit=crop" alt="Fiddle Leaf Fig">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h4>Fiddle Leaf Fig Collection</h4>
+                        <p class="product-specs">Multiple Sizes • Fire Retardant</p>
+                        <a href="products.html" class="btn-text">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&h=800&fit=crop" alt="Green Wall">
+                        <span class="product-badge">Custom</span>
+                    </div>
+                    <div class="product-info">
+                        <h4>Vertical Garden Systems</h4>
+                        <p class="product-specs">Modular Design • Easy Install</p>
+                        <a href="products.html" class="btn-text">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&h=800&fit=crop" alt="Potted Plants">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h4>Designer Potted Collection</h4>
+                        <p class="product-specs">Ready to Display • Premium Pots</p>
+                        <a href="products.html" class="btn-text">View Details</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-mini-card">
-                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&q=80" alt="Ficus Tree 8ft">
-                <div class="product-mini-info">
-                    <h4>Ficus Tree 8ft</h4>
-                    <p>Fire Retardant • Natural Wood</p>
-                    <a href="product-detail.html?id=ficus-8ft" class="btn-small">View Details</a>
-                </div>
-            </div>
-
-            <div class="product-mini-card">
-                <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=600&q=80" alt="Bird of Paradise 7ft">
-                <div class="product-mini-info">
-                    <h4>Bird of Paradise 7ft</h4>
-                    <p>Luxury Grade • UV 5000h+</p>
-                    <a href="product-detail.html?id=bird-paradise-7ft" class="btn-small">View Details</a>
-                </div>
-            </div>
-
-            <div class="product-mini-card">
-                <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80" alt="Monstera Deliciosa 5ft">
-                <div class="product-mini-info">
-                    <h4>Monstera Deliciosa 5ft</h4>
-                    <p>Real Touch • Fire Safe</p>
-                    <a href="product-detail.html?id=monstera-5ft" class="btn-small">View Details</a>
-                </div>
-            </div>
-
-            <div class="product-mini-card">
-                <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600&q=80" alt="Dracaena Marginata 6ft">
-                <div class="product-mini-info">
-                    <h4>Dracaena Marginata 6ft</h4>
-                    <p>Commercial Grade • NFPA 701</p>
-                    <a href="product-detail.html?id=dracaena-6ft" class="btn-small">View Details</a>
-                </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="products.html" class="btn btn-primary btn-large">View All Products</a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Transform Your Space?</h2>
-        <p>Let's discuss how our architectural-grade artificial horticulture solutions can elevate your commercial environment while meeting your safety and maintenance requirements.</p>
-        <a href="contact.html" class="btn-primary" style="background-color: var(--champagne-gold); color: var(--forest-green);">Schedule Consultation</a>
+    <section class="cta-section section-padding">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="cta-title">Ready to Transform Your Space?</h2>
+                <p class="cta-subtitle">Connect with our solution experts to discuss your project requirements</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
+                    <a href="customization.html" class="btn btn-secondary btn-large">Explore Customization</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Inquiry Sidebar -->
-    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
-    <aside class="inquiry-sidebar" id="inquirySidebar">
-        <div class="inquiry-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
-        </div>
-        <div class="inquiry-items" id="inquiryItems">
-            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
-        </div>
-        <div class="inquiry-footer">
-            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
-        </div>
-    </aside>
-
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="products.html?category=trees">Artificial Trees</a></li>
-                    <li><a href="products.html?category=plants">Artificial Plants</a></li>
-                    <li><a href="products.html?category=green-walls">Green Walls</a></li>
-                    <li><a href="products.html?category=custom">Custom Solutions</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">LAYSUN</a>
+                    <p class="footer-tagline">Architectural-Grade Artificial Greenery Solutions</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="solutions.html">Commercial</a></li>
+                        <li><a href="solutions.html">Hospitality</a></li>
+                        <li><a href="solutions.html">Retail</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="solutions.html?type=hotel">Hotel & Hospitality</a></li>
-                    <li><a href="solutions.html?type=retail">Retail Spaces</a></li>
-                    <li><a href="solutions.html?type=commercial">Commercial Buildings</a></li>
-                    <li><a href="solutions.html?type=outdoor">Outdoor Applications</a></li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Laysun. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html#capabilities">Capabilities</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: info@laysun.com</li>
-                    <li>Tel: +86 xxx xxxx xxxx</li>
-                    <li>Manufacturing: Guangdong, China</li>
-                    <li>Global Distribution Network</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Laysun. All rights reserved. | <a href="privacy.html" style="color: inherit;">Privacy Policy</a> | <a href="terms.html" style="color: inherit;">Terms of Service</a></p>
         </div>
     </footer>
 
-    <script>
-        // Inquiry System
-        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+    <!-- Inquiry Sidebar -->
+    <div class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="inquiry-close" id="inquiryClose" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="inquiry-content" id="inquiryContent">
+            <div class="inquiry-empty">
+                <i class="fas fa-clipboard-list"></i>
+                <p>Your inquiry list is empty. Start exploring our collections.</p>
+                <a href="products.html" class="btn btn-secondary">Browse Products</a>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
 
-        function updateInquiryCount() {
-            const count = document.getElementById('inquiryCount');
-            if (count) {
-                count.textContent = inquiryList.length;
-                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
-            }
-        }
-
-        function toggleInquiry() {
-            const sidebar = document.getElementById('inquirySidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-            updateInquirySidebar();
-        }
-
-        function updateInquirySidebar() {
-            const container = document.getElementById('inquiryItems');
-            if (inquiryList.length === 0) {
-                container.innerHTML = '<p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>';
-                return;
-            }
-
-            container.innerHTML = inquiryList.map(item => `
-                <div class="inquiry-item">
-                    <div class="inquiry-item-details">
-                        <h4>${item.name}</h4>
-                        <p>Qty: ${item.quantity}</p>
-                    </div>
-                    <button class="remove-item" onclick="removeFromInquiry('${item.id}')">×</button>
-                </div>
-            `).join('');
-        }
-
-        function removeFromInquiry(id) {
-            inquiryList = inquiryList.filter(item => item.id !== id);
-            localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
-            updateInquiryCount();
-            updateInquirySidebar();
-        }
-
-        function submitInquiry() {
-            if (inquiryList.length === 0) {
-                alert('Please add products to your inquiry first.');
-                return;
-            }
-            window.location.href = 'contact.html?inquiry=true';
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            updateInquiryCount();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
