@@ -3,1429 +3,940 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Laysun - Architectural-Grade Artificial Greenery</title>
+    <title>Contact Laysun | Global Artificial Horticulture Solutions</title>
+    <meta name="description" content="Contact Laysun for tailored artificial horticulture solutions. Global offices in Los Angeles, Rotterdam, and Singapore. Request samples, schedule consultations, or start your bespoke project.">
+    <meta name="keywords" content="contact Laysun, artificial plant supplier, commercial greenery consultation, request samples, global offices">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'laysun-gold': '#C9A961',
+                        'laysun-gold-hover': '#B8944F',
+                        'laysun-green': '#1F3D2B',
+                        'laysun-green-hover': '#2B533B',
+                        'laysun-gray': '#5F6466',
+                        'laysun-dark': '#1A1A1A',
+                        'laysun-light': '#F9F9F9'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        :root {
-            --forest-green: #2D5A3D;
-            --forest-dark: #1E3D2A;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --pure-white: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --text-gray: #666666;
-            --border-light: #E5E5E5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 1.5rem 0;
-        }
-
-        .navbar.scrolled {
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--pure-white);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            color: var(--pure-white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .lang-switch {
-            position: relative;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--pure-white);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--champagne-gold);
-        }
-
-        .lang-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--pure-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s;
-            min-width: 150px;
-        }
-
-        .lang-switch:hover .lang-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .lang-option {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.3s;
-        }
-
-        .lang-option:hover {
-            background: var(--leaf-white);
-            color: var(--forest-green);
-        }
-
-        .inquiry-basket {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .basket-icon {
-            width: 24px;
-            height: 24px;
-            stroke: var(--pure-white);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .basket-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            min-height: 500px;
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 300px;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--pure-white);
-            padding: 0 2rem;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            font-weight: 500;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        /* Contact Cards */
-        .contact-card {
-            background: var(--pure-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-        }
-
-        .card-header {
-            background: var(--forest-green);
-            color: var(--pure-white);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(201,169,97,0.2) 0%, transparent 70%);
-        }
-
-        .card-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .card-header .subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .card-body {
-            padding: 2rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--leaf-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: var(--forest-green);
-        }
-
-        .info-content h4 {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-bottom: 0.25rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .info-content p, .info-content a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        .info-content a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        .badge-outline {
-            background: transparent;
-            border: 1px solid var(--champagne-gold);
-            color: var(--champagne-gold);
-        }
-
-        /* Map Container */
-        .map-container {
-            height: 250px;
-            background: var(--leaf-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%);
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        .map-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: grayscale(20%) contrast(1.1);
-        }
-
-        /* Form Section */
-        .form-section {
-            background: var(--pure-white);
-            padding: 4rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-
-        .form-section h3 {
-            font-size: 2rem;
-            color: var(--forest-green);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-section .subtitle {
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        label .optional {
-            color: var(--text-gray);
-            font-weight: 400;
-            font-size: 0.85rem;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            background: var(--pure-white);
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--forest-green);
-            box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-upload-label {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.875rem 1rem;
-            border: 2px dashed var(--border-light);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: var(--text-gray);
-        }
-
-        .file-upload:hover .file-upload-label {
-            border-color: var(--champagne-gold);
-            background: var(--leaf-white);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-            color: var(--pure-white);
-            border: none;
-            padding: 1rem 3rem;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Quick Connect */
-        .quick-connect {
-            background: var(--forest-green);
-            color: var(--pure-white);
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .quick-connect-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .quick-connect h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .quick-connect p {
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .whatsapp-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: #25D366;
-            color: var(--pure-white);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn.secondary {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .whatsapp-btn.secondary:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .whatsapp-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        .whatsapp-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .whatsapp-info span {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--forest-dark);
-            color: var(--pure-white);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--champagne-gold);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--pure-white);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--champagne-gold);
-            border-color: var(--champagne-gold);
-        }
-
-        /* Inquiry Basket Panel */
-        .basket-panel {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background: var(--pure-white);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 2000;
-            transition: right 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .basket-panel.active {
-            right: 0;
-        }
-
-        .basket-header {
-            background: var(--forest-green);
-            color: var(--pure-white);
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .basket-header h3 {
-            font-size: 1.2rem;
-        }
-
-        .close-basket {
-            background: none;
-            border: none;
-            color: var(--pure-white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .basket-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .empty-basket {
-            text-align: center;
-            color: var(--text-gray);
-            padding: 3rem 0;
-        }
-
-        .basket-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .basket-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            background: var(--leaf-white);
-        }
-
-        .basket-item-info h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .basket-item-info p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        .basket-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-light);
-            background: var(--leaf-white);
-        }
-
-        .basket-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--forest-green);
-            color: var(--pure-white);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 0.75rem;
-            transition: background 0.3s;
-        }
-
-        .basket-btn:hover {
-            background: var(--forest-dark);
-        }
-
-        .basket-btn.gold {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-        }
-
-        .basket-btn.gold:hover {
-            opacity: 0.9;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .quick-connect-inner {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-section {
-                padding: 2rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .basket-panel {
-                width: 100%;
-                right: -100%;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.8s ease forwards;
-        }
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .gradient-overlay { background: linear-gradient(135deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .btn-primary { background-color: #C9A961; color: #1F3D2B; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #B8944F; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4); }
+        .btn-secondary { background-color: #1F3D2B; color: white; transition: all 0.3s ease; }
+        .btn-secondary:hover { background-color: #2B533B; transform: translateY(-2px); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #C9A961; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); }
+        .office-card { background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%); }
+        .input-field:focus { border-color: #1F3D2B; box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1); }
+        .input-field { transition: all 0.3s ease; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-answer.active { max-height: 500px; padding-top: 1rem; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-icon.active { transform: rotate(180deg); }
+        .map-container { background: linear-gradient(135deg, #1F3D2B 0%, #2B533B 100%); }
+        .social-link { transition: all 0.3s ease; }
+        .social-link:hover { background-color: #C9A961; color: #1F3D2B; transform: translateY(-3px); }
+        .contact-method { transition: all 0.3s ease; }
+        .contact-method:hover { background-color: #1F3D2B; color: white; }
+        .contact-method:hover .method-icon { color: #C9A961; }
+        .submit-btn { position: relative; overflow: hidden; }
+        .submit-btn::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
+        .submit-btn:hover::after { width: 300px; height: 300px; }
     </style>
 </head>
-<body>
+<body class="bg-white text-laysun-dark overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">LAYSUN</a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="customization.html">Design & Customization</a></li>
-                <li><a href="capabilities.html">Capabilities</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <div class="lang-switch">
-                    <button class="lang-btn">
-                        <span>EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Home</a>
+                    <a href="solutions.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
+                    <a href="products.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
+                    <a href="customization.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Customization</a>
+                    <a href="capabilities.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Capabilities</a>
+                    <a href="about.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
                     </button>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
-                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
-                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
-                    </div>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">Contact Us</a>
                 </div>
-
-                <div class="inquiry-basket" onclick="toggleBasket()">
-                    <svg class="basket-icon" viewBox="0 0 24 24">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                    </svg>
-                    <span class="basket-count" id="basketCount">0</span>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Home</a>
+                <a href="solutions.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
+                <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
+                <a href="customization.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
+                <a href="capabilities.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Capabilities</a>
+                <a href="about.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>GET IN TOUCH</h1>
-            <p>Ready to elevate your space with Architectural-Grade greenery? Our solution experts are here to help.</p>
+    <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop" alt="Modern Office" class="w-full h-full object-cover">
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content opacity-0 translate-y-8">
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight text-shadow">
+                    Let's Start Your <span class="text-laysun-gold">Project</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
+                    Connect with our global team for tailored artificial horticulture solutions. From consultation to installation, we're here to help.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="section-header animate-in">
-            <h2>Global Presence, Local Expertise</h2>
-            <p>Connect with our regional teams for specialized support tailored to your market and project requirements.</p>
-        </div>
-
-        <div class="contact-grid">
-            <!-- USA Office -->
-            <div class="contact-card animate-in">
-                <div class="card-header">
-                    <h3>🇺🇸 USA Office</h3>
-                    <p class="subtitle">For North America Wholesale Inquiries</p>
-                </div>
-                <div class="card-body">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <a href="tel:+12138298485">+1 213-829-8485</a>
-                            <span class="badge">PST / UTC-8 | 9:00-18:00</span>
-                        </div>
+    <!-- Quick Contact Methods -->
+    <section class="py-16 bg-laysun-dark border-y border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-6">
+                <a href="tel:+15551234567" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
+                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
                     </div>
+                    <h3 class="font-montserrat font-bold text-white mb-2">Call Us</h3>
+                    <p class="text-gray-400 text-sm">+1 (555) 123-4567</p>
+                    <p class="text-laysun-gold text-xs mt-2">Mon-Fri 9AM-6PM PST</p>
+                </a>
 
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <a href="mailto:info@laysun.co">info@laysun.co</a>
-                            <span class="badge badge-outline">Reply within 12 working hours</span>
-                        </div>
+                <a href="mailto:info@laysun.com" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
+                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
                     </div>
+                    <h3 class="font-montserrat font-bold text-white mb-2">Email Us</h3>
+                    <p class="text-gray-400 text-sm">info@laysun.com</p>
+                    <p class="text-laysun-gold text-xs mt-2">24hr Response Time</p>
+                </a>
 
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>WhatsApp</h4>
-                            <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
-                            <span class="badge">24H Quick Responses</span>
-                        </div>
+                <a href="#offices" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
+                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
                     </div>
-                </div>
-                <div class="map-container">
-                    <iframe 
-                        class="map-iframe"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220363292!2d-118.2427666847865!3d34.05223398060604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c648fa1d4803%3A0xdec27bf11f9fd336!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2scn!4v1645000000000!5m2!1sen!2scn"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
+                    <h3 class="font-montserrat font-bold text-white mb-2">Visit Us</h3>
+                    <p class="text-gray-400 text-sm">3 Global Offices</p>
+                    <p class="text-laysun-gold text-xs mt-2">LA • Rotterdam • Singapore</p>
+                </a>
 
-            <!-- China Factory -->
-            <div class="contact-card animate-in">
-                <div class="card-header">
-                    <h3>🇨🇳 China Factory</h3>
-                    <p class="subtitle">For Custom Project & Factory Direct Communication</p>
-                </div>
-                <div class="card-body">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p>No. 25 Qiangfeng Road, Qishi Town<br>Dongguan City, Guangdong Province, China</p>
-                            <span class="badge">1.5h from Shenzhen Bao'an Airport</span>
-                            <span class="badge" style="margin-top: 0.25rem;">1.5h from Guangzhou Baiyun Airport</span>
-                        </div>
+                <button onclick="openLiveChat()" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group cursor-pointer">
+                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <a href="tel:+8613802505260">+86 138-0250-5260</a>
-                            <span class="badge">CST / UTC+8 | 9:00-18:00</span>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <a href="mailto:sales@laysun.co">sales@laysun.co</a>
-                            <span class="badge badge-outline">Reply within 12 working hours</span>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                            </svg>
-                        </div>
-                        <div class="info-content">
-                            <h4>WhatsApp</h4>
-                            <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
-                            <span class="badge">24H Quick Responses</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="map-container">
-                    <iframe 
-                        class="map-iframe"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935220.9641717483!2d113.33893205!3d23.08247315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34025597c495289b%3A0x84682c74a35a2d8!2sDongguan%2C%20Guangdong%20Province%2C%20China!5e0!3m2!1sen!2sus!4v1645000000000!5m2!1sen!2sus"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
+                    <h3 class="font-montserrat font-bold text-white mb-2">Live Chat</h3>
+                    <p class="text-gray-400 text-sm">Chat with Experts</p>
+                    <p class="text-laysun-gold text-xs mt-2">Typically replies in 5 min</p>
+                </button>
             </div>
         </div>
+    </section>
 
-        <!-- Project Inquiry Form -->
-        <div class="form-section animate-in">
-            <h3>Project Inquiry Center</h3>
-            <p class="subtitle">Fill out the form below and our team will respond within 12 working hours.</p>
-            
-            <form id="projectForm" onsubmit="handleSubmit(event)">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
+    <!-- Main Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="scroll-reveal">
+                    <div class="mb-8">
+                        <h2 class="font-montserrat font-bold text-3xl text-laysun-green mb-4">Send Us a Message</h2>
+                        <p class="text-laysun-gray">Tell us about your project and we'll get back to you within 24 hours.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company Name *</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Country/Region *</label>
-                        <input type="text" id="country" name="country" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="projectType">Project Type <span class="optional">(Optional)</span></label>
-                        <select id="projectType" name="projectType">
-                            <option value="">Select Project Type</option>
-                            <option value="retail">Big-Box Retail</option>
-                            <option value="commercial">Commercial Real Estate</option>
-                            <option value="outdoor">Outdoor Engineering</option>
-                            <option value="hospitality">Hospitality</option>
-                            <option value="custom">Custom Design</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="website">Company Website <span class="optional">(Optional)</span></label>
-                        <input type="url" id="website" name="website" placeholder="https://">
-                    </div>
-                    <div class="form-group">
-                        <label for="startDate">Estimated Project Start Date <span class="optional">(Optional)</span></label>
-                        <input type="date" id="startDate" name="startDate">
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="message">Project Details *</label>
-                        <textarea id="message" name="message" placeholder="Please describe your project requirements, including product types, quantities, specifications, and any specific compliance needs..." required></textarea>
-                    </div>
-                    <div class="form-group full-width">
-                        <label>Attach Files <span class="optional">(Optional)</span></label>
-                        <div class="file-upload">
-                            <input type="file" id="attachments" name="attachments" multiple accept=".pdf,.jpg,.png,.dwg,.skp">
-                            <div class="file-upload-label">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3.2-3.5-5.6-6.8-5.6-3.7 0-6.7 3-6.9 6.7-.1 1.5.4 2.9 1.3 4.1"></path>
-                                    <path d="M12 12v9"></path>
-                                    <path d="M16 16l-4-4-4 4"></path>
-                                </svg>
-                                <span>Click to upload design files, mood boards, or technical specifications (PDF, JPG, PNG, DWG, SKP)</span>
+
+                    <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="Doe">
                             </div>
                         </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Email *</label>
+                                <input type="email" name="email" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="john@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Phone</label>
+                                <input type="tel" name="phone" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-laysun-green mb-2">Company Name *</label>
+                            <input type="text" name="company" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="Your Company Ltd.">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Project Type</label>
+                                <select name="projectType" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white">
+                                    <option value="">Select Project Type</option>
+                                    <option value="hotel">Hotel & Hospitality</option>
+                                    <option value="retail">Retail Space</option>
+                                    <option value="commercial">Commercial Office</option>
+                                    <option value="outdoor">Outdoor Installation</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Budget Range</label>
+                                <select name="budget" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white">
+                                    <option value="">Select Budget</option>
+                                    <option value="10k-50k">$10,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="100k-500k">$100,000 - $500,000</option>
+                                    <option value="500k+">$500,000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-laysun-green mb-2">Message *</label>
+                            <textarea name="message" rows="5" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green resize-none" placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 w-4 h-4 text-laysun-gold border-gray-300 rounded focus:ring-laysun-gold">
+                            <label for="newsletter" class="text-sm text-laysun-gray">Subscribe to our newsletter for industry insights and product updates.</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn w-full btn-primary py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider flex items-center justify-center gap-2">
+                            <span id="btnText">Send Message</span>
+                            <i data-lucide="send" class="w-5 h-5" id="btnIcon"></i>
+                            <div id="btnLoader" class="hidden w-5 h-5 border-2 border-laysun-green border-t-transparent rounded-full animate-spin"></div>
+                        </button>
+
+                        <p class="text-xs text-laysun-gray text-center">By submitting this form, you agree to our Privacy Policy and Terms of Service.</p>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden bg-laysun-green rounded-xl p-8 text-center text-white">
+                        <div class="w-16 h-16 bg-laysun-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="check" class="w-8 h-8 text-laysun-green"></i>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-xl mb-2">Message Sent Successfully!</h3>
+                        <p class="text-gray-300 mb-6">Thank you for contacting us. Our team will review your inquiry and respond within 24 hours.</p>
+                        <button onclick="resetForm()" class="btn-primary px-6 py-2 rounded-lg font-semibold text-sm">Send Another Message</button>
                     </div>
                 </div>
-                <button type="submit" class="submit-btn">SUBMIT INQUIRY</button>
-            </form>
+
+                <!-- Contact Info & Map -->
+                <div class="scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-8 border border-laysun-green/10 h-full">
+                        <h3 class="font-montserrat font-bold text-2xl text-laysun-green mb-6">Why Contact Laysun?</h3>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="package" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Request Free Samples</h4>
+                                    <p class="text-sm text-laysun-gray">Evaluate material quality and botanical accuracy before committing.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="ruler" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Custom Design Consultation</h4>
+                                    <p class="text-sm text-laysun-gray">Work with our design team to create bespoke solutions for your space.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="calculator" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Project Quotation</h4>
+                                    <p class="text-sm text-laysun-gray">Receive detailed pricing including shipping and installation support.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="video" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Virtual Factory Tour</h4>
+                                    <p class="text-sm text-laysun-gray">See our manufacturing capabilities and quality processes firsthand.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container rounded-xl p-6 text-white relative overflow-hidden">
+                            <div class="relative z-10">
+                                <h4 class="font-montserrat font-bold text-lg mb-4">Global Response Times</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                        <span class="text-sm">North America</span>
+                                        <span class="font-semibold text-laysun-gold">2-4 hours</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                        <span class="text-sm">Europe</span>
+                                        <span class="font-semibold text-laysun-gold">4-6 hours</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                        <span class="text-sm">Asia Pacific</span>
+                                        <span class="font-semibold text-laysun-gold">6-8 hours</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm">Middle East</span>
+                                        <span class="font-semibold text-laysun-gold">4-6 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-laysun-gold/10 rounded-full -mr-16 -mt-16"></div>
+                            <div class="absolute bottom-0 left-0 w-24 h-24 bg-laysun-gold/10 rounded-full -ml-12 -mb-12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Quick Connect Section -->
-    <section class="quick-connect">
-        <div class="quick-connect-inner">
-            <div>
-                <h3>Instant Connect</h3>
-                <p>Need immediate assistance? Connect with our regional teams directly via WhatsApp Business for 24-hour quick responses.</p>
-                <div style="display: flex; gap: 2rem; margin-top: 2rem;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--champagne-gold);">12H</div>
-                        <div style="font-size: 0.9rem; opacity: 0.8;">Response Guarantee</div>
+    <!-- Global Offices -->
+    <section id="offices" class="py-20 bg-laysun-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Our Global Offices</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">Strategically located to serve clients across all time zones</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Los Angeles -->
+                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                    <div class="h-48 bg-laysun-green relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&h=400&fit=crop" alt="Los Angeles Office" class="w-full h-full object-cover opacity-60">
+                        <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Headquarters</div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="font-montserrat font-bold text-xl text-white">Los Angeles</h3>
+                            <p class="text-gray-300 text-sm">North America Hub</p>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--champagne-gold);">24/7</div>
-                        <div style="font-size: 0.9rem; opacity: 0.8;">WhatsApp Support</div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
+                                <span class="text-laysun-gray">1234 Commerce Blvd, Suite 500<br>Los Angeles, CA 90017, USA</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">usa@laysun.com</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM PST</span>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            View on Map
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rotterdam -->
+                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                    <div class="h-48 bg-laysun-green relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a2?w=600&h=400&fit=crop" alt="Rotterdam Office" class="w-full h-full object-cover opacity-60">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="font-montserrat font-bold text-xl text-white">Rotterdam</h3>
+                            <p class="text-gray-300 text-sm">Europe Hub</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
+                                <span class="text-laysun-gray">WTC Rotterdam, Beursplein 37<br>3011 AA Rotterdam, Netherlands</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">+31 10 123 4567</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">eu@laysun.com</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM CET</span>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            View on Map
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Singapore -->
+                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                    <div class="h-48 bg-laysun-green relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=600&h=400&fit=crop" alt="Singapore Office" class="w-full h-full object-cover opacity-60">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="font-montserrat font-bold text-xl text-white">Singapore</h3>
+                            <p class="text-gray-300 text-sm">Asia Pacific Hub</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
+                                <span class="text-laysun-gray">1 Raffles Place, #44-01<br>Singapore 048616</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">+65 6123 4567</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">apac@laysun.com</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
+                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM SGT</span>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            View on Map
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="whatsapp-btns">
-                <a href="https://wa.me/12138298485" class="whatsapp-btn" target="_blank">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                    <div class="whatsapp-info">
-                        <h4>WhatsApp Business (USA)</h4>
-                        <span>24H Quick Responses | PST Timezone</span>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl text-laysun-green mb-4">Frequently Asked Questions</h2>
+                <p class="text-laysun-gray">Quick answers to common questions. Can't find what you're looking for? Reach out to our team.</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">How quickly can you respond to inquiries?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">We aim to respond to all inquiries within 24 hours during business days. For urgent projects, our live chat is available for immediate assistance, typically responding within 5 minutes during business hours.</p>
                     </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">Do you offer free samples?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">Yes! We provide complimentary sample kits for qualified commercial projects. Samples include material swatches, leaf samples, and small product specimens to evaluate quality and botanical accuracy. Contact us with your project details to request a sample kit.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">What information do you need for a project quotation?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">To provide an accurate quote, we typically need: project type (hotel, retail, etc.), approximate quantities, product specifications (height, species, fire/UV requirements), delivery location, and timeline. Photos or drawings of your space are also helpful for custom recommendations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">Do you provide installation services?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">We offer installation support through our network of certified partners in major markets. For large-scale projects, we can provide on-site supervision and technical guidance. DIY installation guides are also available for straightforward projects.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">What is your typical lead time?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">Standard products: 2-4 weeks. Custom projects: 4-8 weeks depending on complexity. Rush orders available for urgent timelines. We maintain stock for popular items in our global warehouses for faster fulfillment.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-montserrat font-semibold text-laysun-green">Can I schedule a virtual factory tour?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4">
+                        <p class="text-laysun-gray text-sm leading-relaxed">Absolutely! We offer live virtual tours of our manufacturing facilities. See our production processes, quality control labs, and material testing procedures in real-time. Tours are typically 30-45 minutes and can be scheduled at your convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Connect -->
+    <section class="py-16 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.5) 1px, transparent 0); background-size: 30px 30px;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="font-montserrat font-bold text-2xl text-white mb-8">Connect With Us</h2>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
                 </a>
-                <a href="https://wa.me/8613802505260" class="whatsapp-btn secondary" target="_blank">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                    <div class="whatsapp-info">
-                        <h4>WhatsApp Business (China)</h4>
-                        <span>24H Quick Responses | CST Timezone</span>
-                    </div>
+                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="youtube" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="twitter" class="w-6 h-6"></i>
                 </a>
             </div>
+            <p class="text-gray-400 mt-6 text-sm">Follow us for project showcases, design inspiration, and industry insights</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Design & Customization</a></li>
-                </ul>
+    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。结合创新技术与精湛设计，打造既美观又环保的园艺系统。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="products.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
+                        <li><a href="capabilities.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Capabilities</a></li>
+                        <li><a href="customization.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
+                            <span>Global HQ: Los Angeles, CA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>info@laysun.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Core Services</h4>
-                <ul>
-                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
-                    <li><a href="solutions.html">Commercial Interiors</a></li>
-                    <li><a href="solutions.html">Outdoor Engineering</a></li>
-                    <li><a href="customization.html">Bespoke Design</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Product Catalog</a></li>
-                    <li><a href="#">Technical Specifications</a></li>
-                    <li><a href="#">Compliance Certificates</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Inquiry Basket Panel -->
-    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
-    <div class="basket-panel" id="basketPanel">
-        <div class="basket-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-basket" onclick="toggleBasket()">×</button>
-        </div>
-        <div class="basket-body" id="basketBody">
-            <div class="empty-basket">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <p>Your inquiry list is empty.</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+    <!-- Live Chat Widget -->
+    <div id="liveChat" class="fixed bottom-6 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-80 border border-laysun-green/10 overflow-hidden">
+            <div class="bg-laysun-green p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-laysun-gold rounded-full flex items-center justify-center">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-laysun-green"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-montserrat font-bold text-white text-sm">Laysun Support</h4>
+                        <p class="text-xs text-gray-300 flex items-center gap-1">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            Online
+                        </p>
+                    </div>
+                </div>
+                <button onclick="closeLiveChat()" class="text-white hover:text-laysun-gold">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
             </div>
-        </div>
-        <div class="basket-footer">
-            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
-            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
+            <div class="h-80 p-4 overflow-y-auto bg-gray-50" id="chatMessages">
+                <div class="flex gap-3 mb-4">
+                    <div class="w-8 h-8 bg-laysun-gold rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-laysun-green font-bold text-xs">L</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-100 max-w-[80%]">
+                        <p class="text-sm text-laysun-gray">Hello! Welcome to Laysun. How can we help you with your project today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 bg-white border-t border-gray-100">
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-laysun-green" onkeypress="handleChatKeypress(event)">
+                    <button onclick="sendChatMessage()" class="bg-laysun-gold text-laysun-green p-2 rounded-lg hover:bg-laysun-gold-hover transition-colors">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Live Chat Button -->
+    <button onclick="openLiveChat()" id="chatButton" class="fixed bottom-6 right-6 z-40 bg-laysun-gold text-laysun-green w-14 h-14 rounded-full shadow-lg hover:bg-laysun-gold-hover transition-all hover:scale-110 flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Inquiry Cart Sidebar -->
+    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
+        <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
+                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
+                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
+                <div class="text-center text-gray-500 py-12">
+                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                    <p>Your inquiry list is empty.</p>
+                    <p class="text-sm mt-2">Start exploring our collections.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
+                    Submit Inquiry
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
+
+    <!-- JavaScript -->
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.to(".hero-content", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.3
+        });
+
+        // Scroll Reveal
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        scrollElements.forEach((element, index) => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: index * 0.05
+            });
+        });
+
+        // Navbar Effect
+        window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('shadow-lg');
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('shadow-lg');
             }
         });
 
-        // Language switch
-        function changeLang(lang) {
-            console.log('Switching to language:', lang);
-            // Implementation for language switching
-            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
 
-        // Inquiry Basket Logic
-        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
-        
-        function updateBasketCount() {
-            document.getElementById('basketCount').textContent = basketItems.length;
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            // Close all others
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+                }
+            });
+            
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
         }
 
-        function toggleBasket() {
-            const panel = document.getElementById('basketPanel');
-            const overlay = document.getElementById('overlay');
-            panel.classList.toggle('active');
-            overlay.classList.toggle('active');
-            renderBasket();
+        // Form Handling
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const btnLoader = document.getElementById('btnLoader');
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('successMessage');
+            
+            // Show loading state
+            btnText.textContent = 'Sending...';
+            btnIcon.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+            
+            // Simulate API call
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+                lucide.createIcons();
+                
+                // Reset button
+                btnText.textContent = 'Send Message';
+                btnIcon.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
+            }, 2000);
         }
 
-        function renderBasket() {
-            const body = document.getElementById('basketBody');
-            if (basketItems.length === 0) {
-                body.innerHTML = `
-                    <div class="empty-basket">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <p>Your inquiry list is empty.</p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+            document.getElementById('contactForm').classList.remove('hidden');
+            document.getElementById('successMessage').classList.add('hidden');
+        }
+
+        // Live Chat
+        function openLiveChat() {
+            document.getElementById('liveChat').classList.remove('hidden');
+            document.getElementById('chatButton').classList.add('hidden');
+        }
+
+        function closeLiveChat() {
+            document.getElementById('liveChat').classList.add('hidden');
+            document.getElementById('chatButton').classList.remove('hidden');
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+            
+            const container = document.getElementById('chatMessages');
+            
+            // User message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'flex gap-3 mb-4 justify-end';
+            userDiv.innerHTML = `
+                <div class="bg-laysun-green text-white rounded-lg p-3 max-w-[80%]">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+            container.appendChild(userDiv);
+            
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+            
+            // Auto-reply simulation
+            setTimeout(() => {
+                const replyDiv = document.createElement('div');
+                replyDiv.className = 'flex gap-3 mb-4';
+                replyDiv.innerHTML = `
+                    <div class="w-8 h-8 bg-laysun-gold rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-laysun-green font-bold text-xs">L</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-100 max-w-[80%]">
+                        <p class="text-sm text-laysun-gray">Thank you for your message! One of our specialists will be with you shortly. In the meantime, feel free to browse our product catalog or schedule a consultation.</p>
                     </div>
                 `;
+                container.appendChild(replyDiv);
+                container.scrollTop = container.scrollHeight;
+            }, 1000);
+        }
+
+        function handleChatKeypress(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        // Inquiry Cart Functions
+        let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
+
+        function toggleInquiryCart() {
+            const cart = document.getElementById('inquiry-cart');
+            const overlay = document.getElementById('cart-overlay');
+            if (cart.classList.contains('translate-x-full')) {
+                cart.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             } else {
-                body.innerHTML = basketItems.map((item, index) => `
-                    <div class="basket-item">
-                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
-                        <div class="basket-item-info">
-                            <h4>${item.name}</h4>
-                            <p>${item.specs || ''}</p>
-                            <p style="color: var(--champagne-gold); font-weight: 600;">${item.id}</p>
+                cart.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function updateInquiryCart() {
+            const container = document.getElementById('inquiry-items');
+            const badge = document.getElementById('inquiry-badge');
+            const submitBtn = document.getElementById('submit-inquiry-btn');
+            
+            if (inquiryList.length > 0) {
+                badge.textContent = inquiryList.length;
+                badge.classList.remove('hidden');
+                submitBtn.disabled = false;
+                container.innerHTML = inquiryList.map(item => `
+                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="w-20 h-20 bg-laysun-light rounded-lg flex items-center justify-center">
+                            <i data-lucide="package" class="w-8 h-8 text-laysun-gold"></i>
                         </div>
-                        <button onclick="removeItem(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">×</button>
+                        <div class="flex-1">
+                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
+                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
+                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
+                                <i data-lucide="trash-2" class="w-3 h-3"></i>
+                                Remove
+                            </button>
+                        </div>
                     </div>
                 `).join('');
+            } else {
+                badge.classList.add('hidden');
+                submitBtn.disabled = true;
+                container.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                        <p>Your inquiry list is empty.</p>
+                        <p class="text-sm mt-2">Start exploring our collections.</p>
+                    </div>
+                `;
             }
+            localStorage.setItem('laysunInquiry', JSON.stringify(inquiryList));
+            lucide.createIcons();
         }
 
-        function removeItem(index) {
-            basketItems.splice(index, 1);
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            renderBasket();
-        }
-
-        function downloadSpecs() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
-                return;
-            }
-            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+        function removeFromInquiry(productId) {
+            inquiryList = inquiryList.filter(item => item.id !== productId);
+            updateInquiryCart();
         }
 
         function submitInquiry() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
-                return;
-            }
-            toggleBasket();
-            document.getElementById('message').focus();
-            document.getElementById('message').value = 'I am interested in the following products:\n' + 
-                basketItems.map(item => `- ${item.name} (${item.id})`).join('\n') + 
-                '\n\nPlease provide quotation and lead time information.';
+            if (inquiryList.length === 0) return;
+            window.location.href = 'customization.html?inquiry=true';
         }
-
-        // Form submission
-        function handleSubmit(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData);
-            
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('Inquiry Sent Successfully!\n\nOur experts will contact you within 12 working hours.\n\nReference ID: LAY-' + Date.now().toString().slice(-6));
-            
-            // Reset form
-            e.target.reset();
-        }
-
-        // File upload display
-        document.getElementById('attachments').addEventListener('change', function(e) {
-            const files = e.target.files;
-            if (files.length > 0) {
-                const label = document.querySelector('.file-upload-label span');
-                label.textContent = files.length + ' file(s) selected: ' + Array.from(files).map(f => f.name).join(', ');
-            }
-        });
 
         // Initialize
-        updateBasketCount();
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
+        updateInquiryCart();
     </script>
 </body>
 </html>
