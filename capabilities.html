@@ -7,12 +7,10 @@
     <meta name="description" content="Discover Laysun's 20+ years of manufacturing excellence. 5000h+ UV stability, NFPA 701 fire retardancy, global supply chain, and precision engineering for commercial artificial horticulture.">
     <meta name="keywords" content="artificial plant manufacturing, fire retardant artificial plants, UV resistant plants, commercial botanical engineering, Laysun capabilities">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,11 +34,8 @@
         }
     </script>
     
-    <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -59,16 +54,15 @@
         .nav-link:hover::after { width: 100%; }
         .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
         .scroll-reveal { opacity: 0; transform: translateY(30px); }
-        .capability-card { background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%); }
         .process-step::before {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 2rem;
             right: -50%;
             width: 100%;
             height: 2px;
             background: linear-gradient(90deg, #C9A961 0%, transparent 100%);
-            transform: translateY(-50%);
+            transform: translateX(-50%);
             z-index: 0;
         }
         .process-step:last-child::before { display: none; }
@@ -138,6 +132,7 @@
                 <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
                 <a href="customization.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
                 <a href="capabilities.html" class="block px-3 py-2 text-laysun-gold font-semibold">Capabilities</a>
+                <a href="about.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">About</a>
                 <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
             </div>
         </div>
@@ -200,7 +195,6 @@
             </div>
 
             <div class="grid md:grid-cols-4 gap-8 relative">
-                <!-- Step 1 -->
                 <div class="process-step relative scroll-reveal">
                     <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
                         <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">01</div>
@@ -221,7 +215,6 @@
                     </div>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="process-step relative scroll-reveal">
                     <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
                         <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">02</div>
@@ -242,7 +235,6 @@
                     </div>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="process-step relative scroll-reveal">
                     <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
                         <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">03</div>
@@ -263,7 +255,6 @@
                     </div>
                 </div>
 
-                <!-- Step 4 -->
                 <div class="process-step relative scroll-reveal">
                     <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
                         <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">04</div>
@@ -298,7 +289,6 @@
                     </p>
 
                     <div class="space-y-6">
-                        <!-- UV Resistance -->
                         <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -317,7 +307,6 @@
                             </div>
                         </div>
 
-                        <!-- Fire Retardancy -->
                         <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -336,7 +325,6 @@
                             </div>
                         </div>
 
-                        <!-- Durability -->
                         <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -373,7 +361,6 @@
                             </div>
                         </div>
                         
-                        <!-- Floating Stats Cards -->
                         <div class="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-laysun-gold/20 hidden md:block">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center">
@@ -413,7 +400,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- NFPA 701 -->
                 <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="flame" class="w-8 h-8 text-laysun-gold"></i>
@@ -426,7 +412,6 @@
                     </div>
                 </div>
 
-                <!-- ASTM G154 -->
                 <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="sun" class="w-8 h-8 text-laysun-gold"></i>
@@ -439,7 +424,6 @@
                     </div>
                 </div>
 
-                <!-- REACH -->
                 <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="leaf" class="w-8 h-8 text-laysun-gold"></i>
@@ -452,7 +436,6 @@
                     </div>
                 </div>
 
-                <!-- ISO 9001 -->
                 <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="award" class="w-8 h-8 text-laysun-gold"></i>
@@ -494,8 +477,6 @@
                         <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-laysun-light border border-laysun-green/10">
                             <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&h=600&fit=crop" alt="Global Logistics Network" class="w-full h-full object-cover">
                         </div>
-                        
-                        <!-- Network Nodes -->
                         <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-laysun-gold rounded-full animate-pulse shadow-lg shadow-laysun-gold/50"></div>
                         <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-laysun-gold rounded-full animate-pulse delay-300 shadow-lg shadow-laysun-gold/50"></div>
                         <div class="absolute bottom-1/3 left-1/2 w-4 h-4 bg-laysun-gold rounded-full animate-pulse delay-700 shadow-lg shadow-laysun-gold/50"></div>
@@ -577,7 +558,6 @@
         <div class="absolute inset-0 opacity-5">
             <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.5) 1px, transparent 0); background-size: 30px 30px;"></div>
         </div>
-        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 scroll-reveal">
                 <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">R&D Innovation Center</h2>
@@ -709,7 +689,7 @@
                         <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
-                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。结合创新技术与精湛设计，打造既美观又环保的园艺系统。
+                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design to create beautiful and eco-friendly garden systems.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
@@ -787,12 +767,10 @@
     </div>
     <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
 
-    <!-- JavaScript -->
     <script>
         lucide.createIcons();
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Animation
         gsap.to(".hero-content", {
             opacity: 1,
             y: 0,
@@ -801,7 +779,6 @@
             delay: 0.3
         });
 
-        // Counter Animation
         const counters = document.querySelectorAll('.stat-counter');
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-target'));
@@ -825,7 +802,6 @@
             });
         });
 
-        // Scroll Reveal
         const scrollElements = document.querySelectorAll('.scroll-reveal');
         scrollElements.forEach((element, index) => {
             gsap.to(element, {
@@ -842,7 +818,6 @@
             });
         });
 
-        // Navbar Effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.pageYOffset > 100) {
@@ -857,7 +832,6 @@
             menu.classList.toggle('hidden');
         }
 
-        // Inquiry Cart Functions
         let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
 
         function toggleInquiryCart() {
@@ -923,19 +897,7 @@
             window.location.href = 'customization.html?inquiry=true';
         }
 
-        // Initialize
         updateInquiryCart();
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
     </script>
 </body>
 </html>
