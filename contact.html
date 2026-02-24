@@ -7,12 +7,10 @@
     <meta name="description" content="Contact Laysun for tailored artificial horticulture solutions. Global offices in Los Angeles, Rotterdam, and Singapore. Request samples, schedule consultations, or start your bespoke project.">
     <meta name="keywords" content="contact Laysun, artificial plant supplier, commercial greenery consultation, request samples, global offices">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,11 +34,8 @@
         }
     </script>
     
-    <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
@@ -59,7 +54,6 @@
         .nav-link:hover::after { width: 100%; }
         .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
         .scroll-reveal { opacity: 0; transform: translateY(30px); }
-        .office-card { background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%); }
         .input-field:focus { border-color: #1F3D2B; box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1); }
         .input-field { transition: all 0.3s ease; }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
@@ -370,7 +364,7 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Los Angeles -->
-                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
                     <div class="h-48 bg-laysun-green relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&h=400&fit=crop" alt="Los Angeles Office" class="w-full h-full object-cover opacity-60">
                         <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Headquarters</div>
@@ -406,7 +400,7 @@
                 </div>
 
                 <!-- Rotterdam -->
-                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
                     <div class="h-48 bg-laysun-green relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a2?w=600&h=400&fit=crop" alt="Rotterdam Office" class="w-full h-full object-cover opacity-60">
                         <div class="absolute bottom-4 left-4 right-4">
@@ -441,7 +435,7 @@
                 </div>
 
                 <!-- Singapore -->
-                <div class="office-card rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
+                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
                     <div class="h-48 bg-laysun-green relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=600&h=400&fit=crop" alt="Singapore Office" class="w-full h-full object-cover opacity-60">
                         <div class="absolute bottom-4 left-4 right-4">
@@ -488,7 +482,6 @@
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ 1 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">How quickly can you respond to inquiries?</span>
@@ -499,7 +492,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">Do you offer free samples?</span>
@@ -510,7 +502,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">What information do you need for a project quotation?</span>
@@ -521,7 +512,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">Do you provide installation services?</span>
@@ -532,7 +522,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 5 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">What is your typical lead time?</span>
@@ -543,7 +532,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 6 -->
                 <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
                     <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
                         <span class="font-montserrat font-semibold text-laysun-green">Can I schedule a virtual factory tour?</span>
@@ -597,7 +585,7 @@
                         <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
-                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。结合创新技术与精湛设计，打造既美观又环保的园艺系统。
+                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design to create beautiful and eco-friendly garden systems.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
@@ -721,12 +709,10 @@
     </div>
     <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
 
-    <!-- JavaScript -->
     <script>
         lucide.createIcons();
         gsap.registerPlugin(ScrollTrigger);
 
-        // Hero Animation
         gsap.to(".hero-content", {
             opacity: 1,
             y: 0,
@@ -735,7 +721,6 @@
             delay: 0.3
         });
 
-        // Scroll Reveal
         const scrollElements = document.querySelectorAll('.scroll-reveal');
         scrollElements.forEach((element, index) => {
             gsap.to(element, {
@@ -752,7 +737,6 @@
             });
         });
 
-        // Navbar Effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.pageYOffset > 100) {
@@ -767,12 +751,10 @@
             menu.classList.toggle('hidden');
         }
 
-        // FAQ Toggle
         function toggleFaq(button) {
             const answer = button.nextElementSibling;
             const icon = button.querySelector('.faq-icon');
             
-            // Close all others
             document.querySelectorAll('.faq-answer').forEach(item => {
                 if (item !== answer) {
                     item.classList.remove('active');
@@ -784,7 +766,6 @@
             icon.classList.toggle('active');
         }
 
-        // Form Handling
         function handleSubmit(e) {
             e.preventDefault();
             const btnText = document.getElementById('btnText');
@@ -793,18 +774,15 @@
             const form = document.getElementById('contactForm');
             const successMsg = document.getElementById('successMessage');
             
-            // Show loading state
             btnText.textContent = 'Sending...';
             btnIcon.classList.add('hidden');
             btnLoader.classList.remove('hidden');
             
-            // Simulate API call
             setTimeout(() => {
                 form.classList.add('hidden');
                 successMsg.classList.remove('hidden');
                 lucide.createIcons();
                 
-                // Reset button
                 btnText.textContent = 'Send Message';
                 btnIcon.classList.remove('hidden');
                 btnLoader.classList.add('hidden');
@@ -817,7 +795,6 @@
             document.getElementById('successMessage').classList.add('hidden');
         }
 
-        // Live Chat
         function openLiveChat() {
             document.getElementById('liveChat').classList.remove('hidden');
             document.getElementById('chatButton').classList.add('hidden');
@@ -835,7 +812,6 @@
             
             const container = document.getElementById('chatMessages');
             
-            // User message
             const userDiv = document.createElement('div');
             userDiv.className = 'flex gap-3 mb-4 justify-end';
             userDiv.innerHTML = `
@@ -848,7 +824,6 @@
             input.value = '';
             container.scrollTop = container.scrollHeight;
             
-            // Auto-reply simulation
             setTimeout(() => {
                 const replyDiv = document.createElement('div');
                 replyDiv.className = 'flex gap-3 mb-4';
@@ -869,7 +844,6 @@
             if (e.key === 'Enter') sendChatMessage();
         }
 
-        // Inquiry Cart Functions
         let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
 
         function toggleInquiryCart() {
@@ -935,7 +909,6 @@
             window.location.href = 'customization.html?inquiry=true';
         }
 
-        // Initialize
         updateInquiryCart();
     </script>
 </body>
