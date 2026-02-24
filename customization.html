@@ -3,1519 +3,1148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design & Customization | Laysun - Architectural-Grade Artificial Greenery</title>
+    <title>Bespoke Customization Services | Laysun Tailored Solutions</title>
+    <meta name="description" content="Create bespoke artificial horticulture solutions with Laysun. Custom design, 3D visualization, material selection, and end-to-end project management for commercial spaces.">
+    <meta name="keywords" content="custom artificial plants, bespoke greenery solutions, tailored horticulture, commercial plant customization, Laysun design services">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'laysun-gold': '#C9A961',
+                        'laysun-gold-hover': '#B8944F',
+                        'laysun-green': '#1F3D2B',
+                        'laysun-green-hover': '#2B533B',
+                        'laysun-gray': '#5F6466',
+                        'laysun-dark': '#1A1A1A',
+                        'laysun-light': '#F9F9F9'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        :root {
-            --forest-green: #2D5A3D;
-            --forest-dark: #1E3D2A;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --pure-white: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --text-gray: #666666;
-            --border-light: #E5E5E5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 1.5rem 0;
-        }
-
-        .navbar.scrolled {
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--pure-white);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            color: var(--pure-white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-menu a::after {
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .gradient-overlay { background: linear-gradient(135deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .btn-primary { background-color: #C9A961; color: #1F3D2B; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #B8944F; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4); }
+        .btn-secondary { background-color: #1F3D2B; color: white; transition: all 0.3s ease; }
+        .btn-secondary:hover { background-color: #2B533B; transform: translateY(-2px); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #C9A961; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); }
+        .step-connector { position: relative; }
+        .step-connector::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
+            top: 2rem;
+            left: 50%;
+            width: calc(100% - 4rem);
             height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
+            background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%);
+            transform: translateX(-50%);
+            z-index: 0;
         }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        @media (max-width: 768px) {
+            .step-connector::after { display: none; }
         }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
+        .material-card { transition: all 0.3s ease; border: 2px solid transparent; }
+        .material-card:hover { border-color: #C9A961; transform: scale(1.02); }
+        .material-card.selected { border-color: #1F3D2B; background-color: #F9F9F9; }
+        .upload-zone {
+            border: 2px dashed #C9A961;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, rgba(201, 169, 97, 0.02) 100%);
+            transition: all 0.3s ease;
         }
-
-        .lang-switch {
+        .upload-zone:hover { border-color: #1F3D2B; background-color: rgba(31, 61, 43, 0.05); }
+        .upload-zone.dragover { border-color: #1F3D2B; background-color: rgba(31, 61, 43, 0.1); }
+        .progress-bar { transition: width 0.5s ease; }
+        .tab-btn.active { background-color: #1F3D2B; color: white; }
+        .visualization-3d {
+            background: linear-gradient(135deg, #1F3D2B 0%, #2B533B 50%, #1F3D2B 100%);
             position: relative;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--pure-white);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--champagne-gold);
-        }
-
-        .lang-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--pure-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s;
-            min-width: 150px;
-        }
-
-        .lang-switch:hover .lang-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .lang-option {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.3s;
-        }
-
-        .lang-option:hover {
-            background: var(--leaf-white);
-            color: var(--forest-green);
-        }
-
-        .inquiry-basket {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .basket-icon {
-            width: 24px;
-            height: 24px;
-            stroke: var(--pure-white);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .basket-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 70vh;
-            min-height: 600px;
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
         }
-
-        .hero::before {
+        .visualization-3d::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 300px;
-            opacity: 0.3;
+            inset: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--pure-white);
-            padding: 0 2rem;
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(201, 169, 97, 0.2);
-            border: 1px solid var(--champagne-gold);
-            color: var(--champagne-gold);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .highlight-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--champagne-gold);
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 0.5rem;
-        }
-
-        /* Section Common */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Design Agency Section */
-        .agency-section {
-            background: var(--pure-white);
-        }
-
-        .agency-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .agency-visual {
-            position: relative;
-            height: 500px;
-            background: linear-gradient(135deg, var(--leaf-white) 0%, #e8e6e1 100%);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .agency-visual::before {
-            content: 'DESIGN STUDIO';
-            position: absolute;
-            font-size: 4rem;
-            color: rgba(45, 90, 61, 0.05);
-            font-weight: 700;
-            letter-spacing: 10px;
-            transform: rotate(-90deg);
-            left: -50px;
-        }
-
-        .visual-content {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .design-icon {
-            width: 120px;
-            height: 120px;
-            background: var(--forest-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .design-icon::before {
-            content: '';
-            position: absolute;
-            width: 140px;
-            height: 140px;
-            border: 2px solid var(--champagne-gold);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.2); opacity: 0; }
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
-
-        .agency-content h3 {
-            font-size: 2rem;
-            color: var(--forest-green);
-            margin-bottom: 1.5rem;
-        }
-
-        .agency-content p {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .capability-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
-        .capability-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--leaf-white);
-            border-radius: 8px;
-            border-left: 3px solid var(--champagne-gold);
-        }
-
-        .capability-list .icon {
-            width: 40px;
-            height: 40px;
-            background: var(--forest-green);
-            color: var(--pure-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        /* AI Section */
-        .ai-section {
-            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-green) 100%);
-            color: var(--pure-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ai-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 200px;
-        }
-
-        .ai-section .section-header h2 {
-            color: var(--pure-white);
-        }
-
-        .ai-section .section-header p {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .ai-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .ai-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .ai-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.1);
-        }
-
-        .ai-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--champagne-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
-        .ai-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .ai-card p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        /* Process Timeline */
-        .process-section {
-            background: var(--leaf-white);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--forest-green), var(--champagne-gold));
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 50%;
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-item:nth-child(even) {
-            justify-content: flex-start;
-            padding-right: 0;
-            padding-left: 50%;
-        }
-
-        .timeline-content {
-            background: var(--pure-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            max-width: 400px;
-            position: relative;
-            margin-right: 2rem;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 0;
-            margin-left: 2rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        .feature-check { transition: all 0.3s ease; }
+        .feature-check:hover { transform: translateX(5px); }
+        .quote-slider::-webkit-thumb {
+            appearance: none;
             width: 20px;
             height: 20px;
-            background: var(--champagne-gold);
+            background: #C9A961;
             border-radius: 50%;
-            border: 4px solid var(--pure-white);
-            box-shadow: 0 0 0 3px var(--champagne-gold);
-            z-index: 1;
-        }
-
-        .timeline-number {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -40px;
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(45, 90, 61, 0.1);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .timeline-item:nth-child(even) .timeline-number {
-            top: auto;
-            bottom: -40px;
-        }
-
-        .timeline-content h3 {
-            color: var(--forest-green);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content .duration {
-            color: var(--champagne-gold);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Mobile Timeline */
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                justify-content: flex-start;
-                padding-left: 80px;
-                padding-right: 0;
-            }
-            
-            .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 0;
-                margin-right: 0;
-                max-width: 100%;
-            }
-            
-            .timeline-dot {
-                left: 30px;
-            }
-            
-            .timeline-number {
-                left: 80px;
-                transform: none;
-            }
-        }
-
-        /* Case Studies */
-        .cases-section {
-            background: var(--pure-white);
-        }
-
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .case-card {
-            position: relative;
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
             cursor: pointer;
         }
-
-        .case-image {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
-            transition: transform 0.5s;
-        }
-
-        .case-card:hover .case-image {
-            transform: scale(1.1);
-        }
-
-        .case-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(45,90,61,0.95), transparent);
-            color: var(--pure-white);
-            padding: 2rem;
-            transform: translateY(60px);
-            transition: transform 0.3s;
-        }
-
-        .case-card:hover .case-overlay {
-            transform: translateY(0);
-        }
-
-        .case-tag {
-            display: inline-block;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-overlay h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-            color: var(--pure-white);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
+        .timeline-item { position: relative; padding-left: 2rem; }
+        .timeline-item::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(201,169,97,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-            color: var(--pure-white);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--pure-white);
-            border: 2px solid var(--pure-white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--pure-white);
-            color: var(--forest-green);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--forest-dark);
-            color: var(--pure-white);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--champagne-gold);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--pure-white);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--champagne-gold);
-            border-color: var(--champagne-gold);
-        }
-
-        /* Inquiry Basket Panel */
-        .basket-panel {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background: var(--pure-white);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 2000;
-            transition: right 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .basket-panel.active {
-            right: 0;
-        }
-
-        .basket-header {
-            background: var(--forest-green);
-            color: var(--pure-white);
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .basket-header h3 {
-            font-size: 1.2rem;
-        }
-
-        .close-basket {
-            background: none;
-            border: none;
-            color: var(--pure-white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .basket-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .empty-basket {
-            text-align: center;
-            color: var(--text-gray);
-            padding: 3rem 0;
-        }
-
-        .basket-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .basket-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            background: var(--leaf-white);
-        }
-
-        .basket-item-info h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .basket-item-info p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        .basket-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-light);
-            background: var(--leaf-white);
-        }
-
-        .basket-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--forest-green);
-            color: var(--pure-white);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 0.75rem;
-            transition: background 0.3s;
-        }
-
-        .basket-btn:hover {
-            background: var(--forest-dark);
-        }
-
-        .basket-btn.gold {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-        }
-
-        .basket-btn.gold:hover {
-            opacity: 0.9;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #C9A961;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #C9A961;
         }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #E5E7EB;
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .agency-grid,
-            .ai-grid,
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .agency-visual {
-                height: 300px;
-            }
-            
-            .highlight-stats {
-                gap: 2rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .basket-panel {
-                width: 100%;
-                right: -100%;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                padding-left: 80px;
-                padding-right: 0;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.8s ease forwards;
-        }
+        .timeline-item:last-child::after { display: none; }
     </style>
 </head>
-<body>
+<body class="bg-white text-laysun-dark overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">LAYSUN</a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="customization.html">Design & Customization</a></li>
-                <li><a href="capabilities.html">Capabilities</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <div class="lang-switch">
-                    <button class="lang-btn">
-                        <span>EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Home</a>
+                    <a href="solutions.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
+                    <a href="products.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
+                    <a href="customization.html" class="nav-link text-laysun-gold font-medium text-sm uppercase tracking-wider">Customization</a>
+                    <a href="capabilities.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Capabilities</a>
+                    <a href="about.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
                     </button>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
-                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
-                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
-                    </div>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">Contact Us</a>
                 </div>
-
-                <div class="inquiry-basket" onclick="toggleBasket()">
-                    <svg class="basket-icon" viewBox="0 0 24 24">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                    </svg>
-                    <span class="basket-count" id="basketCount">0</span>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Home</a>
+                <a href="solutions.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
+                <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
+                <a href="customization.html" class="block px-3 py-2 text-laysun-gold font-semibold">Customization</a>
+                <a href="capabilities.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Capabilities</a>
+                <a href="about.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">Bespoke Solutions</div>
-            <h1>FROM CONCEPT TO CANOPY</h1>
-            <p>Bespoke Greenery Engineered for Professionals. Where your vision meets our Architectural-Grade precision.</p>
-            
-            <div class="highlight-stats">
-                <div class="stat-item">
-                    <span class="stat-number">48H</span>
-                    <div class="stat-label">Rapid Prototyping</div>
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop" alt="Custom Design Studio" class="w-full h-full object-cover">
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content opacity-0 translate-y-8">
+                <div class="inline-flex items-center gap-2 bg-laysun-gold/20 text-laysun-gold px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-laysun-gold/30">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    Bespoke Design Services
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">3D</span>
-                    <div class="stat-label">AI-Driven Design</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">360°</span>
-                    <div class="stat-label">Visual Impact</div>
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight text-shadow">
+                    Your Vision, <span class="text-laysun-gold">Perfected</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto font-light">
+                    From concept to installation, our design team transforms your space with tailor-made artificial horticulture solutions. Every project is unique—so is our approach.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#customization-wizard" class="btn-primary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                        Start Custom Project
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#process" class="px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-laysun-green transition-all">
+                        See How It Works
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Design Agency Section -->
-    <section class="section agency-section">
-        <div class="agency-grid">
-            <div class="agency-visual animate-in">
-                <div class="visual-content">
-                    <div class="design-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--pure-white);">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                            <path d="M2 2l7.586 7.586"></path>
-                            <circle cx="11" cy="11" r="2"></circle>
-                        </svg>
+    <!-- Customization Wizard -->
+    <section id="customization-wizard" class="py-20 bg-laysun-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Interactive Customization Wizard</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">Configure your bespoke solution in real-time. Get instant estimates and visual previews.</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Configuration Panel -->
+                <div class="lg:col-span-2 space-y-6 scroll-reveal">
+                    <!-- Step 1: Project Basics -->
+                    <div class="bg-white rounded-2xl p-6 border border-laysun-green/10 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center text-laysun-green font-montserrat font-bold">1</div>
+                            <h3 class="font-montserrat font-bold text-xl text-laysun-green">Project Basics</h3>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Project Type *</label>
+                                <select id="projectType" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white" onchange="updateEstimate()">
+                                    <option value="">Select Type</option>
+                                    <option value="hotel">Hotel & Hospitality</option>
+                                    <option value="retail">Retail Space</option>
+                                    <option value="office">Commercial Office</option>
+                                    <option value="restaurant">Restaurant & F&B</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="event">Event & Exhibition</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Space Size (sq ft) *</label>
+                                <input type="number" id="spaceSize" placeholder="e.g., 5000" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" onchange="updateEstimate()">
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-laysun-green mb-2">Project Location</label>
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-laysun-gold transition-colors">
+                                    <input type="radio" name="location" value="indoor" class="text-laysun-gold focus:ring-laysun-gold" onchange="updateEstimate()">
+                                    <span class="text-sm">Indoor</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-laysun-gold transition-colors">
+                                    <input type="radio" name="location" value="outdoor" class="text-laysun-gold focus:ring-laysun-gold" onchange="updateEstimate()">
+                                    <span class="text-sm">Outdoor</span>
+                                </label>
+                                <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-laysun-gold transition-colors">
+                                    <input type="radio" name="location" value="both" class="text-laysun-gold focus:ring-laysun-gold" onchange="updateEstimate()">
+                                    <span class="text-sm">Mixed</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <h3 style="color: var(--forest-green); font-size: 1.5rem;">Design Agency Intelligence</h3>
+
+                    <!-- Step 2: Product Selection -->
+                    <div class="bg-white rounded-2xl p-6 border border-laysun-green/10 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center text-laysun-green font-montserrat font-bold">2</div>
+                            <h3 class="font-montserrat font-bold text-xl text-laysun-green">Product Configuration</h3>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Primary Product Type</label>
+                                <select id="productType" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white" onchange="updateEstimate()">
+                                    <option value="">Select Product</option>
+                                    <option value="trees">Artificial Trees (6-12ft)</option>
+                                    <option value="plants">Potted Plants (2-5ft)</option>
+                                    <option value="greenwall">Vertical Green Walls</option>
+                                    <option value="hedges">Hedges & Topiaries</option>
+                                    <option value="mixed">Mixed Installation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Quantity Needed</label>
+                                <input type="number" id="quantity" placeholder="e.g., 25" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" onchange="updateEstimate()">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Height Range</label>
+                                <select id="heightRange" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white" onchange="updateEstimate()">
+                                    <option value="">Select Height</option>
+                                    <option value="small">Under 4ft</option>
+                                    <option value="medium">4-7ft</option>
+                                    <option value="large">7-10ft</option>
+                                    <option value="xlarge">Over 10ft</option>
+                                    <option value="mixed">Mixed Heights</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-2">Customization Level</label>
+                                <select id="customLevel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white" onchange="updateEstimate()">
+                                    <option value="standard">Standard Specifications</option>
+                                    <option value="modified">Modified Dimensions</option>
+                                    <option value="fully">Fully Custom Design</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Specifications -->
+                    <div class="bg-white rounded-2xl p-6 border border-laysun-green/10 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center text-laysun-green font-montserrat font-bold">3</div>
+                            <h3 class="font-montserrat font-bold text-xl text-laysun-green">Technical Specifications</h3>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-3">Required Certifications</label>
+                                <div class="flex flex-wrap gap-3">
+                                    <label class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-laysun-gold/10 transition-colors">
+                                        <input type="checkbox" class="cert-checkbox text-laysun-gold rounded focus:ring-laysun-gold" value="fire" onchange="updateEstimate()">
+                                        <span class="text-sm flex items-center gap-1"><i data-lucide="flame" class="w-4 h-4"></i> Fire Retardant</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-laysun-gold/10 transition-colors">
+                                        <input type="checkbox" class="cert-checkbox text-laysun-gold rounded focus:ring-laysun-gold" value="uv" onchange="updateEstimate()">
+                                        <span class="text-sm flex items-center gap-1"><i data-lucide="sun" class="w-4 h-4"></i> UV Resistant</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-laysun-gold/10 transition-colors">
+                                        <input type="checkbox" class="cert-checkbox text-laysun-gold rounded focus:ring-laysun-gold" value="retail" onchange="updateEstimate()">
+                                        <span class="text-sm flex items-center gap-1"><i data-lucide="shopping-bag" class="w-4 h-4"></i> Retail Ready</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg cursor-pointer hover:bg-laysun-gold/10 transition-colors">
+                                        <input type="checkbox" class="cert-checkbox text-laysun-gold rounded focus:ring-laysun-gold" value="leed" onchange="updateEstimate()">
+                                        <span class="text-sm flex items-center gap-1"><i data-lucide="leaf" class="w-4 h-4"></i> LEED Compliant</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-laysun-green mb-3">Material Preference</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="material-card p-4 rounded-lg bg-gray-50 cursor-pointer text-center" onclick="selectMaterial(this, 'pe')">
+                                        <div class="w-12 h-12 bg-laysun-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i data-lucide="flower-2" class="w-6 h-6 text-laysun-gold"></i>
+                                        </div>
+                                        <p class="font-semibold text-sm text-laysun-green">Premium PE</p>
+                                        <p class="text-xs text-gray-500 mt-1">Most Realistic</p>
+                                    </div>
+                                    <div class="material-card p-4 rounded-lg bg-gray-50 cursor-pointer text-center" onclick="selectMaterial(this, 'silk')">
+                                        <div class="w-12 h-12 bg-laysun-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i data-lucide="wind" class="w-6 h-6 text-laysun-gold"></i>
+                                        </div>
+                                        <p class="font-semibold text-sm text-laysun-green">Silk Blend</p>
+                                        <p class="text-xs text-gray-500 mt-1">Soft Texture</p>
+                                    </div>
+                                    <div class="material-card p-4 rounded-lg bg-gray-50 cursor-pointer text-center" onclick="selectMaterial(this, 'pvc')">
+                                        <div class="w-12 h-12 bg-laysun-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                            <i data-lucide="shield" class="w-6 h-6 text-laysun-gold"></i>
+                                        </div>
+                                        <p class="font-semibold text-sm text-laysun-green">PVC</p>
+                                        <p class="text-xs text-gray-500 mt-1">Cost Effective</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="bg-white rounded-2xl p-6 border border-laysun-green/10 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center text-laysun-green font-montserrat font-bold">4</div>
+                            <h3 class="font-montserrat font-bold text-xl text-laysun-green">Upload Project Files</h3>
+                        </div>
+
+                        <div class="upload-zone rounded-xl p-8 text-center cursor-pointer" id="dropZone" onclick="document.getElementById('fileInput').click()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                            <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.skp" class="hidden" onchange="handleFiles(this.files)">
+                            <div class="w-16 h-16 bg-laysun-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="upload-cloud" class="w-8 h-8 text-laysun-gold"></i>
+                            </div>
+                            <p class="font-semibold text-laysun-green mb-2">Drop files here or click to upload</p>
+                            <p class="text-sm text-gray-500 mb-4">Support: PDF, JPG, PNG, CAD (DWG), SketchUp (SKP)</p>
+                            <p class="text-xs text-gray-400">Maximum file size: 10MB per file</p>
+                        </div>
+
+                        <div id="fileList" class="mt-4 space-y-2"></div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="agency-content animate-in">
-                <h3>Design-Led Innovation Meets Manufacturing Precision</h3>
-                <p>At Laysun, we don't just manufacture; we co-create. Our in-house Design Agency transforms global aesthetic trends into market-winning botanical collections using AI-driven forecasting and 3D modeling.</p>
-                <p>While others simply copy nature, we reimagine it. Every custom piece is vetted by our design team to ensure alignment with upcoming aesthetic shifts in international hospitality and retail sectors.</p>
-                
-                <ul class="capability-list">
-                    <li>
-                        <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                                <circle cx="12" cy="13" r="4"></circle>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>AI-Enhanced Trend Alignment</strong>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Predictive analytics for next-season aesthetics</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                <polyline points="2 17 12 22 22 17"></polyline>
-                                <polyline points="2 12 12 17 22 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>3D Modeling & Visualization</strong>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Photorealistic renders before production</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <strong>Global Aesthetic Intelligence</strong>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--text-gray);">Regional trend adaptation for local markets</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-    <!-- AI Section -->
-    <section class="section ai-section">
-        <div class="section-header animate-in">
-            <h2>AI-Driven Research & Development</h2>
-            <p>Leveraging cutting-edge artificial intelligence to revolutionize botanical design and predict market trends before they emerge.</p>
-        </div>
+                <!-- Live Estimate Panel -->
+                <div class="scroll-reveal">
+                    <div class="bg-laysun-green rounded-2xl p-6 text-white sticky top-24">
+                        <h3 class="font-montserrat font-bold text-xl mb-6">Project Estimate</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between items-center pb-3 border-b border-white/20">
+                                <span class="text-gray-300 text-sm">Base Estimate</span>
+                                <span class="font-bold" id="baseEstimate">$0</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-3 border-b border-white/20">
+                                <span class="text-gray-300 text-sm">Customization</span>
+                                <span class="font-bold text-laysun-gold" id="customFee">$0</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-3 border-b border-white/20">
+                                <span class="text-gray-300 text-sm">Certifications</span>
+                                <span class="font-bold text-laysun-gold" id="certFee">$0</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="font-semibold">Estimated Range</span>
+                                <span class="font-montserrat font-bold text-2xl text-laysun-gold" id="totalEstimate">$0 - $0</span>
+                            </div>
+                        </div>
 
-        <div class="ai-grid">
-            <div class="ai-card animate-in">
-                <div class="ai-icon">🎯</div>
-                <h3>Trend Forecasting Engine</h3>
-                <p>Our proprietary AI analyzes global design publications, social media trends, and architectural projects to predict color palettes, forms, and species demand 12-18 months ahead.</p>
-            </div>
-            
-            <div class="ai-card animate-in">
-                <div class="ai-icon">🧬</div>
-                <h3>Generative Design</h3>
-                <p>Machine learning algorithms generate thousands of botanical variations, optimizing for aesthetic appeal, structural integrity, and manufacturing efficiency simultaneously.</p>
-            </div>
-            
-            <div class="ai-card animate-in">
-                <div class="ai-icon">⚡</div>
-                <h3>Rapid Prototyping</h3>
-                <p>AI-assisted 3D printing and CNC machining reduce prototype development from weeks to 48 hours, accelerating your project timeline.</p>
+                        <div class="bg-white/10 rounded-lg p-4 mb-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold"></i>
+                                <span class="font-semibold text-sm">Estimated Lead Time</span>
+                            </div>
+                            <p class="text-2xl font-bold" id="leadTime">4-6 weeks</p>
+                            <p class="text-xs text-gray-300 mt-1">Rush delivery available</p>
+                        </div>
+
+                        <button onclick="submitCustomization()" class="w-full btn-primary py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider mb-3">
+                            Request Formal Quote
+                        </button>
+                        
+                        <button onclick="saveConfiguration()" class="w-full py-3 border border-white/30 rounded-lg font-semibold text-sm hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="save" class="w-4 h-4"></i>
+                            Save Configuration
+                        </button>
+
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-xs text-gray-400 text-center">
+                                This is a preliminary estimate. Final pricing depends on detailed specifications and volume.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Visualization Preview -->
+                    <div class="mt-6 bg-white rounded-2xl p-6 border border-laysun-green/10 shadow-sm">
+                        <h4 class="font-montserrat font-bold text-laysun-green mb-4">3D Preview</h4>
+                        <div class="visualization-3d rounded-xl h-48 flex items-center justify-center relative">
+                            <div class="text-center relative z-10">
+                                <i data-lucide="box" class="w-16 h-16 text-laysun-gold/50 mx-auto mb-2"></i>
+                                <p class="text-white/80 text-sm">Configure to generate preview</p>
+                            </div>
+                            <div class="absolute bottom-2 right-2 flex gap-2">
+                                <button class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i data-lucide="rotate-3d" class="w-4 h-4"></i>
+                                </button>
+                                <button class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+                                    <i data-lucide="maximize" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <button class="flex-1 py-2 text-xs bg-laysun-light rounded-lg hover:bg-laysun-gold/20 transition-colors">Front</button>
+                            <button class="flex-1 py-2 text-xs bg-laysun-light rounded-lg hover:bg-laysun-gold/20 transition-colors">Side</button>
+                            <button class="flex-1 py-2 text-xs bg-laysun-light rounded-lg hover:bg-laysun-gold/20 transition-colors">Top</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Process Timeline -->
-    <section class="section process-section">
-        <div class="section-header animate-in">
-            <h2>Custom Service Process</h2>
-            <p>From initial concept to final installation, our streamlined process ensures Architectural-Grade results at every stage.</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">01</div>
-                <div class="timeline-content">
-                    <h3>Discovery & Consultation</h3>
-                    <span class="duration">Day 1-2</span>
-                    <p>We begin with understanding your vision, spatial requirements, and brand identity. Our design team conducts site analysis and mood board development.</p>
-                </div>
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Our Customization Process</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">From initial concept to final installation, we guide you every step of the way</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">02</div>
-                <div class="timeline-content">
-                    <h3>AI-Enhanced Concept Design</h3>
-                    <span class="duration">Day 3-5</span>
-                    <p>Our AI engine generates multiple design iterations. You receive photorealistic 3D renders and material samples for review.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 step-connector">
+                <div class="relative z-10 scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-16 h-16 bg-laysun-gold rounded-2xl flex items-center justify-center mb-4 text-laysun-green">
+                            <i data-lucide="message-square" class="w-8 h-8"></i>
+                        </div>
+                        <div class="text-laysun-gold font-montserrat font-bold text-sm mb-2">STEP 01</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Discovery</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed">
+                            Initial consultation to understand your vision, space requirements, and aesthetic goals. We review floor plans, mood boards, and reference images.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-xs text-laysun-gold font-semibold">Duration: 1-2 days</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">03</div>
-                <div class="timeline-content">
-                    <h3>48H Rapid Prototyping</h3>
-                    <span class="duration">Day 6-7</span>
-                    <p>Physical prototype creation using advanced 3D printing and hand-finishing techniques. Review and refine before full production.</p>
+                <div class="relative z-10 scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-16 h-16 bg-laysun-gold rounded-2xl flex items-center justify-center mb-4 text-laysun-green">
+                            <i data-lucide="pen-tool" class="w-8 h-8"></i>
+                        </div>
+                        <div class="text-laysun-gold font-montserrat font-bold text-sm mb-2">STEP 02</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Design & Sampling</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed">
+                            Our designers create detailed 3D renderings and physical samples. We refine specifications until every detail meets your expectations.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-xs text-laysun-gold font-semibold">Duration: 1-2 weeks</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">04</div>
-                <div class="timeline-content">
-                    <h3>Engineering & Compliance</h3>
-                    <span class="duration">Day 8-14</span>
-                    <p>Structural engineering for safety, fire retardancy integration (NFPA 701/B1), and UV stabilization testing for outdoor applications.</p>
+                <div class="relative z-10 scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-16 h-16 bg-laysun-gold rounded-2xl flex items-center justify-center mb-4 text-laysun-green">
+                            <i data-lucide="factory" class="w-8 h-8"></i>
+                        </div>
+                        <div class="text-laysun-gold font-montserrat font-bold text-sm mb-2">STEP 03</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Production</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed">
+                            Precision manufacturing with rigorous quality control. Regular progress updates and photos from the factory floor.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-xs text-laysun-gold font-semibold">Duration: 2-6 weeks</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">05</div>
-                <div class="timeline-content">
-                    <h3>Production & Quality Control</h3>
-                    <span class="duration">Day 15-30</span>
-                    <p>Full-scale manufacturing with batch testing. Each piece undergoes rigorous quality checks against Architectural-Grade standards.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item animate-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-number">06</div>
-                <div class="timeline-content">
-                    <h3>Global Delivery & Installation</h3>
-                    <span class="duration">Day 31-45</span>
-                    <p>Optimized logistics for safe transport. Optional installation support and final on-site adjustments for perfect presentation.</p>
+                <div class="relative z-10 scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-16 h-16 bg-laysun-gold rounded-2xl flex items-center justify-center mb-4 text-laysun-green">
+                            <i data-lucide="truck" class="w-8 h-8"></i>
+                        </div>
+                        <div class="text-laysun-gold font-montserrat font-bold text-sm mb-2">STEP 04</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Delivery & Install</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed">
+                            White-glove delivery and professional installation. Final walkthrough to ensure everything exceeds your expectations.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-xs text-laysun-gold font-semibold">Duration: 1-2 weeks</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Case Studies -->
-    <section class="section cases-section">
-        <div class="section-header animate-in">
-            <h2>Custom Case Studies</h2>
-            <p>Explore how we've transformed unique visions into Architectural-Grade reality for global clients.</p>
+    <section class="py-20 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.5) 1px, transparent 0); background-size: 40px 40px;"></div>
         </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">Customization Success Stories</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">See how we've transformed unique visions into reality</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
 
-        <div class="cases-grid">
-            <div class="case-card animate-in">
-                <div class="case-image"></div>
-                <div class="case-overlay">
-                    <span class="case-tag">Hospitality</span>
-                    <h3>Dubai Luxury Hotel</h3>
-                    <p>12ft custom IFR Olive Trees with integrated lighting systems for grand lobby installation.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 scroll-reveal card-hover">
+                    <div class="h-56 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop" alt="Luxury Hotel Project" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold">Hotel</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-2">Beverly Hills Luxury Hotel</h3>
+                        <p class="text-gray-300 text-sm mb-4">Custom 12ft olive trees with integrated lighting for grand lobby installation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Custom Height</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Fire Rated</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">LED Integration</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-white/10">
+                            <div>
+                                <p class="text-xs text-gray-400">Timeline</p>
+                                <p class="text-sm text-laysun-gold font-semibold">8 weeks</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Units</p>
+                                <p class="text-sm text-laysun-gold font-semibold">24 trees</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 scroll-reveal card-hover">
+                    <div class="h-56 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Retail Flagship Store" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold">Retail</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-2">Global Fashion Flagship</h3>
+                        <p class="text-gray-300 text-sm mb-4">Seasonal rotating green walls with modular planting system for NYC flagship.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Modular System</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Seasonal Swap</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Retail Ready</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-white/10">
+                            <div>
+                                <p class="text-xs text-gray-400">Timeline</p>
+                                <p class="text-sm text-laysun-gold font-semibold">6 weeks</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Units</p>
+                                <p class="text-sm text-laysun-gold font-semibold">16 panels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 scroll-reveal card-hover">
+                    <div class="h-56 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Corporate Headquarters" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold">Corporate</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-montserrat font-bold text-xl text-white mb-2">Tech Campus HQ</h3>
+                        <p class="text-gray-300 text-sm mb-4">Biophilic installation with 200+ custom specimens across 12 floors.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Mixed Species</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">UV Rated</span>
+                            <span class="text-xs bg-white/10 text-white px-2 py-1 rounded">Large Scale</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t border-white/10">
+                            <div>
+                                <p class="text-xs text-gray-400">Timeline</p>
+                                <p class="text-sm text-laysun-gold font-semibold">12 weeks</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Units</p>
+                                <p class="text-sm text-laysun-gold font-semibold">200+ items</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="case-card animate-in">
-                <div class="case-image" style="background: linear-gradient(135deg, #c9c9c9 0%, #a8a8a8 100%);"></div>
-                <div class="case-overlay">
-                    <span class="case-tag">Retail</span>
-                    <h3>Global Flagship Store</h3>
-                    <p>Seasonal rotating collection of 50+ bespoke species with PDQ-optimized packaging.</p>
-                </div>
+            <div class="mt-12 text-center scroll-reveal">
+                <a href="contact.html" class="btn-primary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center gap-2">
+                    Start Your Custom Project
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <div class="case-card animate-in">
-                <div class="case-image" style="background: linear-gradient(135deg, #b8b8b8 0%, #969696 100%);"></div>
-                <div class="case-overlay">
-                    <span class="case-tag">Outdoor</span>
-                    <h3>Mediterranean Resort</h3>
-                    <p>UV-Stable 5000h+ custom Palm series engineered for extreme coastal conditions.</p>
+    <!-- Features & Benefits -->
+    <section class="py-20 bg-laysun-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Why Choose Custom?</h2>
+                    <p class="text-laysun-gray mb-8 leading-relaxed">
+                        Off-the-shelf solutions don't always fit. Our bespoke service ensures every plant, tree, and green wall is perfectly tailored to your space, brand, and functional requirements.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="feature-check flex gap-4 p-4 bg-white rounded-xl border border-laysun-green/10">
+                            <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-5 h-5 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-laysun-green mb-1">Perfect Proportions</h4>
+                                <p class="text-sm text-laysun-gray">Exact dimensions to fit your architectural constraints and sight lines.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-check flex gap-4 p-4 bg-white rounded-xl border border-laysun-green/10">
+                            <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-5 h-5 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-laysun-green mb-1">Brand Alignment</h4>
+                                <p class="text-sm text-laysun-gray">Custom colors, container finishes, and styling to match your brand identity.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-check flex gap-4 p-4 bg-white rounded-xl border border-laysun-green/10">
+                            <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-5 h-5 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-laysun-green mb-1">Technical Compliance</h4>
+                                <p class="text-sm text-laysun-gray">Specific fire ratings, UV resistance, and safety certifications as required.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-check flex gap-4 p-4 bg-white rounded-xl border border-laysun-green/10">
+                            <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-5 h-5 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-laysun-green mb-1">Exclusive Designs</h4>
+                                <p class="text-sm text-laysun-gray">Unique specimens available only to your project, ensuring distinctiveness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal">
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-laysun-green">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop" alt="Custom Design Process" class="w-full h-full object-cover opacity-90">
+                        </div>
+                        
+                        <div class="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-laysun-gold/20 hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="ruler" class="w-5 h-5 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="font-montserrat font-bold text-laysun-green">Custom Sizes</div>
+                                    <div class="text-xs text-gray-500">Any dimension</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-laysun-gold/20 hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="palette" class="w-5 h-5 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="font-montserrat font-bold text-laysun-green">Color Matching</div>
+                                    <div class="text-xs text-gray-500">Brand colors</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content animate-in">
-            <h2>START YOUR BESPOKE PROJECT</h2>
-            <p>Ready to transform your space with custom Architectural-Grade greenery? Our design experts are standing by to bring your vision to life.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary">CONSULT WITH AN EXPERT</a>
-                <a href="contact.html" class="btn btn-secondary">UPLOAD YOUR DESIGN BRIEF</a>
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <div class="w-20 h-20 bg-laysun-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="sparkles" class="w-10 h-10 text-laysun-gold"></i>
+            </div>
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Ready to Create Something Unique?</h2>
+            <p class="text-laysun-gray text-lg mb-8 leading-relaxed">
+                Whether you have detailed plans or just a vision, our design team is ready to bring your project to life. Start with our wizard above or schedule a direct consultation.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#customization-wizard" class="btn-primary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                    Use Configuration Wizard
+                    <i data-lucide="wand-2" class="w-5 h-5"></i>
+                </a>
+                <a href="contact.html" class="btn-secondary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                    Schedule Consultation
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center gap-8 text-laysun-gray">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">NDA Available</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">48hr Response</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="globe" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">Global Delivery</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Design & Customization</a></li>
-                </ul>
+    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design to create beautiful and eco-friendly garden systems.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="products.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
+                        <li><a href="capabilities.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Capabilities</a></li>
+                        <li><a href="customization.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
+                            <span>Global HQ: Los Angeles, CA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>custom@laysun.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Core Services</h4>
-                <ul>
-                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
-                    <li><a href="solutions.html">Commercial Interiors</a></li>
-                    <li><a href="solutions.html">Outdoor Engineering</a></li>
-                    <li><a href="customization.html">Bespoke Design</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Product Catalog</a></li>
-                    <li><a href="#">Technical Specifications</a></li>
-                    <li><a href="#">Compliance Certificates</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Inquiry Basket Panel -->
-    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
-    <div class="basket-panel" id="basketPanel">
-        <div class="basket-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-basket" onclick="toggleBasket()">×</button>
-        </div>
-        <div class="basket-body" id="basketBody">
-            <div class="empty-basket">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <p>Your inquiry list is empty.</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
+    <!-- Inquiry Cart Sidebar -->
+    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
+        <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
+                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
+                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
+                <div class="text-center text-gray-500 py-12">
+                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                    <p>Your inquiry list is empty.</p>
+                    <p class="text-sm mt-2">Start exploring our collections.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
+                    Submit Inquiry
+                </button>
             </div>
         </div>
-        <div class="basket-footer">
-            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
-            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
-        </div>
     </div>
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-content", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.3
+        });
+
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        scrollElements.forEach((element, index) => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: index * 0.05
+            });
+        });
+
+        window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('shadow-lg');
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('shadow-lg');
             }
         });
 
-        // Language switch
-        function changeLang(lang) {
-            console.log('Switching to language:', lang);
-            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
 
-        // Inquiry Basket Logic
-        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
-        
-        function updateBasketCount() {
-            document.getElementById('basketCount').textContent = basketItems.length;
-        }
+        let selectedMaterial = null;
+        let uploadedFiles = [];
 
-        function toggleBasket() {
-            const panel = document.getElementById('basketPanel');
-            const overlay = document.getElementById('overlay');
-            panel.classList.toggle('active');
-            overlay.classList.toggle('active');
-            renderBasket();
-        }
-
-        function renderBasket() {
-            const body = document.getElementById('basketBody');
-            if (basketItems.length === 0) {
-                body.innerHTML = `
-                    <div class="empty-basket">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <p>Your inquiry list is empty.</p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
-                    </div>
-                `;
-            } else {
-                body.innerHTML = basketItems.map((item, index) => `
-                    <div class="basket-item">
-                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
-                        <div class="basket-item-info">
-                            <h4>${item.name}</h4>
-                            <p>${item.specs || ''}</p>
-                            <p style="color: var(--champagne-gold); font-weight: 600;">${item.id}</p>
-                        </div>
-                        <button onclick="removeItem(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">×</button>
-                    </div>
-                `).join('');
+        function updateEstimate() {
+            const projectType = document.getElementById('projectType').value;
+            const spaceSize = parseInt(document.getElementById('spaceSize').value) || 0;
+            const productType = document.getElementById('productType').value;
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            const heightRange = document.getElementById('heightRange').value;
+            const customLevel = document.getElementById('customLevel').value;
+            const location = document.querySelector('input[name="location"]:checked')?.value;
+            
+            let basePrice = 0;
+            let customFee = 0;
+            let certFee = 0;
+            let leadTime = "4-6 weeks";
+            
+            const basePrices = {
+                'trees': 800,
+                'plants': 300,
+                'greenwall': 150,
+                'hedges': 400,
+                'mixed': 500
+            };
+            
+            if (productType && quantity) {
+                basePrice = basePrices[productType] * quantity;
             }
+            
+            const customMultipliers = {
+                'standard': 1,
+                'modified': 1.3,
+                'fully': 1.8
+            };
+            
+            if (customLevel) {
+                customFee = basePrice * (customMultipliers[customLevel] - 1);
+            }
+            
+            const certs = document.querySelectorAll('.cert-checkbox:checked');
+            certFee = certs.length * 50 * quantity;
+            
+            if (location === 'outdoor') {
+                basePrice *= 1.2;
+                leadTime = "6-8 weeks";
+            } else if (location === 'both') {
+                basePrice *= 1.15;
+                leadTime = "6-8 weeks";
+            }
+            
+            if (heightRange === 'large' || heightRange === 'xlarge') {
+                basePrice *= 1.25;
+                leadTime = "8-10 weeks";
+            }
+            
+            const totalMin = Math.round(basePrice + customFee + certFee);
+            const totalMax = Math.round(totalMin * 1.2);
+            
+            document.getElementById('baseEstimate').textContent = '$' + basePrice.toLocaleString();
+            document.getElementById('customFee').textContent = '+$' + customFee.toLocaleString();
+            document.getElementById('certFee').textContent = '+$' + certFee.toLocaleString();
+            document.getElementById('totalEstimate').textContent = '$' + totalMin.toLocaleString() + ' - $' + totalMax.toLocaleString();
+            document.getElementById('leadTime').textContent = leadTime;
         }
 
-        function removeItem(index) {
-            basketItems.splice(index, 1);
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            renderBasket();
+        function selectMaterial(element, material) {
+            document.querySelectorAll('.material-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            selectedMaterial = material;
+            updateEstimate();
         }
 
-        function downloadSpecs() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
+        function handleDragOver(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            document.getElementById('dropZone').classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        }
+
+        function handleFiles(files) {
+            const fileList = document.getElementById('fileList');
+            
+            Array.from(files).forEach(file => {
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File ' + file.name + ' is too large. Maximum size is 10MB.');
+                    return;
+                }
+                
+                uploadedFiles.push(file);
+                
+                const fileDiv = document.createElement('div');
+                fileDiv.className = 'flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200';
+                fileDiv.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="file" class="w-5 h-5 text-laysun-gold"></i>
+                        <div>
+                            <p class="text-sm font-medium text-laysun-green truncate max-w-[200px]">${file.name}</p>
+                            <p class="text-xs text-gray-500">${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        </div>
+                    </div>
+                    <button onclick="removeFile(this, '${file.name}')" class="text-red-500 hover:text-red-700">
+                        <i data-lucide="x" class="w-4 h-4"></i>
+                    </button>
+                `;
+                fileList.appendChild(fileDiv);
+            });
+            
+            lucide.createIcons();
+        }
+
+        function removeFile(button, fileName) {
+            uploadedFiles = uploadedFiles.filter(f => f.name !== fileName);
+            button.closest('div').remove();
+        }
+
+        function submitCustomization() {
+            const config = {
+                projectType: document.getElementById('projectType').value,
+                spaceSize: document.getElementById('spaceSize').value,
+                productType: document.getElementById('productType').value,
+                quantity: document.getElementById('quantity').value,
+                material: selectedMaterial,
+                files: uploadedFiles.map(f => f.name)
+            };
+            
+            if (!config.projectType || !config.productType) {
+                alert('Please fill in required fields (Project Type and Product Type)');
                 return;
             }
-            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+            
+            localStorage.setItem('laysunCustomConfig', JSON.stringify(config));
+            window.location.href = 'contact.html?custom=true';
+        }
+
+        function saveConfiguration() {
+            const config = {
+                projectType: document.getElementById('projectType').value,
+                spaceSize: document.getElementById('spaceSize').value,
+                estimate: document.getElementById('totalEstimate').textContent
+            };
+            
+            localStorage.setItem('laysunSavedConfig', JSON.stringify(config));
+            
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Saved!';
+            btn.classList.add('bg-laysun-green', 'text-white');
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-laysun-green', 'text-white');
+                lucide.createIcons();
+            }, 2000);
+        }
+
+        let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
+
+        function toggleInquiryCart() {
+            const cart = document.getElementById('inquiry-cart');
+            const overlay = document.getElementById('cart-overlay');
+            if (cart.classList.contains('translate-x-full')) {
+                cart.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                cart.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function updateInquiryCart() {
+            const container = document.getElementById('inquiry-items');
+            const badge = document.getElementById('inquiry-badge');
+            const submitBtn = document.getElementById('submit-inquiry-btn');
+            
+            if (inquiryList.length > 0) {
+                badge.textContent = inquiryList.length;
+                badge.classList.remove('hidden');
+                submitBtn.disabled = false;
+                container.innerHTML = inquiryList.map(item => `
+                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="w-20 h-20 bg-laysun-light rounded-lg flex items-center justify-center">
+                            <i data-lucide="package" class="w-8 h-8 text-laysun-gold"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
+                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
+                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
+                                <i data-lucide="trash-2" class="w-3 h-3"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                badge.classList.add('hidden');
+                submitBtn.disabled = true;
+                container.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                        <p>Your inquiry list is empty.</p>
+                        <p class="text-sm mt-2">Start exploring our collections.</p>
+                    </div>
+                `;
+            }
+            localStorage.setItem('laysunInquiry', JSON.stringify(inquiryList));
+            lucide.createIcons();
+        }
+
+        function removeFromInquiry(productId) {
+            inquiryList = inquiryList.filter(item => item.id !== productId);
+            updateInquiryCart();
         }
 
         function submitInquiry() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
-                return;
-            }
-            window.location.href = 'contact.html';
+            if (inquiryList.length === 0) return;
+            window.location.href = 'customization.html?inquiry=true';
         }
 
-        // Initialize
-        updateBasketCount();
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
+        updateInquiryCart();
     </script>
 </body>
 </html>
