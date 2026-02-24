@@ -3,1396 +3,938 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capabilities & Compliance | Laysun - Global Manufacturing Excellence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Manufacturing Capabilities & Engineering Excellence | Laysun</title>
+    <meta name="description" content="Discover Laysun's 20+ years of manufacturing excellence. 5000h+ UV stability, NFPA 701 fire retardancy, global supply chain, and precision engineering for commercial artificial horticulture.">
+    <meta name="keywords" content="artificial plant manufacturing, fire retardant artificial plants, UV resistant plants, commercial botanical engineering, Laysun capabilities">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'laysun-gold': '#C9A961',
+                        'laysun-gold-hover': '#B8944F',
+                        'laysun-green': '#1F3D2B',
+                        'laysun-green-hover': '#2B533B',
+                        'laysun-gray': '#5F6466',
+                        'laysun-dark': '#1A1A1A',
+                        'laysun-light': '#F9F9F9'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --forest-green: #2D5A3D;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-        
-        /* Header */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 2px;
-        }
-        
-        .logo span {
-            color: var(--champagne-gold);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--champagne-gold);
-        }
-        
-        .nav-menu a::after {
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .gradient-overlay { background: linear-gradient(135deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%); }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .btn-primary { background-color: #C9A961; color: #1F3D2B; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #B8944F; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4); }
+        .btn-secondary { background-color: #1F3D2B; color: white; transition: all 0.3s ease; }
+        .btn-secondary:hover { background-color: #2B533B; transform: translateY(-2px); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #C9A961; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); }
+        .capability-card { background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%); }
+        .process-step::before {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
+            top: 50%;
+            right: -50%;
+            width: 100%;
             height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        /* Header Actions */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        /* Language Switcher */
-        .language-switcher {
-            display: flex;
-            gap: 5px;
-            background: rgba(255,255,255,0.1);
-            padding: 5px;
-            border-radius: 4px;
-        }
-        
-        .lang-btn {
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.7);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 6px 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-radius: 3px;
-        }
-        
-        .lang-btn:hover {
-            color: white;
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .lang-btn.active {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        /* Global Inquiry Basket */
-        .inquiry-basket-global {
-            position: relative;
-            cursor: pointer;
-            padding: 10px;
-            background: var(--champagne-gold);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .inquiry-basket-global:hover {
-            background: var(--champagne-dark);
-            transform: scale(1.1);
-        }
-        
-        .basket-icon {
-            font-size: 20px;
-        }
-        
-        .basket-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #e74c3c;
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-        }
-        
-        /* Basket Dropdown */
-        .basket-dropdown {
-            display: none;
-            position: absolute;
-            top: 70px;
-            right: 30px;
-            width: 380px;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            z-index: 1001;
-        }
-        
-        .basket-dropdown.active {
-            display: block;
-        }
-        
-        .basket-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .basket-header h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        .clear-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 5px 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .clear-btn:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .basket-items {
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 15px;
-        }
-        
-        .empty-basket {
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-            padding: 30px 0;
-        }
-        
-        .basket-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .basket-item-image {
-            width: 60px;
-            height: 60px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #999;
-        }
-        
-        .basket-item-info {
-            flex: 1;
-        }
-        
-        .basket-item-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 5px;
-        }
-        
-        .basket-item-id {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        .basket-item-remove {
-            background: none;
-            border: none;
-            color: #e74c3c;
-            cursor: pointer;
-            font-size: 18px;
-            padding: 5px;
-        }
-        
-        .basket-footer {
-            padding: 20px;
-            background: var(--leaf-white);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .download-specs-btn,
-        .submit-inquiry-btn {
-            flex: 1;
-            padding: 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            border: none;
-        }
-        
-        .download-specs-btn {
-            background: white;
-            color: var(--forest-green);
-            border: 2px solid var(--forest-green);
-        }
-        
-        .download-specs-btn:hover {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .submit-inquiry-btn {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        .submit-inquiry-btn:hover {
-            background: var(--champagne-dark);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, #1a3d2e 100%);
-            padding: 100px 0;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 100px;
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            font-weight: 300;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-        
-        /* Section Common */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--forest-green);
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--medium-gray);
-            font-size: 16px;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-        
-        /* Manufacturing Section */
-        .manufacturing {
-            background: white;
-        }
-        
-        .manufacturing-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .manufacturing-text h3 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 25px;
-        }
-        
-        .manufacturing-text p {
-            font-size: 15px;
-            line-height: 1.9;
-            color: var(--medium-gray);
-            margin-bottom: 20px;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .stat-box {
-            background: var(--leaf-white);
-            padding: 25px;
-            text-align: center;
-            border-left: 4px solid var(--champagne-gold);
-        }
-        
-        .stat-box .number {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--forest-green);
-            display: block;
-        }
-        
-        .stat-box .label {
-            font-size: 13px;
-            color: var(--medium-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        .manufacturing-image {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .manufacturing-image::before {
-            content: '10,000㎡ Production Facility';
-            color: #999;
-            font-size: 16px;
-        }
-        
-        /* Compliance Section */
-        .compliance {
-            background: var(--leaf-white);
-        }
-        
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .certificate-card {
-            background: white;
-            padding: 40px 30px;
-            text-align: center;
-            border: 2px solid #e8e8e8;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .certificate-card:hover {
-            border-color: var(--champagne-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .cert-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--forest-green);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 20px;
-        }
-        
-        .certificate-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 10px;
-        }
-        
-        .certificate-card p {
-            font-size: 13px;
-            color: var(--medium-gray);
-            margin-bottom: 15px;
-        }
-        
-        .cert-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: var(--champagne-gold);
-            color: white;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-        
-        /* Certificate Modal */
-        .cert-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .cert-modal.active {
-            display: flex;
-        }
-        
-        .cert-modal-content {
-            background: white;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-        }
-        
-        .cert-modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--medium-gray);
-        }
-        
-        .cert-modal-close:hover {
-            color: var(--forest-green);
-        }
-        
-        .cert-modal h3 {
-            font-size: 24px;
-            color: var(--forest-green);
-            margin-bottom: 20px;
-        }
-        
-        .cert-detail {
-            margin-bottom: 15px;
-        }
-        
-        .cert-detail strong {
-            display: block;
-            color: var(--forest-green);
-            margin-bottom: 5px;
-        }
-        
-        .cert-detail p {
-            color: var(--medium-gray);
-            font-size: 14px;
-        }
-        
-        .download-cert-btn {
-            width: 100%;
-            padding: 15px;
-            background: var(--champagne-gold);
-            color: white;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        
-        /* Supply Chain Section */
-        .supply-chain {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .supply-chain .section-title h2 {
-            color: white;
-        }
-        
-        .supply-chain .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .map-container {
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .map-container::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><rect fill="rgba(255,255,255,0.1)" x="150" y="100" width="200" height="150" rx="20"/><rect fill="rgba(255,255,255,0.1)" x="450" y="80" width="150" height="200" rx="20"/><rect fill="rgba(255,255,255,0.1)" x="650" y="120" width="250" height="180" rx="20"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        .map-overlay {
-            text-align: center;
-            z-index: 1;
-        }
-        
-        .map-overlay h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .map-overlay p {
-            opacity: 0.9;
-        }
-        
-        .supply-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        
-        .supply-feature {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .supply-feature h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--champagne-gold);
-        }
-        
-        .supply-feature p {
-            font-size: 14px;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-        
-        /* Sustainability Section */
-        .sustainability {
-            background: white;
-        }
-        
-        .sustain-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .sustain-text h3 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 25px;
-        }
-        
-        .sustain-text p {
-            font-size: 15px;
-            line-height: 1.9;
-            color: var(--medium-gray);
-            margin-bottom: 20px;
-        }
-        
-        .sustain-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-        
-        .sustain-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e8e8e8;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 15px;
-        }
-        
-        .sustain-list li::before {
-            content: '✓';
-            color: var(--champagne-gold);
-            font-weight: 700;
-            font-size: 20px;
-        }
-        
-        .sustain-image {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .sustain-image::before {
-            content: 'Sustainability Initiatives';
-            color: #666;
-            font-size: 16px;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 80px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-        
-        .footer-section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--champagne-gold);
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--champagne-gold);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        
-        .footer-logo span {
-            color: var(--champagne-gold);
-        }
-        
-        .copyright {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-        }
-        
-        /* RTL Support for Arabic */
-        body[lang="ar"] {
-            direction: rtl;
-        }
-        
-        body[lang="ar"] .nav-menu {
-            flex-direction: row-reverse;
-        }
-        
-        body[lang="ar"] .basket-dropdown {
-            right: auto;
-            left: 30px;
-        }
-        
-        body[lang="ar"] .manufacturing-content,
-        body[lang="ar"] .sustain-content {
-            direction: rtl;
-        }
-        
-        body[lang="ar"] .stat-box {
-            border-left: none;
-            border-right: 4px solid var(--champagne-gold);
-        }
-        
-        /* Notification */
-        .notification {
-            position: fixed;
-            top: 90px;
-            right: 30px;
-            background: var(--forest-green);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 4px;
-            font-size: 14px;
-            z-index: 10000;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        /* Mobile Responsive */
+            background: linear-gradient(90deg, #C9A961 0%, transparent 100%);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .process-step:last-child::before { display: none; }
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .manufacturing-content,
-            .sustain-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .stats-grid,
-            .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .supply-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .basket-dropdown {
-                width: 90%;
-                right: 5%;
-            }
+            .process-step::before { display: none; }
+        }
+        .certification-badge {
+            background: linear-gradient(135deg, #1F3D2B 0%, #2B533B 100%);
+            transition: all 0.3s ease;
+        }
+        .certification-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(31, 61, 43, 0.3);
+        }
+        .stat-counter {
+            background: linear-gradient(135deg, #C9A961 0%, #B8944F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tech-spec-grid {
+            background-image: radial-gradient(circle at 1px 1px, rgba(201, 169, 97, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">LAY<span>SUN</span></div>
-                
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="customization.html">Customization</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="header-actions">
-                    <!-- Language Switcher -->
-                    <div class="language-switcher">
-                        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                        <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
-                        <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
-                    </div>
-                    
-                    <!-- Global Inquiry Basket -->
-                    <div class="inquiry-basket-global" onclick="toggleBasket()">
-                        <span class="basket-icon">🛒</span>
-                        <span class="basket-count" id="globalBasketCount">0</span>
-                    </div>
+<body class="bg-white text-laysun-dark overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Home</a>
+                    <a href="solutions.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
+                    <a href="products.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
+                    <a href="customization.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Customization</a>
+                    <a href="capabilities.html" class="nav-link text-laysun-gold font-medium text-sm uppercase tracking-wider">Capabilities</a>
+                    <a href="about.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">Contact Us</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        
-        <!-- Basket Dropdown -->
-        <div class="basket-dropdown" id="basketDropdown">
-            <div class="basket-header">
-                <h4>Project Inquiry</h4>
-                <button onclick="clearBasket()" class="clear-btn">Clear</button>
-            </div>
-            <div class="basket-items" id="basketItems">
-                <p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>
-            </div>
-            <div class="basket-footer">
-                <button class="download-specs-btn" onclick="downloadSpecs()">Download Specs</button>
-                <a href="contact.html" class="submit-inquiry-btn">Submit Inquiry</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Home</a>
+                <a href="solutions.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
+                <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
+                <a href="customization.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
+                <a href="capabilities.html" class="block px-3 py-2 text-laysun-gold font-semibold">Capabilities</a>
+                <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Capabilities & Compliance</h1>
-                <p>Industrial Precision at a Global Scale. Your Risk-Free Supply Chain Partner.</p>
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop" alt="Manufacturing Facility" class="w-full h-full object-cover">
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content opacity-0 translate-y-8">
+                <div class="inline-flex items-center gap-2 bg-laysun-gold/20 text-laysun-gold px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-laysun-gold/30">
+                    <i data-lucide="factory" class="w-4 h-4"></i>
+                    Manufacturing Excellence
+                </div>
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight text-shadow">
+                    Engineering the Future of<br>
+                    <span class="text-laysun-gold">Commercial Botanicals</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto font-light">
+                    20+ years of precision manufacturing. From molecular-level UV stabilization to NFPA 701 fire retardancy, we engineer products that exceed global standards.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Manufacturing Section -->
-    <section class="section manufacturing">
-        <div class="container">
-            <div class="manufacturing-content">
-                <div class="manufacturing-text">
-                    <h3>Manufacturing Excellence</h3>
-                    <p>Operating from our 10,000㎡ state-of-the-art facility in Dongguan, China, Laysun harmonizes large-scale automation with artisanal detail. We don't just "make" artificial plants; we engineer them.</p>
-                    
-                    <p>Our production lines are optimized for consistency, durability, and speed, allowing us to manage high-volume retail orders and complex bespoke projects with equal precision. From 48h rapid prototyping to rigorous batch testing, every product leaving our floor is an "Architectural-Grade" asset.</p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-box">
-                            <span class="number">10,000㎡</span>
-                            <span class="label">Production Facility</span>
+    <!-- Core Stats -->
+    <section class="py-16 bg-laysun-dark border-y border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="scroll-reveal">
+                    <div class="text-4xl md:text-5xl font-montserrat font-bold stat-counter mb-2" data-target="20">0</div>
+                    <p class="text-gray-400 uppercase tracking-wider text-sm">Years Experience</p>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-4xl md:text-5xl font-montserrat font-bold stat-counter mb-2" data-target="5000">0</div>
+                    <p class="text-gray-400 uppercase tracking-wider text-sm">Hours UV Testing</p>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-4xl md:text-5xl font-montserrat font-bold stat-counter mb-2" data-target="50">0</div>
+                    <p class="text-gray-400 uppercase tracking-wider text-sm">Countries Served</p>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="text-4xl md:text-5xl font-montserrat font-bold stat-counter mb-2" data-target="98">0</div>
+                    <p class="text-gray-400 uppercase tracking-wider text-sm">% On-Time Delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Precision Manufacturing Process</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">From raw material selection to final quality control, every step is engineered for excellence</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="process-step relative scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">01</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Material Selection</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed mb-4">
+                            Premium PE and silk materials sourced from certified suppliers. Molecular-level UV stabilizers integrated at the raw material stage.
+                        </p>
+                        <ul class="space-y-2 text-sm text-laysun-gray">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                FDA-approved polymers
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                UV stabilizer integration
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step relative scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">02</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Precision Molding</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed mb-4">
+                            Advanced injection molding and hand-crafted detailing. Each leaf is individually shaped for botanical accuracy.
+                        </p>
+                        <ul class="space-y-2 text-sm text-laysun-gray">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                CNC precision molds
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                Hand-finished details
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step relative scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">03</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Fire Treatment</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed mb-4">
+                            Proprietary fire-retardant treatment process ensuring NFPA 701 and B1 compliance without compromising aesthetics.
+                        </p>
+                        <ul class="space-y-2 text-sm text-laysun-gray">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                NFPA 701 certified
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                Non-toxic formulations
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step relative scroll-reveal">
+                    <div class="bg-laysun-light rounded-2xl p-6 relative z-10 h-full border border-laysun-green/10 card-hover">
+                        <div class="w-14 h-14 bg-laysun-green rounded-xl flex items-center justify-center mb-4 text-laysun-gold font-montserrat font-bold text-2xl">04</div>
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-3">Quality Assurance</h3>
+                        <p class="text-laysun-gray text-sm leading-relaxed mb-4">
+                            47-point inspection protocol including UV testing, fire resistance verification, and structural integrity checks.
+                        </p>
+                        <ul class="space-y-2 text-sm text-laysun-gray">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                47-point inspection
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-laysun-gold"></i>
+                                Batch traceability
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="py-20 bg-laysun-green relative overflow-hidden tech-spec-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">Technical Specifications & Standards</h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Our products undergo rigorous testing to meet and exceed international safety and quality standards. Every batch is certified and traceable.
+                    </p>
+
+                    <div class="space-y-6">
+                        <!-- UV Resistance -->
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="sun" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h3 class="font-montserrat font-bold text-white">UV Resistance</h3>
+                                        <span class="text-laysun-gold font-bold">5000h+</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm mb-3">ASTM G154 & ASTM G155 tested. Color fastness grade 7-8 after 5000 hours exposure.</p>
+                                    <div class="w-full bg-white/10 rounded-full h-2">
+                                        <div class="bg-laysun-gold h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <span class="number">99.5%</span>
-                            <span class="label">On-Time Delivery</span>
+
+                        <!-- Fire Retardancy -->
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="flame" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h3 class="font-montserrat font-bold text-white">Fire Retardancy</h3>
+                                        <span class="text-laysun-gold font-bold">NFPA 701</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm mb-3">NFPA 701 Small Scale & Large Scale certified. B1 classification available for EU markets.</p>
+                                    <div class="w-full bg-white/10 rounded-full h-2">
+                                        <div class="bg-laysun-gold h-2 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <span class="number">48h</span>
-                            <span class="label">Rapid Prototyping</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="number">500+</span>
-                            <span class="label">Global Clients</span>
+
+                        <!-- Durability -->
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-laysun-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield" class="w-6 h-6 text-laysun-gold"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h3 class="font-montserrat font-bold text-white">Durability Rating</h3>
+                                        <span class="text-laysun-gold font-bold">10+ Years</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm mb-3">Accelerated aging tests confirm structural integrity and color stability beyond 10 years.</p>
+                                    <div class="w-full bg-white/10 rounded-full h-2">
+                                        <div class="bg-laysun-gold h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="manufacturing-image"></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Compliance Section -->
-    <section class="section compliance">
-        <div class="container">
-            <div class="section-title">
-                <h2>Global Compliance & Safety</h2>
-                <p>In the world of commercial procurement, beauty is nothing without safety and ethics. We strictly adhere to international standards.</p>
-            </div>
-            
-            <div class="certificates-grid">
-                <div class="certificate-card" onclick="openCertModal('bsci')">
-                    <div class="cert-icon">📋</div>
-                    <h3>BSCI</h3>
-                    <p>Business Social Compliance Initiative</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('sedex')">
-                    <div class="cert-icon">📋</div>
-                    <h3>SEDEX</h3>
-                    <p>Supplier Ethical Data Exchange</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('nfpa')">
-                    <div class="cert-icon">🔥</div>
-                    <h3>NFPA 701</h3>
-                    <p>Fire Retardant Standard USA</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('b1')">
-                    <div class="cert-icon">🔥</div>
-                    <h3>B1</h3>
-                    <p>Fire Retardant Standard Europe</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('uv')">
-                    <div class="cert-icon">☀️</div>
-                    <h3>UV 5000h+</h3>
-                    <p>Weathering Resistance Test</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('iso')">
-                    <div class="cert-icon">✓</div>
-                    <h3>ISO 9001</h3>
-                    <p>Quality Management System</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('reach')">
-                    <div class="cert-icon">🧪</div>
-                    <h3>REACH</h3>
-                    <p>Chemical Safety Compliance</p>
-                    <span class="cert-badge">View Certificate</span>
-                </div>
-                
-                <div class="certificate-card" onclick="openCertModal('rohs')">
-                    <div class="cert-icon">🌿</div>
-                    <h3>RoHS</h3>
-                    <p>Hazardous Substances Control</p>
-                    <span class="cert-badge">View Certificate</span>
+                <div class="scroll-reveal">
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-laysun-dark border border-laysun-gold/30">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" alt="Quality Testing Laboratory" class="w-full h-full object-cover opacity-80">
+                            <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <div class="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span class="text-white font-semibold text-sm">Live Quality Monitoring</span>
+                                    </div>
+                                    <p class="text-gray-300 text-xs">Real-time tracking of 127 quality parameters across all production lines</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Stats Cards -->
+                        <div class="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-laysun-gold/20 hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="microscope" class="w-5 h-5 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="font-montserrat font-bold text-laysun-green">127</div>
+                                    <div class="text-xs text-gray-500">Quality Parameters</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-laysun-gold/20 hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-laysun-gold/10 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="clipboard-check" class="w-5 h-5 text-laysun-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="font-montserrat font-bold text-laysun-green">99.8%</div>
+                                    <div class="text-xs text-gray-500">Pass Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certificate Modal -->
-    <div class="cert-modal" id="certModal">
-        <div class="cert-modal-content">
-            <span class="cert-modal-close" onclick="closeCertModal()">×</span>
-            <h3 id="modalTitle">Certificate Details</h3>
-            <div id="modalContent"></div>
-            <button class="download-cert-btn" onclick="downloadCertificate()">Download PDF Certificate</button>
-        </div>
-    </div>
+    <!-- Certifications -->
+    <section class="py-20 bg-laysun-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Global Certifications</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">Meeting and exceeding international safety and quality standards</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
 
-    <!-- Supply Chain Section -->
-    <section class="section supply-chain">
-        <div class="container">
-            <div class="section-title">
-                <h2>Global Supply Chain & Delivery</h2>
-                <p>A seamless supply chain empowered by data, ensuring on-time delivery worldwide</p>
-            </div>
-            
-            <div class="map-container">
-                <div class="map-overlay">
-                    <h3>Global Logistics Network</h3>
-                    <p>Strategic distribution centers across 3 continents</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- NFPA 701 -->
+                <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="flame" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg mb-2">NFPA 701</h3>
+                    <p class="text-gray-300 text-sm mb-4">Fire Tests for Flame-Resistant Textiles and Films</p>
+                    <div class="inline-flex items-center gap-1 text-laysun-gold text-sm font-semibold">
+                        <span>Certified</span>
+                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- ASTM G154 -->
+                <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="sun" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg mb-2">ASTM G154</h3>
+                    <p class="text-gray-300 text-sm mb-4">UV Exposure Testing for Non-Metallic Materials</p>
+                    <div class="inline-flex items-center gap-1 text-laysun-gold text-sm font-semibold">
+                        <span>Certified</span>
+                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- REACH -->
+                <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="leaf" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg mb-2">REACH</h3>
+                    <p class="text-gray-300 text-sm mb-4">EU Chemical Regulation Compliance</p>
+                    <div class="inline-flex items-center gap-1 text-laysun-gold text-sm font-semibold">
+                        <span>Compliant</span>
+                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- ISO 9001 -->
+                <div class="certification-badge rounded-2xl p-6 text-center text-white scroll-reveal cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="award" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg mb-2">ISO 9001</h3>
+                    <p class="text-gray-300 text-sm mb-4">Quality Management Systems</p>
+                    <div class="inline-flex items-center gap-1 text-laysun-gold text-sm font-semibold">
+                        <span>Certified</span>
+                        <i data-lucide="badge-check" class="w-4 h-4"></i>
+                    </div>
                 </div>
             </div>
-            
-            <div class="supply-features">
-                <div class="supply-feature">
-                    <h4>Strategic Logistics</h4>
-                    <p>Optimized shipping routes and container loading to reduce landed costs by up to 15%</p>
-                </div>
-                
-                <div class="supply-feature">
-                    <h4>Inventory Management</h4>
-                    <p>Data-driven forecasting ensures 99.5% on-time delivery for seasonal and core collections</p>
-                </div>
-                
-                <div class="supply-feature">
-                    <h4>Global Fulfillment</h4>
-                    <p>Distribution centers and logistics partners across North America, Europe, and Asia-Pacific</p>
+
+            <div class="mt-12 bg-white rounded-2xl p-8 border border-laysun-green/10 scroll-reveal">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <h4 class="font-montserrat font-bold text-laysun-green mb-2">B1 Fire Classification</h4>
+                        <p class="text-sm text-laysun-gray">European standard for fire-resistant materials</p>
+                    </div>
+                    <div>
+                        <h4 class="font-montserrat font-bold text-laysun-green mb-2">California TB 117</h4>
+                        <p class="text-sm text-laysun-gray">Technical Bulletin for furniture flammability</p>
+                    </div>
+                    <div>
+                        <h4 class="font-montserrat font-bold text-laysun-green mb-2">RoHS Compliant</h4>
+                        <p class="text-sm text-laysun-gray">Restriction of Hazardous Substances Directive</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sustainability Section -->
-    <section class="section sustainability">
-        <div class="container">
-            <div class="sustain-content">
-                <div class="sustain-text">
-                    <h3>Sustainability & Environmental Responsibility</h3>
-                    <p>At Laysun, we believe that exceptional design should not come at the expense of our planet. Our commitment to sustainability is woven into every aspect of our operations.</p>
-                    
-                    <p>By significantly extending the replacement cycle through superior engineering, we help project owners reduce waste and achieve long-term sustainability goals in their landscape investments.</p>
-                    
-                    <ul class="sustain-list">
-                        <li>Eco-friendly PE materials and recyclable packaging</li>
-                        <li>Water-based adhesives and low-VOC production processes</li>
-                        <li>Extended product lifecycle reducing replacement waste</li>
-                        <li>Carbon footprint optimization in logistics</li>
-                        <li>Continuous R&D in biodegradable materials</li>
-                    </ul>
+    <!-- Global Supply Chain -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 scroll-reveal">
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-laysun-light border border-laysun-green/10">
+                            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&h=600&fit=crop" alt="Global Logistics Network" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Network Nodes -->
+                        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-laysun-gold rounded-full animate-pulse shadow-lg shadow-laysun-gold/50"></div>
+                        <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-laysun-gold rounded-full animate-pulse delay-300 shadow-lg shadow-laysun-gold/50"></div>
+                        <div class="absolute bottom-1/3 left-1/2 w-4 h-4 bg-laysun-gold rounded-full animate-pulse delay-700 shadow-lg shadow-laysun-gold/50"></div>
+                        <div class="absolute top-1/2 right-1/4 w-4 h-4 bg-laysun-gold rounded-full animate-pulse delay-500 shadow-lg shadow-laysun-gold/50"></div>
+                    </div>
                 </div>
-                <div class="sustain-image"></div>
+
+                <div class="order-1 lg:order-2 scroll-reveal">
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Global Supply Chain & Logistics</h2>
+                    <p class="text-laysun-gray mb-8 leading-relaxed">
+                        Seamless worldwide delivery through strategically located distribution centers and partnerships with leading logistics providers.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-laysun-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="warehouse" class="w-6 h-6 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-montserrat font-bold text-laysun-green mb-1">Strategic Warehousing</h3>
+                                <p class="text-laysun-gray text-sm">Distribution centers in Los Angeles, Rotterdam, and Singapore for rapid global fulfillment.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-laysun-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="truck" class="w-6 h-6 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-montserrat font-bold text-laysun-green mb-1">Multi-Modal Transport</h3>
+                                <p class="text-laysun-gray text-sm">Sea, air, and land freight options optimized for cost and delivery time requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-laysun-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-montserrat font-bold text-laysun-green mb-1">Real-Time Tracking</h3>
+                                <p class="text-laysun-gray text-sm">End-to-end visibility with IoT-enabled tracking and predictive delivery analytics.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-laysun-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="package" class="w-6 h-6 text-laysun-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-montserrat font-bold text-laysun-green mb-1">Retail-Ready Packaging</h3>
+                                <p class="text-laysun-gray text-sm">Barcode-ready, shelf-ready packaging compliant with major retailer requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-laysun-green/10">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-montserrat font-bold text-laysun-gold">3</div>
+                                <div class="text-xs text-laysun-gray">Global Hubs</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-montserrat font-bold text-laysun-gold">50+</div>
+                                <div class="text-xs text-laysun-gray">Countries</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-montserrat font-bold text-laysun-gold">98%</div>
+                                <div class="text-xs text-laysun-gray">On-Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- R&D Innovation -->
+    <section class="py-20 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.5) 1px, transparent 0); background-size: 30px 30px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">R&D Innovation Center</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">Pushing the boundaries of artificial botanical technology</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 scroll-reveal card-hover">
+                    <div class="w-14 h-14 bg-laysun-gold/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="brain" class="w-7 h-7 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-white mb-3">AI-Driven Design</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Machine learning algorithms analyze global design trends and botanical data to create hyper-realistic plant specifications that match market demands.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 scroll-reveal card-hover">
+                    <div class="w-14 h-14 bg-laysun-gold/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="test-tube" class="w-7 h-7 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-white mb-3">Material Science Lab</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Dedicated research into advanced polymers and UV stabilizers. Our proprietary formulations extend product lifespan by 40% compared to industry standards.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 scroll-reveal card-hover">
+                    <div class="w-14 h-14 bg-laysun-gold/20 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="scan" class="w-7 h-7 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-white mb-3">3D Botanical Scanning</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        High-resolution 3D scanning of live specimens captures every detail—from leaf venation to stem texture—for unmatched realism in final products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 scroll-reveal">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">15+</div>
+                        <div class="text-gray-400 text-sm">Research Scientists</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">8%</div>
+                        <div class="text-gray-400 text-sm">Revenue to R&D</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">24</div>
+                        <div class="text-gray-400 text-sm">Patents Pending</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">50+</div>
+                        <div class="text-gray-400 text-sm">New SKUs/Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Promise -->
+    <section class="py-20 bg-laysun-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <div class="w-20 h-20 bg-laysun-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <i data-lucide="shield-check" class="w-10 h-10 text-laysun-gold"></i>
+            </div>
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Our Quality Promise</h2>
+            <p class="text-laysun-gray text-lg mb-8 leading-relaxed">
+                Every Laysun product is backed by our comprehensive quality guarantee. From raw material sourcing to final delivery, we maintain unwavering standards that have earned the trust of global brands and iconic projects worldwide.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white rounded-xl p-6 border border-laysun-green/10">
+                    <i data-lucide="refresh-cw" class="w-8 h-8 text-laysun-gold mx-auto mb-3"></i>
+                    <h3 class="font-montserrat font-bold text-laysun-green mb-2">5-Year Warranty</h3>
+                    <p class="text-sm text-laysun-gray">Comprehensive coverage against manufacturing defects</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-laysun-green/10">
+                    <i data-lucide="truck" class="w-8 h-8 text-laysun-gold mx-auto mb-3"></i>
+                    <h3 class="font-montserrat font-bold text-laysun-green mb-2">Damage Protection</h3>
+                    <p class="text-sm text-laysun-gray">Full replacement for shipping damages</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-laysun-green/10">
+                    <i data-lucide="headphones" class="w-8 h-8 text-laysun-gold mx-auto mb-3"></i>
+                    <h3 class="font-montserrat font-bold text-laysun-green mb-2">24/7 Support</h3>
+                    <p class="text-sm text-laysun-gray">Dedicated technical assistance worldwide</p>
+                </div>
+            </div>
+
+            <a href="contact.html" class="btn-primary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center gap-2">
+                Discuss Your Project Requirements
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=600&fit=crop" alt="Factory Floor" class="w-full h-full object-cover opacity-10">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">Ready to Experience Manufacturing Excellence?</h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Schedule a virtual factory tour or request samples to experience our quality firsthand.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn-primary px-8 py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                    Schedule Factory Tour
+                    <i data-lucide="video" class="w-4 h-4"></i>
+                </a>
+                <a href="#" class="px-8 py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-laysun-green transition-all">
+                    Request Technical Specs
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
-                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
-                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
-                        <li><a href="customization.html">Custom Projects</a></li>
+    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。结合创新技术与精湛设计，打造既美观又环保的园艺系统。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="products.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
+                        <li><a href="capabilities.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Capabilities</a></li>
+                        <li><a href="customization.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="products.html">Signature Series</a></li>
-                        <li><a href="products.html">Retail Ready</a></li>
-                        <li><a href="products.html">Fire Retardant</a></li>
-                        <li><a href="products.html">UV Stable</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="capabilities.html">Compliance</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="contact.html">Get in Touch</a></li>
-                        <li><a href="#">Request Quote</a></li>
-                        <li><a href="#">Download Catalog</a></li>
-                        <li><a href="#">Find a Rep</a></li>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
+                            <span>Global HQ: Los Angeles, CA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>info@laysun.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">LAY<span>SUN</span></div>
-                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Global Inquiry Basket System
-        let inquiryBasket = JSON.parse(localStorage.getItem('laysunBasket')) || [];
+    <!-- Inquiry Cart Sidebar -->
+    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
+        <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
+                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
+                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
+                <div class="text-center text-gray-500 py-12">
+                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                    <p>Your inquiry list is empty.</p>
+                    <p class="text-sm mt-2">Start exploring our collections.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
+                    Submit Inquiry
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            updateBasketDisplay();
-            
-            document.addEventListener('click', function(e) {
-                const basket = document.getElementById('basketDropdown');
-                const basketBtn = document.querySelector('.inquiry-basket-global');
-                if (basket && !basket.contains(e.target) && !basketBtn.contains(e.target)) {
-                    basket.classList.remove('active');
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.to(".hero-content", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.3
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            gsap.to(counter, {
+                scrollTrigger: {
+                    trigger: counter,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                innerHTML: target,
+                duration: 2,
+                ease: "power2.out",
+                snap: { innerHTML: 1 },
+                onUpdate: function() {
+                    counter.innerHTML = Math.ceil(this.targets()[0].innerHTML);
+                    if (target === 98) counter.innerHTML += '%';
+                    else if (target === 5000) counter.innerHTML += 'h+';
+                    else if (target === 50) counter.innerHTML += '+';
+                    else counter.innerHTML += '+';
                 }
             });
         });
 
-        function addToBasket(productId, productName, productImage = '') {
-            if (!inquiryBasket.find(item => item.id === productId)) {
-                inquiryBasket.push({
-                    id: productId,
-                    name: productName,
-                    image: productImage,
-                    addedAt: new Date().toISOString()
-                });
-                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-                updateBasketDisplay();
-                showNotification(productName + ' added to inquiry basket');
+        // Scroll Reveal
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        scrollElements.forEach((element, index) => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: index * 0.05
+            });
+        });
+
+        // Navbar Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('shadow-lg');
             } else {
-                showNotification('Product already in basket', 'warning');
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Inquiry Cart Functions
+        let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
+
+        function toggleInquiryCart() {
+            const cart = document.getElementById('inquiry-cart');
+            const overlay = document.getElementById('cart-overlay');
+            if (cart.classList.contains('translate-x-full')) {
+                cart.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                cart.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
             }
         }
 
-        function removeFromBasket(productId) {
-            inquiryBasket = inquiryBasket.filter(item => item.id !== productId);
-            localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-            updateBasketDisplay();
-        }
-
-        function clearBasket() {
-            if (confirm('Clear all items from inquiry basket?')) {
-                inquiryBasket = [];
-                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-                updateBasketDisplay();
-            }
-        }
-
-        function updateBasketDisplay() {
-            const countEl = document.getElementById('globalBasketCount');
-            const itemsEl = document.getElementById('basketItems');
+        function updateInquiryCart() {
+            const container = document.getElementById('inquiry-items');
+            const badge = document.getElementById('inquiry-badge');
+            const submitBtn = document.getElementById('submit-inquiry-btn');
             
-            if (countEl) countEl.textContent = inquiryBasket.length;
-            
-            if (itemsEl) {
-                if (inquiryBasket.length === 0) {
-                    itemsEl.innerHTML = '<p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>';
-                } else {
-                    itemsEl.innerHTML = inquiryBasket.map(item => `
-                        <div class="basket-item">
-                            <div class="basket-item-image">${item.image ? '' : 'IMG'}</div>
-                            <div class="basket-item-info">
-                                <div class="basket-item-name">${item.name}</div>
-                                <div class="basket-item-id">${item.id}</div>
-                            </div>
-                            <button class="basket-item-remove" onclick="removeFromBasket('${item.id}')">×</button>
+            if (inquiryList.length > 0) {
+                badge.textContent = inquiryList.length;
+                badge.classList.remove('hidden');
+                submitBtn.disabled = false;
+                container.innerHTML = inquiryList.map(item => `
+                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="w-20 h-20 bg-laysun-light rounded-lg flex items-center justify-center">
+                            <i data-lucide="package" class="w-8 h-8 text-laysun-gold"></i>
                         </div>
-                    `).join('');
-                }
-            }
-        }
-
-        function toggleBasket() {
-            const dropdown = document.getElementById('basketDropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('active');
-            }
-        }
-
-        function downloadSpecs() {
-            if (inquiryBasket.length === 0) {
-                alert('Please add products to your inquiry basket first.');
-                return;
-            }
-            
-            const productIds = inquiryBasket.map(item => item.id).join(', ');
-            alert('Generating specification sheet for:\n\n' + productIds + '\n\nIn a real implementation, this would download a PDF with all product specifications.');
-        }
-
-        function showNotification(message, type = 'success') {
-            const notif = document.createElement('div');
-            notif.className = 'notification';
-            notif.style.background = type === 'success' ? '#2D5A3D' : '#e74c3c';
-            notif.textContent = message;
-            document.body.appendChild(notif);
-            
-            setTimeout(() => {
-                notif.remove();
-            }, 3000);
-        }
-
-        // Certificate Modal
-        const certData = {
-            'bsci': {
-                title: 'BSCI Certificate',
-                details: [
-                    { label: 'BSCI ID', value: 'LAY-2024-BSCI-001' },
-                    { label: 'Audit Date', value: 'March 15, 2024' },
-                    { label: 'Valid Until', value: 'March 14, 2026' },
-                    { label: 'Audit Type', value: 'Full Audit' },
-                    { label: 'Rating', value: 'A - Outstanding Compliance' }
-                ]
-            },
-            'sedex': {
-                title: 'SEDEX Certificate',
-                details: [
-                    { label: 'SEDEX Member ID', value: 'ZC123456789' },
-                    { label: 'Audit Type', value: '4-Pillar SMETA' },
-                    { label: 'Last Audit', value: 'January 20, 2024' },
-                    { label: 'Next Audit Due', value: 'January 20, 2025' },
-                    { label: 'Status', value: 'Active Member' }
-                ]
-            },
-            'nfpa': {
-                title: 'NFPA 701 Certificate',
-                details: [
-                    { label: 'Test Report No.', value: 'NFPA-LAY-2024-001' },
-                    { label: 'Test Date', value: 'February 10, 2024' },
-                    { label: 'Valid Until', value: 'Unlimited' },
-                    { label: 'Test Standard', value: 'NFPA 701 (2023 Edition)' },
-                    { label: 'Result', value: 'PASS - No flaming drip' }
-                ]
-            },
-            'b1': {
-                title: 'B1 Fire Classification',
-                details: [
-                    { label: 'Certificate No.', value: 'B1-DE-2024-456' },
-                    { label: 'Issued Date', value: 'January 15, 2024' },
-                    { label: 'Valid Until', value: 'January 14, 2027' },
-                    { label: 'Issuing Body', value: 'TÜV SÜD Germany' },
-                    { label: 'Classification', value: 'B1 - Schwer entflammbar' }
-                ]
-            },
-            'uv': {
-                title: 'UV Resistance Certificate',
-                details: [
-                    { label: 'Test Report', value: 'UV5000-LAY-2024' },
-                    { label: 'Test Hours', value: '5000+ hours' },
-                    { label: 'Test Lab', value: 'SGS Shanghai' },
-                    { label: 'Test Method', value: 'ASTM G154' },
-                    { label: 'Color Retention', value: '>95% after 5000h' }
-                ]
-            },
-            'iso': {
-                title: 'ISO 9001:2015 Certificate',
-                details: [
-                    { label: 'Certificate No.', value: 'ISO-LAY-2023' },
-                    { label: 'Issue Date', value: 'December 1, 2023' },
-                    { label: 'Valid Until', value: 'December 31, 2026' },
-                    { label: 'Scope', value: 'Design and manufacture of artificial plants' },
-                    { label: 'Certification Body', value: 'Bureau Veritas' }
-                ]
-            },
-            'reach': {
-                title: 'REACH Compliance',
-                details: [
-                    { label: 'Registration No.', value: '01-2119457890-42' },
-                    { label: 'Compliance Date', value: 'January 1, 2024' },
-                    { label: 'Last Update', value: 'SVHC List 2024' },
-                    { label: 'Status', value: 'Fully Compliant' },
-                    { label: 'Responsible', value: 'Only Representative EU' }
-                ]
-            },
-            'rohs': {
-                title: 'RoHS Certificate',
-                details: [
-                    { label: 'Certificate No.', value: 'ROHS-LAY-2024' },
-                    { label: 'Tested by', value: 'TÜV SÜD' },
-                    { label: 'Test Date', value: 'March 1, 2024' },
-                    { label: 'Directive', value: 'RoHS 2011/65/EU' },
-                    { label: 'Status', value: 'Compliant - All 10 substances' }
-                ]
-            }
-        };
-
-        function openCertModal(cert) {
-            const modal = document.getElementById('certModal');
-            const title = document.getElementById('modalTitle');
-            const content = document.getElementById('modalContent');
-            
-            const data = certData[cert];
-            if (data) {
-                title.textContent = data.title;
-                content.innerHTML = data.details.map(d => `
-                    <div class="cert-detail">
-                        <strong>${d.label}</strong>
-                        <p>${d.value}</p>
+                        <div class="flex-1">
+                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
+                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
+                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
+                                <i data-lucide="trash-2" class="w-3 h-3"></i>
+                                Remove
+                            </button>
+                        </div>
                     </div>
                 `).join('');
-                modal.classList.add('active');
+            } else {
+                badge.classList.add('hidden');
+                submitBtn.disabled = true;
+                container.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                        <p>Your inquiry list is empty.</p>
+                        <p class="text-sm mt-2">Start exploring our collections.</p>
+                    </div>
+                `;
             }
+            localStorage.setItem('laysunInquiry', JSON.stringify(inquiryList));
+            lucide.createIcons();
         }
 
-        function closeCertModal() {
-            document.getElementById('certModal').classList.remove('active');
+        function removeFromInquiry(productId) {
+            inquiryList = inquiryList.filter(item => item.id !== productId);
+            updateInquiryCart();
         }
 
-        function downloadCertificate() {
-            alert('In a real implementation, this would download the PDF certificate file.');
+        function submitInquiry() {
+            if (inquiryList.length === 0) return;
+            window.location.href = 'customization.html?inquiry=true';
         }
 
-        // Close modal on outside click
-        document.getElementById('certModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCertModal();
-            }
-        });
+        // Initialize
+        updateInquiryCart();
 
-        // Language Switching
-        function switchLanguage(lang) {
-            document.body.setAttribute('lang', lang);
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(lang)) {
-                    btn.classList.add('active');
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-            
-            localStorage.setItem('laysunLang', lang);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('laysunLang') || 'en';
-            switchLanguage(savedLang);
         });
     </script>
 </body>
