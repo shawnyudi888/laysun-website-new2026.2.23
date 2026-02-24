@@ -3,973 +3,1119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailored Artificial Horticulture Solutions for Global Commercial Spaces | Laysun</title>
-    <meta name="description" content="Explore Laysun's high-performance artificial plants, ideal for commercial spaces, retail, and outdoor environments. 20+ years manufacturing excellence.">
-    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, artificial plants for commercial spaces, Laysun artificial plants">
+    <title>About Laysun | Global Leader in Artificial Horticulture Systems</title>
+    <meta name="description" content="Laysun is a global leader in artificial horticulture systems, providing fire-retardant, UV-stable botanical solutions for commercial spaces worldwide. 20+ years manufacturing excellence.">
+    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, Laysun artificial plants, fire retardant artificial plants manufacturer">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'laysun-gold': '#C9A961',
-                        'laysun-gold-hover': '#B8944F',
-                        'laysun-green': '#1F3D2B',
-                        'laysun-green-hover': '#2B533B',
-                        'laysun-gray': '#5F6466',
-                        'laysun-dark': '#1A1A1A',
-                        'laysun-light': '#F9F9F9'
-                    },
-                    fontFamily: {
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                        'roboto': ['Roboto', 'sans-serif']
-                    }
-                }
-            }
-        }
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Laysun",
+        "description": "Global leader in artificial horticulture systems",
+        "url": "https://laysun.com",
+        "logo": "https://laysun.com/logo.png",
+        "foundingDate": "2006",
+        "areaServed": "Global",
+        "sameAs": [
+            "https://linkedin.com/company/laysun",
+            "https://instagram.com/laysun"
+        ]
+    }
     </script>
-    
-    <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
+        :root {
+            --champagne-gold: #C9A961;
+            --champagne-gold-hover: #B8944F;
+            --forest-green: #1F3D2B;
+            --forest-green-hover: #2B533B;
+            --dark-gray: #5F6466;
+            --charcoal: #1A1A1A;
+            --light-gray: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            line-height: 1.6;
         }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            object-fit: cover;
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(31, 61, 43, 0.85) 0%, rgba(26, 26, 26, 0.7) 100%);
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+            letter-spacing: 2px;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+
+        .logo span {
+            color: var(--champagne-gold);
         }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
         }
-        .btn-primary {
-            background-color: #C9A961;
-            color: #1F3D2B;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #B8944F;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
-        }
-        .btn-secondary {
-            background-color: #1F3D2B;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: #2B533B;
-            transform: translateY(-2px);
-        }
-        .nav-link {
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
             position: relative;
         }
-        .nav-link::after {
+
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
             content: '';
             position: absolute;
+            bottom: -5px;
+            left: 0;
             width: 0;
             height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #C9A961;
+            background-color: var(--champagne-gold);
             transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
+
+        nav a:hover::after {
             width: 100%;
         }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .inquiry-btn {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .inquiry-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        .inquiry-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--forest-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Trust Strip */
+        .trust-strip {
+            background-color: var(--champagne-gold);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
         .trust-item {
-            border-right: 1px solid rgba(201, 169, 97, 0.3);
+            text-align: center;
+            color: var(--forest-green);
         }
-        .trust-item:last-child {
-            border-right: none;
+
+        .trust-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
-        .solution-card {
-            background: linear-gradient(180deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
+
+        .trust-item p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .pillar-icon {
-            background: linear-gradient(135deg, #C9A961 0%, #B8944F 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        /* Mission Section */
+        .mission-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
-        .gold-accent {
-            background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%);
+
+        .mission-content h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
         }
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
+
+        .mission-content p {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .mission-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .experience-badge h3 {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .experience-badge p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: var(--light-gray);
+            padding: 5rem 2rem;
+        }
+
+        .values-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .values-header h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid var(--champagne-gold);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .value-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .value-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Capabilities Section */
+        .capabilities-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .capabilities-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .capabilities-header h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .capability-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .capability-card:hover {
+            border-color: var(--champagne-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .capability-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .capability-card ul {
+            list-style: none;
+            color: var(--dark-gray);
+        }
+
+        .capability-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .capability-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--champagne-gold);
+        }
+
+        /* Global Presence */
+        .global-section {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .global-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .global-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .global-container > p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .global-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .global-stat {
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .global-stat h3 {
+            font-size: 2.5rem;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .global-stat p {
+            opacity: 0.9;
+        }
+
+        /* Team/Leadership */
+        .leadership-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .leadership-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .leadership-header h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .leader-card {
+            text-align: center;
+        }
+
+        .leader-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--champagne-gold);
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-card .title {
+            color: var(--champagne-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-card p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Certifications */
+        .certifications-section {
+            background-color: var(--light-gray);
+            padding: 5rem 2rem;
+        }
+
+        .certifications-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .certifications-container h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 3rem;
+        }
+
+        .cert-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            background-color: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            min-width: 200px;
+        }
+
+        .cert-item h3 {
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Inquiry Sidebar */
+        .inquiry-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 100%;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 3000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inquiry-sidebar.active {
+            right: 0;
+        }
+
+        .inquiry-header {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-inquiry {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .inquiry-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .inquiry-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .inquiry-item-details {
+            flex-grow: 1;
+        }
+
+        .inquiry-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .inquiry-item p {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #E74C3C;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .inquiry-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .submit-inquiry {
+            width: 100%;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-inquiry:hover {
+            background-color: var(--champagne-gold-hover);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2500;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .mission-section {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-badge {
+                left: 20px;
+                bottom: 20px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="bg-white text-laysun-dark overflow-x-hidden">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
-                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
-                        </div>
-                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
-                    </a>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Home</a>
-                    <a href="#solutions" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
-                    <a href="#products" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
-                    <a href="#customization" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Customization</a>
-                    <a href="#cases" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Cases</a>
-                    <a href="#about" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
-                </div>
-
-                <!-- CTA & Inquiry -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
-                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
-                    </button>
-                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">
-                        Contact Us
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">LAY<span>SUN</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Customization</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="inquiry-btn" onclick="toggleInquiry()">
+                    Project Inquiry
+                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
+                </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Home</a>
-                <a href="#solutions" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
-                <a href="#products" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
-                <a href="#customization" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
-                <a href="#cases" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Cases</a>
-                <a href="#contact" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
-            </div>
-        </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Video Background -->
-        <video class="hero-video" autoplay muted loop playsinline poster="/api/placeholder/1920/1080">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-green-plant-in-the-breeze-1188-large.mp4" type="video/mp4">
-        </video>
-        
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 gradient-overlay"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hero-content opacity-0 translate-y-8">
-                <h1 class="font-montserrat font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight text-shadow">
-                    Tailored Artificial Horticulture<br>
-                    <span class="text-laysun-gold">Solutions for Global</span><br>
-                    Commercial Spaces
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                    Providing high-performance botanical solutions for commercial, retail, and outdoor applications worldwide.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#solutions" class="btn-primary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
-                        Explore Solutions
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#customization" class="btn-secondary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white">
-                        Start a Bespoke Project
-                        <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="w-8 h-8 text-laysun-gold"></i>
-        </div>
+    <section class="about-hero">
+        <h1>Engineering Nature for Global Commerce</h1>
+        <p>For over two decades, Laysun has been the trusted partner for architectural-grade artificial horticulture solutions, combining manufacturing precision with design intelligence.</p>
     </section>
 
     <!-- Trust Strip -->
-    <section class="bg-laysun-dark py-6 border-y border-laysun-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="trust-item py-2 scroll-reveal">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i data-lucide="award" class="w-5 h-5 text-laysun-gold"></i>
-                        <span class="font-montserrat font-bold text-2xl text-white">20+</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Years Manufacturing</p>
+    <section class="trust-strip">
+        <div class="trust-item">
+            <h3>20+</h3>
+            <p>Years Manufacturing</p>
+        </div>
+        <div class="trust-item">
+            <h3>500+</h3>
+            <p>Projects Delivered</p>
+        </div>
+        <div class="trust-item">
+            <h3>50+</h3>
+            <p>Countries Served</p>
+        </div>
+        <div class="trust-item">
+            <h3>100%</h3>
+            <p>Compliance Rate</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Laysun is dedicated to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. We combine innovative technology with exquisite design to create botanical systems that are both beautiful and environmentally responsible.</p>
+            <p>We help businesses enhance spatial aesthetics, reduce maintenance costs, and meet stringent fire safety standards—all while maintaining the natural beauty that makes spaces come alive.</p>
+            <p>Our vision is to become the world's leading artificial horticulture systems provider, creating green, low-carbon, intelligent commercial landscapes that bring natural vitality to every space.</p>
+        </div>
+        <div class="mission-image">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Laysun Manufacturing Facility - Artificial Plant Production" loading="lazy">
+            <div class="experience-badge">
+                <h3>20+</h3>
+                <p>Years of<br>Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="values-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every decision we make and every product we create</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation Driven</h3>
+                    <p>We continuously push the boundaries of artificial horticulture technology, striving to provide the most advanced solutions in the market. Our R&D team constantly explores new materials and techniques.</p>
                 </div>
-                <div class="trust-item py-2 scroll-reveal">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-laysun-gold"></i>
-                        <span class="font-montserrat font-bold text-2xl text-white">UV & Fire</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Certified Standards</p>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Customer Centric</h3>
+                    <p>Every project is tailored to ensure perfect alignment with client needs. We believe in deep collaboration to understand and exceed expectations at every stage.</p>
                 </div>
-                <div class="trust-item py-2 scroll-reveal">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i data-lucide="globe" class="w-5 h-5 text-laysun-gold"></i>
-                        <span class="font-montserrat font-bold text-2xl text-white">50+</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Countries Served</p>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability Focused</h3>
+                    <p>We are committed to ecological responsibility, providing low-maintenance, high-quality products that reduce carbon footprints and eliminate water waste.</p>
                 </div>
-                <div class="trust-item py-2 scroll-reveal">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i data-lucide="truck" class="w-5 h-5 text-laysun-gold"></i>
-                        <span class="font-montserrat font-bold text-2xl text-white">Global</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Delivery Network</p>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Professional Excellence</h3>
+                    <p>With years of deep industry expertise, we focus on delivering premium products and services, ensuring every detail meets the highest standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Three Pillars -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">The Three Pillars</h2>
-                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">What sets Laysun apart in the global artificial greenery market</p>
-                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+    <!-- Capabilities Section -->
+    <section class="capabilities-section" id="capabilities">
+        <div class="capabilities-header">
+            <h2>Our Capabilities</h2>
+            <p>End-to-end artificial horticulture solutions powered by advanced manufacturing and design expertise</p>
+        </div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <h3>🎨 Design & Development</h3>
+                <ul>
+                    <li>In-house design agency with AI-driven trend forecasting</li>
+                    <li>Custom botanical collection development</li>
+                    <li>3D modeling and prototyping</li>
+                    <li>Material innovation and testing</li>
+                    <li>Color and texture matching</li>
+                </ul>
             </div>
+            <div class="capability-card">
+                <h3>⚙️ Manufacturing Excellence</h3>
+                <ul>
+                    <li>200,000+ sqm production facility</li>
+                    <li>ISO 9001 certified processes</li>
+                    <li>Advanced injection molding</li>
+                    <li>Hand-finishing craftsmanship</li>
+                    <li>Quality control at every stage</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <h3>🔬 Testing & Certification</h3>
+                <ul>
+                    <li>NFPA 701 fire retardancy testing</li>
+                    <li>UV stability testing (5000h+)</li>
+                    <li>Indoor air quality certification</li>
+                    <li>Third-party lab verification</li>
+                    <li>International standards compliance</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <h3>🌍 Global Fulfillment</h3>
+                <ul>
+                    <li>Strategic warehousing worldwide</li>
+                    <li>Container optimization</li>
+                    <li>Customs and documentation support</li>
+                    <li>Last-mile delivery coordination</li>
+                    <li>Inventory management systems</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <h3>🤝 Project Support</h3>
+                <ul>
+                    <li>Dedicated account management</li>
+                    <li>Technical specification support</li>
+                    <li>Installation guidance</li>
+                    <li>After-sales service</li>
+                    <li>Warranty programs</li>
+                </ul>
+            </div>
+            <div class="capability-card">
+                <h3>📦 Retail Ready Services</h3>
+                <ul>
+                    <li>Barcode and labeling</li>
+                    <li>Custom packaging design</li>
+                    <li>Display fixture integration</li>
+                    <li>Point-of-sale materials</li>
+                    <li>Drop-shipping capabilities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Pillar 1 -->
-                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
-                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="palette" class="w-8 h-8 text-laysun-gold"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Design-Led Innovation</h3>
-                    <p class="text-laysun-gray leading-relaxed">
-                        Our in-house agency transforms global aesthetic trends into market-winning botanical collections using AI-driven forecasting and precision craftsmanship.
-                    </p>
+    <!-- Global Presence -->
+    <section class="global-section">
+        <div class="global-container">
+            <h2>Global Presence</h2>
+            <p>Serving commercial clients across 50+ countries with localized support and global consistency</p>
+            <div class="global-stats">
+                <div class="global-stat">
+                    <h3>3</h3>
+                    <p>Continental Offices</p>
                 </div>
-
-                <!-- Pillar 2 -->
-                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
-                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="cog" class="w-8 h-8 text-laysun-gold"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Engineering Excellence</h3>
-                    <p class="text-laysun-gray leading-relaxed">
-                        From 5000h+ UV stability to NFPA 701 fire retardancy, we build for the world's toughest environments and safety standards.
-                    </p>
+                <div class="global-stat">
+                    <h3>12</h3>
+                    <p>Distribution Partners</p>
                 </div>
-
-                <!-- Pillar 3 -->
-                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
-                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="globe-2" class="w-8 h-8 text-laysun-gold"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Global Fulfillment</h3>
-                    <p class="text-laysun-gray leading-relaxed">
-                        A seamless supply chain empowered by data, ensuring on-time delivery for retail giants and iconic projects worldwide.
-                    </p>
+                <div class="global-stat">
+                    <h3>24/7</h3>
+                    <p>Customer Support</p>
+                </div>
+                <div class="global-stat">
+                    <h3>99.2%</h3>
+                    <p>On-Time Delivery</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industry Solutions -->
-    <section id="solutions" class="py-20 bg-laysun-green relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.3) 1px, transparent 0); background-size: 40px 40px;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">Industry Solutions</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">Tailored solutions for every commercial environment</p>
-                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Hotel & Hospitality -->
-                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="filterByApplication('hotel')">
-                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop" alt="Luxury Hotel with Artificial Plants" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i data-lucide="building-2" class="w-5 h-5 text-laysun-gold"></i>
-                            <h3 class="font-montserrat font-bold text-lg text-white">Hotels & Hospitality</h3>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">Create memorable first impressions with zero-maintenance luxury greenery.</p>
-                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
-                            <span>View Solutions</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </div>
-                    </div>
+    <!-- Certifications -->
+    <section class="certifications-section">
+        <div class="certifications-container">
+            <h2>Certifications & Standards</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h3>NFPA 701</h3>
+                    <p>Fire Retardant</p>
                 </div>
-
-                <!-- Retail -->
-                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="filterByApplication('retail')">
-                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Retail Store with Artificial Plants" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i data-lucide="store" class="w-5 h-5 text-laysun-gold"></i>
-                            <h3 class="font-montserrat font-bold text-lg text-white">Retail Spaces</h3>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">Barcode-ready solutions that enhance customer experience and dwell time.</p>
-                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
-                            <span>View Solutions</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </div>
-                    </div>
+                <div class="cert-item">
+                    <h3>ISO 9001</h3>
+                    <p>Quality Management</p>
                 </div>
-
-                <!-- Commercial -->
-                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="filterByApplication('commercial')">
-                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Commercial Office with Artificial Plants" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i data-lucide="briefcase" class="w-5 h-5 text-laysun-gold"></i>
-                            <h3 class="font-montserrat font-bold text-lg text-white">Commercial</h3>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">Elevate workplace wellness with biophilic design that requires no maintenance.</p>
-                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
-                            <span>View Solutions</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </div>
-                    </div>
+                <div class="cert-item">
+                    <h3>ASTM</h3>
+                    <p>UV Stability</p>
                 </div>
-
-                <!-- Outdoor -->
-                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="filterByApplication('outdoor')">
-                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" alt="Outdoor Commercial Space with Artificial Plants" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i data-lucide="sun" class="w-5 h-5 text-laysun-gold"></i>
-                            <h3 class="font-montserrat font-bold text-lg text-white">Outdoor</h3>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">UV-resistant solutions engineered for extreme weather conditions.</p>
-                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
-                            <span>View Solutions</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </div>
-                    </div>
+                <div class="cert-item">
+                    <h3>REACH</h3>
+                    <p>Chemical Safety</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Delivery Footprint -->
-    <section class="py-20 bg-laysun-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="scroll-reveal">
-                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Global Delivery Footprint</h2>
-                    <p class="text-laysun-gray text-lg mb-8 leading-relaxed">
-                        Serving 50+ countries with Architectural-Grade solutions. Our seamless supply chain ensures on-time delivery for retail giants and iconic projects worldwide.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
-                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">500+</div>
-                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Projects Delivered</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
-                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">50+</div>
-                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Countries Served</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
-                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">98%</div>
-                            <div class="text-laysun-gray text-sm uppercase tracking-wider">On-Time Delivery</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
-                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">24/7</div>
-                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Global Support</div>
-                        </div>
-                    </div>
-
-                    <a href="#contact" class="btn-primary px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center gap-2">
-                        Explore Global Capabilities
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-
-                <div class="relative scroll-reveal">
-                    <div class="aspect-square rounded-2xl overflow-hidden bg-laysun-green relative">
-                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=800&fit=crop" alt="Global Network Map" class="w-full h-full object-cover opacity-80">
-                        <div class="absolute inset-0 bg-gradient-to-br from-laysun-green/40 to-transparent"></div>
-                        
-                        <!-- Animated Dots -->
-                        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-laysun-gold rounded-full animate-pulse"></div>
-                        <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-300"></div>
-                        <div class="absolute bottom-1/3 left-1/2 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-700"></div>
-                        <div class="absolute top-1/2 right-1/4 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-500"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section id="products" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 scroll-reveal">
-                <div>
-                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Signature Collections</h2>
-                    <p class="text-laysun-gray text-lg">Explore our most popular Architectural-Grade products</p>
-                </div>
-                <a href="#" class="mt-4 md:mt-0 text-laysun-gold font-semibold hover:text-laysun-gold-hover transition-colors inline-flex items-center gap-2">
-                    View All Products
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
-                    <div class="relative h-64 overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1614594975525-e45890e2e122?w=600&h=800&fit=crop" alt="Signature Olive Tree 9ft" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-laysun-gold text-laysun-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Signature</span>
-                        </div>
-                        <div class="absolute top-4 right-4 flex flex-col gap-2">
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="sun" class="w-3 h-3"></i> UV
-                            </span>
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="flame" class="w-3 h-3"></i> Fire
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">Multi-Stem Olive Tree</h3>
-                        <p class="text-laysun-gray text-sm mb-3">4ft - 9ft | UV Protected | Retail Ready</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">PE/Silk Blend</span>
-                            <button onclick="addToInquiry('olive-tree-9ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
-                                <i data-lucide="plus" class="w-4 h-4"></i>
-                                Add to Inquiry
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
-                    <div class="relative h-64 overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1597055181300-e30ba15247b5?w=600&h=800&fit=crop" alt="Fiddle Leaf Fig" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 flex flex-col gap-2">
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="flame" class="w-3 h-3"></i> Fire
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">4ft Fiddle Leaf Fig</h3>
-                        <p class="text-laysun-gray text-sm mb-3">4ft | Barcode Ready | Fire Retardant</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">Premium PE</span>
-                            <button onclick="addToInquiry('fiddle-leaf-4ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
-                                <i data-lucide="plus" class="w-4 h-4"></i>
-                                Add to Inquiry
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
-                    <div class="relative h-64 overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600&h=800&fit=crop" alt="Vertical Green Wall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 flex flex-col gap-2">
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="flame" class="w-3 h-3"></i> NFPA 701
-                            </span>
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="sun" class="w-3 h-3"></i> UV
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">Fire-Retardant Vertical Green Wall</h3>
-                        <p class="text-laysun-gray text-sm mb-3">Custom Size | NFPA 701 | UV Stable</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">Mixed Materials</span>
-                            <button onclick="addToInquiry('green-wall-custom')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
-                                <i data-lucide="plus" class="w-4 h-4"></i>
-                                Add to Inquiry
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
-                    <div class="relative h-64 overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&h=800&fit=crop" alt="Bamboo Tree" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 right-4 flex flex-col gap-2">
-                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                                <i data-lucide="sun" class="w-3 h-3"></i> 2000h+
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">UV-Stable Bamboo</h3>
-                        <p class="text-laysun-gray text-sm mb-3">6ft - 10ft | 2000h+ UV | Outdoor Ready</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">PVC/PE Blend</span>
-                            <button onclick="addToInquiry('bamboo-6-10ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
-                                <i data-lucide="plus" class="w-4 h-4"></i>
-                                Add to Inquiry
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Study Highlight -->
-    <section id="cases" class="py-20 bg-laysun-green relative overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop" alt="Luxury Hotel Background" class="w-full h-full object-cover opacity-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-laysun-green via-laysun-green/95 to-laysun-green/80"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="scroll-reveal">
-                    <div class="inline-flex items-center gap-2 bg-laysun-gold/20 text-laysun-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                        <i data-lucide="star" class="w-4 h-4"></i>
-                        Featured Case Study
-                    </div>
-                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">Luxury Hotel Los Angeles</h2>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        Laysun为位于洛杉矶的一家五星级酒店提供了定制9英尺的橄榄树，产品符合加州严格的防火标准，并且无需维护。自安装以来，酒店大堂的绿化状态保持完美，给客人留下深刻印象。
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="border-l-2 border-laysun-gold pl-4">
-                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">100%</div>
-                            <div class="text-gray-400 text-sm">Maintenance Cost Reduction</div>
-                        </div>
-                        <div class="border-l-2 border-laysun-gold pl-4">
-                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">$12K</div>
-                            <div class="text-gray-400 text-sm">Annual Savings</div>
-                        </div>
-                        <div class="border-l-2 border-laysun-gold pl-4">
-                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">18+</div>
-                            <div class="text-gray-400 text-sm">Months Problem-Free</div>
-                        </div>
-                        <div class="border-l-2 border-laysun-gold pl-4">
-                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">5★</div>
-                            <div class="text-gray-400 text-sm">Guest Satisfaction</div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="btn-primary px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
-                            Read Full Case Study
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#customization" class="px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-laysun-green transition-all">
-                            See Samples in Your Space
-                            <i data-lucide="package" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="relative scroll-reveal">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop" alt="Luxury Hotel Los Angeles Project" class="w-full h-auto">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                            <p class="text-white font-montserrat font-semibold">Signature Olive Tree 9ft Installation</p>
-                            <p class="text-gray-300 text-sm">Grand Lobby, Beverly Hills</p>
-                        </div>
-                    </div>
+                <div class="cert-item">
+                    <h3>RoHS</h3>
+                    <p>Environmental</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-laysun-light">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
-            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Ready to Transform Your Space?</h2>
-            <p class="text-laysun-gray text-lg mb-10 max-w-2xl mx-auto">
-                从概念到安装，Laysun为您提供全方位的仿真园艺解决方案。立即开始您的定制项目，或申请免费样品包体验我们的品质。
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#customization" class="btn-primary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
-                    Start a Bespoke Project
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="btn-secondary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
-                    Request Sample Kit
-                    <i data-lucide="package" class="w-5 h-5"></i>
-                </a>
-            </div>
-
-            <div class="mt-12 flex items-center justify-center gap-8 text-laysun-gray">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
-                    <span class="text-sm">Free Consultation</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
-                    <span class="text-sm">Custom Design</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
-                    <span class="text-sm">Global Delivery</span>
-                </div>
-            </div>
-        </div>
+    <section class="cta-section">
+        <h2>Partner With Us</h2>
+        <p>Let's discuss how Laysun can bring architectural-grade artificial horticulture solutions to your next commercial project.</p>
+        <a href="contact.html" class="btn-primary">Start Conversation</a>
     </section>
 
+    <!-- Inquiry Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
+        </div>
+        <div class="inquiry-items" id="inquiryItems">
+            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
+        </div>
+        <div class="inquiry-footer">
+            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </aside>
+
     <!-- Footer -->
-    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
-                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
-                        </div>
-                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
-                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。结合创新技术与精湛设计，打造既美观又环保的园艺系统。
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#products" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
-                        <li><a href="#cases" class="text-gray-400 hover:text-laysun-gold transition-colors">Case Studies</a></li>
-                        <li><a href="#customization" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
-                            <span>Global HQ: Los Angeles, CA</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
-                            <span>info@laysun.com</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="products.html?category=trees">Artificial Trees</a></li>
+                    <li><a href="products.html?category=plants">Artificial Plants</a></li>
+                    <li><a href="products.html?category=green-walls">Green Walls</a></li>
+                    <li><a href="products.html?category=custom">Custom Solutions</a></li>
+                </ul>
             </div>
-
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
-                </div>
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="solutions.html?type=hotel">Hotel & Hospitality</a></li>
+                    <li><a href="solutions.html?type=retail">Retail Spaces</a></li>
+                    <li><a href="solutions.html?type=commercial">Commercial Buildings</a></li>
+                    <li><a href="solutions.html?type=outdoor">Outdoor Applications</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#capabilities">Capabilities</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@laysun.com</li>
+                    <li>Tel: +86 xxx xxxx xxxx</li>
+                    <li>Manufacturing: Guangdong, China</li>
+                    <li>Global Distribution Network</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun. All rights reserved. | <a href="privacy.html" style="color: inherit;">Privacy Policy</a> | <a href="terms.html" style="color: inherit;">Terms of Service</a></p>
         </div>
     </footer>
 
-    <!-- Inquiry Cart Sidebar -->
-    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
-        <div class="h-full flex flex-col">
-            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
-                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
-                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
-                <div class="text-center text-gray-500 py-12">
-                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
-                    <p>Your inquiry list is empty.</p>
-                    <p class="text-sm mt-2">Start exploring our collections.</p>
-                </div>
-            </div>
-            <div class="p-6 border-t border-gray-200 bg-gray-50">
-                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
-                    Submit Inquiry
-                </button>
-            </div>
-        </div>
-    </div>
-    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
-
-    <!-- JavaScript -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        // Inquiry System
+        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
 
-        // GSAP ScrollTrigger Registration
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero Animation
-        gsap.to(".hero-content", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: 0.3
-        });
-
-        // Scroll Reveal Animations
-        const scrollElements = document.querySelectorAll('.scroll-reveal');
-        scrollElements.forEach((element, index) => {
-            gsap.to(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                },
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "power2.out",
-                delay: index * 0.1
-            });
-        });
-
-        // Navbar Scroll Effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Inquiry Cart Logic
-        let inquiryList = [];
-
-        function toggleInquiryCart() {
-            const cart = document.getElementById('inquiry-cart');
-            const overlay = document.getElementById('cart-overlay');
-            
-            if (cart.classList.contains('translate-x-full')) {
-                cart.classList.remove('translate-x-full');
-                overlay.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                cart.classList.add('translate-x-full');
-                overlay.classList.add('hidden');
-                document.body.style.overflow = '';
+        function updateInquiryCount() {
+            const count = document.getElementById('inquiryCount');
+            if (count) {
+                count.textContent = inquiryList.length;
+                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
             }
         }
 
-        function addToInquiry(productId) {
-            const products = {
-                'olive-tree-9ft': {
-                    name: 'Multi-Stem Olive Tree',
-                    specs: '4ft - 9ft | UV Protected',
-                    image: 'https://images.unsplash.com/photo-1614594975525-e45890e2e122?w=200&h=200&fit=crop'
-                },
-                'fiddle-leaf-4ft': {
-                    name: '4ft Fiddle Leaf Fig',
-                    specs: '4ft | Fire Retardant',
-                    image: 'https://images.unsplash.com/photo-1597055181300-e30ba15247b5?w=200&h=200&fit=crop'
-                },
-                'green-wall-custom': {
-                    name: 'Fire-Retardant Vertical Green Wall',
-                    specs: 'Custom Size | NFPA 701',
-                    image: 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=200&h=200&fit=crop'
-                },
-                'bamboo-6-10ft': {
-                    name: 'UV-Stable Bamboo',
-                    specs: '6ft - 10ft | 2000h+ UV',
-                    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=200&h=200&fit=crop'
-                }
-            };
-
-            const product = products[productId];
-            if (product && !inquiryList.find(item => item.id === productId)) {
-                inquiryList.push({ id: productId, ...product });
-                updateInquiryCart();
-                
-                // Show notification
-                showNotification('Product added to inquiry list');
-            }
+        function toggleInquiry() {
+            const sidebar = document.getElementById('inquirySidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            updateInquirySidebar();
         }
 
-        function removeFromInquiry(productId) {
-            inquiryList = inquiryList.filter(item => item.id !== productId);
-            updateInquiryCart();
-        }
-
-        function updateInquiryCart() {
-            const container = document.getElementById('inquiry-items');
-            const badge = document.getElementById('inquiry-badge');
-            const submitBtn = document.getElementById('submit-inquiry-btn');
-            
-            // Update badge
-            if (inquiryList.length > 0) {
-                badge.textContent = inquiryList.length;
-                badge.classList.remove('hidden');
-                submitBtn.disabled = false;
-            } else {
-                badge.classList.add('hidden');
-                submitBtn.disabled = true;
-            }
-            
-            // Update cart content
+        function updateInquirySidebar() {
+            const container = document.getElementById('inquiryItems');
             if (inquiryList.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center text-gray-500 py-12">
-                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
-                        <p>Your inquiry list is empty.</p>
-                        <p class="text-sm mt-2">Start exploring our collections.</p>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = inquiryList.map(item => `
-                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg">
-                        <div class="flex-1">
-                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
-                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
-                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
-                                <i data-lucide="trash-2" class="w-3 h-3"></i>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
+                container.innerHTML = '<p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>';
+                return;
             }
-            
-            lucide.createIcons();
+
+            container.innerHTML = inquiryList.map(item => `
+                <div class="inquiry-item">
+                    <div class="inquiry-item-details">
+                        <h4>${item.name}</h4>
+                        <p>Qty: ${item.quantity}</p>
+                    </div>
+                    <button class="remove-item" onclick="removeFromInquiry('${item.id}')">×</button>
+                </div>
+            `).join('');
+        }
+
+        function removeFromInquiry(id) {
+            inquiryList = inquiryList.filter(item => item.id !== id);
+            localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
+            updateInquiryCount();
+            updateInquirySidebar();
         }
 
         function submitInquiry() {
-            if (inquiryList.length === 0) return;
-            
-            // In real implementation, this would submit to backend
-            alert('Inquiry submitted successfully! We will contact you within 24 hours.');
-            inquiryList = [];
-            updateInquiryCart();
-            toggleInquiryCart();
+            if (inquiryList.length === 0) {
+                alert('Please add products to your inquiry first.');
+                return;
+            }
+            window.location.href = 'contact.html?inquiry=true';
         }
 
-        function filterByApplication(type) {
-            // Navigate to products page with filter
-            window.location.href = `/products?application=${type}`;
-        }
-
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.className = 'fixed bottom-4 right-4 bg-laysun-green text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center gap-2 animate-bounce';
-            notification.innerHTML = `
-                <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
-                <span>${message}</span>
-            `;
-            document.body.appendChild(notification);
-            lucide.createIcons();
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        // Smooth Scroll for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateInquiryCount();
         });
     </script>
 </body>
