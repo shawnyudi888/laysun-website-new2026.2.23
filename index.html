@@ -51,14 +51,9 @@
             --text: #333333;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--bg-warm);
@@ -78,7 +73,7 @@
             line-height: 1.2;
         }
 
-        /* Architectural Button Styles */
+        /* Button Styles - Architectural Precision */
         .btn-primary {
             background-color: var(--primary);
             color: white;
@@ -87,8 +82,8 @@
             font-weight: 600;
             letter-spacing: 1px;
             transition: all 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
         .btn-primary:hover {
@@ -97,31 +92,29 @@
             box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
         }
 
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
+        .btn-primary:active { transform: scale(0.98); }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
+            color: white;
+            border: 1px solid white;
             border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             letter-spacing: 1px;
             transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
         .btn-secondary:hover {
-            background-color: var(--primary);
-            color: white;
+            background-color: white;
+            color: var(--primary);
         }
 
-        .btn-secondary:active {
-            transform: scale(0.98);
-        }
+        .btn-secondary:active { transform: scale(0.98); }
 
-        /* Navigation Transition */
+        /* Navigation */
         .nav-scrolled {
             background-color: rgba(249, 248, 245, 0.95) !important;
             backdrop-filter: blur(10px);
@@ -132,13 +125,17 @@
             filter: brightness(0) saturate(100%) invert(18%) sepia(15%) saturate(1500%) hue-rotate(120deg) brightness(95%) contrast(90%);
         }
 
-        .nav-scrolled .nav-link {
-            color: var(--primary) !important;
-        }
+        .nav-scrolled .nav-link { color: var(--primary) !important; }
+        .nav-scrolled .nav-logo-text { color: var(--primary) !important; }
 
         .nav-link {
             position: relative;
             transition: color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .nav-link::after {
@@ -152,9 +149,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        .nav-link:hover::after { width: 100%; }
 
         /* Hero Video Overlay */
         .hero-overlay {
@@ -176,6 +171,7 @@
         .solution-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid transparent;
+            background: white;
         }
 
         .solution-card:hover {
@@ -193,6 +189,8 @@
         .filter-tag {
             transition: all 0.3s;
             border: 1px solid #e5e5e5;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
         }
 
         .filter-tag:hover, .filter-tag.active {
@@ -250,9 +248,7 @@
             transition: all 0.3s;
         }
 
-        .inquiry-basket:hover {
-            transform: scale(1.05);
-        }
+        .inquiry-basket:hover { transform: scale(1.05); }
 
         .basket-pulse {
             animation: basketPulse 2s infinite;
@@ -279,7 +275,7 @@
             box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1);
         }
 
-        /* Smooth Reveal Animation */
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -291,38 +287,24 @@
             transform: translateY(0);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-warm);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--forest-dark);
-        }
-
         /* Mobile Menu */
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
 
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
+        .mobile-menu.open { transform: translateX(0); }
 
-        /* Trust Strip Gradient */
+        /* Trust Strip */
         .trust-strip {
             background: linear-gradient(90deg, rgba(31,61,43,0.05) 0%, rgba(197,160,89,0.1) 50%, rgba(31,61,43,0.05) 100%);
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-warm); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--forest-dark); }
     </style>
 </head>
 <body class="antialiased">
@@ -331,7 +313,7 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3">
                 <svg class="nav-logo w-10 h-10 text-white transition-all duration-300" viewBox="0 0 40 40" fill="currentColor">
                     <path d="M20 2L2 12v16l18 10 18-10V12L20 2zm0 4l14 7.78v2.2L20 10l-14 5.98v-2.2L20 6zm0 28L6 26.22v-10L20 22l14-5.78v10L20 34z"/>
                     <path d="M20 14l-8 4 8 4 8-4-8-4z" opacity="0.6"/>
@@ -341,12 +323,13 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-8">
-                <a href="#solutions" class="nav-link text-white font-montserrat text-sm font-medium tracking-body hover:text-champagne">Solutions</a>
-                <a href="#products" class="nav-link text-white font-montserrat text-sm font-medium tracking-body hover:text-champagne">Products</a>
-                <a href="#cases" class="nav-link text-white font-montserrat text-sm font-medium tracking-body hover:text-champagne">Case Studies</a>
-                <a href="#custom" class="nav-link text-white font-montserrat text-sm font-medium tracking-body hover:text-champagne">Customization</a>
-                <a href="#contact" class="nav-link text-white font-montserrat text-sm font-medium tracking-body hover:text-champagne">Contact</a>
-                <button onclick="openInquiry()" class="btn-primary px-6 py-2.5 text-sm">Inquiry Basket <span id="basket-count" class="ml-2 bg-champagne text-forest px-2 py-0.5 rounded-full text-xs hidden">0</span></button>
+                <a href="index.html" class="nav-link text-white hover:text-champagne">Home</a>
+                <a href="about.html" class="nav-link text-white hover:text-champagne">About</a>
+                <a href="#solutions" class="nav-link text-white hover:text-champagne">Solutions</a>
+                <a href="#products" class="nav-link text-white hover:text-champagne">Products</a>
+                <a href="#cases" class="nav-link text-white hover:text-champagne">Cases</a>
+                <a href="#contact" class="nav-link text-white hover:text-champagne">Contact</a>
+                <button onclick="openInquiry()" class="btn-primary px-6 py-2.5">Inquiry</button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -365,10 +348,10 @@
                 </svg>
             </button>
             <div class="mt-12 flex flex-col gap-6">
+                <a href="index.html" class="text-forest font-montserrat font-semibold text-lg">Home</a>
+                <a href="about.html" class="text-forest font-montserrat font-semibold text-lg">About</a>
                 <a href="#solutions" class="text-forest font-montserrat font-semibold text-lg">Solutions</a>
                 <a href="#products" class="text-forest font-montserrat font-semibold text-lg">Products</a>
-                <a href="#cases" class="text-forest font-montserrat font-semibold text-lg">Case Studies</a>
-                <a href="#custom" class="text-forest font-montserrat font-semibold text-lg">Customization</a>
                 <a href="#contact" class="text-forest font-montserrat font-semibold text-lg">Contact</a>
                 <button onclick="openInquiry()" class="btn-primary px-6 py-3 mt-4">Inquiry Basket</button>
             </div>
@@ -380,7 +363,7 @@
         <!-- Video Background -->
         <div class="absolute inset-0 w-full h-full">
             <video autoplay muted loop playsinline class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920">
-                <source src="https://assets.mixkit.co/videos/preview/mixkin-interior-of-a-hotel-lobby-with-plants-4819-large.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-interior-of-a-hotel-lobby-with-plants-4819-large.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay absolute inset-0"></div>
         </div>
@@ -410,9 +393,10 @@
                     Providing high-performance botanical solutions for commercial, retail, and outdoor applications worldwide.
                 </p>
                 
+                <!-- CORRECTED BUTTONS -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#solutions" class="btn-primary px-8 py-4 text-base">Explore Solutions</a>
-                    <a href="#custom" class="btn-secondary px-8 py-4 text-base border-white text-white hover:bg-white hover:text-forest">Start a Bespoke Project</a>
+                    <a href="#solutions" class="btn-primary px-8 py-4">Explore Solutions</a>
+                    <a href="#custom" class="btn-secondary px-8 py-4">Start a Bespoke Project</a>
                 </div>
             </div>
 
@@ -450,7 +434,7 @@
                         <span class="text-champagne">Artificial Horticulture</span>
                     </h2>
                     <p class="text-charcoal font-roboto text-lg mb-6 leading-relaxed">
-                        Laysun致力于为全球商业空间提供高质量、可持续的仿真园艺解决方案。我们结合创新技术与精湛设计，打造出既美观又环保的园艺系统，帮助企业提升空间美感，减少维护成本，并符合严格的消防安全标准。
+                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. By combining innovative technology with exquisite design, we create beautiful and eco-friendly garden systems that help businesses enhance spatial aesthetics, reduce maintenance costs, and meet strict fire safety standards.
                     </p>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start gap-4">
@@ -458,8 +442,8 @@
                                 <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-montserrat font-bold text-forest mb-1">创新驱动</h4>
-                                <p class="text-gray-text text-sm">不断推动仿真园艺技术的创新，提供市场上最先进的解决方案。</p>
+                                <h4 class="font-montserrat font-bold text-forest mb-1">Innovation Driven</h4>
+                                <p class="text-gray-text text-sm">We continuously drive innovation in artificial horticulture technology, striving to provide the most advanced solutions in the market.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -467,8 +451,8 @@
                                 <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-montserrat font-bold text-forest mb-1">客户为中心</h4>
-                                <p class="text-gray-text text-sm">每个项目都是量身定制，确保完美契合客户的需求。</p>
+                                <h4 class="font-montserrat font-bold text-forest mb-1">Customer Centric</h4>
+                                <p class="text-gray-text text-sm">Every project is tailored to ensure perfect alignment with client needs.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -476,12 +460,12 @@
                                 <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-montserrat font-bold text-forest mb-1">全球服务</h4>
-                                <p class="text-gray-text text-sm">无论您在世界何地，我们都能提供及时、专业的服务。</p>
+                                <h4 class="font-montserrat font-bold text-forest mb-1">Global Service</h4>
+                                <p class="text-gray-text text-sm">Wherever you are in the world, we provide timely, professional service.</p>
                             </div>
                         </div>
                     </div>
-                    <a href="#custom" class="btn-primary inline-block px-8 py-3">Discover Our Approach</a>
+                    <a href="about.html" class="btn-primary inline-block px-8 py-3">Discover Our Approach</a>
                 </div>
                 <div class="relative reveal">
                     <div class="aspect-[4/5] rounded-architectural overflow-hidden bg-gray-100">
@@ -507,7 +491,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Hotel Solution -->
-                <div class="solution-card bg-warm-white rounded-architectural p-6 cursor-pointer group reveal">
+                <div class="solution-card rounded-architectural p-6 cursor-pointer group reveal">
                     <div class="card-icon w-14 h-14 rounded-architectural bg-forest/10 flex items-center justify-center mb-6 transition-colors duration-300">
                         <svg class="w-7 h-7 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
@@ -520,7 +504,7 @@
                 </div>
 
                 <!-- Retail Solution -->
-                <div class="solution-card bg-warm-white rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 100ms">
+                <div class="solution-card rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 100ms">
                     <div class="card-icon w-14 h-14 rounded-architectural bg-forest/10 flex items-center justify-center mb-6 transition-colors duration-300">
                         <svg class="w-7 h-7 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                     </div>
@@ -532,8 +516,8 @@
                     </div>
                 </div>
 
-                <!-- Commercial Solution -->
-                <div class="solution-card bg-warm-white rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 200ms">
+                <!-- Corporate Solution -->
+                <div class="solution-card rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 200ms">
                     <div class="card-icon w-14 h-14 rounded-architectural bg-forest/10 flex items-center justify-center mb-6 transition-colors duration-300">
                         <svg class="w-7 h-7 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
@@ -546,7 +530,7 @@
                 </div>
 
                 <!-- Outdoor Solution -->
-                <div class="solution-card bg-warm-white rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 300ms">
+                <div class="solution-card rounded-architectural p-6 cursor-pointer group reveal" style="transition-delay: 300ms">
                     <div class="card-icon w-14 h-14 rounded-architectural bg-forest/10 flex items-center justify-center mb-6 transition-colors duration-300">
                         <svg class="w-7 h-7 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
@@ -576,7 +560,7 @@
                     </div>
                     <h2 class="font-montserrat font-bold text-3xl md:text-4xl mb-6">Luxury Hotel Los Angeles</h2>
                     <p class="text-white/80 font-roboto text-lg mb-6 leading-relaxed">
-                        Laysun为位于洛杉矶的一家五星级酒店提供了定制9英尺的橄榄树，产品符合加州严格的防火标准，并且无需维护。自安装以来，酒店大堂的绿化状态保持完美，给客人留下深刻印象。
+                        Laysun provided a custom 9-foot olive tree for a five-star hotel in Los Angeles, meeting California's strict fire safety standards with zero maintenance requirements. Since installation, the hotel lobby's greenery has remained in perfect condition, leaving a lasting impression on guests.
                     </p>
                     
                     <div class="grid grid-cols-3 gap-6 mb-8">
@@ -598,26 +582,18 @@
                 </div>
 
                 <div class="relative reveal">
-                    <!-- Before/After Comparison Slider -->
                     <div class="comparison-slider relative h-[500px] rounded-architectural overflow-hidden bg-gray-800" id="comparison-slider">
-                        <!-- After Image (Full width background) -->
                         <div class="absolute inset-0">
                             <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200" alt="Hotel Lobby After Installation" class="w-full h-full object-cover">
                         </div>
-                        
-                        <!-- Before Image (Clipped) -->
                         <div class="absolute inset-0 w-1/2 overflow-hidden" id="before-image" style="width: 50%">
                             <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200" alt="Hotel Lobby Before Installation" class="w-full h-full object-cover" style="width: 200%; max-width: none;">
                         </div>
-
-                        <!-- Slider Handle -->
                         <div class="slider-handle" id="slider-handle" style="left: 50%">
                             <div class="slider-button">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                             </div>
                         </div>
-
-                        <!-- Labels -->
                         <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded text-xs font-montserrat tracking-wider">BEFORE</div>
                         <div class="absolute top-4 right-4 bg-champagne/90 px-3 py-1 rounded text-xs font-montserrat tracking-wider text-forest font-bold">AFTER</div>
                     </div>
@@ -644,23 +620,23 @@
             <div class="mb-10 reveal">
                 <div class="flex flex-wrap gap-3 mb-6">
                     <span class="text-charcoal font-montserrat font-semibold text-sm mr-2 py-2">Standards:</span>
-                    <button class="filter-tag active px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">UV Resistant</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Fire Retardant</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Retail Ready</button>
+                    <button class="filter-tag active px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">UV Resistant</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Fire Retardant</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Retail Ready</button>
                 </div>
                 <div class="flex flex-wrap gap-3 mb-6">
                     <span class="text-charcoal font-montserrat font-semibold text-sm mr-2 py-2">Application:</span>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Hotel</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Retail</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Office</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">Outdoor</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Hotel</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Retail</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Office</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">Outdoor</button>
                 </div>
                 <div class="flex flex-wrap gap-3">
                     <span class="text-charcoal font-montserrat font-semibold text-sm mr-2 py-2">Height:</span>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">&lt;4ft</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">4-7ft</button>
-                    <button class="filter-tag active px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">7-10ft</button>
-                    <button class="filter-tag px-4 py-2 rounded-architectural text-sm font-roboto" onclick="toggleFilter(this)">10ft+</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">&lt;4ft</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">4-7ft</button>
+                    <button class="filter-tag active px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">7-10ft</button>
+                    <button class="filter-tag px-4 py-2 rounded-architectural" onclick="toggleFilter(this)">10ft+</button>
                 </div>
             </div>
 
@@ -683,7 +659,7 @@
                             <h3 class="font-montserrat font-bold text-forest text-lg">Signature Olive Tree</h3>
                             <span class="text-champagne font-montserrat font-bold">9ft</span>
                         </div>
-                        <p class="text-gray-text text-sm mb-4">PE/丝绸混合材质，抗UV，符合NFPA 701防火认证</p>
+                        <p class="text-gray-text text-sm mb-4">PE/Silk blend material, UV resistant, NFPA 701 fire certified</p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2">
                                 <span class="text-xs bg-warm-white text-charcoal px-2 py-1 rounded">Hotel</span>
@@ -716,7 +692,7 @@
                             <h3 class="font-montserrat font-bold text-forest text-lg">Ficus Benjamina</h3>
                             <span class="text-champagne font-montserrat font-bold">7ft</span>
                         </div>
-                        <p class="text-gray-text text-sm mb-4">高密度PE材质，自然树干纹理，适合商业办公空间</p>
+                        <p class="text-gray-text text-sm mb-4">High-density PE material, natural trunk texture, perfect for commercial office spaces</p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2">
                                 <span class="text-xs bg-warm-white text-charcoal px-2 py-1 rounded">Office</span>
@@ -743,7 +719,7 @@
                             <h3 class="font-montserrat font-bold text-forest text-lg">Monstera Deliciosa</h3>
                             <span class="text-champagne font-montserrat font-bold">5ft</span>
                         </div>
-                        <p class="text-gray-text text-sm mb-4">标志性裂叶设计，阻燃处理，通过加州防火标准</p>
+                        <p class="text-gray-text text-sm mb-4">Iconic split-leaf design, flame retardant treated, meets California fire standards</p>
                         <div class="flex items-center justify-between">
                             <div class="flex gap-2">
                                 <span class="text-xs bg-warm-white text-charcoal px-2 py-1 rounded">Hotel</span>
@@ -767,7 +743,7 @@
                 <div class="relative z-10 max-w-2xl">
                     <h2 class="text-white font-montserrat font-bold text-3xl md:text-4xl mb-6">Start Your Bespoke Project</h2>
                     <p class="text-white/80 font-roboto text-lg mb-8">
-                        告诉我们您的项目需求，我们将为您量身定制解决方案。支持CAD图纸上传和特定尺寸定制。
+                        Tell us about your project requirements and we will tailor a solution specifically for you. CAD drawing uploads and custom sizing supported.
                     </p>
                     
                     <form class="space-y-4 mb-8" onsubmit="handleCustomSubmit(event)">
@@ -882,7 +858,7 @@
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
                             <a href="#" class="w-10 h-10 rounded-architectural bg-forest text-white flex items-center justify-center hover:bg-champagne transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.259.014-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             </a>
                             <a href="#" class="w-10 h-10 rounded-architectural bg-forest text-white flex items-center justify-center hover:bg-champagne transition-colors">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
@@ -949,10 +925,8 @@
                     <ul class="space-y-2 text-sm text-white/70 font-roboto">
                         <li>info@laysun.co</li>
                         <li>sales@laysun.co</li>
-                        <li>WhatsApp: +1 213-829-8485</li>
-                        <li class="pt-2">
-                            <a href="#" class="text-champagne hover:underline">Download Catalog</a>
-                        </li>
+                        <li>+1 213-829-8485 (US)</li>
+                        <li>+86 138-0250-5260 (CN)</li>
                     </ul>
                 </div>
             </div>
@@ -1047,7 +1021,7 @@
             });
         });
 
-        // Reveal Animation on Scroll
+        // Reveal Animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1097,8 +1071,6 @@
         // Filter System
         function toggleFilter(btn) {
             btn.classList.toggle('active');
-            // Here you would typically filter the products
-            // For demo, we'll just animate the grid
             const grid = document.getElementById('product-grid');
             grid.style.opacity = '0.5';
             setTimeout(() => {
@@ -1116,7 +1088,6 @@
             });
             updateBasketUI();
             
-            // Show notification
             const btn = event.currentTarget;
             const originalHTML = btn.innerHTML;
             btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>';
@@ -1130,14 +1101,12 @@
         function updateBasketUI() {
             const count = inquiryItems.length;
             const badge = document.getElementById('basket-badge');
-            const basketCount = document.getElementById('basket-count');
             const inquiryCount = document.getElementById('inquiry-count');
             const itemsContainer = document.getElementById('inquiry-items');
             
             if (count > 0) {
                 badge.classList.remove('hidden');
                 badge.textContent = count;
-                basketCount.textContent = count;
                 inquiryCount.textContent = count;
                 
                 itemsContainer.innerHTML = inquiryItems.map(item => `
@@ -1197,7 +1166,6 @@
             closeInquiry();
         }
 
-        // Form Handlers
         function handleCustomSubmit(e) {
             e.preventDefault();
             alert('Thank you for your project request! We will review your requirements and contact you shortly.');
@@ -1207,17 +1175,6 @@
         function showCaseDetail() {
             alert('Case study detail page would open here. This would include full project specifications, installation process, and client testimonials.');
         }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            // Preload critical images
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                if (img.dataset.src) {
-                    img.src = img.dataset.src;
-                }
-            });
-        });
     </script>
 </body>
 </html>
