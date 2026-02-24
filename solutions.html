@@ -3,381 +3,701 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commercial Greenery Solutions | Laysun Artificial Horticulture Systems</title>
-    <meta name="description" content="Tailored artificial greenery solutions for hotels, retail, commercial buildings, and outdoor applications. NFPA 701 certified, UV stable, and retail-ready.">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SEO 优化 (符合 File 6 要求) -->
+    <title>Solutions | Laysun - Artificial Horticulture for Commercial Spaces</title>
+    <meta name="description" content="Explore Laysun's tailored artificial horticulture solutions for hotels, retail, offices, and outdoor spaces. Real-world case studies included.">
+    <!-- 字体 (File 4) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           Laysun Solutions Page - 基于全站视觉与文案规范
+           包含: 解决方案概述、酒店案例、产品关联卡片 (File 1 & 5)
+           ============================================ */
+
+        /* --- 全局变量 (File 3 & 4) --- */
+        :root {
+            --primary: #1F3D2B;      /* 深森林绿 */
+            --accent: #C5A059;       /* 香槟金 */
+            --bg-warm: #F9F8F5;       /* 暖白 */
+            --text-dark: #333333;     /* 炭灰 */
+            --text-light: #FFFFFF;
+            --text-gray: #6B6B6B;
+            --border-light: #EEEEEE;
+
+            --font-heading: 'Montserrat', 'Inter', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+
+            --container-max: 1440px;
+            --radius-btn: 4px;
+            --radius-card: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-warm);
+            line-height: 1.6;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* --- 字体系统 --- */
+        h1, h2, h3, .btn, .nav-link {
+            font-family: var(--font-heading);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            color: var(--primary);
+        }
+
+        /* --- UI 组件 --- */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: var(--radius-btn);
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--text-light);
+            transform: scale(0.98);
+        }
+
+        /* 导航栏 (滚动变色) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            transition: background-color 0.3s ease;
+            background-color: transparent;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--bg-warm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-svg {
+            display: block;
+            height: 40px;
+            width: auto;
+        }
+
+        .navbar .logo-svg path {
+            fill: var(--text-light);
+            transition: fill 0.3s ease;
+        }
+
+        .navbar.scrolled .logo-svg path {
+            fill: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-decoration: none;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--primary);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 页面主要内容区 */
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%231F3D2B"/><circle cx="1200" cy="400" r="120" fill="%23C5A059" opacity="0.2"/><circle cx="500" cy="600" r="180" fill="%23FFFFFF" opacity="0.05"/><path d="M300,700 L450,500 L600,680 L750,550 L900,720 L1050,600 L1200,750 L1350,620 L1500,700 L1650,550 L1750,650" stroke="%23C5A059" stroke-width="2" opacity="0.3" fill="none"/></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .page-header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-xl) auto;
+        }
+
+        .section-intro p {
+            color: var(--text-gray);
+            margin-top: var(--space-sm);
+        }
+
+        /* 解决方案卡片 (每个解决方案一个区块) */
+        .solution-block {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .solution-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .solution-header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .solution-header h3 {
+            font-size: 32px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .solution-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #e0e0e0;
+            background-image: linear-gradient(145deg, #2a5a3a, #b58a4b);
+            background-size: cover;
+        }
+
+        .product-info {
+            padding: var(--space-md);
+        }
+
+        .product-info h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .product-meta {
+            display: flex;
+            gap: var(--space-sm);
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: var(--space-xs) 0;
+        }
+
+        .product-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-right: var(--space-xs);
+        }
+
+        .case-link {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .case-link:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* 特色案例模块 (Luxury Hotel Los Angeles) */
+        .featured-case {
+            background-color: white;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-light);
+            padding: var(--space-xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            margin: var(--space-2xl) 0;
+        }
+
+        .case-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-image: linear-gradient(135deg, #1F3D2B, #C5A059);
+            border-radius: var(--radius-card);
+        }
+
+        .case-content h3 {
+            font-size: 28px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .case-content p {
+            color: var(--text-gray);
+            margin-bottom: var(--space-md);
+        }
+
+        /* 信任条 (复用首页) */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .trust-item svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        /* 页脚 */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: var(--space-xl) 0;
+        }
+
+        .footer .logo-svg path {
+            fill: var(--accent);
+        }
+
+        .footer a {
+            color: var(--bg-warm);
+            text-decoration: none;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            h1 { font-size: 42px; }
+            h2 { font-size: 32px; }
+            h3 { font-size: 24px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-case { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--space-sm); }
+            h1 { font-size: 32px; }
+            .nav-menu { display: none; }
+            .product-grid { grid-template-columns: 1fr; }
+            .trust-strip { gap: var(--space-md); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- 导航栏 (与全局一致) -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <nav class="nav">
-                <a href="index.html" class="logo">LAYSUN</a>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html" class="active">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Customization</a></li>
-                    <li><a href="capabilities.html">Capabilities</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="header-actions">
-                    <button class="btn-icon" id="inquiryBtn" aria-label="Project Inquiry">
-                        <i class="fas fa-clipboard-list"></i>
-                        <span class="inquiry-badge" id="inquiryBadge">0</span>
-                    </button>
-                    <button class="btn-mobile" id="mobileMenuBtn" aria-label="Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
+            <a href="index.html">
+                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
+                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
+                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
+                </svg>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="solutions.html" class="nav-link">SOLUTIONS</a></li>
+                <li><a href="products.html" class="nav-link">PRODUCTS</a></li>
+                <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
+                <li><a href="customization.html" class="nav-link">DESIGN</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题区 -->
+    <header class="page-header">
+        <div class="container">
+            <h1>TAILORED SOLUTIONS FOR EVERY SPACE</h1>
+            <p>High-performance botanical solutions for commercial, retail, and outdoor applications worldwide.</p>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="solutions.html" class="active">Solutions</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="customization.html">Customization</a></li>
-            <li><a href="capabilities.html">Capabilities</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+    <!-- 主要内容 -->
+    <main>
+        <!-- 解决方案概述 (File 5) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Our Capabilities</h2>
+                    <p>Laysun provides customized artificial horticulture solutions for a variety of commercial spaces, including hotels, retail stores, office buildings, exhibition halls, and more. Through highly realistic plants, trees, and greenery systems, we bring natural vitality and harmony to your space.</p>
+                </div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Tailored Solutions for Every Space</h1>
-            <p class="page-subtitle">From luxury hotels to retail giants, we engineer artificial horticulture systems that meet the world's toughest standards while exceeding aesthetic expectations.</p>
-        </div>
-    </section>
-
-    <!-- Solutions Grid -->
-    <section class="solutions-section section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Industry Solutions</h2>
-                <p class="section-subtitle">Specialized artificial greenery systems designed for the unique demands of each commercial environment</p>
-            </div>
-
-            <div class="solutions-grid">
-                <!-- Hotels & Hospitality -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Luxury hotel with artificial greenery">
+                <!-- 信任条 (体现专业认证) -->
+                <div class="trust-strip">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" fill="none"/></svg>
+                        <span>NFPA 701 CERTIFIED</span>
                     </div>
-                    <div class="solution-content">
-                        <h3>Hotels & Hospitality</h3>
-                        <span class="solution-tag">Fire-safe elegance for luxury environments</span>
-                        <p>Create unforgettable first impressions with NFPA 701 certified artificial plants that maintain perfect aesthetics without compromising safety standards required by luxury hospitality venues.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> NFPA 701 Fire Retardant Certified</li>
-                            <li><i class="fas fa-check"></i> Zero maintenance requirements</li>
-                            <li><i class="fas fa-check"></i> Custom sizing for grand lobbies</li>
-                            <li><i class="fas fa-check"></i> Realistic appearance guaranteed</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Hotel Case Studies <i class="fas fa-arrow-right"></i></a>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6V12L16 14" stroke="white" stroke-width="2" fill="none"/></svg>
+                        <span>UV RESISTANT</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M4 12H20" stroke="white" stroke-width="2"/><path d="M12 4V20" stroke="white" stroke-width="2"/></svg>
+                        <span>ZERO MAINTENANCE</span>
                     </div>
                 </div>
 
-                <!-- Retail Spaces -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Retail store interior">
+                <!-- 酒店解决方案 -->
+                <div class="solution-block">
+                    <div class="solution-header">
+                        <h3>Hotel & Hospitality</h3>
+                        <p>Elevate guest experiences with elegant, fire-safe greenery that requires no maintenance.</p>
                     </div>
-                    <div class="solution-content">
-                        <h3>Retail Spaces</h3>
-                        <span class="solution-tag">Retail-ready botanical merchandising</span>
-                        <p>Barcode-ready packaging and display-optimized designs that help retailers create immersive brand experiences while maintaining consistent quality across thousands of locations.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> Retail-ready packaging & barcoding</li>
-                            <li><i class="fas fa-check"></i> UV stable for window displays</li>
-                            <li><i class="fas fa-check"></i> Scalable global fulfillment</li>
-                            <li><i class="fas fa-check"></i> Trend-forward designs</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Retail Case Studies <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Commercial Buildings -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Modern office building">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Commercial Buildings</h3>
-                        <span class="solution-tag">Large-scale biophilic integration</span>
-                        <p>Architectural-grade solutions for corporate headquarters, mixed-use developments, and commercial complexes requiring consistent quality across extensive installations.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> Large volume capabilities</li>
-                            <li><i class="fas fa-check"></i> Specification-grade documentation</li>
-                            <li><i class="fas fa-check"></i> LEED contribution support</li>
-                            <li><i class="fas fa-check"></i> Multi-site consistency</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Commercial Case Studies <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Outdoor Applications -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Outdoor artificial plants">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Outdoor Applications</h3>
-                        <span class="solution-tag">Weather-resistant exterior solutions</span>
-                        <p>UV-stable and weather-resistant artificial plants engineered to withstand harsh outdoor conditions while maintaining color fidelity and structural integrity for years.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> 5000h+ UV stability rating</li>
-                            <li><i class="fas fa-check"></i> Weather-resistant construction</li>
-                            <li><i class="fas fa-check"></i> Drainage-optimized bases</li>
-                            <li><i class="fas fa-check"></i> Wind-load tested</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Outdoor Case Studies <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Healthcare Facilities -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" alt="Healthcare facility interior">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Healthcare Facilities</h3>
-                        <span class="solution-tag">Hypoallergenic healing environments</span>
-                        <p>Create calming, maintenance-free environments that support patient wellbeing while meeting strict healthcare facility standards for cleanliness and safety.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> Antimicrobial treatments available</li>
-                            <li><i class="fas fa-check"></i> Dust-resistant foliage</li>
-                            <li><i class="fas fa-check"></i> No pollen or allergens</li>
-                            <li><i class="fas fa-check"></i> Easy sanitization</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Healthcare Case Studies <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Events & Exhibitions -->
-                <div class="solution-card">
-                    <div class="solution-image">
-                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop" alt="Event space with decorations">
-                    </div>
-                    <div class="solution-content">
-                        <h3>Events & Exhibitions</h3>
-                        <span class="solution-tag">Temporary installations, permanent impact</span>
-                        <p>Rental and purchase options for trade shows, corporate events, and temporary installations with rapid deployment and professional installation services.</p>
-                        <ul class="solution-features">
-                            <li><i class="fas fa-check"></i> Rental programs available</li>
-                            <li><i class="fas fa-check"></i> Rapid deployment</li>
-                            <li><i class="fas fa-check"></i> Installation services</li>
-                            <li><i class="fas fa-check"></i> Reusable designs</li>
-                        </ul>
-                        <a href="#" class="btn-text">View Events Portfolio <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Case Study -->
-    <section class="case-study-section section-padding bg-light">
-        <div class="container">
-            <div class="case-study-header text-center">
-                <h2 class="section-title">Featured Case Study</h2>
-                <p class="section-subtitle">See how we transformed a luxury Los Angeles hotel with our signature artificial horticulture solutions</p>
-            </div>
-
-            <div class="case-study-card">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop" alt="Luxury hotel lobby">
-                    <div class="case-study-badge">Featured Project</div>
-                </div>
-                <div class="case-study-content">
-                    <div class="case-study-meta">
-                        <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, California</span>
-                    </div>
-                    <h3>Luxury Hotel Los Angeles</h3>
-                    <p>A prestigious five-star property in downtown Los Angeles required fire-retardant botanical solutions that met California's strict safety codes while delivering the luxury aesthetic their brand demanded. We installed custom 9-foot olive trees throughout the lobby and atrium spaces.</p>
-                    
-                    <div class="case-study-stats">
-                        <div class="stat">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">Maintenance Cost Reduction</span>
+                    <div class="product-grid">
+                        <!-- 产品卡片 1 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #2a5a3a, #b58a4b);"></div>
+                            <div class="product-info">
+                                <h4>Signature Olive Tree 9ft</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                    <span>☀️ UV Resistant</span>
+                                </div>
+                                <div><span class="product-badge">Hotel Lobby</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="products-used">
-                        <h4>Products Used</h4>
-                        <div class="product-tags">
-                            <span class="product-tag">Signature Olive Tree 9ft</span>
-                            <span class="product-tag">Ficus Collection</span>
-                            <span class="product-tag">Custom Planters</span>
+                        <!-- 产品卡片 2 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #2d5e44, #a77b3c);"></div>
+                            <div class="product-info">
+                                <h4>Palm Collection 12ft</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                </div>
+                                <div><span class="product-badge">Resort</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
+                        <!-- 产品卡片 3 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #326b4a, #8f6935);"></div>
+                            <div class="product-info">
+                                <h4>Ficus Hedge Panels</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                    <span>☀️ UV Resistant</span>
+                                </div>
+                                <div><span class="product-badge">Restaurant</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Related Products -->
-    <section class="related-products section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Products for Hospitality</h2>
-                <p class="section-subtitle">Explore our most popular solutions for hotel and commercial spaces</p>
-            </div>
-
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&h=800&fit=crop" alt="Olive Tree">
-                        <span class="product-badge">Signature</span>
+                <!-- 零售解决方案 -->
+                <div class="solution-block">
+                    <div class="solution-header">
+                        <h3>Retail & Commercial</h3>
+                        <p>Create inviting shopping environments with durable, retail-ready greenery.</p>
                     </div>
-                    <div class="product-info">
-                        <h4>Signature Olive Tree 9ft</h4>
-                        <p class="product-specs">NFPA 701 Certified • UV Stable</p>
-                        <a href="products.html" class="btn-text">View Details</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1598880940371-c756e015fea1?w=600&h=800&fit=crop" alt="Fiddle Leaf Fig">
-                        <span class="product-badge">Best Seller</span>
-                    </div>
-                    <div class="product-info">
-                        <h4>Fiddle Leaf Fig Collection</h4>
-                        <p class="product-specs">Multiple Sizes • Fire Retardant</p>
-                        <a href="products.html" class="btn-text">View Details</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&h=800&fit=crop" alt="Green Wall">
-                        <span class="product-badge">Custom</span>
-                    </div>
-                    <div class="product-info">
-                        <h4>Vertical Garden Systems</h4>
-                        <p class="product-specs">Modular Design • Easy Install</p>
-                        <a href="products.html" class="btn-text">View Details</a>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #3b7555, #c29b5b);"></div>
+                            <div class="product-info">
+                                <h4>Topiary Spheres Set</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                </div>
+                                <div><span class="product-badge">Retail</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #b38d4d);"></div>
+                            <div class="product-info">
+                                <h4>Green Wall Modules</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                    <span>☀️ UV Resistant</span>
+                                </div>
+                                <div><span class="product-badge">Mall</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #a57842);"></div>
+                            <div class="product-info">
+                                <h4>Artificial Boxwood Hedges</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                </div>
+                                <div><span class="product-badge">Storefront</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&h=800&fit=crop" alt="Potted Plants">
-                        <span class="product-badge">New</span>
+                <!-- 办公与户外解决方案 -->
+                <div class="solution-block">
+                    <div class="solution-header">
+                        <h3>Office & Outdoor</h3>
+                        <p>Bring biophilic design to workplaces and exteriors with weather-resistant plants.</p>
                     </div>
-                    <div class="product-info">
-                        <h4>Designer Potted Collection</h4>
-                        <p class="product-specs">Ready to Display • Premium Pots</p>
-                        <a href="products.html" class="btn-text">View Details</a>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #478f68, #dbb168);"></div>
+                            <div class="product-info">
+                                <h4>Large Ficus Trees 10ft+</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                    <span>☀️ UV Resistant</span>
+                                </div>
+                                <div><span class="product-badge">Outdoor</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #b38d4d);"></div>
+                            <div class="product-info">
+                                <h4>Planter Boxes with Grass</h4>
+                                <div class="product-meta">
+                                    <span>☀️ UV Resistant</span>
+                                </div>
+                                <div><span class="product-badge">Terrace</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(145deg, #5da07e, #c7a159);"></div>
+                            <div class="product-info">
+                                <h4>Hanging Baskets</h4>
+                                <div class="product-meta">
+                                    <span>🔥 Fire Retardant</span>
+                                </div>
+                                <div><span class="product-badge">Office</span></div>
+                                <a href="#" class="case-link">View Case Study →</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="products.html" class="btn btn-primary btn-large">View All Products</a>
-            </div>
-        </div>
-    </section>
+                <!-- 特色案例：Luxury Hotel Los Angeles (File 1 & 5) -->
+                <div class="featured-case">
+                    <div class="case-image"></div>
+                    <div class="case-content">
+                        <h3>Luxury Hotel Los Angeles</h3>
+                        <p>Laysun provided custom 9ft olive trees for a five-star hotel in Los Angeles. The products meet California's strict fire safety standards and require zero maintenance. Since installation, the hotel lobby's greenery has remained in perfect condition, leaving a lasting impression on guests.</p>
+                        <a href="#" class="btn btn-primary">EXPLORE CASE STUDY</a>
+                    </div>
+                </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section section-padding">
-        <div class="container">
-            <div class="cta-content text-center">
-                <h2 class="cta-title">Ready to Transform Your Space?</h2>
-                <p class="cta-subtitle">Connect with our solution experts to discuss your project requirements</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
-                    <a href="customization.html" class="btn btn-secondary btn-large">Explore Customization</a>
+                <!-- 额外的CTA -->
+                <div style="text-align: center; margin-top: var(--space-2xl);">
+                    <h3 style="margin-bottom: var(--space-md);">Ready to start your project?</h3>
+                    <a href="contact.html" class="btn btn-primary" style="margin-right: var(--space-sm);">CONTACT US</a>
+                    <a href="customization.html" class="btn btn-secondary">CUSTOMIZE YOUR SOLUTION</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
+    <!-- 页脚 (与全局一致) -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">LAYSUN</a>
-                    <p class="footer-tagline">Architectural-Grade Artificial Greenery Solutions</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="solutions.html">Commercial</a></li>
-                        <li><a href="solutions.html">Hospitality</a></li>
-                        <li><a href="solutions.html">Retail</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Returns</a></li>
-                    </ul>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+                <!-- Logo 香槟金版本 -->
+                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
+                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
+                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
+                </svg>
+                <div style="display: flex; gap: var(--space-sm);">
+                    <a href="#" style="color: var(--accent);">in</a>
+                    <a href="#" style="color: var(--accent);">fb</a>
+                    <a href="#" style="color: var(--accent);">ig</a>
+                    <a href="#" style="color: var(--accent);">yt</a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Laysun. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
+            <hr style="border-color: var(--accent); opacity: 0.2; margin: var(--space-md) 0;">
+            <p style="text-align: center; color: var(--bg-warm);">&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Inquiry Sidebar -->
-    <div class="inquiry-sidebar" id="inquirySidebar">
-        <div class="inquiry-header">
-            <h3>Project Inquiry</h3>
-            <button class="inquiry-close" id="inquiryClose" aria-label="Close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="inquiry-content" id="inquiryContent">
-            <div class="inquiry-empty">
-                <i class="fas fa-clipboard-list"></i>
-                <p>Your inquiry list is empty. Start exploring our collections.</p>
-                <a href="products.html" class="btn btn-secondary">Browse Products</a>
-            </div>
-        </div>
-    </div>
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <!-- 滚动导航变色脚本 -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
