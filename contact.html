@@ -10,6 +10,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Map Container Styles */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+            background: #f3f4f6;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(20%) contrast(1.1);
+            transition: filter 0.3s ease;
+        }
+        
+        .map-container:hover iframe {
+            filter: grayscale(0%) contrast(1);
+        }
+        
+        /* Map Overlay for better UX */
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .map-container:hover .map-overlay {
+            opacity: 1;
+        }
+        
+        .map-hint {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            pointer-events: none;
+        }
+        
+        /* Click to activate map (prevents scroll hijacking) */
+        .map-container.map-active .map-overlay {
+            display: none;
+        }
+        
+        /* Location Card Improvements */
+        .location-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .location-flag {
+            font-size: 1.5rem;
+        }
+        
+        .location-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+        }
+        
+        .location-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-left: auto;
+        }
+        
+        /* Alternative: Static map with link to Google Maps */
+        .static-map {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .static-map:hover {
+            transform: translateY(-2px);
+        }
+        
+        .static-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .static-map-link {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 500;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .static-map-link:hover {
+            background: #2563eb;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -156,17 +299,20 @@
                             <span class="location-badge">For North America Wholesale Inquiries</span>
                         </div>
                         
-                        <div class="location-map">
+                        <!-- Interactive Google Map -->
+                        <div class="map-container" id="map-usa">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220363292!2d-118.2453186847865!3d34.05223418060603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c648fa1d4803%3A0xdec27bf11f9fd336!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2scn!4v1645000000000!5m2!1sen!2scn" 
                                 width="100%" 
-                                height="200" 
-                                style="border:0; border-radius: 8px;" 
+                                height="250" 
+                                style="border:0;" 
                                 allowfullscreen="" 
                                 loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Los Angeles Office Location">
+                                referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
+                            <div class="map-overlay" onclick="activateMap('map-usa')">
+                                <span class="map-hint">Click to interact</span>
+                            </div>
                         </div>
 
                         <div class="location-details">
@@ -207,17 +353,20 @@
                             <span class="location-badge">For Custom Project & Factory Direct Communication</span>
                         </div>
                         
-                        <div class="location-map">
+                        <!-- Interactive Google Map -->
+                        <div class="map-container" id="map-china">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29317.89539646238!2d114.1323394743164!3d23.083456000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3402ff3c9f1c3f7d%3A0x4e7e0e3b0e5b0e5b!2sQishi%20Town%2C%20Dongguan%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2sus!4v1645000000000!5m2!1sen!2sus" 
                                 width="100%" 
-                                height="200" 
-                                style="border:0; border-radius: 8px;" 
+                                height="250" 
+                                style="border:0;" 
                                 allowfullscreen="" 
                                 loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Dongguan Factory Location">
+                                referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
+                            <div class="map-overlay" onclick="activateMap('map-china')">
+                                <span class="map-hint">Click to interact</span>
+                            </div>
                         </div>
 
                         <div class="location-details">
@@ -396,11 +545,26 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script>
+        // Map activation function
+        function activateMap(mapId) {
+            const mapContainer = document.getElementById(mapId);
+            mapContainer.classList.add('map-active');
+        }
+        
         // Form validation and submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             const btn = this.querySelector('button[type="submit"]');
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled = true;
+        });
+        
+        // Click outside to deactivate maps (optional - improves UX)
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.map-container')) {
+                document.querySelectorAll('.map-container').forEach(map => {
+                    map.classList.remove('map-active');
+                });
+            }
         });
     </script>
 </body>
