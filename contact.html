@@ -5,162 +5,598 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Laysun - Architectural-Grade Artificial Greenery</title>
     <meta name="description" content="Get in touch with Laysun for Architectural-Grade Artificial Greenery solutions. USA and China offices ready to assist your commercial projects.">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts - 与首页保持一致 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* Map Container Styles */
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin: 1.5rem 0;
-            background: #f3f4f6;
+        :root {
+            --champagne-gold: #C9A961;
+            --champagne-gold-hover: #B8944F;
+            --forest-green: #1F3D2B;
+            --forest-green-hover: #2B533B;
+            --dark-gray: #5F6466;
+            --charcoal: #1A1A1A;
+            --light-gray: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
         }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            filter: grayscale(20%) contrast(1.1);
-            transition: filter 0.3s ease;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        .map-container:hover iframe {
-            filter: grayscale(0%) contrast(1);
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            line-height: 1.6;
         }
-        
-        /* Map Overlay for better UX */
-        .map-overlay {
-            position: absolute;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Header - 与首页一致 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
             top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: transparent;
-            z-index: 1;
+            width: 0;
+            height: 2px;
+            background-color: var(--champagne-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .inquiry-btn {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .inquiry-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        .inquiry-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--forest-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
-        
-        .map-container:hover .map-overlay {
-            opacity: 1;
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
         }
-        
-        .map-hint {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            pointer-events: none;
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
-        
-        /* Click to activate map (prevents scroll hijacking) */
-        .map-container.map-active .map-overlay {
-            display: none;
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
         }
-        
-        /* Location Card Improvements */
+
+        /* Section Padding */
+        .section-padding {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        /* Form Styles */
+        .form-section h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .form-section > p {
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.875rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--champagne-gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Contact Info Section */
+        .info-section h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+        }
+
         .location-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
         }
-        
+
         .location-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--champagne-gold);
         }
-        
+
         .location-flag {
             font-size: 1.5rem;
         }
-        
+
         .location-header h3 {
             font-size: 1.25rem;
-            font-weight: 600;
-            color: #111827;
+            color: var(--forest-green);
             margin: 0;
         }
-        
+
         .location-badge {
-            background: #dbeafe;
-            color: #1e40af;
+            background: var(--champagne-gold);
+            color: var(--forest-green);
             padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        /* Alternative: Static map with link to Google Maps */
-        .static-map {
-            position: relative;
+
+        /* Map Container */
+        .map-container {
             width: 100%;
-            height: 250px;
-            border-radius: 12px;
+            height: 200px;
+            border-radius: 8px;
             overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+            background: var(--light-gray);
         }
-        
-        .static-map:hover {
-            transform: translateY(-2px);
-        }
-        
-        .static-map img {
+
+        .map-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: 0;
         }
-        
-        .static-map-link {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .detail-item i {
+            color: var(--champagne-gold);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+            width: 20px;
+        }
+
+        .detail-content {
+            flex: 1;
+        }
+
+        .detail-label {
+            display: block;
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            color: var(--dark-gray);
             text-decoration: none;
-            color: #2563eb;
-            font-weight: 500;
-            font-size: 0.875rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value:hover {
+            color: var(--champagne-gold);
+        }
+
+        .detail-note {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            opacity: 0.8;
+        }
+
+        /* Quick Connect */
+        .quick-connect {
+            background: var(--forest-green);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .quick-connect h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .connect-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .connect-btn {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
-        }
-        
-        .static-map-link:hover {
-            background: #2563eb;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
             color: white;
+            transition: all 0.3s;
+        }
+
+        .connect-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .connect-btn i {
+            font-size: 1.5rem;
+            color: var(--champagne-gold);
+        }
+
+        .connect-info {
+            flex: 1;
+        }
+
+        .connect-title {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .connect-meta {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .connect-action {
+            font-weight: 600;
+            color: var(--champagne-gold);
+        }
+
+        /* Commitment Section */
+        .commitment-section {
+            background: var(--light-gray);
+            padding: 4rem 2rem;
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .commitment-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .commitment-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--champagne-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.75rem;
+            color: var(--forest-green);
+        }
+
+        .commitment-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .commitment-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="index.html" class="logo">LAYSUN</a>
-                <ul class="nav-menu">
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            <nav>
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="solutions.html">Solutions</a></li>
                     <li><a href="products.html">Products</a></li>
@@ -169,55 +605,35 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
-                <div class="header-actions">
-                    <button class="btn-icon" id="inquiryBtn" aria-label="Project Inquiry">
-                        <i class="fas fa-clipboard-list"></i>
-                        <span class="inquiry-badge" id="inquiryBadge">0</span>
-                    </button>
-                    <button class="btn-mobile" id="mobileMenuBtn" aria-label="Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
             </nav>
+            <div class="header-actions">
+                <button class="inquiry-btn" onclick="toggleInquiry()">
+                    Project Inquiry
+                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="mobile-nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="customization.html">Customization</a></li>
-            <li><a href="capabilities.html">Capabilities</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-    </div>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Get In Touch</h1>
-            <p class="page-subtitle">Ready to elevate your space with Architectural-Grade greenery? Our solution experts are here to help.</p>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">GET IN TOUCH</h1>
+        <p class="hero-subtitle">Ready to elevate your space with Architectural-Grade greenery? Our solution experts are here to help.</p>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section section-padding">
+    <section class="section-padding">
         <div class="container">
             <div class="contact-grid">
                 <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <div class="section-header">
-                        <h2 class="section-title">Project Inquiry</h2>
-                        <p class="section-subtitle">Fill out the form below and our team will respond within 12 working hours.</p>
-                    </div>
+                <div class="form-section">
+                    <h2>Project Inquiry</h2>
+                    <p>Fill out the form below and our team will respond within 12 working hours.</p>
                     
-                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@laysun.co" method="POST">
+                    <form class="contact-form" action="https://formsubmit.co/info@laysun.co" method="POST">
                         <input type="hidden" name="_subject" value="New Project Inquiry from Laysun Website">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://shawnyudi888.github.io/laysun-website-new2026.2.23/thank-you.html">
@@ -255,6 +671,7 @@
                                 <option value="AU">Australia</option>
                                 <option value="DE">Germany</option>
                                 <option value="FR">France</option>
+                                <option value="CN">China</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -277,7 +694,7 @@
                             <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-large">
+                        <button type="submit" class="submit-btn">
                             <span>Send Inquiry</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -285,39 +702,29 @@
                 </div>
 
                 <!-- Contact Info -->
-                <div class="contact-info-wrapper">
-                    <div class="section-header">
-                        <h2 class="section-title">Our Locations</h2>
-                        <p class="section-subtitle">Strategic presence for global service</p>
-                    </div>
-
+                <div class="info-section">
+                    <h2>Our Locations</h2>
+                    
                     <!-- USA Office -->
                     <div class="location-card">
                         <div class="location-header">
                             <span class="location-flag">🇺🇸</span>
                             <h3>USA Office</h3>
-                            <span class="location-badge">For North America Wholesale Inquiries</span>
+                            <span class="location-badge">North America</span>
                         </div>
                         
-                        <!-- Interactive Google Map -->
-                        <div class="map-container" id="map-usa">
+                        <div class="map-container">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.715220363292!2d-118.2453186847865!3d34.05223418060603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c648fa1d4803%3A0xdec27bf11f9fd336!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2scn!4v1645000000000!5m2!1sen!2scn" 
-                                width="100%" 
-                                height="250" 
-                                style="border:0;" 
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-                            <div class="map-overlay" onclick="activateMap('map-usa')">
-                                <span class="map-hint">Click to interact</span>
-                            </div>
                         </div>
 
                         <div class="location-details">
                             <div class="detail-item">
-                                <i class="fas fa-phone-alt"></i>
+                                <i class="fas fa-phone"></i>
                                 <div class="detail-content">
                                     <span class="detail-label">Phone</span>
                                     <a href="tel:+12138298485" class="detail-value">+1 213-829-8485</a>
@@ -338,7 +745,7 @@
                                 <i class="fab fa-whatsapp"></i>
                                 <div class="detail-content">
                                     <span class="detail-label">WhatsApp</span>
-                                    <a href="https://wa.me/12138298485" target="_blank" class="detail-value">+1 213-829-8485</a>
+                                    <a href="https://wa.me/12138298485" class="detail-value" target="_blank">+1 213-829-8485</a>
                                     <span class="detail-note">24H Quick Responses</span>
                                 </div>
                             </div>
@@ -350,23 +757,16 @@
                         <div class="location-header">
                             <span class="location-flag">🇨🇳</span>
                             <h3>China Factory</h3>
-                            <span class="location-badge">For Custom Project & Factory Direct Communication</span>
+                            <span class="location-badge">Factory Direct</span>
                         </div>
                         
-                        <!-- Interactive Google Map -->
-                        <div class="map-container" id="map-china">
+                        <div class="map-container">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29317.89539646238!2d114.1323394743164!3d23.083456000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3402ff3c9f1c3f7d%3A0x4e7e0e3b0e5b0e5b!2sQishi%20Town%2C%20Dongguan%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2sus!4v1645000000000!5m2!1sen!2sus" 
-                                width="100%" 
-                                height="250" 
-                                style="border:0;" 
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-                            <div class="map-overlay" onclick="activateMap('map-china')">
-                                <span class="map-hint">Click to interact</span>
-                            </div>
                         </div>
 
                         <div class="location-details">
@@ -375,15 +775,12 @@
                                 <div class="detail-content">
                                     <span class="detail-label">Address</span>
                                     <span class="detail-value">No. 25 Qiangfeng Road, Qishi Town, Dongguan City, Guangdong Province, China</span>
-                                    <div class="detail-note">
-                                        <span>📍 1.5h from Shenzhen Bao'an International Airport</span>
-                                        <span>📍 1.5h from Guangzhou Baiyun International Airport</span>
-                                    </div>
+                                    <span class="detail-note">📍 1.5h from Shenzhen Bao'an International Airport<br>📍 1.5h from Guangzhou Baiyun International Airport</span>
                                 </div>
                             </div>
                             
                             <div class="detail-item">
-                                <i class="fas fa-phone-alt"></i>
+                                <i class="fas fa-phone"></i>
                                 <div class="detail-content">
                                     <span class="detail-label">Phone</span>
                                     <a href="tel:+8613802505260" class="detail-value">+86 138-0250-5260</a>
@@ -404,7 +801,7 @@
                                 <i class="fab fa-whatsapp"></i>
                                 <div class="detail-content">
                                     <span class="detail-label">WhatsApp</span>
-                                    <a href="https://wa.me/8613802505260" target="_blank" class="detail-value">+86 138-0250-5260</a>
+                                    <a href="https://wa.me/8613802505260" class="detail-value" target="_blank">+86 138-0250-5260</a>
                                     <span class="detail-note">24H Quick Responses</span>
                                 </div>
                             </div>
@@ -413,9 +810,9 @@
 
                     <!-- Quick Connect -->
                     <div class="quick-connect">
-                        <h4>Instant Connect</h4>
+                        <h3>Instant Connect</h3>
                         <div class="connect-buttons">
-                            <a href="https://wa.me/12138298485" target="_blank" class="connect-btn whatsapp">
+                            <a href="https://wa.me/12138298485" class="connect-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <div class="connect-info">
                                     <span class="connect-title">WhatsApp Business (USA)</span>
@@ -423,7 +820,7 @@
                                 </div>
                                 <span class="connect-action">Chat Now</span>
                             </a>
-                            <a href="https://wa.me/8613802505260" target="_blank" class="connect-btn whatsapp">
+                            <a href="https://wa.me/8613802505260" class="connect-btn" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                                 <div class="connect-info">
                                     <span class="connect-title">WhatsApp Business (China)</span>
@@ -439,133 +836,79 @@
     </section>
 
     <!-- Commitment Section -->
-    <section class="commitment-section section-padding bg-light">
-        <div class="container">
-            <div class="commitment-content text-center">
-                <h2 class="section-title">Our Commitment to You</h2>
-                <p class="section-subtitle">We understand that timing is critical in commercial projects.</p>
-                
-                <div class="commitment-grid">
-                    <div class="commitment-item">
-                        <div class="commitment-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>12-Hour Response Guarantee</h3>
-                        <p>Initial consultation reply within 12 working hours</p>
-                    </div>
-                    <div class="commitment-item">
-                        <div class="commitment-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>Dedicated Support</h3>
-                        <p>Personal account manager for your project</p>
-                    </div>
-                    <div class="commitment-item">
-                        <div class="commitment-icon">
-                            <i class="fas fa-shipping-fast"></i>
-                        </div>
-                        <h3>Global Logistics</h3>
-                        <p>Seamless delivery to 50+ countries</p>
-                    </div>
+    <section class="commitment-section">
+        <div class="commitment-grid">
+            <div class="commitment-card">
+                <div class="commitment-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
+                <h3>12-Hour Response</h3>
+                <p>Initial consultation reply within 12 working hours. We understand timing is critical in commercial projects.</p>
+            </div>
+            <div class="commitment-card">
+                <div class="commitment-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Dedicated Support</h3>
+                <p>Personal account manager assigned to your project from inquiry through delivery and beyond.</p>
+            </div>
+            <div class="commitment-card">
+                <div class="commitment-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Global Logistics</h3>
+                <p>Seamless delivery to 50+ countries with full tracking and customs documentation support.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">LAYSUN</a>
-                    <p class="footer-tagline">Architectural-Grade Artificial Greenery Solutions</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="solutions.html">Commercial</a></li>
-                        <li><a href="solutions.html">Hospitality</a></li>
-                        <li><a href="solutions.html">Retail</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Returns</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="products.html">Artificial Trees</a></li>
+                    <li><a href="products.html">Artificial Plants</a></li>
+                    <li><a href="products.html">Green Walls</a></li>
+                    <li><a href="products.html">Custom Solutions</a></li>
+                </ul>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Laysun. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="solutions.html">Hotel & Hospitality</a></li>
+                    <li><a href="solutions.html">Retail Spaces</a></li>
+                    <li><a href="solutions.html">Commercial Buildings</a></li>
+                    <li><a href="solutions.html">Outdoor Applications</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@laysun.co</li>
+                    <li>Global Distribution Network</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Inquiry Sidebar -->
-    <div class="inquiry-sidebar" id="inquirySidebar">
-        <div class="inquiry-header">
-            <h3>Project Inquiry</h3>
-            <button class="inquiry-close" id="inquiryClose" aria-label="Close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="inquiry-content" id="inquiryContent">
-            <div class="inquiry-empty">
-                <i class="fas fa-clipboard-list"></i>
-                <p>Your inquiry list is empty. Start exploring our collections.</p>
-                <a href="products.html" class="btn btn-secondary">Browse Products</a>
-            </div>
-        </div>
-    </div>
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
     <script>
-        // Map activation function
-        function activateMap(mapId) {
-            const mapContainer = document.getElementById(mapId);
-            mapContainer.classList.add('map-active');
+        // Simple inquiry count update
+        function toggleInquiry() {
+            alert('Project Inquiry sidebar would open here. Add your inquiry logic.');
         }
-        
-        // Form validation and submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            const btn = this.querySelector('button[type="submit"]');
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-        });
-        
-        // Click outside to deactivate maps (optional - improves UX)
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.map-container')) {
-                document.querySelectorAll('.map-container').forEach(map => {
-                    map.classList.remove('map-active');
-                });
-            }
-        });
     </script>
 </body>
 </html>
