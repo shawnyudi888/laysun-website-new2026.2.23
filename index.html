@@ -3,1135 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laysun - Architectural-Grade Artificial Greenery Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tailored Artificial Horticulture Solutions for Global Commercial Spaces | Laysun</title>
+    <meta name="description" content="Explore Laysun's high-performance artificial plants, ideal for commercial spaces, retail, and outdoor environments. 20+ years manufacturing excellence.">
+    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, artificial plants for commercial spaces, Laysun artificial plants">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'laysun-gold': '#C9A961',
+                        'laysun-gold-hover': '#B8944F',
+                        'laysun-green': '#1F3D2B',
+                        'laysun-green-hover': '#2B533B',
+                        'laysun-gray': '#5F6466',
+                        'laysun-dark': '#1A1A1A',
+                        'laysun-light': '#F9F9F9'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --forest-green: #2D5A3D;
-            --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --dark-gray: #333333;
-            --medium-gray: #666666;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-        
-        /* Header */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 2px;
-        }
-        
-        .logo span {
-            color: var(--champagne-gold);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--champagne-gold);
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        /* Header Actions */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        /* Language Switcher */
-        .language-switcher {
-            display: flex;
-            gap: 5px;
-            background: rgba(255,255,255,0.1);
-            padding: 5px;
-            border-radius: 4px;
-        }
-        
-        .lang-btn {
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.7);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 6px 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-radius: 3px;
-        }
-        
-        .lang-btn:hover {
-            color: white;
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .lang-btn.active {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        /* Global Inquiry Basket */
-        .inquiry-basket-global {
-            position: relative;
-            cursor: pointer;
-            padding: 10px;
-            background: var(--champagne-gold);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .inquiry-basket-global:hover {
-            background: var(--champagne-dark);
-            transform: scale(1.1);
-        }
-        
-        .basket-icon {
-            font-size: 20px;
-        }
-        
-        .basket-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #e74c3c;
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-        }
-        
-        /* Basket Dropdown */
-        .basket-dropdown {
-            display: none;
-            position: absolute;
-            top: 70px;
-            right: 30px;
-            width: 380px;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            z-index: 1001;
-        }
-        
-        .basket-dropdown.active {
-            display: block;
-        }
-        
-        .basket-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .basket-header h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        .clear-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 5px 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .clear-btn:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .basket-items {
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 15px;
-        }
-        
-        .empty-basket {
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-            padding: 30px 0;
-        }
-        
-        .basket-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .basket-item-image {
-            width: 60px;
-            height: 60px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #999;
-        }
-        
-        .basket-item-info {
-            flex: 1;
-        }
-        
-        .basket-item-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--dark-gray);
-            margin-bottom: 5px;
-        }
-        
-        .basket-item-id {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        .basket-item-remove {
-            background: none;
-            border: none;
-            color: #e74c3c;
-            cursor: pointer;
-            font-size: 18px;
-            padding: 5px;
-        }
-        
-        .basket-footer {
-            padding: 20px;
-            background: var(--leaf-white);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .download-specs-btn,
-        .submit-inquiry-btn {
-            flex: 1;
-            padding: 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            border: none;
-        }
-        
-        .download-specs-btn {
-            background: white;
-            color: var(--forest-green);
-            border: 2px solid var(--forest-green);
-        }
-        
-        .download-specs-btn:hover {
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .submit-inquiry-btn {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        .submit-inquiry-btn:hover {
-            background: var(--champagne-dark);
-        }
-        
-        /* Hero Section with Video */
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            color: white;
-        }
-        
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .video-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.85) 0%, rgba(26, 61, 46, 0.9) 100%);
-            z-index: 1;
-        }
-        
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a3d2e 0%, #2d5a3d 50%, #1a3d2e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .video-placeholder::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 80px;
-            animation: drift 20s linear infinite;
-        }
-        
-        @keyframes drift {
-            from { transform: translate(0, 0); }
-            to { transform: translate(-80px, -80px); }
-        }
-        
-        .play-button {
-            width: 100px;
-            height: 100px;
-            background: rgba(201, 169, 97, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 2;
-            position: relative;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.1);
-            background: var(--champagne-gold);
-        }
-        
-        .play-button::after {
-            content: '▶';
-            color: white;
-            font-size: 40px;
-            margin-left: 8px;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 1000px;
-            padding: 0 30px;
-        }
-        
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            font-weight: 300;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            line-height: 1.8;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .btn-primary,
-        .btn-secondary {
-            padding: 18px 40px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: var(--champagne-gold);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--champagne-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--forest-green);
-        }
-        
-        /* Three Pillars Section */
-        .pillars-section {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--forest-green);
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--medium-gray);
-            font-size: 16px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        
-        .pillar-card {
-            text-align: center;
-            padding: 50px 30px;
-            background: var(--leaf-white);
-            border: 1px solid #e8e8e8;
-            transition: all 0.3s;
-        }
-        
-        .pillar-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--champagne-gold);
-        }
-        
-        .pillar-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--forest-green);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            margin: 0 auto 25px;
-        }
-        
-        .pillar-card h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 15px;
-        }
-        
-        .pillar-card p {
-            font-size: 14px;
-            color: var(--medium-gray);
-            line-height: 1.8;
-        }
-        
-        /* Industry Solutions Preview */
-        .industries-section {
-            padding: 100px 0;
-            background: var(--forest-green);
-            color: white;
-        }
-        
-        .industries-section .section-title h2 {
-            color: white;
-        }
-        
-        .industries-section .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .industry-card {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
-        }
-        
-        .industry-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-5px);
-        }
-        
-        .industry-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .industry-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .industry-card p {
-            font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.7;
-        }
-        
-        /* Dynamic Map Section */
-        .map-section {
-            padding: 100px 0;
-            background: var(--leaf-white);
-            text-align: center;
-        }
-        
-        .map-section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--forest-green);
-            margin-bottom: 15px;
-        }
-        
-        .map-section > p {
-            font-size: 18px;
-            color: var(--medium-gray);
-            margin-bottom: 50px;
-        }
-        
-        .dynamic-map {
-            max-width: 1000px;
-            margin: 0 auto;
-            height: 500px;
-            background: white;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        
-        .map-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            background: linear-gradient(135deg, #e8f4f8 0%, #d4e8ed 100%);
-        }
-        
-        .world-map {
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .hero-video {
             position: absolute;
             top: 50%;
             left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             transform: translate(-50%, -50%);
-            width: 90%;
-            height: 80%;
-            opacity: 0.3;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><rect fill="%232D5A3D" x="150" y="100" width="200" height="150" rx="20"/><rect fill="%232D5A3D" x="450" y="80" width="150" height="200" rx="20"/><rect fill="%232D5A3D" x="650" y="120" width="250" height="180" rx="20"/><rect fill="%232D5A3D" x="200" y="300" width="120" height="150" rx="20"/><rect fill="%232D5A3D" x="700" y="320" width="180" height="120" rx="20"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+            z-index: -1;
+            object-fit: cover;
         }
-        
-        .map-dot {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--champagne-gold);
-            border-radius: 50%;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7);
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(31, 61, 43, 0.85) 0%, rgba(26, 26, 26, 0.7) 100%);
         }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(201, 169, 97, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0); }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .map-dot::before {
-            content: attr(data-country);
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--forest-green);
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .btn-primary {
+            background-color: #C9A961;
+            color: #1F3D2B;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #B8944F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+        .btn-secondary {
+            background-color: #1F3D2B;
             color: white;
-            padding: 8px 15px;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 4px;
-            white-space: nowrap;
-            opacity: 0;
-            transition: all 0.3s;
-            pointer-events: none;
+            transition: all 0.3s ease;
         }
-        
-        .map-dot:hover::before {
-            opacity: 1;
-            bottom: 35px;
+        .btn-secondary:hover {
+            background-color: #2B533B;
+            transform: translateY(-2px);
         }
-        
-        .map-dot::after {
-            content: attr(data-projects);
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--forest-green);
-            font-size: 12px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            transition: all 0.3s;
-        }
-        
-        .map-dot:hover::after {
-            opacity: 1;
-            top: 35px;
-        }
-        
-        .map-legend {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: left;
-        }
-        
-        .map-legend h4 {
-            font-size: 14px;
-            color: var(--forest-green);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 13px;
-            color: var(--medium-gray);
-        }
-        
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--champagne-gold);
-            border-radius: 50%;
-        }
-        
-        /* Featured Products */
-        .products-section {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .product-card {
-            background: var(--leaf-white);
-            border: 1px solid #e8e8e8;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .product-image {
-            height: 250px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .nav-link {
             position: relative;
         }
-        
-        .product-image::before {
-            content: 'Product Image';
-            color: #999;
-            font-size: 14px;
-        }
-        
-        .product-badge {
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 15px;
-            left: 15px;
-            padding: 6px 12px;
-            background: var(--forest-green);
-            color: white;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #C9A961;
+            transition: width 0.3s ease;
         }
-        
-        .product-info {
-            padding: 25px;
-        }
-        
-        .product-name {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 8px;
-        }
-        
-        .product-specs {
-            font-size: 13px;
-            color: var(--medium-gray);
-            margin-bottom: 15px;
-        }
-        
-        .add-to-basket {
+        .nav-link:hover::after {
             width: 100%;
-            padding: 12px;
-            background: var(--champagne-gold);
-            color: white;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
         }
-        
-        .add-to-basket:hover {
-            background: var(--champagne-dark);
+        .trust-item {
+            border-right: 1px solid rgba(201, 169, 97, 0.3);
         }
-        
-        /* Footer */
-        .footer {
-            background: var(--forest-green);
-            color: white;
-            padding: 80px 0 30px;
+        .trust-item:last-child {
+            border-right: none;
         }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 60px;
+        .solution-card {
+            background: linear-gradient(180deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
         }
-        
-        .footer-section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            color: var(--champagne-gold);
+        .gold-accent {
+            background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%);
         }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: var(--champagne-gold);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        
-        .footer-logo span {
-            color: var(--champagne-gold);
-        }
-        
-        .copyright {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-        }
-        
-        /* RTL Support for Arabic */
-        body[lang="ar"] {
-            direction: rtl;
-        }
-        
-        body[lang="ar"] .nav-menu {
-            flex-direction: row-reverse;
-        }
-        
-        body[lang="ar"] .basket-dropdown {
-            right: auto;
-            left: 30px;
-        }
-        
-        body[lang="ar"] .hero-cta {
-            flex-direction: row-reverse;
-        }
-        
-        /* Notification */
-        .notification {
-            position: fixed;
-            top: 90px;
-            right: 30px;
-            background: var(--forest-green);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 4px;
-            font-size: 14px;
-            z-index: 10000;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-            }
-            
-            .pillars-grid,
-            .industries-grid,
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .basket-dropdown {
-                width: 90%;
-                right: 5%;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">LAY<span>SUN</span></div>
-                
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="customization.html">Customization</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="header-actions">
-                    <!-- Language Switcher -->
-                    <div class="language-switcher">
-                        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-                        <button class="lang-btn" onclick="switchLanguage('de')">DE</button>
-                        <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+<body class="bg-white text-laysun-dark overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-laysun-gold font-medium text-sm uppercase tracking-wider">Home</a>
+                    <a href="solutions.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
+                    <a href="products.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
+                    <a href="customization.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Customization</a>
+                    <a href="capabilities.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Capabilities</a>
+                    <a href="about.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
+                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-laysun-gold font-semibold">Home</a>
+                <a href="solutions.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
+                <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
+                <a href="customization.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
+                <a href="capabilities.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Capabilities</a>
+                <a href="about.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-green-plant-in-the-breeze-1188-large.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="hero-content opacity-0 translate-y-8">
+                <h1 class="font-montserrat font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight text-shadow">
+                    Tailored Artificial Horticulture<br>
+                    <span class="text-laysun-gold">Solutions for Global</span><br>
+                    Commercial Spaces
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                    Providing high-performance botanical solutions for commercial, retail, and outdoor applications worldwide.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="solutions.html" class="btn-primary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                        Explore Solutions
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="customization.html" class="btn-secondary px-8 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white">
+                        Start a Bespoke Project
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-laysun-gold"></i>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="bg-laysun-dark py-6 border-y border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="trust-item py-2 scroll-reveal">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i data-lucide="award" class="w-5 h-5 text-laysun-gold"></i>
+                        <span class="font-montserrat font-bold text-2xl text-white">20+</span>
                     </div>
-                    
-                    <!-- Global Inquiry Basket -->
-                    <div class="inquiry-basket-global" onclick="toggleBasket()">
-                        <span class="basket-icon">🛒</span>
-                        <span class="basket-count" id="globalBasketCount">0</span>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Years Manufacturing</p>
+                </div>
+                <div class="trust-item py-2 scroll-reveal">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-laysun-gold"></i>
+                        <span class="font-montserrat font-bold text-2xl text-white">UV & Fire</span>
+                    </div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Certified Standards</p>
+                </div>
+                <div class="trust-item py-2 scroll-reveal">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i data-lucide="globe" class="w-5 h-5 text-laysun-gold"></i>
+                        <span class="font-montserrat font-bold text-2xl text-white">50+</span>
+                    </div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Countries Served</p>
+                </div>
+                <div class="trust-item py-2 scroll-reveal">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i data-lucide="truck" class="w-5 h-5 text-laysun-gold"></i>
+                        <span class="font-montserrat font-bold text-2xl text-white">Global</span>
+                    </div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider">Delivery Network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Pillars -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">The Three Pillars</h2>
+                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">What sets Laysun apart in the global artificial greenery market</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
+                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="palette" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Design-Led Innovation</h3>
+                    <p class="text-laysun-gray leading-relaxed">
+                        Our in-house agency transforms global aesthetic trends into market-winning botanical collections using AI-driven forecasting and precision craftsmanship.
+                    </p>
+                </div>
+                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
+                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="cog" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Engineering Excellence</h3>
+                    <p class="text-laysun-gray leading-relaxed">
+                        From 5000h+ UV stability to NFPA 701 fire retardancy, we build for the world's toughest environments and safety standards.
+                    </p>
+                </div>
+                <div class="bg-laysun-light rounded-2xl p-8 card-hover scroll-reveal border border-laysun-green/10">
+                    <div class="w-16 h-16 bg-laysun-green/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="globe-2" class="w-8 h-8 text-laysun-gold"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-laysun-green mb-3">Global Fulfillment</h3>
+                    <p class="text-laysun-gray leading-relaxed">
+                        A seamless supply chain empowered by data, ensuring on-time delivery for retail giants and iconic projects worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions -->
+    <section id="solutions" class="py-20 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.3) 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-4">Industry Solutions</h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">Tailored solutions for every commercial environment</p>
+                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="window.location.href='solutions.html?type=hotel'">
+                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop" alt="Luxury Hotel" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="building-2" class="w-5 h-5 text-laysun-gold"></i>
+                            <h3 class="font-montserrat font-bold text-lg text-white">Hotels & Hospitality</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Create memorable first impressions with zero-maintenance luxury greenery.</p>
+                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
+                            <span>View Solutions</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="window.location.href='solutions.html?type=retail'">
+                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Retail Store" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="store" class="w-5 h-5 text-laysun-gold"></i>
+                            <h3 class="font-montserrat font-bold text-lg text-white">Retail Spaces</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Barcode-ready solutions that enhance customer experience and dwell time.</p>
+                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
+                            <span>View Solutions</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="window.location.href='solutions.html?type=commercial'">
+                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Commercial Office" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-laysun-gold"></i>
+                            <h3 class="font-montserrat font-bold text-lg text-white">Commercial</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Elevate workplace wellness with biophilic design that requires no maintenance.</p>
+                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
+                            <span>View Solutions</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-card rounded-2xl overflow-hidden card-hover scroll-reveal group cursor-pointer" onclick="window.location.href='solutions.html?type=outdoor'">
+                    <div class="h-48 bg-gradient-to-br from-laysun-green to-laysun-dark relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" alt="Outdoor Space" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-laysun-green via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i data-lucide="sun" class="w-5 h-5 text-laysun-gold"></i>
+                            <h3 class="font-montserrat font-bold text-lg text-white">Outdoor</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">UV-resistant solutions engineered for extreme weather conditions.</p>
+                        <div class="flex items-center text-laysun-gold text-sm font-medium group-hover:gap-2 transition-all">
+                            <span>View Solutions</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Basket Dropdown -->
-        <div class="basket-dropdown" id="basketDropdown">
-            <div class="basket-header">
-                <h4>Project Inquiry</h4>
-                <button onclick="clearBasket()" class="clear-btn">Clear</button>
-            </div>
-            <div class="basket-items" id="basketItems">
-                <p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>
-            </div>
-            <div class="basket-footer">
-                <button class="download-specs-btn" onclick="downloadSpecs()">Download Specs</button>
-                <a href="contact.html" class="submit-inquiry-btn">Submit Inquiry</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section with Video Background -->
-    <section class="hero">
-        <div class="video-background">
-            <div class="video-placeholder">
-                <div class="play-button" onclick="playVideo()"></div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1>NATURE, REIMAGINED FOR GLOBAL COMMERCE</h1>
-                <p>Architectural-Grade Greenery Solutions. Where Design Intelligence Meets Manufacturing Precision.</p>
-                <div class="hero-cta">
-                    <a href="solutions.html" class="btn-primary">Explore Our Solutions</a>
-                    <a href="products.html" class="btn-secondary">View Collections</a>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Three Pillars Section -->
-    <section class="pillars-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>The Three Pillars</h2>
-                <p>What sets Laysun apart in the global artificial greenery market</p>
-            </div>
-            
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-icon">🎨</div>
-                    <h3>Design-Led Innovation</h3>
-                    <p>Our in-house agency transforms global aesthetic trends into market-winning botanical collections using AI-driven forecasting.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-icon">⚙️</div>
-                    <h3>Engineering Excellence</h3>
-                    <p>From 5000h+ UV stability to NFPA 701 fire retardancy, we build for the world's toughest environments and standards.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-icon">🌍</div>
-                    <h3>Global Fulfillment</h3>
-                    <p>A seamless supply chain empowered by data, ensuring on-time delivery for retail giants and iconic projects worldwide.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industry Solutions Preview -->
-    <section class="industries-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Industry Solutions</h2>
-                <p>Tailored solutions for every commercial environment</p>
-            </div>
-            
-            <div class="industries-grid">
-                <a href="solutions.html#retail" class="industry-card">
-                    <div class="industry-icon">🏪</div>
-                    <h3>Big-Box Retail</h3>
-                    <p>Optimized for turnover. Engineered for landed cost. Up to 15% savings on logistics.</p>
-                </a>
-                
-                <a href="solutions.html#commercial" class="industry-card">
-                    <div class="industry-icon">🏢</div>
-                    <h3>Commercial Interiors</h3>
-                    <p>Safety-first greenery for luxury hospitality and office spaces. NFPA 701/B1 certified.</p>
-                </a>
-                
-                <a href="solutions.html#outdoor" class="industry-card">
-                    <div class="industry-icon">🌴</div>
-                    <h3>Outdoor Engineering</h3>
-                    <p>Weather-resistant aesthetics that refuse to fade. 5000h+ UV stability guaranteed.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dynamic Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <h2>Global Delivery Footprint</h2>
-            <p>Serving 50+ countries with Architectural-Grade solutions</p>
-            
-            <div class="dynamic-map">
-                <div class="map-container">
-                    <div class="world-map"></div>
-                    
-                    <!-- Interactive Dots -->
-                    <div class="map-dot" style="top: 35%; left: 18%;" data-country="USA" data-projects="150+ Projects"></div>
-                    <div class="map-dot" style="top: 32%; left: 45%;" data-country="Germany" data-projects="80+ Projects"></div>
-                    <div class="map-dot" style="top: 30%; left: 50%;" data-country="UK" data-projects="60+ Projects"></div>
-                    <div class="map-dot" style="top: 38%; left: 72%;" data-country="China" data-projects="200+ Projects"></div>
-                    <div class="map-dot" style="top: 40%; left: 78%;" data-country="Japan" data-projects="45+ Projects"></div>
-                    <div class="map-dot" style="top: 42%; left: 85%;" data-country="Australia" data-projects="35+ Projects"></div>
-                    <div class="map-dot" style="top: 55%; left: 30%;" data-country="UAE" data-projects="70+ Projects"></div>
-                    <div class="map-dot" style="top: 70%; left: 55%;" data-country="South Africa" data-projects="25+ Projects"></div>
-                    <div class="map-dot" style="top: 50%; left: 22%;" data-country="Brazil" data-projects="40+ Projects"></div>
-                    
-                    <div class="map-legend">
-                        <h4>Global Presence</h4>
-                        <div class="legend-item">
-                            <span class="legend-dot"></span>
-                            <span>Active Project Locations</span>
+    <!-- Global Delivery -->
+    <section class="py-20 bg-laysun-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Global Delivery Footprint</h2>
+                    <p class="text-laysun-gray text-lg mb-8 leading-relaxed">
+                        Serving 50+ countries with Architectural-Grade solutions. Our seamless supply chain ensures on-time delivery for retail giants and iconic projects worldwide.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
+                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">500+</div>
+                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Projects Delivered</div>
                         </div>
-                        <div class="legend-item">
-                            <span style="font-weight: 600; color: var(--forest-green);">500+</span>
-                            <span>Projects Delivered</span>
+                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
+                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">50+</div>
+                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Countries Served</div>
                         </div>
-                        <div class="legend-item">
-                            <span style="font-weight: 600; color: var(--forest-green);">50+</span>
-                            <span>Countries Served</span>
+                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
+                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">98%</div>
+                            <div class="text-laysun-gray text-sm uppercase tracking-wider">On-Time Delivery</div>
                         </div>
+                        <div class="bg-white p-6 rounded-xl border border-laysun-green/10">
+                            <div class="text-3xl font-montserrat font-bold text-laysun-gold mb-1">24/7</div>
+                            <div class="text-laysun-gray text-sm uppercase tracking-wider">Global Support</div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-primary px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center gap-2">
+                        Explore Global Capabilities
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="relative scroll-reveal">
+                    <div class="aspect-square rounded-2xl overflow-hidden bg-laysun-green relative">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=800&fit=crop" alt="Global Network" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-laysun-green/40 to-transparent"></div>
+                        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-laysun-gold rounded-full animate-pulse"></div>
+                        <div class="absolute top-1/3 right-1/3 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-300"></div>
+                        <div class="absolute bottom-1/3 left-1/2 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-700"></div>
+                        <div class="absolute top-1/2 right-1/4 w-3 h-3 bg-laysun-gold rounded-full animate-pulse delay-500"></div>
                     </div>
                 </div>
             </div>
@@ -1139,305 +410,466 @@
     </section>
 
     <!-- Featured Products -->
-    <section class="products-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Signature Collections</h2>
-                <p>Explore our most popular Architectural-Grade products</p>
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 scroll-reveal">
+                <div>
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Signature Collections</h2>
+                    <p class="text-laysun-gray text-lg">Explore our most popular Architectural-Grade products</p>
+                </div>
+                <a href="products.html" class="mt-4 md:mt-0 text-laysun-gold font-semibold hover:text-laysun-gold-hover transition-colors inline-flex items-center gap-2">
+                    View All Products
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
             </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Signature</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45890e2e122?w=600&h=800&fit=crop" alt="Olive Tree" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-laysun-gold text-laysun-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Signature</span>
+                        </div>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="sun" class="w-3 h-3"></i> UV
+                            </span>
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="flame" class="w-3 h-3"></i> Fire
+                            </span>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Multi-Stem Olive Tree</h3>
-                        <p class="product-specs">4ft - 9ft | UV Protected</p>
-                        <button class="add-to-basket" onclick="addToBasket('LS-2026-001', 'Multi-Stem Olive Tree')">Add to Inquiry</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Retail Ready</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">4ft Fiddle Leaf Fig</h3>
-                        <p class="product-specs">4ft | Barcode Ready</p>
-                        <button class="add-to-basket" onclick="addToBasket('LS-2026-005', '4ft Fiddle Leaf Fig')">Add to Inquiry</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">Fire Retardant</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Fire-Retardant Vertical Green Wall</h3>
-                        <p class="product-specs">Custom Size | NFPA 701</p>
-                        <button class="add-to-basket" onclick="addToBasket('LS-2026-007', 'Fire-Retardant Vertical Green Wall')">Add to Inquiry</button>
+                    <div class="p-5">
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">Multi-Stem Olive Tree</h3>
+                        <p class="text-laysun-gray text-sm mb-3">4ft - 9ft | UV Protected | Retail Ready</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">PE/Silk Blend</span>
+                            <button onclick="addToInquiry('olive-tree-9ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                                Add to Inquiry
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">UV Stable</span>
+                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1597055181300-e30ba15247b5?w=600&h=800&fit=crop" alt="Fiddle Leaf Fig" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="flame" class="w-3 h-3"></i> Fire
+                            </span>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">UV-Stable Bamboo</h3>
-                        <p class="product-specs">6ft - 10ft | 2000h+ UV</p>
-                        <button class="add-to-basket" onclick="addToBasket('LS-2026-010', 'UV-Stable Bamboo')">Add to Inquiry</button>
+                    <div class="p-5">
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">4ft Fiddle Leaf Fig</h3>
+                        <p class="text-laysun-gray text-sm mb-3">4ft | Barcode Ready | Fire Retardant</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">Premium PE</span>
+                            <button onclick="addToInquiry('fiddle-leaf-4ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                                Add to Inquiry
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600&h=800&fit=crop" alt="Green Wall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="flame" class="w-3 h-3"></i> NFPA 701
+                            </span>
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="sun" class="w-3 h-3"></i> UV
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">Fire-Retardant Vertical Green Wall</h3>
+                        <p class="text-laysun-gray text-sm mb-3">Custom Size | NFPA 701 | UV Stable</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">Mixed Materials</span>
+                            <button onclick="addToInquiry('green-wall-custom')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                                Add to Inquiry
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal group">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&h=800&fit=crop" alt="Bamboo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <span class="bg-laysun-green text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i data-lucide="sun" class="w-3 h-3"></i> 2000h+
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-montserrat font-bold text-lg text-laysun-green mb-2">UV-Stable Bamboo</h3>
+                        <p class="text-laysun-gray text-sm mb-3">6ft - 10ft | 2000h+ UV | Outdoor Ready</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-laysun-gray bg-laysun-light px-2 py-1 rounded">PVC/PE Blend</span>
+                            <button onclick="addToInquiry('bamboo-6-10ft')" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                                Add to Inquiry
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Case Study -->
+    <section id="cases" class="py-20 bg-laysun-green relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop" alt="Hotel Background" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-laysun-green via-laysun-green/95 to-laysun-green/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-2 bg-laysun-gold/20 text-laysun-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        Featured Case Study
+                    </div>
+                    <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-white mb-6">Luxury Hotel Los Angeles</h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Laysun provided custom 9-foot olive trees for a five-star hotel in Los Angeles, meeting California's strict fire safety standards with zero maintenance requirements. The lobby installation has maintained perfect condition since installation, leaving lasting impressions on guests.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="border-l-2 border-laysun-gold pl-4">
+                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">100%</div>
+                            <div class="text-gray-400 text-sm">Maintenance Cost Reduction</div>
+                        </div>
+                        <div class="border-l-2 border-laysun-gold pl-4">
+                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">$12K</div>
+                            <div class="text-gray-400 text-sm">Annual Savings</div>
+                        </div>
+                        <div class="border-l-2 border-laysun-gold pl-4">
+                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">18+</div>
+                            <div class="text-gray-400 text-sm">Months Problem-Free</div>
+                        </div>
+                        <div class="border-l-2 border-laysun-gold pl-4">
+                            <div class="text-2xl font-montserrat font-bold text-laysun-gold">5★</div>
+                            <div class="text-gray-400 text-sm">Guest Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="btn-primary px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                            Read Full Case Study
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="customization.html" class="px-8 py-3 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider inline-flex items-center justify-center gap-2 border border-white text-white hover:bg-white hover:text-laysun-green transition-all">
+                            See Samples in Your Space
+                            <i data-lucide="package" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative scroll-reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop" alt="Hotel Project" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <p class="text-white font-montserrat font-semibold">Signature Olive Tree 9ft Installation</p>
+                            <p class="text-gray-300 text-sm">Grand Lobby, Beverly Hills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-laysun-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-laysun-gray text-lg mb-10 max-w-2xl mx-auto">
+                From concept to installation, Laysun provides comprehensive artificial horticulture solutions. Start your custom project today or request a complimentary sample kit to experience our quality.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="customization.html" class="btn-primary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                    Start a Bespoke Project
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </a>
+                <a href="contact.html" class="btn-secondary px-10 py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider inline-flex items-center justify-center gap-2">
+                    Request Sample Kit
+                    <i data-lucide="package" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <div class="mt-12 flex items-center justify-center gap-8 text-laysun-gray">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">Free Consultation</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">Custom Design</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
+                    <span class="text-sm">Global Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="solutions.html#retail">Big-Box Retail</a></li>
-                        <li><a href="solutions.html#commercial">Commercial Interiors</a></li>
-                        <li><a href="solutions.html#outdoor">Outdoor Engineering</a></li>
-                        <li><a href="customization.html">Custom Projects</a></li>
+    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
+                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
+                        </div>
+                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
+                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design to create beautiful and eco-friendly garden systems.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="products.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
+                        <li><a href="capabilities.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Capabilities</a></li>
+                        <li><a href="customization.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="products.html">Signature Series</a></li>
-                        <li><a href="products.html">Retail Ready</a></li>
-                        <li><a href="products.html">Fire Retardant</a></li>
-                        <li><a href="products.html">UV Stable</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="capabilities.html">Capabilities</a></li>
-                        <li><a href="capabilities.html">Compliance</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="contact.html">Get in Touch</a></li>
-                        <li><a href="#">Request Quote</a></li>
-                        <li><a href="#">Download Catalog</a></li>
-                        <li><a href="#">Find a Rep</a></li>
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
+                            <span>Global HQ: Los Angeles, CA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>info@laysun.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-logo">LAY<span>SUN</span></div>
-                <div class="copyright">© 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Global Inquiry Basket System
-        let inquiryBasket = JSON.parse(localStorage.getItem('laysunBasket')) || [];
+    <!-- Inquiry Cart Sidebar -->
+    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
+        <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
+                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
+                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
+                <div class="text-center text-gray-500 py-12">
+                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                    <p>Your inquiry list is empty.</p>
+                    <p class="text-sm mt-2">Start exploring our collections.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
+                    Submit Inquiry
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateBasketDisplay();
-            
-            // Close basket when clicking outside
-            document.addEventListener('click', function(e) {
-                const basket = document.getElementById('basketDropdown');
-                const basketBtn = document.querySelector('.inquiry-basket-global');
-                if (basket && !basket.contains(e.target) && !basketBtn.contains(e.target)) {
-                    basket.classList.remove('active');
-                }
+    <script>
+        lucide.createIcons();
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-content", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 0.3
+        });
+
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+        scrollElements.forEach((element, index) => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: index * 0.1
             });
         });
 
-        // Add product to basket
-        function addToBasket(productId, productName, productImage = '') {
-            if (!inquiryBasket.find(item => item.id === productId)) {
-                inquiryBasket.push({
-                    id: productId,
-                    name: productName,
-                    image: productImage,
-                    addedAt: new Date().toISOString()
-                });
-                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-                updateBasketDisplay();
-                showNotification(productName + ' added to inquiry basket');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-lg');
             } else {
-                showNotification('Product already in basket', 'warning');
+                navbar.classList.remove('shadow-lg');
+            }
+            lastScroll = currentScroll;
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        let inquiryList = [];
+
+        function toggleInquiryCart() {
+            const cart = document.getElementById('inquiry-cart');
+            const overlay = document.getElementById('cart-overlay');
+            if (cart.classList.contains('translate-x-full')) {
+                cart.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                cart.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
             }
         }
 
-        // Remove from basket
-        function removeFromBasket(productId) {
-            inquiryBasket = inquiryBasket.filter(item => item.id !== productId);
-            localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-            updateBasketDisplay();
-        }
-
-        // Clear basket
-        function clearBasket() {
-            if (confirm('Clear all items from inquiry basket?')) {
-                inquiryBasket = [];
-                localStorage.setItem('laysunBasket', JSON.stringify(inquiryBasket));
-                updateBasketDisplay();
-            }
-        }
-
-        // Update basket display
-        function updateBasketDisplay() {
-            const countEl = document.getElementById('globalBasketCount');
-            const itemsEl = document.getElementById('basketItems');
-            
-            if (countEl) countEl.textContent = inquiryBasket.length;
-            
-            if (itemsEl) {
-                if (inquiryBasket.length === 0) {
-                    itemsEl.innerHTML = '<p class="empty-basket">Your inquiry list is empty. Start exploring our collections.</p>';
-                } else {
-                    itemsEl.innerHTML = inquiryBasket.map(item => `
-                        <div class="basket-item">
-                            <div class="basket-item-image">${item.image ? '' : 'IMG'}</div>
-                            <div class="basket-item-info">
-                                <div class="basket-item-name">${item.name}</div>
-                                <div class="basket-item-id">${item.id}</div>
-                            </div>
-                            <button class="basket-item-remove" onclick="removeFromBasket('${item.id}')">×</button>
-                        </div>
-                    `).join('');
+        function addToInquiry(productId) {
+            const products = {
+                'olive-tree-9ft': {
+                    name: 'Multi-Stem Olive Tree',
+                    specs: '4ft - 9ft | UV Protected',
+                    image: 'https://images.unsplash.com/photo-1614594975525-e45890e2e122?w=200&h=200&fit=crop'
+                },
+                'fiddle-leaf-4ft': {
+                    name: '4ft Fiddle Leaf Fig',
+                    specs: '4ft | Fire Retardant',
+                    image: 'https://images.unsplash.com/photo-1597055181300-e30ba15247b5?w=200&h=200&fit=crop'
+                },
+                'green-wall-custom': {
+                    name: 'Fire-Retardant Vertical Green Wall',
+                    specs: 'Custom Size | NFPA 701',
+                    image: 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=200&h=200&fit=crop'
+                },
+                'bamboo-6-10ft': {
+                    name: 'UV-Stable Bamboo',
+                    specs: '6ft - 10ft | 2000h+ UV',
+                    image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=200&h=200&fit=crop'
                 }
+            };
+
+            const product = products[productId];
+            if (product && !inquiryList.find(item => item.id === productId)) {
+                inquiryList.push({ id: productId, ...product });
+                updateInquiryCart();
+                showNotification('Product added to inquiry list');
             }
         }
 
-        // Toggle basket dropdown
-        function toggleBasket() {
-            const dropdown = document.getElementById('basketDropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('active');
-            }
+        function removeFromInquiry(productId) {
+            inquiryList = inquiryList.filter(item => item.id !== productId);
+            updateInquiryCart();
         }
 
-        // Download specs
-        function downloadSpecs() {
-            if (inquiryBasket.length === 0) {
-                alert('Please add products to your inquiry basket first.');
-                return;
-            }
+        function updateInquiryCart() {
+            const container = document.getElementById('inquiry-items');
+            const badge = document.getElementById('inquiry-badge');
+            const submitBtn = document.getElementById('submit-inquiry-btn');
             
-            const productIds = inquiryBasket.map(item => item.id).join(', ');
-            alert('Generating specification sheet for:\n\n' + productIds + '\n\nIn a real implementation, this would download a PDF with all product specifications.');
+            if (inquiryList.length > 0) {
+                badge.textContent = inquiryList.length;
+                badge.classList.remove('hidden');
+                submitBtn.disabled = false;
+                container.innerHTML = inquiryList.map(item => `
+                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
+                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
+                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
+                                <i data-lucide="trash-2" class="w-3 h-3"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                badge.classList.add('hidden');
+                submitBtn.disabled = true;
+                container.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
+                        <p>Your inquiry list is empty.</p>
+                        <p class="text-sm mt-2">Start exploring our collections.</p>
+                    </div>
+                `;
+            }
+            lucide.createIcons();
         }
 
-        // Play video
-        function playVideo() {
-            alert('Video player would open here. In production, this would play the 4K showcase video.');
+        function submitInquiry() {
+            if (inquiryList.length === 0) return;
+            alert('Inquiry submitted successfully! We will contact you within 24 hours.');
+            inquiryList = [];
+            updateInquiryCart();
+            toggleInquiryCart();
         }
 
-        // Notification system
-        function showNotification(message, type = 'success') {
-            const notif = document.createElement('div');
-            notif.className = 'notification';
-            notif.style.background = type === 'success' ? '#2D5A3D' : '#e74c3c';
-            notif.textContent = message;
-            document.body.appendChild(notif);
-            
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-laysun-green text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center gap-2 animate-bounce';
+            notification.innerHTML = `
+                <i data-lucide="check-circle" class="w-5 h-5 text-laysun-gold"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(notification);
+            lucide.createIcons();
             setTimeout(() => {
-                notif.remove();
+                notification.remove();
             }, 3000);
         }
 
-        // Language Switching System
-        const translations = {
-            en: {
-                'nav.home': 'Home',
-                'nav.solutions': 'Solutions',
-                'nav.products': 'Products',
-                'nav.customization': 'Customization',
-                'nav.capabilities': 'Capabilities',
-                'nav.about': 'About Us',
-                'nav.contact': 'Contact',
-                'hero.title': 'NATURE, REIMAGINED FOR GLOBAL COMMERCE',
-                'hero.subtitle': 'Architectural-Grade Greenery Solutions. Where Design Intelligence Meets Manufacturing Precision.',
-                'hero.cta1': 'Explore Our Solutions',
-                'hero.cta2': 'View Collections',
-                'basket.empty': 'Your inquiry list is empty. Start exploring our collections.',
-                'basket.clear': 'Clear',
-                'basket.download': 'Download Specs',
-                'basket.submit': 'Submit Inquiry'
-            },
-            de: {
-                'nav.home': 'Startseite',
-                'nav.solutions': 'Lösungen',
-                'nav.products': 'Produkte',
-                'nav.customization': 'Anpassung',
-                'nav.capabilities': 'Fähigkeiten',
-                'nav.about': 'Über Uns',
-                'nav.contact': 'Kontakt',
-                'hero.title': 'NATUR, NEU GEDACHT FÜR DEN GLOBALEN HANDEL',
-                'hero.subtitle': 'Architekturgrade Grünlösungen. Wo Designintelligenz auf Fertigungsprecision trifft.',
-                'hero.cta1': 'Lösungen Entdecken',
-                'hero.cta2': 'Kollektionen Ansehen',
-                'basket.empty': 'Ihre Anfrageliste ist leer. Beginnen Sie mit der Erkundung unserer Kollektionen.',
-                'basket.clear': 'Löschen',
-                'basket.download': 'Spezifikationen',
-                'basket.submit': 'Anfrage Senden'
-            },
-            ar: {
-                'nav.home': 'الرئيسية',
-                'nav.solutions': 'الحلول',
-                'nav.products': 'المنتجات',
-                'nav.customization': 'التخصيص',
-                'nav.capabilities': 'القدرات',
-                'nav.about': 'من نحن',
-                'nav.contact': 'اتصل بنا',
-                'hero.title': 'الطبيعة، معاد تصورها للتجارة العالمية',
-                'hero.subtitle': 'حلول خضراء من الدرجة المعمارية. حيث يلتقي الذكاء التصميمي مع الدقة التصنيعية.',
-                'hero.cta1': 'استكشف حلولنا',
-                'hero.cta2': 'عرض المجموعات',
-                'basket.empty': 'قائمة الاستفسار فارغة. ابدأ في استكشاف مجموعاتنا.',
-                'basket.clear': 'مسح',
-                'basket.download': 'تحميل المواصفات',
-                'basket.submit': 'إرسال الاستفسار'
-            }
-        };
-
-        function switchLanguage(lang) {
-            document.body.setAttribute('lang', lang);
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(lang)) {
-                    btn.classList.add('active');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-            
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
-            
-            localStorage.setItem('laysunLang', lang);
-        }
-
-        // Load saved language
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('laysunLang') || 'en';
-            switchLanguage(savedLang);
         });
     </script>
 </body>
