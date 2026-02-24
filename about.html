@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Laysun - Architectural-Grade Artificial Greenery</title>
-    <meta name="description" content="Learn about Laysun's 20+ years of expertise in architectural-grade artificial greenery. Discover our double-engine strategy combining design agency creativity with manufacturing excellence.">
-    
-    <!-- Fonts - 与首页保持一致 -->
+    <!-- SEO 优化 (符合 File 6 要求) -->
+    <title>About Laysun | Global Artificial Horticulture Solutions Company</title>
+    <meta name="description" content="Laysun is dedicated to providing high-quality, sustainable artificial horticulture solutions for commercial spaces worldwide. Learn about our mission, vision, and values.">
+    <!-- 字体 (File 4) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Laysun",
-        "description": "Global leader in artificial horticulture systems",
-        "url": "https://laysun.com",
-        "logo": "https://laysun.com/logo.png",
-        "foundingDate": "2006",
-        "areaServed": "Global"
-    }
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+           Laysun About Page - 基于全站视觉与文案规范
+           包含: 品牌使命、愿景、核心价值观 (File 5)
+           ============================================ */
+
+        /* --- 全局变量 (File 3 & 4) --- */
         :root {
-            --champagne-gold: #C9A961;
-            --champagne-gold-hover: #B8944F;
-            --forest-green: #1F3D2B;
-            --forest-green-hover: #2B533B;
-            --dark-gray: #5F6466;
-            --charcoal: #1A1A1A;
-            --light-gray: #F9F9F9;
-            --white: #FFFFFF;
-            --border-color: #E5E5E5;
+            --primary: #1F3D2B;      /* 深森林绿 */
+            --accent: #C5A059;       /* 香槟金 */
+            --bg-warm: #F9F8F5;       /* 暖白 */
+            --text-dark: #333333;     /* 炭灰 */
+            --text-light: #FFFFFF;
+            --text-gray: #6B6B6B;
+            --border-light: #EEEEEE;
+
+            --font-heading: 'Montserrat', 'Inter', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+
+            --container-max: 1440px;
+            --radius-btn: 4px;
+            --radius-card: 4px;
         }
 
         * {
@@ -45,1141 +48,458 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--charcoal);
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-warm);
             line-height: 1.6;
+            font-size: 16px;
+            letter-spacing: 0.5px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* --- 字体系统 --- */
+        h1, h2, h3, .btn, .nav-link {
+            font-family: var(--font-heading);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             line-height: 1.2;
-        }
-
-        /* Header - 与首页一致 */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--forest-green);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--champagne-gold);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--champagne-gold);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after, nav a.active::after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .inquiry-btn {
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .inquiry-btn:hover {
-            background-color: var(--champagne-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
-        }
-
-        .inquiry-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--forest-green);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Hero Section - 与首页Hero一致 */
-        .hero {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            color: var(--white);
-            padding: 8rem 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-        }
-
-        /* Stats Bar - 与首页Global Delivery Footprint一致 */
-        .stats-bar {
-            background-color: var(--champagne-gold);
-            padding: 3rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 6rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: var(--forest-green);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 700;
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            font-weight: 600;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-            display: block;
         }
 
-        /* Section Spacing - 与首页一致 */
-        .section-padding {
-            padding: 6rem 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .bg-light {
-            background-color: var(--light-gray);
-        }
-
-        /* Story Section - 两栏布局 */
-        .story-section .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .story-content h2 {
-            font-size: 2.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1.5rem;
-        }
-
-        .story-content .lead {
-            font-size: 1.25rem;
-            color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-
-        .story-content p {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .story-image {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .story-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .experience-badge {
-            position: absolute;
-            bottom: -20px;
-            left: -20px;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .experience-badge .number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+        h2 {
+            font-size: 36px;
             font-weight: 700;
-            line-height: 1;
-            display: block;
-        }
-
-        .experience-badge .text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 0;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            line-height: 1.3;
+            color: var(--text-dark);
         }
 
-        /* Three Pillars - 与首页The Three Pillars一致 */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .pillar-card {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .pillar-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .pillar-card h3 {
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .pillar-card p {
-            color: var(--dark-gray);
-            line-height: 1.7;
-        }
-
-        /* Values Grid - 4列布局 */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .value-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border-top: 4px solid var(--champagne-gold);
-            text-align: center;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .value-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--light-gray);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.75rem;
-        }
-
-        .value-card h3 {
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .value-card p {
-            color: var(--dark-gray);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        /* Capabilities - 与首页Industry Solutions一致 */
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .capability-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-
-        .capability-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .capability-header {
-            background-color: var(--forest-green);
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .capability-header h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .capability-content {
-            padding: 1.5rem;
-        }
-
-        .capability-content ul {
-            list-style: none;
-        }
-
-        .capability-content li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--dark-gray);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .capability-content li:last-child {
-            border-bottom: none;
-        }
-
-        .capability-content li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--champagne-gold);
+        h3 {
+            font-size: 28px;
             font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            color: var(--primary);
         }
 
-        /* Global Section - 深色背景 */
-        .global-section {
-            background-color: var(--forest-green);
-            color: white;
-            padding: 6rem 2rem;
-        }
-
-        .global-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .global-container h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .global-container > p {
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        .global-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .global-stat {
-            padding: 2rem;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-
-        .global-stat h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--champagne-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .global-stat p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        /* Certifications - 简洁横向布局 */
-        .certifications-section {
-            background-color: var(--light-gray);
-            padding: 4rem 2rem;
-        }
-
-        .certifications-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .certifications-container h2 {
-            font-size: 2rem;
-            color: var(--forest-green);
-            margin-bottom: 3rem;
-        }
-
-        .cert-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .cert-item {
-            background: white;
-            padding: 1.5rem 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            min-width: 150px;
-        }
-
-        .cert-item h3 {
-            color: var(--champagne-gold);
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .cert-item p {
-            color: var(--dark-gray);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* CTA Section - 与首页一致 */
-        .cta {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            padding: 6rem 2rem;
-            text-align: center;
-            color: white;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        /* --- UI 组件 (复用 index 规范) --- */
         .btn {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-btn);
+            font-family: var(--font-heading);
+            font-size: 18px;
             font-weight: 600;
-            transition: all 0.3s;
-            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
+            background-color: var(--primary);
+            color: var(--text-light);
         }
 
         .btn-primary:hover {
-            background-color: var(--champagne-gold-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+            background-color: var(--accent);
+            transform: scale(0.98);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: white;
-            border: 2px solid white;
-            margin-left: 1rem;
+            color: var(--primary);
+            border: 1px solid var(--primary);
         }
 
         .btn-secondary:hover {
-            background-color: white;
-            color: var(--forest-green);
+            background-color: var(--primary);
+            color: var(--text-light);
+            transform: scale(0.98);
         }
 
-        /* Footer - 与首页一致 */
-        footer {
-            background-color: var(--charcoal);
-            color: white;
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-        }
-
-        .footer-section h4 {
-            color: var(--champagne-gold);
-            margin-bottom: 1.5rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 3rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-        }
-
-        /* Inquiry Sidebar */
-        .inquiry-sidebar {
+        /* 导航栏 (滚动变色) */
+        .navbar {
             position: fixed;
             top: 0;
-            right: -400px;
-            width: 400px;
-            max-width: 100%;
-            height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-            z-index: 3000;
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+            transition: background-color 0.3s ease;
+            background-color: transparent;
         }
 
-        .inquiry-sidebar.active {
-            right: 0;
+        .navbar.scrolled {
+            background-color: var(--bg-warm);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .inquiry-header {
-            background-color: var(--forest-green);
-            color: white;
-            padding: 1.5rem;
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .close-inquiry {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .inquiry-items {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .inquiry-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .submit-inquiry {
-            width: 100%;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-inquiry:hover {
-            background-color: var(--champagne-gold-hover);
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 2500;
-            display: none;
-        }
-
-        .overlay.active {
+        .logo-svg {
             display: block;
+            height: 40px;
+            width: auto;
         }
 
-        /* Responsive */
+        .navbar .logo-svg path {
+            fill: var(--text-light);
+            transition: fill 0.3s ease;
+        }
+
+        .navbar.scrolled .logo-svg path {
+            fill: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-decoration: none;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--primary);
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 页面主要内容区 */
+        .page-section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .page-section:first-of-type {
+            padding-top: 120px; /* 为固定导航留出空间 */
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-xl) auto;
+        }
+
+        .section-intro p {
+            color: var(--text-gray);
+            margin-top: var(--space-sm);
+        }
+
+        /* 核心价值观卡片 (复用优势网格样式) */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .value-card {
+            background-color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .value-card h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .value-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        /* 全球足迹部分 (参考 File 2 办公室信息) */
+        .offices-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .office-card {
+            background-color: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-light);
+        }
+
+        .office-card h4 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .office-card p {
+            margin-bottom: var(--space-xs);
+            color: var(--text-dark);
+        }
+
+        .office-card .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+            margin-right: var(--space-xs);
+            vertical-align: middle;
+        }
+
+        /* 页脚 (与首页一致) */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: var(--space-xl) 0;
+        }
+
+        .footer .logo-svg path {
+            fill: var(--accent);
+        }
+
+        .footer a {
+            color: var(--bg-warm);
+            text-decoration: none;
+        }
+
+        /* 响应式 */
         @media (max-width: 1024px) {
-            .pillars-grid,
-            .capabilities-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .values-grid,
-            .global-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            h1 { font-size: 42px; }
+            h2 { font-size: 32px; }
+            h3 { font-size: 24px; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .story-section .container {
-                grid-template-columns: 1fr;
-            }
-            
-            .experience-badge {
-                left: 20px;
-                bottom: 20px;
-            }
-            
-            .pillars-grid,
-            .capabilities-grid,
-            .values-grid,
-            .global-stats,
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-bar {
-                gap: 2rem;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
+            .container { padding: 0 var(--space-sm); }
+            h1 { font-size: 32px; }
+            .nav-menu { display: none; } /* 简化演示，实际可用汉堡菜单 */
+            .values-grid { grid-template-columns: 1fr; }
+            .offices-grid { grid-template-columns: 1fr; }
+        }
+
+        /* 占位图标 */
+        .icon-placeholder {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent);
+            mask-size: contain;
+            -webkit-mask-size: contain;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">LAYSUN</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Customization</a></li>
-                    <li><a href="capabilities.html">Capabilities</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="inquiry-btn" onclick="toggleInquiry()">
-                    Project Inquiry
-                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="hero-title">ABOUT LAYSUN</h1>
-        <p class="hero-subtitle">Two decades of excellence in architectural-grade artificial greenery. Where botanical art meets industrial engineering.</p>
-    </section>
-
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="stat-item">
-            <span class="stat-number">20+</span>
-            <span class="stat-label">Years Manufacturing</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">Projects Delivered</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Countries Served</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Compliance Rate</span>
-        </div>
-    </section>
-
-    <!-- Our Story -->
-    <section class="story-section section-padding">
+    <!-- 导航栏 (与首页一致) -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="story-content">
-                <h2>Our Story</h2>
-                <p class="lead">For over 20 years, Laysun has been more than just a manufacturer — we are a global solution provider where botanical art meets industrial engineering.</p>
-                <p>Born from a vision to bring nature's soul into the built environment, we have evolved into a dual-engine powerhouse: a high-end Design Agency and a large-scale Manufacturing Hub.</p>
-                <p>While others simply copy nature, we reimagine it. Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections.</p>
-                <p>Operating out of our 10,000㎡ precision facility, we harmonize traditional craftsmanship with modern automation. Every leaf texture and trunk silhouette is an Architectural-Grade masterpiece.</p>
-            </div>
-            <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Laysun Manufacturing Facility" loading="lazy">
-                <div class="experience-badge">
-                    <span class="number">20+</span>
-                    <span class="text">Years of<br>Excellence</span>
-                </div>
-            </div>
+            <a href="index.html">
+                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
+                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
+                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
+                </svg>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="solutions.html" class="nav-link">SOLUTIONS</a></li>
+                <li><a href="products.html" class="nav-link">PRODUCTS</a></li>
+                <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
+                <li><a href="design.html" class="nav-link">DESIGN</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <!-- The Three Pillars - 与首页一致 -->
-    <section class="section-padding bg-light">
-        <div class="section-header">
-            <h2 class="section-title">The Laysun Difference</h2>
-            <p class="section-subtitle">Our double-engine strategy sets us apart in the global artificial greenery market</p>
-        </div>
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <div class="pillar-icon">🏭</div>
-                <h3>Manufacturing Hub</h3>
-                <p>Operating out of our 10,000㎡ precision facility, we harmonize traditional craftsmanship with modern automation. Every product is an Architectural-Grade masterpiece.</p>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">🎨</div>
-                <h3>Design Agency</h3>
-                <p>Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections. We define trends.</p>
-            </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">🌍</div>
-                <h3>Global Standards</h3>
-                <p>Engineered to meet the world's strictest compliance standards — including BSCI, SEDEX for ethical sourcing, and NFPA 701, B1 for fire safety.</p>
-            </div>
-        </div>
-    </section>
+    <!-- 主要内容区 -->
+    <main>
+        <!-- 品牌使命与愿景部分 (File 5) -->
+        <section class="page-section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Our Mission & Vision</h2>
+                    <p>Driving the future of commercial greenery with precision and sustainability.</p>
+                </div>
 
-    <!-- Core Values -->
-    <section class="section-padding">
-        <div class="section-header">
-            <h2 class="section-title">Our Core Values</h2>
-            <p class="section-subtitle">The principles that guide every decision we make</p>
-        </div>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">💡</div>
-                <h3>Innovation Driven</h3>
-                <p>We continuously push the boundaries of artificial horticulture technology, striving to provide the most advanced solutions in the market.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-top: var(--space-lg);">
+                    <!-- 使命 -->
+                    <div style="background: white; padding: var(--space-xl); border-radius: var(--radius-card); border: 1px solid var(--border-light);">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-sm);">Our Mission</h3>
+                        <p style="font-size: 18px; line-height: 1.6; color: var(--text-dark);">
+                            Laysun is dedicated to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design, we create botanical systems that are both aesthetically pleasing and environmentally friendly, helping businesses enhance spatial beauty, reduce maintenance costs, and meet strict fire safety standards.
+                        </p>
+                    </div>
+                    <!-- 愿景 -->
+                    <div style="background: white; padding: var(--space-xl); border-radius: var(--radius-card); border: 1px solid var(--border-light);">
+                        <h3 style="color: var(--primary); margin-bottom: var(--space-sm);">Our Vision</h3>
+                        <p style="font-size: 18px; line-height: 1.6; color: var(--text-dark);">
+                            To become the world's leading provider of artificial horticulture systems, creating green, low-carbon, and intelligent commercial landscapes, filling every space with the vitality of nature.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h3>Customer Centric</h3>
-                <p>Every project is tailored to ensure perfect alignment with client needs. We believe in deep collaboration to exceed expectations.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🌱</div>
-                <h3>Sustainability Focused</h3>
-                <p>We are committed to ecological responsibility, providing low-maintenance, high-quality products that reduce carbon footprints.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">✓</div>
-                <h3>Professional Excellence</h3>
-                <p>With years of deep industry expertise, we focus on delivering premium products and services, ensuring every detail meets the highest standards.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Capabilities - 与首页Industry Solutions一致 -->
-    <section class="section-padding bg-light" id="capabilities">
-        <div class="section-header">
-            <h2 class="section-title">Our Capabilities</h2>
-            <p class="section-subtitle">End-to-end artificial horticulture solutions powered by advanced manufacturing and design expertise</p>
-        </div>
-        <div class="capabilities-grid">
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>🎨</span>
-                    <h3>Design & Development</h3>
+        <!-- 核心价值观 (File 5) -->
+        <section class="page-section" style="background-color: white;">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Our Core Values</h2>
+                    <p>The principles that guide every project we undertake.</p>
                 </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>In-house design agency with AI-driven trend forecasting</li>
-                        <li>Custom botanical collection development</li>
-                        <li>3D modeling and prototyping</li>
-                        <li>Material innovation and testing</li>
-                        <li>Color and texture matching</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>⚙️</span>
-                    <h3>Manufacturing Excellence</h3>
-                </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>10,000㎡ production facility</li>
-                        <li>ISO 9001 certified processes</li>
-                        <li>Advanced injection molding</li>
-                        <li>Hand-finishing craftsmanship</li>
-                        <li>Quality control at every stage</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>🔬</span>
-                    <h3>Testing & Certification</h3>
-                </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>NFPA 701 fire retardancy testing</li>
-                        <li>UV stability testing (5000h+)</li>
-                        <li>Indoor air quality certification</li>
-                        <li>Third-party lab verification</li>
-                        <li>International standards compliance</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>🌍</span>
-                    <h3>Global Fulfillment</h3>
-                </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>Strategic warehousing worldwide</li>
-                        <li>Container optimization</li>
-                        <li>Customs and documentation support</li>
-                        <li>Last-mile delivery coordination</li>
-                        <li>Inventory management systems</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>🤝</span>
-                    <h3>Project Support</h3>
-                </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>Dedicated account management</li>
-                        <li>Technical specification support</li>
-                        <li>Installation guidance</li>
-                        <li>After-sales service</li>
-                        <li>Warranty programs</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="capability-card">
-                <div class="capability-header">
-                    <span>📦</span>
-                    <h3>Retail Ready Services</h3>
-                </div>
-                <div class="capability-content">
-                    <ul>
-                        <li>Barcode and labeling</li>
-                        <li>Custom packaging design</li>
-                        <li>Display fixture integration</li>
-                        <li>Point-of-sale materials</li>
-                        <li>Drop-shipping capabilities</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Global Presence -->
-    <section class="global-section">
-        <div class="global-container">
-            <h2>Global Presence</h2>
-            <p>Serving commercial clients across 50+ countries with localized support and global consistency</p>
-            <div class="global-stats">
-                <div class="global-stat">
-                    <h3>3</h3>
-                    <p>Continental Offices</p>
-                </div>
-                <div class="global-stat">
-                    <h3>12</h3>
-                    <p>Distribution Partners</p>
-                </div>
-                <div class="global-stat">
-                    <h3>24/7</h3>
-                    <p>Customer Support</p>
-                </div>
-                <div class="global-stat">
-                    <h3>99.2%</h3>
-                    <p>On-Time Delivery</p>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h4>Innovation-Driven</h4>
+                        <p>We continuously drive innovation in artificial horticulture technology, striving to provide the most advanced solutions in the market.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Customer-Centric</h4>
+                        <p>Every project is tailor-made to perfectly fit our clients' needs.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Sustainable Development</h4>
+                        <p>We focus on ecological sustainability, committed to providing low-maintenance, high-quality products to reduce carbon footprint.</p>
+                    </div>
+                    <div class="value-card">
+                        <h4>Professionalism</h4>
+                        <p>With years of deep cultivation in the horticulture industry, we focus on providing quality products and services, ensuring every detail is done to the best.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications -->
-    <section class="certifications-section">
-        <div class="certifications-container">
-            <h2>Certifications & Standards</h2>
-            <div class="cert-grid">
-                <div class="cert-item">
-                    <h3>NFPA 701</h3>
-                    <p>Fire Retardant</p>
+        <!-- 全球足迹 (参考 File 2 办公室信息) -->
+        <section class="page-section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Global Presence</h2>
+                    <p>Strategically located to serve you better.</p>
                 </div>
-                <div class="cert-item">
-                    <h3>ISO 9001</h3>
-                    <p>Quality Management</p>
-                </div>
-                <div class="cert-item">
-                    <h3>BSCI</h3>
-                    <p>Ethical Sourcing</p>
-                </div>
-                <div class="cert-item">
-                    <h3>SEDEX</h3>
-                    <p>Supply Chain</p>
-                </div>
-                <div class="cert-item">
-                    <h3>RoHS</h3>
-                    <p>Environmental</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2 class="cta-title">Ready to Work With Us?</h2>
-        <p class="cta-subtitle">Let's bring your vision to life with our architectural-grade solutions</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-            <a href="capabilities.html" class="btn btn-secondary">Our Capabilities</a>
-        </div>
-    </section>
+                <div class="offices-grid">
+                    <!-- 美国办公室 -->
+                    <div class="office-card">
+                        <h4>
+                            <svg class="contact-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            USA Office
+                        </h4>
+                        <p>20 Transom Rd, Port Wentworth, Georgia, 31407</p>
+                        <p>📞 +1 213-829-8485</p>
+                        <p>🕒 9:00-18:00 (PST / UTC-8)</p>
+                        <p>✉️ usa@laysun.co</p>
+                    </div>
+                    <!-- 中国工厂 -->
+                    <div class="office-card">
+                        <h4>
+                            <svg class="contact-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            China Factory
+                        </h4>
+                        <p>No. 25 Qiaofeng Road, Qishi Town, Dongguan City, Guangdong</p>
+                        <p>📞 +86 138-0250-5260</p>
+                        <p>🕒 9:00-18:00 (CST / UTC+8)</p>
+                        <p>✉️ china@laysun.co</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: var(--space-md); color: var(--text-gray);">
+                    <svg width="20" height="20" fill="var(--accent)" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    Shenzhen Bao'an International Airport: 1.5h drive | Guangzhou Baiyun International Airport: 1.5h drive
+                </p>
+            </div>
+        </section>
+    </main>
 
-    <!-- Inquiry Sidebar -->
-    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
-    <aside class="inquiry-sidebar" id="inquirySidebar">
-        <div class="inquiry-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
-        </div>
-        <div class="inquiry-items" id="inquiryItems">
-            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
-        </div>
-        <div class="inquiry-footer">
-            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
-        </div>
-    </aside>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="products.html">Artificial Trees</a></li>
-                    <li><a href="products.html">Artificial Plants</a></li>
-                    <li><a href="products.html">Green Walls</a></li>
-                    <li><a href="products.html">Custom Solutions</a></li>
-                </ul>
+    <!-- 页脚 (与首页一致) -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+                <!-- Logo 香槟金版本 -->
+                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
+                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
+                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
+                </svg>
+                <div style="display: flex; gap: var(--space-sm);">
+                    <!-- 社交媒体图标占位 (File 3) -->
+                    <a href="#" style="color: var(--accent);">in</a>
+                    <a href="#" style="color: var(--accent);">fb</a>
+                    <a href="#" style="color: var(--accent);">ig</a>
+                    <a href="#" style="color: var(--accent);">yt</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="solutions.html">Hotel & Hospitality</a></li>
-                    <li><a href="solutions.html">Retail Spaces</a></li>
-                    <li><a href="solutions.html">Commercial Buildings</a></li>
-                    <li><a href="solutions.html">Outdoor Applications</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="capabilities.html">Capabilities</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: info@laysun.com</li>
-                    <li>Global Distribution Network</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Laysun. All rights reserved.</p>
+            <hr style="border-color: var(--accent); opacity: 0.2; margin: var(--space-md) 0;">
+            <p style="text-align: center; color: var(--bg-warm);">&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- 滚动导航变色脚本 -->
     <script>
-        // Inquiry System
-        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
-
-        function updateInquiryCount() {
-            const count = document.getElementById('inquiryCount');
-            if (count) {
-                count.textContent = inquiryList.length;
-                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
-        }
-
-        function toggleInquiry() {
-            const sidebar = document.getElementById('inquirySidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        function submitInquiry() {
-            if (inquiryList.length === 0) {
-                alert('Please add products to your inquiry first.');
-                return;
-            }
-            window.location.href = 'contact.html?inquiry=true';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateInquiryCount();
         });
     </script>
 </body>
