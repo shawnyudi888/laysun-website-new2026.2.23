@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Laysun | Global Artificial Horticulture Solutions</title>
-    <meta name="description" content="Contact Laysun Co-Creation (Guangzhou) Technology Co., Ltd. for commercial artificial plant inquiries. USA Office: +1 213-829-8485. China Factory: +86 138-0250-5260. Global support for hotels, retail, and commercial projects.">
-    <meta name="keywords" content="Laysun contact, artificial plants wholesale, commercial greenery solutions, USA office, China factory">
+    <title>About Us | Laysun - Architectural-Grade Artificial Greenery</title>
+    <meta name="description" content="Learn about Laysun's 20+ years of expertise in architectural-grade artificial greenery. Discover our double-engine strategy combining design agency creativity with manufacturing excellence.">
     
-    <!-- Fonts -->
+    <!-- Fonts - 与首页保持一致 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Laysun",
+        "description": "Global leader in artificial horticulture systems",
+        "url": "https://laysun.com",
+        "logo": "https://laysun.com/logo.png",
+        "foundingDate": "2006",
+        "areaServed": "Global"
+    }
+    </script>
 
     <style>
         :root {
@@ -32,18 +45,19 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--charcoal);
             background-color: var(--white);
             line-height: 1.6;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
+            line-height: 1.2;
         }
 
-        /* Header */
+        /* Header - 与首页一致 */
         header {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -62,16 +76,12 @@
         }
 
         .logo {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--forest-green);
             text-decoration: none;
             letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--champagne-gold);
         }
 
         nav ul {
@@ -89,7 +99,7 @@
             position: relative;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--champagne-gold);
         }
 
@@ -104,7 +114,7 @@
             transition: width 0.3s ease;
         }
 
-        nav a:hover::after {
+        nav a:hover::after, nav a.active::after {
             width: 100%;
         }
 
@@ -120,7 +130,7 @@
             border: none;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -148,385 +158,488 @@
             justify-content: center;
         }
 
-        /* Hero */
-        .contact-hero {
+        /* Hero Section - 与首页Hero一致 */
+        .hero {
             background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            color: white;
-            padding: 5rem 2rem;
+            color: var(--white);
+            padding: 8rem 2rem;
             text-align: center;
+            position: relative;
         }
 
-        .contact-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
-        .contact-hero .company-fullname {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .contact-hero p {
-            font-size: 1.2rem;
+        .hero-subtitle {
+            font-size: 1.3rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
         }
 
-        /* Contact Container */
-        .contact-container {
+        /* Stats Bar - 与首页Global Delivery Footprint一致 */
+        .stats-bar {
+            background-color: var(--champagne-gold);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: var(--forest-green);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Section Spacing - 与首页一致 */
+        .section-padding {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bg-light {
+            background-color: var(--light-gray);
+        }
+
+        /* Story Section - 两栏布局 */
+        .story-section .container {
             max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+            align-items: center;
         }
 
-        .contact-info h2 {
+        .story-content h2 {
+            font-size: 2.5rem;
             color: var(--forest-green);
             margin-bottom: 1.5rem;
-            font-size: 2rem;
         }
 
-        /* Location Cards */
-        .location-card {
-            background-color: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s;
-        }
-
-        .location-card:hover {
-            border-color: var(--champagne-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
-        }
-
-        .location-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--champagne-gold);
-        }
-
-        .location-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .location-header h3 {
-            color: var(--forest-green);
-            font-size: 1.3rem;
-        }
-
-        .location-header .tagline {
-            font-size: 0.85rem;
+        .story-content .lead {
+            font-size: 1.25rem;
             color: var(--dark-gray);
-            font-weight: 400;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .contact-detail-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-        }
-
-        .contact-detail-row .label {
-            font-weight: 600;
-            color: var(--forest-green);
-            min-width: 80px;
-            font-size: 0.9rem;
-        }
-
-        .contact-detail-row .value {
-            color: var(--charcoal);
-            flex: 1;
-        }
-
-        .contact-detail-row .value a {
-            color: var(--champagne-gold);
-            text-decoration: none;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
             font-weight: 500;
         }
 
-        .contact-detail-row .value a:hover {
-            text-decoration: underline;
-        }
-
-        .note {
-            font-size: 0.85rem;
+        .story-content p {
             color: var(--dark-gray);
-            font-style: italic;
-            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
-        .address-box {
-            background-color: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
+        .story-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .address-box .label {
-            font-weight: 600;
-            color: var(--forest-green);
-            margin-bottom: 0.5rem;
+        .story-image img {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
-        .address-box p {
-            color: var(--charcoal);
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .airport-info {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed var(--border-color);
-        }
-
-        .airport-badge {
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
             background-color: var(--champagne-gold);
             color: var(--forest-green);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Quick Contact Methods */
-        .quick-contact {
-            background-color: var(--forest-green);
-            color: white;
             padding: 2rem;
             border-radius: 12px;
-            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .quick-contact h3 {
-            margin-bottom: 1.5rem;
-            color: var(--champagne-gold);
+        .experience-badge .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            display: block;
         }
 
-        .quick-contact-grid {
+        .experience-badge .text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Three Pillars - 与首页The Three Pillars一致 */
+        .pillars-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .quick-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .pillar-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
-        .quick-item .icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(201, 169, 97, 0.2);
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .pillar-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* Values Grid - 4列布局 */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid var(--champagne-gold);
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-gray);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            margin: 0 auto 1.5rem;
+            font-size: 1.75rem;
         }
 
-        .quick-item div {
-            font-size: 0.9rem;
-        }
-
-        .quick-item a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .quick-item a:hover {
-            color: var(--champagne-gold);
-        }
-
-        /* Contact Form */
-        .contact-form-wrapper h2 {
+        .value-card h3 {
             color: var(--forest-green);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
 
-        .contact-form {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
+        .value-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--forest-green);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--champagne-gold);
-            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-        }
-
-        .form-row {
+        /* Capabilities - 与首页Industry Solutions一致 */
+        .capabilities-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .submit-btn {
-            width: 100%;
-            background-color: var(--champagne-gold);
-            color: var(--forest-green);
-            border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
+        .capability-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: all 0.3s;
         }
 
-        .submit-btn:hover {
-            background-color: var(--champagne-gold-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.3);
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
-        /* Map Section */
-        .map-section {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .map-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .map-header h2 {
-            color: var(--forest-green);
-            font-size: 2rem;
-        }
-
-        .map-container {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
-            height: 450px;
-            border-radius: 12px;
+        .capability-header {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
+            gap: 0.75rem;
+        }
+
+        .capability-header h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .capability-content {
+            padding: 1.5rem;
+        }
+
+        .capability-content ul {
+            list-style: none;
+        }
+
+        .capability-content li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
             position: relative;
-            overflow: hidden;
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .map-container::before {
-            content: '';
+        .capability-content li:last-child {
+            border-bottom: none;
+        }
+
+        .capability-content li::before {
+            content: '→';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: var(--champagne-gold);
+            font-weight: 700;
         }
 
-        .map-content {
-            text-align: center;
-            z-index: 1;
+        /* Global Section - 深色背景 */
+        .global-section {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 6rem 2rem;
         }
 
-        .map-locations {
-            display: flex;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-
-        .map-location {
+        .global-container {
+            max-width: 1400px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .map-location h4 {
+        .global-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .global-container > p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .global-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .global-stat {
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .global-stat h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             color: var(--champagne-gold);
             margin-bottom: 0.5rem;
         }
 
-        .map-location p {
+        .global-stat p {
             opacity: 0.9;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        /* Footer */
+        /* Certifications - 简洁横向布局 */
+        .certifications-section {
+            background-color: var(--light-gray);
+            padding: 4rem 2rem;
+        }
+
+        .certifications-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .certifications-container h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 3rem;
+        }
+
+        .cert-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            min-width: 150px;
+        }
+
+        .cert-item h3 {
+            color: var(--champagne-gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-item p {
+            color: var(--dark-gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Section - 与首页一致 */
+        .cta {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--forest-green);
+        }
+
+        /* Footer - 与首页一致 */
         footer {
             background-color: var(--charcoal);
             color: white;
             padding: 4rem 2rem 2rem;
-            margin-top: 4rem;
         }
 
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
         }
 
         .footer-section h4 {
             color: var(--champagne-gold);
             margin-bottom: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-section ul {
@@ -541,19 +654,11 @@
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .footer-section a:hover {
             color: var(--champagne-gold);
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
         }
 
         .footer-bottom {
@@ -563,43 +668,136 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
             color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Inquiry Sidebar */
+        .inquiry-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 100%;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 3000;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inquiry-sidebar.active {
+            right: 0;
+        }
+
+        .inquiry-header {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-inquiry {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .inquiry-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .inquiry-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .submit-inquiry {
+            width: 100%;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-inquiry:hover {
+            background-color: var(--champagne-gold-hover);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2500;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
-            .contact-container {
-                grid-template-columns: 1fr;
+        @media (max-width: 1024px) {
+            .pillars-grid,
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .quick-contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .map-locations {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .contact-hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                display: none;
+            
+            .values-grid,
+            .global-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 640px) {
-            .airport-info {
-                flex-direction: column;
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
-
-            .location-card {
-                padding: 1.5rem;
+            
+            .story-section .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-badge {
+                left: 20px;
+                bottom: 20px;
+            }
+            
+            .pillars-grid,
+            .capabilities-grid,
+            .values-grid,
+            .global-stats,
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-bar {
+                gap: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
             }
         }
     </style>
@@ -609,14 +807,15 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">LAY<span>SUN</span></a>
+            <a href="index.html" class="logo">LAYSUN</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="solutions.html">Solutions</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="customization.html">Customization</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -629,239 +828,286 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="contact-hero">
-        <h1>Get In Touch</h1>
-        <p class="company-fullname">Laysun Co-Creation (Guangzhou) Technology Co., Ltd.</p>
-        <p>Ready to elevate your commercial space with architectural-grade artificial horticulture solutions? Our global team is here to support your project.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">ABOUT LAYSUN</h1>
+        <p class="hero-subtitle">Two decades of excellence in architectural-grade artificial greenery. Where botanical art meets industrial engineering.</p>
     </section>
 
-    <!-- Contact Container -->
-    <div class="contact-container">
-        <!-- Contact Info Side -->
-        <div class="contact-info">
-            <h2>Global Contact Centers</h2>
-            
-            <!-- USA Office -->
-            <div class="location-card">
-                <div class="location-header">
-                    <div class="location-icon">🇺🇸</div>
-                    <div>
-                        <h3>USA Office</h3>
-                        <span class="tagline">For North America Wholesale Inquiries</span>
-                    </div>
-                </div>
-                
-                <div class="contact-detail-row">
-                    <span class="label">Phone:</span>
-                    <div class="value">
-                        <a href="tel:+12138298485">+1 213-829-8485</a>
-                        <p class="note">Time Zone: PST / UTC-8 | Working Hours: 9:00-18:00</p>
-                    </div>
-                </div>
-
-                <div class="contact-detail-row">
-                    <span class="label">Email:</span>
-                    <div class="value">
-                        <a href="mailto:info@laysun.co">info@laysun.co</a>
-                        <p class="note">Reply within 12 working hours</p>
-                    </div>
-                </div>
-
-                <div class="contact-detail-row">
-                    <span class="label">WhatsApp:</span>
-                    <div class="value">
-                        <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
-                        <p class="note">24H Quick Responses</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- China Factory -->
-            <div class="location-card">
-                <div class="location-header">
-                    <div class="location-icon">🇨🇳</div>
-                    <div>
-                        <h3>China Factory</h3>
-                        <span class="tagline">For Custom Project & Factory Direct Communication</span>
-                    </div>
-                </div>
-                
-                <div class="contact-detail-row">
-                    <span class="label">Phone:</span>
-                    <div class="value">
-                        <a href="tel:+8613802505260">+86 138-0250-5260</a>
-                        <p class="note">Time Zone: CST / UTC+8 | Working Hours: 9:00-18:00</p>
-                    </div>
-                </div>
-
-                <div class="contact-detail-row">
-                    <span class="label">Email:</span>
-                    <div class="value">
-                        <a href="mailto:sales@laysun.co">sales@laysun.co</a>
-                        <p class="note">Reply within 12 working hours</p>
-                    </div>
-                </div>
-
-                <div class="contact-detail-row">
-                    <span class="label">WhatsApp:</span>
-                    <div class="value">
-                        <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
-                        <p class="note">24H Quick Responses</p>
-                    </div>
-                </div>
-
-                <div class="address-box">
-                    <span class="label">Factory Address:</span>
-                    <p>No. 25 Qiangfeng Road, Qishi Town, Dongguan City, Guangdong Province, China</p>
-                    <div class="airport-info">
-                        <span class="airport-badge">✈ 1.5h from Shenzhen Bao'an International Airport</span>
-                        <span class="airport-badge">✈ 1.5h from Guangzhou Baiyun International Airport</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quick Contact Summary -->
-            <div class="quick-contact">
-                <h3>Quick Contact Guide</h3>
-                <div class="quick-contact-grid">
-                    <div class="quick-item">
-                        <div class="icon">📧</div>
-                        <div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">General Inquiries</div>
-                            <a href="mailto:info@laysun.co">info@laysun.co</a>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="icon">🛒</div>
-                        <div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">Sales & Orders</div>
-                            <a href="mailto:sales@laysun.co">sales@laysun.co</a>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="icon">💬</div>
-                        <div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">USA WhatsApp</div>
-                            <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
-                        </div>
-                    </div>
-                    <div class="quick-item">
-                        <div class="icon">💬</div>
-                        <div>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">China WhatsApp</div>
-                            <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Years Manufacturing</span>
         </div>
-
-        <!-- Contact Form Side -->
-        <div class="contact-form-wrapper">
-            <h2>Send Us a Message</h2>
-            <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company" placeholder="Laysun Co-Creation (Guangzhou) Technology Co., Ltd.">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="country">Country/Region *</label>
-                        <select id="country" name="country" required>
-                            <option value="">Select Country</option>
-                            <option value="us">United States</option>
-                            <option value="ca">Canada</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="au">Australia</option>
-                            <option value="de">Germany</option>
-                            <option value="fr">France</option>
-                            <option value="jp">Japan</option>
-                            <option value="sg">Singapore</option>
-                            <option value="ae">UAE</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select Subject</option>
-                            <option value="product-inquiry">Product Inquiry</option>
-                            <option value="custom-project">Custom Project Request</option>
-                            <option value="sample-request">Sample Request</option>
-                            <option value="wholesale">Wholesale Partnership</option>
-                            <option value="factory-visit">Factory Visit Appointment</option>
-                            <option value="support">Customer Support</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Please describe your project requirements, preferred contact method, and any specific questions..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferredContact">Preferred Contact Method</label>
-                    <select id="preferredContact" name="preferredContact">
-                        <option value="email">Email</option>
-                        <option value="phone">Phone Call</option>
-                        <option value="whatsapp">WhatsApp</option>
-                        <option value="wechat">WeChat</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Projects Delivered</span>
         </div>
-    </div>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="map-header">
-            <h2>Our Global Presence</h2>
+        <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Countries Served</span>
         </div>
-        <div class="map-container">
-            <div class="map-content">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Serving 50+ Countries Worldwide</h3>
-                <p>Strategic locations for seamless global support</p>
-                <div class="map-locations">
-                    <div class="map-location">
-                        <h4>🇺🇸 USA Office</h4>
-                        <p>Los Angeles, California<br>PST / UTC-8</p>
-                    </div>
-                    <div class="map-location">
-                        <h4>🇨🇳 China Factory</h4>
-                        <p>Dongguan, Guangdong<br>CST / UTC+8</p>
-                    </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Compliance Rate</span>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section section-padding">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p class="lead">For over 20 years, Laysun has been more than just a manufacturer — we are a global solution provider where botanical art meets industrial engineering.</p>
+                <p>Born from a vision to bring nature's soul into the built environment, we have evolved into a dual-engine powerhouse: a high-end Design Agency and a large-scale Manufacturing Hub.</p>
+                <p>While others simply copy nature, we reimagine it. Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections.</p>
+                <p>Operating out of our 10,000㎡ precision facility, we harmonize traditional craftsmanship with modern automation. Every leaf texture and trunk silhouette is an Architectural-Grade masterpiece.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="Laysun Manufacturing Facility" loading="lazy">
+                <div class="experience-badge">
+                    <span class="number">20+</span>
+                    <span class="text">Years of<br>Excellence</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- The Three Pillars - 与首页一致 -->
+    <section class="section-padding bg-light">
+        <div class="section-header">
+            <h2 class="section-title">The Laysun Difference</h2>
+            <p class="section-subtitle">Our double-engine strategy sets us apart in the global artificial greenery market</p>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">🏭</div>
+                <h3>Manufacturing Hub</h3>
+                <p>Operating out of our 10,000㎡ precision facility, we harmonize traditional craftsmanship with modern automation. Every product is an Architectural-Grade masterpiece.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">🎨</div>
+                <h3>Design Agency</h3>
+                <p>Our in-house design team leverages AI-driven trend forecasting and 3D modeling to turn global aesthetic shifts into market-ready collections. We define trends.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">🌍</div>
+                <h3>Global Standards</h3>
+                <p>Engineered to meet the world's strictest compliance standards — including BSCI, SEDEX for ethical sourcing, and NFPA 701, B1 for fire safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-padding">
+        <div class="section-header">
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-subtitle">The principles that guide every decision we make</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation Driven</h3>
+                <p>We continuously push the boundaries of artificial horticulture technology, striving to provide the most advanced solutions in the market.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Customer Centric</h3>
+                <p>Every project is tailored to ensure perfect alignment with client needs. We believe in deep collaboration to exceed expectations.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Sustainability Focused</h3>
+                <p>We are committed to ecological responsibility, providing low-maintenance, high-quality products that reduce carbon footprints.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">✓</div>
+                <h3>Professional Excellence</h3>
+                <p>With years of deep industry expertise, we focus on delivering premium products and services, ensuring every detail meets the highest standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities - 与首页Industry Solutions一致 -->
+    <section class="section-padding bg-light" id="capabilities">
+        <div class="section-header">
+            <h2 class="section-title">Our Capabilities</h2>
+            <p class="section-subtitle">End-to-end artificial horticulture solutions powered by advanced manufacturing and design expertise</p>
+        </div>
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>🎨</span>
+                    <h3>Design & Development</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>In-house design agency with AI-driven trend forecasting</li>
+                        <li>Custom botanical collection development</li>
+                        <li>3D modeling and prototyping</li>
+                        <li>Material innovation and testing</li>
+                        <li>Color and texture matching</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>⚙️</span>
+                    <h3>Manufacturing Excellence</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>10,000㎡ production facility</li>
+                        <li>ISO 9001 certified processes</li>
+                        <li>Advanced injection molding</li>
+                        <li>Hand-finishing craftsmanship</li>
+                        <li>Quality control at every stage</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>🔬</span>
+                    <h3>Testing & Certification</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>NFPA 701 fire retardancy testing</li>
+                        <li>UV stability testing (5000h+)</li>
+                        <li>Indoor air quality certification</li>
+                        <li>Third-party lab verification</li>
+                        <li>International standards compliance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>🌍</span>
+                    <h3>Global Fulfillment</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>Strategic warehousing worldwide</li>
+                        <li>Container optimization</li>
+                        <li>Customs and documentation support</li>
+                        <li>Last-mile delivery coordination</li>
+                        <li>Inventory management systems</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>🤝</span>
+                    <h3>Project Support</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>Dedicated account management</li>
+                        <li>Technical specification support</li>
+                        <li>Installation guidance</li>
+                        <li>After-sales service</li>
+                        <li>Warranty programs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="capability-card">
+                <div class="capability-header">
+                    <span>📦</span>
+                    <h3>Retail Ready Services</h3>
+                </div>
+                <div class="capability-content">
+                    <ul>
+                        <li>Barcode and labeling</li>
+                        <li>Custom packaging design</li>
+                        <li>Display fixture integration</li>
+                        <li>Point-of-sale materials</li>
+                        <li>Drop-shipping capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence -->
+    <section class="global-section">
+        <div class="global-container">
+            <h2>Global Presence</h2>
+            <p>Serving commercial clients across 50+ countries with localized support and global consistency</p>
+            <div class="global-stats">
+                <div class="global-stat">
+                    <h3>3</h3>
+                    <p>Continental Offices</p>
+                </div>
+                <div class="global-stat">
+                    <h3>12</h3>
+                    <p>Distribution Partners</p>
+                </div>
+                <div class="global-stat">
+                    <h3>24/7</h3>
+                    <p>Customer Support</p>
+                </div>
+                <div class="global-stat">
+                    <h3>99.2%</h3>
+                    <p>On-Time Delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications-section">
+        <div class="certifications-container">
+            <h2>Certifications & Standards</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h3>NFPA 701</h3>
+                    <p>Fire Retardant</p>
+                </div>
+                <div class="cert-item">
+                    <h3>ISO 9001</h3>
+                    <p>Quality Management</p>
+                </div>
+                <div class="cert-item">
+                    <h3>BSCI</h3>
+                    <p>Ethical Sourcing</p>
+                </div>
+                <div class="cert-item">
+                    <h3>SEDEX</h3>
+                    <p>Supply Chain</p>
+                </div>
+                <div class="cert-item">
+                    <h3>RoHS</h3>
+                    <p>Environmental</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2 class="cta-title">Ready to Work With Us?</h2>
+        <p class="cta-subtitle">Let's bring your vision to life with our architectural-grade solutions</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            <a href="capabilities.html" class="btn btn-secondary">Our Capabilities</a>
+        </div>
+    </section>
+
+    <!-- Inquiry Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
+        </div>
+        <div class="inquiry-items" id="inquiryItems">
+            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
+        </div>
+        <div class="inquiry-footer">
+            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </aside>
 
     <!-- Footer -->
     <footer>
@@ -872,7 +1118,7 @@
                     <li><a href="products.html">Artificial Trees</a></li>
                     <li><a href="products.html">Artificial Plants</a></li>
                     <li><a href="products.html">Green Walls</a></li>
-                    <li><a href="customization.html">Custom Solutions</a></li>
+                    <li><a href="products.html">Custom Solutions</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -888,85 +1134,52 @@
                 <h4>Company</h4>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html">Capabilities</a></li>
-                    <li><a href="solutions.html">Case Studies</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Contact Us</h4>
-                <div class="footer-contact-item">
-                    <span>📧</span>
-                    <a href="mailto:info@laysun.co">info@laysun.co</a>
-                </div>
-                <div class="footer-contact-item">
-                    <span>📧</span>
-                    <a href="mailto:sales@laysun.co">sales@laysun.co</a>
-                </div>
-                <div class="footer-contact-item">
-                    <span>🇺🇸</span>
-                    <a href="tel:+12138298485">+1 213-829-8485</a>
-                </div>
-                <div class="footer-contact-item">
-                    <span>🇨🇳</span>
-                    <a href="tel:+8613802505260">+86 138-0250-5260</a>
-                </div>
-                <div class="footer-contact-item">
-                    <span>📍</span>
-                    <span style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">Dongguan, Guangdong, China</span>
-                </div>
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@laysun.com</li>
+                    <li>Global Distribution Network</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
+            <p>&copy; 2026 Laysun. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const btn = event.target.querySelector('.submit-btn');
-            const originalText = btn.textContent;
-            
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                alert('Thank you for your message! Our team will review your inquiry and respond within 12 working hours.\n\nFor urgent matters, please contact us via WhatsApp for 24H quick responses.');
-                event.target.reset();
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }, 1500);
+        // Inquiry System
+        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+
+        function updateInquiryCount() {
+            const count = document.getElementById('inquiryCount');
+            if (count) {
+                count.textContent = inquiryList.length;
+                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
+            }
         }
 
         function toggleInquiry() {
-            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
-            if (inquiryList.length > 0) {
-                window.location.href = 'products.html';
-            } else {
-                alert('Your inquiry list is empty. Please add products from our catalog first.');
-            }
+            const sidebar = document.getElementById('inquirySidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
         }
 
-        // Check for inquiry parameter and pre-fill form
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('inquiry') === 'true') {
-            document.getElementById('subject').value = 'product-inquiry';
-            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
-            if (inquiryList.length > 0) {
-                const productList = inquiryList.map(item => `- ${item.name} (Qty: ${item.quantity})`).join('\n');
-                document.getElementById('message').value = `I am interested in the following products:\n\n${productList}\n\nPlease provide pricing and availability information.`;
+        function submitInquiry() {
+            if (inquiryList.length === 0) {
+                alert('Please add products to your inquiry first.');
+                return;
             }
+            window.location.href = 'contact.html?inquiry=true';
         }
 
-        // Initialize inquiry count
         document.addEventListener('DOMContentLoaded', () => {
-            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
-            const count = document.getElementById('inquiryCount');
-            if (count && inquiryList.length > 0) {
-                count.textContent = inquiryList.length;
-                count.style.display = 'flex';
-            }
+            updateInquiryCount();
         });
     </script>
 </body>
