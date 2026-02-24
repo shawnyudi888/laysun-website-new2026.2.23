@@ -4,912 +4,1129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Laysun | Global Artificial Horticulture Solutions</title>
-    <meta name="description" content="Contact Laysun for tailored artificial horticulture solutions. Global offices in Los Angeles, Rotterdam, and Singapore. Request samples, schedule consultations, or start your bespoke project.">
-    <meta name="keywords" content="contact Laysun, artificial plant supplier, commercial greenery consultation, request samples, global offices">
+    <meta name="description" content="Contact Laysun Co-Creation (Guangzhou) Technology Co., Ltd. USA Office: 20 Transom Rd, Port Wentworth, GA. China Factory: Dongguan, Guangdong. 24/7 WhatsApp support available.">
+    <meta name="keywords" content="Laysun contact, artificial plants wholesale, USA office Georgia, China factory Dongguan, commercial greenery solutions">
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'laysun-gold': '#C9A961',
-                        'laysun-gold-hover': '#B8944F',
-                        'laysun-green': '#1F3D2B',
-                        'laysun-green-hover': '#2B533B',
-                        'laysun-gray': '#5F6466',
-                        'laysun-dark': '#1A1A1A',
-                        'laysun-light': '#F9F9F9'
-                    },
-                    fontFamily: {
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                        'roboto': ['Roboto', 'sans-serif']
-                    }
-                }
+
+    <style>
+        :root {
+            --champagne-gold: #C9A961;
+            --champagne-gold-hover: #B8944F;
+            --forest-green: #1F3D2B;
+            --forest-green-hover: #2B533B;
+            --dark-gray: #5F6466;
+            --charcoal: #1A1A1A;
+            --light-gray: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--champagne-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--champagne-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .inquiry-btn {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .inquiry-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        .inquiry-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--forest-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero .company-fullname {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        /* Location Cards */
+        .location-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .location-card:hover {
+            border-color: var(--champagne-gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-content {
+            padding: 2rem;
+        }
+
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .location-header h3 {
+            color: var(--forest-green);
+            font-size: 1.3rem;
+        }
+
+        .location-header .tagline {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .contact-detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-detail-row:hover {
+            background-color: rgba(201, 169, 97, 0.1);
+        }
+
+        .contact-detail-row .label {
+            font-weight: 600;
+            color: var(--forest-green);
+            min-width: 90px;
+            font-size: 0.9rem;
+        }
+
+        .contact-detail-row .value {
+            color: var(--charcoal);
+            flex: 1;
+        }
+
+        .contact-detail-row .value a {
+            color: var(--champagne-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .contact-detail-row .value a:hover {
+            color: var(--forest-green);
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        .address-box {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--champagne-gold);
+        }
+
+        .address-box .label {
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .address-box p {
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .airport-info {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .airport-badge {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Quick Contact Summary */
+        .quick-contact {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .quick-contact h3 {
+            margin-bottom: 1.5rem;
+            color: var(--champagne-gold);
+        }
+
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .quick-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quick-item .icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(201, 169, 97, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .quick-item div {
+            font-size: 0.9rem;
+        }
+
+        .quick-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .quick-item a:hover {
+            color: var(--champagne-gold);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper h2 {
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--forest-green);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--champagne-gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.3);
+        }
+
+        /* Global Presence Section */
+        .presence-section {
+            background-color: var(--light-gray);
+            padding: 5rem 2rem;
+        }
+
+        .presence-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .presence-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .presence-header h2 {
+            color: var(--forest-green);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .presence-header p {
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .maps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .map-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .map-card-header {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .map-card-header .flag {
+            font-size: 2rem;
+        }
+
+        .map-card-header h3 {
+            margin: 0;
+        }
+
+        .map-card-header p {
+            margin: 0.25rem 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .large-map {
+            width: 100%;
+            height: 350px;
+        }
+
+        .large-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-info {
+            padding: 1.5rem;
+        }
+
+        .map-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .map-info-item .icon {
+            color: var(--champagne-gold);
+            font-size: 1.2rem;
+        }
+
+        .map-info-item strong {
+            color: var(--forest-green);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .maps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                display: none;
             }
         }
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        body { font-family: 'Roboto', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-        .gradient-overlay { background: linear-gradient(135deg, rgba(31, 61, 43, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%); }
-        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .btn-primary { background-color: #C9A961; color: #1F3D2B; transition: all 0.3s ease; }
-        .btn-primary:hover { background-color: #B8944F; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4); }
-        .btn-secondary { background-color: #1F3D2B; color: white; transition: all 0.3s ease; }
-        .btn-secondary:hover { background-color: #2B533B; transform: translateY(-2px); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #C9A961; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-        .gold-accent { background: linear-gradient(90deg, #C9A961 0%, #B8944F 100%); }
-        .scroll-reveal { opacity: 0; transform: translateY(30px); }
-        .input-field:focus { border-color: #1F3D2B; box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1); }
-        .input-field { transition: all 0.3s ease; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
-        .faq-answer.active { max-height: 500px; padding-top: 1rem; }
-        .faq-icon { transition: transform 0.3s ease; }
-        .faq-icon.active { transform: rotate(180deg); }
-        .map-container { background: linear-gradient(135deg, #1F3D2B 0%, #2B533B 100%); }
-        .social-link { transition: all 0.3s ease; }
-        .social-link:hover { background-color: #C9A961; color: #1F3D2B; transform: translateY(-3px); }
-        .contact-method { transition: all 0.3s ease; }
-        .contact-method:hover { background-color: #1F3D2B; color: white; }
-        .contact-method:hover .method-icon { color: #C9A961; }
-        .submit-btn { position: relative; overflow: hidden; }
-        .submit-btn::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; background: rgba(255,255,255,0.2); border-radius: 50%; transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; }
-        .submit-btn:hover::after { width: 300px; height: 300px; }
+
+        @media (max-width: 640px) {
+            .airport-info {
+                flex-direction: column;
+            }
+
+            .location-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .quick-contact {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-white text-laysun-dark overflow-x-hidden">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-laysun-green/95 backdrop-blur-md border-b border-laysun-gold/20" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
-                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
-                        </div>
-                        <span class="font-montserrat font-bold text-2xl text-white tracking-wide">LAYSUN</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Home</a>
-                    <a href="solutions.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Solutions</a>
-                    <a href="products.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Products</a>
-                    <a href="customization.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Customization</a>
-                    <a href="capabilities.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">Capabilities</a>
-                    <a href="about.html" class="nav-link text-white font-medium text-sm uppercase tracking-wider hover:text-laysun-gold transition-colors">About</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <button class="relative p-2 text-white hover:text-laysun-gold transition-colors" onclick="toggleInquiryCart()">
-                        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                        <span id="inquiry-badge" class="absolute -top-1 -right-1 bg-laysun-gold text-laysun-green text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
-                    </button>
-                    <a href="contact.html" class="btn-primary px-6 py-2.5 rounded-lg font-montserrat font-semibold text-sm uppercase tracking-wider">Contact Us</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-white hover:text-laysun-gold transition-colors">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-laysun-green border-t border-laysun-gold/20">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Home</a>
-                <a href="solutions.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Solutions</a>
-                <a href="products.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Products</a>
-                <a href="customization.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Customization</a>
-                <a href="capabilities.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">Capabilities</a>
-                <a href="about.html" class="block px-3 py-2 text-white font-medium hover:text-laysun-gold">About</a>
-                <a href="contact.html" class="block px-3 py-2 text-laysun-gold font-semibold">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop" alt="Modern Office" class="w-full h-full object-cover">
-            <div class="absolute inset-0 gradient-overlay"></div>
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="hero-content opacity-0 translate-y-8">
-                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight text-shadow">
-                    Let's Start Your <span class="text-laysun-gold">Project</span>
-                </h1>
-                <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
-                    Connect with our global team for tailored artificial horticulture solutions. From consultation to installation, we're here to help.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Contact Methods -->
-    <section class="py-16 bg-laysun-dark border-y border-laysun-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-6">
-                <a href="tel:+15551234567" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
-                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
-                        <i data-lucide="phone" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-white mb-2">Call Us</h3>
-                    <p class="text-gray-400 text-sm">+1 (555) 123-4567</p>
-                    <p class="text-laysun-gold text-xs mt-2">Mon-Fri 9AM-6PM PST</p>
-                </a>
-
-                <a href="mailto:info@laysun.com" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
-                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-white mb-2">Email Us</h3>
-                    <p class="text-gray-400 text-sm">info@laysun.com</p>
-                    <p class="text-laysun-gold text-xs mt-2">24hr Response Time</p>
-                </a>
-
-                <a href="#offices" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group">
-                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
-                        <i data-lucide="map-pin" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-white mb-2">Visit Us</h3>
-                    <p class="text-gray-400 text-sm">3 Global Offices</p>
-                    <p class="text-laysun-gold text-xs mt-2">LA • Rotterdam • Singapore</p>
-                </a>
-
-                <button onclick="openLiveChat()" class="contact-method bg-laysun-green/50 rounded-xl p-6 text-center border border-laysun-gold/20 scroll-reveal group cursor-pointer">
-                    <div class="method-icon w-14 h-14 bg-laysun-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 text-laysun-gold group-hover:bg-laysun-gold group-hover:text-laysun-green transition-all">
-                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-montserrat font-bold text-white mb-2">Live Chat</h3>
-                    <p class="text-gray-400 text-sm">Chat with Experts</p>
-                    <p class="text-laysun-gold text-xs mt-2">Typically replies in 5 min</p>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">LAY<span>SUN</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Customization</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="inquiry-btn" onclick="toggleInquiry()">
+                    Project Inquiry
+                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
                 </button>
             </div>
         </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+        <h1>Get In Touch</h1>
+        <p class="company-fullname">Laysun Co-Creation (Guangzhou) Technology Co., Ltd.</p>
+        <p>Ready to elevate your commercial space with architectural-grade artificial horticulture solutions? Our global team is here to support your project.</p>
     </section>
 
-    <!-- Main Contact Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Contact Form -->
-                <div class="scroll-reveal">
-                    <div class="mb-8">
-                        <h2 class="font-montserrat font-bold text-3xl text-laysun-green mb-4">Send Us a Message</h2>
-                        <p class="text-laysun-gray">Tell us about your project and we'll get back to you within 24 hours.</p>
-                    </div>
-
-                    <form id="contactForm" class="space-y-6" onsubmit="handleSubmit(event)">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">First Name *</label>
-                                <input type="text" name="firstName" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="John">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">Last Name *</label>
-                                <input type="text" name="lastName" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="Doe">
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">Email *</label>
-                                <input type="email" name="email" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="john@company.com">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">Phone</label>
-                                <input type="tel" name="phone" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="+1 (555) 000-0000">
-                            </div>
-                        </div>
-
+    <!-- Contact Container -->
+    <div class="contact-container">
+        <!-- Contact Info Side -->
+        <div class="contact-info">
+            <h2>Global Contact Centers</h2>
+            
+            <!-- USA Office with Map -->
+            <div class="location-card">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.4683079817!2d-81.1684!3d32.1496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fb9a3c6c6c6c6c%3A0x6c6c6c6c6c6c6c6c!2s20%20Transom%20Rd%2C%20Port%20Wentworth%2C%20GA%2031407%2C%20USA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="location-content">
+                    <div class="location-header">
+                        <div class="location-icon">🇺🇸</div>
                         <div>
-                            <label class="block text-sm font-medium text-laysun-green mb-2">Company Name *</label>
-                            <input type="text" name="company" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green" placeholder="Your Company Ltd.">
+                            <h3>USA Office</h3>
+                            <span class="tagline">For North America Wholesale Inquiries</span>
                         </div>
+                    </div>
+                    
+                    <div class="address-box">
+                        <span class="label">Address:</span>
+                        <p>20 Transom Rd, Port Wentworth, Georgia, 31407, United States</p>
+                    </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">Project Type</label>
-                                <select name="projectType" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white">
-                                    <option value="">Select Project Type</option>
-                                    <option value="hotel">Hotel & Hospitality</option>
-                                    <option value="retail">Retail Space</option>
-                                    <option value="commercial">Commercial Office</option>
-                                    <option value="outdoor">Outdoor Installation</option>
-                                    <option value="residential">Residential</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-laysun-green mb-2">Budget Range</label>
-                                <select name="budget" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green bg-white">
-                                    <option value="">Select Budget</option>
-                                    <option value="10k-50k">$10,000 - $50,000</option>
-                                    <option value="50k-100k">$50,000 - $100,000</option>
-                                    <option value="100k-500k">$100,000 - $500,000</option>
-                                    <option value="500k+">$500,000+</option>
-                                </select>
-                            </div>
+                    <div class="contact-detail-row" style="margin-top: 1rem;">
+                        <span class="label">Phone:</span>
+                        <div class="value">
+                            <a href="tel:+12138298485">+1 213-829-8485</a>
+                            <p class="note">Time Zone: PST / UTC-8 | Working Hours: 9:00-18:00</p>
                         </div>
+                    </div>
 
+                    <div class="contact-detail-row">
+                        <span class="label">Email:</span>
+                        <div class="value">
+                            <a href="mailto:info@laysun.co">info@laysun.co</a>
+                            <p class="note">Reply within 12 working hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="label">WhatsApp:</span>
+                        <div class="value">
+                            <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
+                            <p class="note">24H Quick Responses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- China Factory with Map -->
+            <div class="location-card">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4470936886!2d114.1320!3d22.9236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f3f3f3f3f3f3%3A0x3f3f3f3f3f3f3f3f!2sNo.%2025%20Qiaofeng%20Rd%2C%20Qishi%20Town%2C%20Dongguan%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2scn!4v1700000000000!5m2!1sen!2scn" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="location-content">
+                    <div class="location-header">
+                        <div class="location-icon">🇨🇳</div>
                         <div>
-                            <label class="block text-sm font-medium text-laysun-green mb-2">Message *</label>
-                            <textarea name="message" rows="5" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-laysun-green resize-none" placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+                            <h3>China Factory</h3>
+                            <span class="tagline">For Custom Project & Factory Direct Communication</span>
                         </div>
-
-                        <div class="flex items-start gap-3">
-                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 w-4 h-4 text-laysun-gold border-gray-300 rounded focus:ring-laysun-gold">
-                            <label for="newsletter" class="text-sm text-laysun-gray">Subscribe to our newsletter for industry insights and product updates.</label>
+                    </div>
+                    
+                    <div class="address-box">
+                        <span class="label">Factory Address:</span>
+                        <p>No. 25 Qiaofeng Road, Qishi Town, Dongguan City, Guangdong Province, China</p>
+                        <div class="airport-info">
+                            <span class="airport-badge">✈ 1.5h from Shenzhen Bao'an International Airport</span>
+                            <span class="airport-badge">✈ 1.5h from Guangzhou Baiyun International Airport</span>
                         </div>
+                    </div>
 
-                        <button type="submit" class="submit-btn w-full btn-primary py-4 rounded-lg font-montserrat font-bold text-base uppercase tracking-wider flex items-center justify-center gap-2">
-                            <span id="btnText">Send Message</span>
-                            <i data-lucide="send" class="w-5 h-5" id="btnIcon"></i>
-                            <div id="btnLoader" class="hidden w-5 h-5 border-2 border-laysun-green border-t-transparent rounded-full animate-spin"></div>
-                        </button>
-
-                        <p class="text-xs text-laysun-gray text-center">By submitting this form, you agree to our Privacy Policy and Terms of Service.</p>
-                    </form>
-
-                    <!-- Success Message -->
-                    <div id="successMessage" class="hidden bg-laysun-green rounded-xl p-8 text-center text-white">
-                        <div class="w-16 h-16 bg-laysun-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="check" class="w-8 h-8 text-laysun-green"></i>
+                    <div class="contact-detail-row" style="margin-top: 1rem;">
+                        <span class="label">Phone:</span>
+                        <div class="value">
+                            <a href="tel:+8613802505260">+86 138-0250-5260</a>
+                            <p class="note">Time Zone: CST / UTC+8 | Working Hours: 9:00-18:00</p>
                         </div>
-                        <h3 class="font-montserrat font-bold text-xl mb-2">Message Sent Successfully!</h3>
-                        <p class="text-gray-300 mb-6">Thank you for contacting us. Our team will review your inquiry and respond within 24 hours.</p>
-                        <button onclick="resetForm()" class="btn-primary px-6 py-2 rounded-lg font-semibold text-sm">Send Another Message</button>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="label">Email:</span>
+                        <div class="value">
+                            <a href="mailto:sales@laysun.co">sales@laysun.co</a>
+                            <p class="note">Reply within 12 working hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="label">WhatsApp:</span>
+                        <div class="value">
+                            <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
+                            <p class="note">24H Quick Responses</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Contact Info & Map -->
-                <div class="scroll-reveal">
-                    <div class="bg-laysun-light rounded-2xl p-8 border border-laysun-green/10 h-full">
-                        <h3 class="font-montserrat font-bold text-2xl text-laysun-green mb-6">Why Contact Laysun?</h3>
-                        
-                        <div class="space-y-6 mb-8">
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="package" class="w-6 h-6 text-laysun-gold"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Request Free Samples</h4>
-                                    <p class="text-sm text-laysun-gray">Evaluate material quality and botanical accuracy before committing.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="ruler" class="w-6 h-6 text-laysun-gold"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Custom Design Consultation</h4>
-                                    <p class="text-sm text-laysun-gray">Work with our design team to create bespoke solutions for your space.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="calculator" class="w-6 h-6 text-laysun-gold"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Project Quotation</h4>
-                                    <p class="text-sm text-laysun-gray">Receive detailed pricing including shipping and installation support.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4">
-                                <div class="w-12 h-12 bg-laysun-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="video" class="w-6 h-6 text-laysun-gold"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-montserrat font-bold text-laysun-green mb-1">Virtual Factory Tour</h4>
-                                    <p class="text-sm text-laysun-gray">See our manufacturing capabilities and quality processes firsthand.</p>
-                                </div>
-                            </div>
+            <!-- Quick Contact Summary -->
+            <div class="quick-contact">
+                <h3>Quick Contact Guide</h3>
+                <div class="quick-contact-grid">
+                    <div class="quick-item">
+                        <div class="icon">📧</div>
+                        <div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">General Inquiries</div>
+                            <a href="mailto:info@laysun.co">info@laysun.co</a>
                         </div>
-
-                        <div class="map-container rounded-xl p-6 text-white relative overflow-hidden">
-                            <div class="relative z-10">
-                                <h4 class="font-montserrat font-bold text-lg mb-4">Global Response Times</h4>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
-                                        <span class="text-sm">North America</span>
-                                        <span class="font-semibold text-laysun-gold">2-4 hours</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
-                                        <span class="text-sm">Europe</span>
-                                        <span class="font-semibold text-laysun-gold">4-6 hours</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-2 border-b border-white/20">
-                                        <span class="text-sm">Asia Pacific</span>
-                                        <span class="font-semibold text-laysun-gold">6-8 hours</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm">Middle East</span>
-                                        <span class="font-semibold text-laysun-gold">4-6 hours</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-laysun-gold/10 rounded-full -mr-16 -mt-16"></div>
-                            <div class="absolute bottom-0 left-0 w-24 h-24 bg-laysun-gold/10 rounded-full -ml-12 -mb-12"></div>
+                    </div>
+                    <div class="quick-item">
+                        <div class="icon">🛒</div>
+                        <div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">Sales & Orders</div>
+                            <a href="mailto:sales@laysun.co">sales@laysun.co</a>
+                        </div>
+                    </div>
+                    <div class="quick-item">
+                        <div class="icon">💬</div>
+                        <div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">USA WhatsApp</div>
+                            <a href="https://wa.me/12138298485" target="_blank">+1 213-829-8485</a>
+                        </div>
+                    </div>
+                    <div class="quick-item">
+                        <div class="icon">💬</div>
+                        <div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">China WhatsApp</div>
+                            <a href="https://wa.me/8613802505260" target="_blank">+86 138-0250-5260</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Global Offices -->
-    <section id="offices" class="py-20 bg-laysun-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-laysun-green mb-4">Our Global Offices</h2>
-                <p class="text-laysun-gray text-lg max-w-2xl mx-auto">Strategically located to serve clients across all time zones</p>
-                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Los Angeles -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
-                    <div class="h-48 bg-laysun-green relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&h=400&fit=crop" alt="Los Angeles Office" class="w-full h-full object-cover opacity-60">
-                        <div class="absolute top-4 left-4 bg-laysun-gold text-laysun-green px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Headquarters</div>
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="font-montserrat font-bold text-xl text-white">Los Angeles</h3>
-                            <p class="text-gray-300 text-sm">North America Hub</p>
-                        </div>
+        <!-- Contact Form Side -->
+        <div class="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
                     </div>
-                    <div class="p-6">
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-start gap-3 text-sm">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
-                                <span class="text-laysun-gray">1234 Commerce Blvd, Suite 500<br>Los Angeles, CA 90017, USA</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">+1 (555) 123-4567</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">usa@laysun.com</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM PST</span>
-                            </div>
-                        </div>
-                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            View on Map
-                        </a>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
 
-                <!-- Rotterdam -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
-                    <div class="h-48 bg-laysun-green relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a2?w=600&h=400&fit=crop" alt="Rotterdam Office" class="w-full h-full object-cover opacity-60">
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="font-montserrat font-bold text-xl text-white">Rotterdam</h3>
-                            <p class="text-gray-300 text-sm">Europe Hub</p>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="p-6">
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-start gap-3 text-sm">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
-                                <span class="text-laysun-gray">WTC Rotterdam, Beursplein 37<br>3011 AA Rotterdam, Netherlands</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">+31 10 123 4567</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">eu@laysun.com</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM CET</span>
-                            </div>
-                        </div>
-                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            View on Map
-                        </a>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                 </div>
 
-                <!-- Singapore -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-laysun-green/10 card-hover scroll-reveal">
-                    <div class="h-48 bg-laysun-green relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=600&h=400&fit=crop" alt="Singapore Office" class="w-full h-full object-cover opacity-60">
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="font-montserrat font-bold text-xl text-white">Singapore</h3>
-                            <p class="text-gray-300 text-sm">Asia Pacific Hub</p>
-                        </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Laysun Co-Creation (Guangzhou) Technology Co., Ltd.">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country/Region *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="jp">Japan</option>
+                            <option value="sg">Singapore</option>
+                            <option value="ae">UAE</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                    <div class="p-6">
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-start gap-3 text-sm">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-laysun-gold mt-0.5 flex-shrink-0"></i>
-                                <span class="text-laysun-gray">1 Raffles Place, #44-01<br>Singapore 048616</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="phone" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">+65 6123 4567</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="mail" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">apac@laysun.com</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 text-laysun-gold flex-shrink-0"></i>
-                                <span class="text-laysun-gray">Mon-Fri: 9:00 AM - 6:00 PM SGT</span>
-                            </div>
-                        </div>
-                        <a href="https://maps.google.com" target="_blank" class="w-full py-3 border border-laysun-green text-laysun-green rounded-lg font-semibold text-sm hover:bg-laysun-green hover:text-white transition-all flex items-center justify-center gap-2">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                            View on Map
-                        </a>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="product-inquiry">Product Inquiry</option>
+                            <option value="custom-project">Custom Project Request</option>
+                            <option value="sample-request">Sample Request</option>
+                            <option value="wholesale">Wholesale Partnership</option>
+                            <option value="factory-visit">Factory Visit Appointment</option>
+                            <option value="support">Customer Support</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Please describe your project requirements, preferred contact method, and any specific questions..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredContact">Preferred Contact Method</label>
+                    <select id="preferredContact" name="preferredContact">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="wechat">WeChat</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
-    </section>
+    </div>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <h2 class="font-montserrat font-bold text-3xl text-laysun-green mb-4">Frequently Asked Questions</h2>
-                <p class="text-laysun-gray">Quick answers to common questions. Can't find what you're looking for? Reach out to our team.</p>
-                <div class="w-24 h-1 gold-accent mx-auto mt-6 rounded-full"></div>
+    <!-- Global Presence Section with Large Maps -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <div class="presence-header">
+                <h2>Our Global Presence</h2>
+                <p>Strategic locations for seamless worldwide support and logistics</p>
             </div>
-
-            <div class="space-y-4">
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">How quickly can you respond to inquiries?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">We aim to respond to all inquiries within 24 hours during business days. For urgent projects, our live chat is available for immediate assistance, typically responding within 5 minutes during business hours.</p>
+            
+            <div class="maps-grid">
+                <!-- USA Large Map Card -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        <span class="flag">🇺🇸</span>
+                        <div>
+                            <h3>North America Headquarters</h3>
+                            <p>Port Wentworth, Georgia, USA</p>
+                        </div>
+                    </div>
+                    <div class="large-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.4683079817!2d-81.1684!3d32.1496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fb9a3c6c6c6c6c%3A0x6c6c6c6c6c6c6c6c!2s20%20Transom%20Rd%2C%20Port%20Wentworth%2C%20GA%2031407%2C%20USA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-info-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                20 Transom Rd, Port Wentworth, GA 31407, USA
+                            </div>
+                        </div>
+                        <div class="map-info-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+12138298485" style="color: var(--champagne-gold); text-decoration: none;">+1 213-829-8485</a>
+                            </div>
+                        </div>
+                        <div class="map-info-item">
+                            <span class="icon">🕐</span>
+                            <div>
+                                <strong>Working Hours</strong>
+                                PST / UTC-8 | Monday-Friday 9:00-18:00
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">Do you offer free samples?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">Yes! We provide complimentary sample kits for qualified commercial projects. Samples include material swatches, leaf samples, and small product specimens to evaluate quality and botanical accuracy. Contact us with your project details to request a sample kit.</p>
+                <!-- China Large Map Card -->
+                <div class="map-card">
+                    <div class="map-card-header">
+                        <span class="flag">🇨🇳</span>
+                        <div>
+                            <h3>Asia Pacific Manufacturing Center</h3>
+                            <p>Dongguan, Guangdong, China</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">What information do you need for a project quotation?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">To provide an accurate quote, we typically need: project type (hotel, retail, etc.), approximate quantities, product specifications (height, species, fire/UV requirements), delivery location, and timeline. Photos or drawings of your space are also helpful for custom recommendations.</p>
+                    <div class="large-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4470936886!2d114.1320!3d22.9236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f3f3f3f3f3f3%3A0x3f3f3f3f3f3f3f3f!2sNo.%2025%20Qiaofeng%20Rd%2C%20Qishi%20Town%2C%20Dongguan%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2scn!4v1700000000000!5m2!1sen!2scn" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
-                </div>
-
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">Do you provide installation services?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">We offer installation support through our network of certified partners in major markets. For large-scale projects, we can provide on-site supervision and technical guidance. DIY installation guides are also available for straightforward projects.</p>
-                    </div>
-                </div>
-
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">What is your typical lead time?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">Standard products: 2-4 weeks. Custom projects: 4-8 weeks depending on complexity. Rush orders available for urgent timelines. We maintain stock for popular items in our global warehouses for faster fulfillment.</p>
-                    </div>
-                </div>
-
-                <div class="bg-laysun-light rounded-xl border border-laysun-green/10 overflow-hidden scroll-reveal">
-                    <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white transition-colors" onclick="toggleFaq(this)">
-                        <span class="font-montserrat font-semibold text-laysun-green">Can I schedule a virtual factory tour?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-laysun-gold faq-icon"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-4">
-                        <p class="text-laysun-gray text-sm leading-relaxed">Absolutely! We offer live virtual tours of our manufacturing facilities. See our production processes, quality control labs, and material testing procedures in real-time. Tours are typically 30-45 minutes and can be scheduled at your convenience.</p>
+                    <div class="map-info">
+                        <div class="map-info-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                No. 25 Qiaofeng Road, Qishi Town, Dongguan, Guangdong, China
+                            </div>
+                        </div>
+                        <div class="map-info-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+8613802505260" style="color: var(--champagne-gold); text-decoration: none;">+86 138-0250-5260</a>
+                            </div>
+                        </div>
+                        <div class="map-info-item">
+                            <span class="icon">✈</span>
+                            <div>
+                                <strong>Airport Access</strong>
+                                1.5h from Shenzhen Bao'an & Guangzhou Baiyun Airports
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Social Connect -->
-    <section class="py-16 bg-laysun-green relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(201,169,97,0.5) 1px, transparent 0); background-size: 30px 30px;"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="font-montserrat font-bold text-2xl text-white mb-8">Connect With Us</h2>
-            <div class="flex justify-center gap-6">
-                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
-                    <i data-lucide="linkedin" class="w-6 h-6"></i>
-                </a>
-                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
-                    <i data-lucide="instagram" class="w-6 h-6"></i>
-                </a>
-                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
-                    <i data-lucide="facebook" class="w-6 h-6"></i>
-                </a>
-                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
-                    <i data-lucide="youtube" class="w-6 h-6"></i>
-                </a>
-                <a href="#" class="social-link w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white">
-                    <i data-lucide="twitter" class="w-6 h-6"></i>
-                </a>
-            </div>
-            <p class="text-gray-400 mt-6 text-sm">Follow us for project showcases, design inspiration, and industry insights</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-laysun-dark text-white py-16 border-t border-laysun-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 bg-laysun-gold rounded-lg flex items-center justify-center">
-                            <span class="text-laysun-green font-montserrat font-bold text-xl">L</span>
-                        </div>
-                        <span class="font-montserrat font-bold text-2xl tracking-wide">LAYSUN</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md leading-relaxed">
-                        Laysun is committed to providing high-quality, sustainable artificial horticulture solutions for global commercial spaces. Combining innovative technology with exquisite design to create beautiful and eco-friendly garden systems.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-laysun-green rounded-lg flex items-center justify-center hover:bg-laysun-gold hover:text-laysun-green transition-all">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="products.html">Artificial Trees</a></li>
+                    <li><a href="products.html">Artificial Plants</a></li>
+                    <li><a href="products.html">Green Walls</a></li>
+                    <li><a href="customization.html">Custom Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="solutions.html">Hotel & Hospitality</a></li>
+                    <li><a href="solutions.html">Retail Spaces</a></li>
+                    <li><a href="solutions.html">Commercial Buildings</a></li>
+                    <li><a href="solutions.html">Outdoor Applications</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="solutions.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item">
+                    <span>📧</span>
+                    <a href="mailto:info@laysun.co">info@laysun.co</a>
                 </div>
-                <div>
-                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="products.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Products</a></li>
-                        <li><a href="solutions.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Solutions</a></li>
-                        <li><a href="capabilities.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Capabilities</a></li>
-                        <li><a href="customization.html" class="text-gray-400 hover:text-laysun-gold transition-colors">Customization</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-laysun-gold transition-colors">About Us</a></li>
-                    </ul>
+                <div class="footer-contact-item">
+                    <span>📧</span>
+                    <a href="mailto:sales@laysun.co">sales@laysun.co</a>
                 </div>
-                <div>
-                    <h4 class="font-montserrat font-bold text-lg mb-6 text-laysun-gold">Contact</h4>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-laysun-gold flex-shrink-0 mt-0.5"></i>
-                            <span>Global HQ: Los Angeles, CA</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-laysun-gold"></i>
-                            <span>info@laysun.com</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-laysun-gold"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                    </ul>
+                <div class="footer-contact-item">
+                    <span>🇺🇸</span>
+                    <a href="tel:+12138298485">+1 213-829-8485</a>
+                </div>
+                <div class="footer-contact-item">
+                    <span>🇨🇳</span>
+                    <a href="tel:+8613802505260">+86 138-0250-5260</a>
+                </div>
+                <div class="footer-contact-item">
+                    <span>📍</span>
+                    <span style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">Dongguan, Guangdong, China</span>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">&copy; 2026 Laysun. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-laysun-gold transition-colors">Cookie Policy</a>
-                </div>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Live Chat Widget -->
-    <div id="liveChat" class="fixed bottom-6 right-6 z-50 hidden">
-        <div class="bg-white rounded-2xl shadow-2xl w-80 border border-laysun-green/10 overflow-hidden">
-            <div class="bg-laysun-green p-4 flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-laysun-gold rounded-full flex items-center justify-center">
-                        <i data-lucide="message-circle" class="w-5 h-5 text-laysun-green"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-montserrat font-bold text-white text-sm">Laysun Support</h4>
-                        <p class="text-xs text-gray-300 flex items-center gap-1">
-                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                            Online
-                        </p>
-                    </div>
-                </div>
-                <button onclick="closeLiveChat()" class="text-white hover:text-laysun-gold">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-            <div class="h-80 p-4 overflow-y-auto bg-gray-50" id="chatMessages">
-                <div class="flex gap-3 mb-4">
-                    <div class="w-8 h-8 bg-laysun-gold rounded-full flex items-center justify-center flex-shrink-0">
-                        <span class="text-laysun-green font-bold text-xs">L</span>
-                    </div>
-                    <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-100 max-w-[80%]">
-                        <p class="text-sm text-laysun-gray">Hello! Welcome to Laysun. How can we help you with your project today?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 bg-white border-t border-gray-100">
-                <div class="flex gap-2">
-                    <input type="text" id="chatInput" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-laysun-green" onkeypress="handleChatKeypress(event)">
-                    <button onclick="sendChatMessage()" class="bg-laysun-gold text-laysun-green p-2 rounded-lg hover:bg-laysun-gold-hover transition-colors">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Live Chat Button -->
-    <button onclick="openLiveChat()" id="chatButton" class="fixed bottom-6 right-6 z-40 bg-laysun-gold text-laysun-green w-14 h-14 rounded-full shadow-lg hover:bg-laysun-gold-hover transition-all hover:scale-110 flex items-center justify-center">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
-    </button>
-
-    <!-- Inquiry Cart Sidebar -->
-    <div id="inquiry-cart" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-laysun-green/10">
-        <div class="h-full flex flex-col">
-            <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-laysun-green">
-                <h3 class="font-montserrat font-bold text-lg text-white">Project Inquiry</h3>
-                <button onclick="toggleInquiryCart()" class="text-white hover:text-laysun-gold transition-colors">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto p-6" id="inquiry-items">
-                <div class="text-center text-gray-500 py-12">
-                    <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
-                    <p>Your inquiry list is empty.</p>
-                    <p class="text-sm mt-2">Start exploring our collections.</p>
-                </div>
-            </div>
-            <div class="p-6 border-t border-gray-200 bg-gray-50">
-                <button onclick="submitInquiry()" class="w-full btn-primary py-3 rounded-lg font-montserrat font-bold text-sm uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed" id="submit-inquiry-btn" disabled>
-                    Submit Inquiry
-                </button>
-            </div>
-        </div>
-    </div>
-    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-40 hidden" onclick="toggleInquiryCart()"></div>
-
     <script>
-        lucide.createIcons();
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to(".hero-content", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: 0.3
-        });
-
-        const scrollElements = document.querySelectorAll('.scroll-reveal');
-        scrollElements.forEach((element, index) => {
-            gsap.to(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                },
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "power2.out",
-                delay: index * 0.05
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.pageYOffset > 100) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-            }
-        });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function toggleFaq(button) {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('.faq-icon');
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('.submit-btn');
+            const originalText = btn.textContent;
             
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                if (item !== answer) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
-                }
-            });
-            
-            answer.classList.toggle('active');
-            icon.classList.toggle('active');
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btnText = document.getElementById('btnText');
-            const btnIcon = document.getElementById('btnIcon');
-            const btnLoader = document.getElementById('btnLoader');
-            const form = document.getElementById('contactForm');
-            const successMsg = document.getElementById('successMessage');
-            
-            btnText.textContent = 'Sending...';
-            btnIcon.classList.add('hidden');
-            btnLoader.classList.remove('hidden');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
             
             setTimeout(() => {
-                form.classList.add('hidden');
-                successMsg.classList.remove('hidden');
-                lucide.createIcons();
-                
-                btnText.textContent = 'Send Message';
-                btnIcon.classList.remove('hidden');
-                btnLoader.classList.add('hidden');
-            }, 2000);
+                alert('Thank you for your message! Our team will review your inquiry and respond within 12 working hours.\n\nFor urgent matters, please contact us via WhatsApp for 24H quick responses.');
+                event.target.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
         }
 
-        function resetForm() {
-            document.getElementById('contactForm').reset();
-            document.getElementById('contactForm').classList.remove('hidden');
-            document.getElementById('successMessage').classList.add('hidden');
-        }
-
-        function openLiveChat() {
-            document.getElementById('liveChat').classList.remove('hidden');
-            document.getElementById('chatButton').classList.add('hidden');
-        }
-
-        function closeLiveChat() {
-            document.getElementById('liveChat').classList.add('hidden');
-            document.getElementById('chatButton').classList.remove('hidden');
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            if (!message) return;
-            
-            const container = document.getElementById('chatMessages');
-            
-            const userDiv = document.createElement('div');
-            userDiv.className = 'flex gap-3 mb-4 justify-end';
-            userDiv.innerHTML = `
-                <div class="bg-laysun-green text-white rounded-lg p-3 max-w-[80%]">
-                    <p class="text-sm">${message}</p>
-                </div>
-            `;
-            container.appendChild(userDiv);
-            
-            input.value = '';
-            container.scrollTop = container.scrollHeight;
-            
-            setTimeout(() => {
-                const replyDiv = document.createElement('div');
-                replyDiv.className = 'flex gap-3 mb-4';
-                replyDiv.innerHTML = `
-                    <div class="w-8 h-8 bg-laysun-gold rounded-full flex items-center justify-center flex-shrink-0">
-                        <span class="text-laysun-green font-bold text-xs">L</span>
-                    </div>
-                    <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-100 max-w-[80%]">
-                        <p class="text-sm text-laysun-gray">Thank you for your message! One of our specialists will be with you shortly. In the meantime, feel free to browse our product catalog or schedule a consultation.</p>
-                    </div>
-                `;
-                container.appendChild(replyDiv);
-                container.scrollTop = container.scrollHeight;
-            }, 1000);
-        }
-
-        function handleChatKeypress(e) {
-            if (e.key === 'Enter') sendChatMessage();
-        }
-
-        let inquiryList = JSON.parse(localStorage.getItem('laysunInquiry')) || [];
-
-        function toggleInquiryCart() {
-            const cart = document.getElementById('inquiry-cart');
-            const overlay = document.getElementById('cart-overlay');
-            if (cart.classList.contains('translate-x-full')) {
-                cart.classList.remove('translate-x-full');
-                overlay.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                cart.classList.add('translate-x-full');
-                overlay.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
-
-        function updateInquiryCart() {
-            const container = document.getElementById('inquiry-items');
-            const badge = document.getElementById('inquiry-badge');
-            const submitBtn = document.getElementById('submit-inquiry-btn');
-            
+        function toggleInquiry() {
+            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
             if (inquiryList.length > 0) {
-                badge.textContent = inquiryList.length;
-                badge.classList.remove('hidden');
-                submitBtn.disabled = false;
-                container.innerHTML = inquiryList.map(item => `
-                    <div class="flex gap-4 mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                        <div class="w-20 h-20 bg-laysun-light rounded-lg flex items-center justify-center">
-                            <i data-lucide="package" class="w-8 h-8 text-laysun-gold"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-montserrat font-semibold text-sm text-laysun-green">${item.name}</h4>
-                            <p class="text-xs text-gray-500 mt-1">${item.specs}</p>
-                            <button onclick="removeFromInquiry('${item.id}')" class="text-red-500 text-xs mt-2 hover:text-red-700 flex items-center gap-1">
-                                <i data-lucide="trash-2" class="w-3 h-3"></i>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
+                window.location.href = 'products.html';
             } else {
-                badge.classList.add('hidden');
-                submitBtn.disabled = true;
-                container.innerHTML = `
-                    <div class="text-center text-gray-500 py-12">
-                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto mb-4 text-gray-300"></i>
-                        <p>Your inquiry list is empty.</p>
-                        <p class="text-sm mt-2">Start exploring our collections.</p>
-                    </div>
-                `;
+                alert('Your inquiry list is empty. Please add products from our catalog first.');
             }
-            localStorage.setItem('laysunInquiry', JSON.stringify(inquiryList));
-            lucide.createIcons();
         }
 
-        function removeFromInquiry(productId) {
-            inquiryList = inquiryList.filter(item => item.id !== productId);
-            updateInquiryCart();
+        // Check for inquiry parameter and pre-fill form
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('inquiry') === 'true') {
+            document.getElementById('subject').value = 'product-inquiry';
+            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+            if (inquiryList.length > 0) {
+                const productList = inquiryList.map(item => `- ${item.name} (Qty: ${item.quantity})`).join('\n');
+                document.getElementById('message').value = `I am interested in the following products:\n\n${productList}\n\nPlease provide pricing and availability information.`;
+            }
         }
 
-        function submitInquiry() {
-            if (inquiryList.length === 0) return;
-            window.location.href = 'customization.html?inquiry=true';
-        }
-
-        updateInquiryCart();
+        // Initialize inquiry count
+        document.addEventListener('DOMContentLoaded', () => {
+            const inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+            const count = document.getElementById('inquiryCount');
+            if (count && inquiryList.length > 0) {
+                count.textContent = inquiryList.length;
+                count.style.display = 'flex';
+            }
+        });
     </script>
 </body>
 </html>
