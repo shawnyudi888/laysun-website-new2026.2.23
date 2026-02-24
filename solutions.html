@@ -3,21 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions | Laysun - Architectural-Grade Artificial Greenery</title>
+    <title>Commercial Greenery Solutions | Laysun Artificial Horticulture Systems</title>
+    <meta name="description" content="Tailored artificial horticulture solutions for hotels, retail, and commercial spaces. Explore our case studies including Luxury Hotel Los Angeles installation.">
+    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, hotel greenery solutions, retail artificial plants, fire safe artificial plants commercial">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Hotel & Hospitality Solutions",
+                "description": "Fire-retardant artificial plants for luxury hotels"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Retail Solutions",
+                "description": "Retail-ready artificial greenery systems"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Commercial Building Solutions",
+                "description": "Large-scale artificial horticulture for offices"
+            }
+        ]
+    }
+    </script>
+
     <style>
         :root {
-            --forest-green: #2D5A3D;
-            --forest-dark: #1E3D2A;
             --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --pure-white: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --text-gray: #666666;
-            --border-light: #E5E5E5;
+            --champagne-gold-hover: #B8944F;
+            --forest-green: #1F3D2B;
+            --forest-green-hover: #2B533B;
+            --dark-gray: #5F6466;
+            --charcoal: #1A1A1A;
+            --light-gray: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
         }
 
         * {
@@ -27,227 +60,207 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--text-dark);
+            font-family: 'Roboto', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 1.5rem 0;
         }
 
-        .navbar.scrolled {
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
+        .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--pure-white);
+            font-weight: 700;
+            color: var(--forest-green);
             text-decoration: none;
             letter-spacing: 2px;
         }
 
-        .nav-menu {
+        .logo span {
+            color: var(--champagne-gold);
+        }
+
+        nav ul {
             display: flex;
             list-style: none;
             gap: 2.5rem;
-            align-items: center;
         }
 
-        .nav-menu a {
-            color: var(--pure-white);
+        nav a {
             text-decoration: none;
-            font-size: 0.9rem;
+            color: var(--charcoal);
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
             position: relative;
         }
 
-        .nav-menu a::after {
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
+            background-color: var(--champagne-gold);
+            transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover::after {
+        nav a:hover::after {
             width: 100%;
         }
 
-        .nav-right {
+        .header-actions {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
 
-        .lang-switch {
-            position: relative;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--pure-white);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--champagne-gold);
-        }
-
-        .lang-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--pure-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s;
-            min-width: 150px;
-        }
-
-        .lang-switch:hover .lang-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .lang-option {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.3s;
-        }
-
-        .lang-option:hover {
-            background: var(--leaf-white);
+        .inquiry-btn {
+            background-color: var(--champagne-gold);
             color: var(--forest-green);
-        }
-
-        .inquiry-basket {
-            position: relative;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .basket-icon {
-            width: 24px;
-            height: 24px;
-            stroke: var(--pure-white);
-            fill: none;
-            stroke-width: 2;
+        .inquiry-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
         }
 
-        .basket-count {
+        .inquiry-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
+            background-color: var(--forest-green);
+            color: white;
             border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
         }
 
         /* Hero Section */
-        .hero {
-            height: 60vh;
-            min-height: 500px;
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
+        .solutions-hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
         }
 
-        .hero::before {
+        .solutions-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 300px;
-            opacity: 0.3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--pure-white);
-            padding: 0 2rem;
-            max-width: 900px;
-        }
-
-        .hero h1 {
+        .solutions-hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            letter-spacing: 3px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .solutions-hero p {
+            font-size: 1.3rem;
             opacity: 0.9;
-            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--forest-green);
         }
 
         /* Solutions Grid */
-        .solutions-section {
-            padding: 6rem 2rem;
+        .solutions-container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 5rem 2rem;
         }
 
         .section-header {
@@ -262,126 +275,87 @@
         }
 
         .section-header p {
-            color: var(--text-gray);
+            color: var(--dark-gray);
             font-size: 1.1rem;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
         }
 
         .solution-card {
-            background: var(--pure-white);
+            background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
         }
 
         .solution-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
 
         .solution-image {
-            height: 280px;
-            position: relative;
+            height: 250px;
             overflow: hidden;
+            position: relative;
         }
 
-        .solution-image-bg {
+        .solution-image img {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .solution-card:hover .solution-image-bg {
+        .solution-card:hover .solution-image img {
             transform: scale(1.1);
         }
 
-        .solution-icon {
+        .solution-overlay {
             position: absolute;
-            bottom: -30px;
-            left: 2rem;
-            width: 60px;
-            height: 60px;
-            background: var(--champagne-gold);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(201, 169, 97, 0.3);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(31, 61, 43, 0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
         }
 
-        .solution-icon svg {
-            width: 30px;
-            height: 30px;
-            color: var(--pure-white);
+        .solution-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .solution-content {
-            padding: 3rem 2rem 2rem;
-        }
-
-        .solution-tag {
-            display: inline-block;
-            background: var(--leaf-white);
-            color: var(--forest-green);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-
-        .solution-content h3 {
-            font-size: 1.5rem;
-            color: var(--forest-green);
-            margin-bottom: 1rem;
-        }
-
-        .solution-content p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            padding: 2rem;
         }
 
         .solution-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .solution-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--text-dark);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--dark-gray);
         }
 
         .solution-features li::before {
             content: '✓';
-            width: 20px;
-            height: 20px;
-            background: var(--forest-green);
-            color: var(--pure-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            flex-shrink: 0;
+            position: absolute;
+            left: 0;
+            color: var(--champagne-gold);
+            font-weight: bold;
         }
 
         .solution-cta {
@@ -391,448 +365,349 @@
             color: var(--forest-green);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: gap 0.3s;
         }
 
         .solution-cta:hover {
+            gap: 1rem;
             color: var(--champagne-gold);
         }
 
-        /* Detailed Solution Sections */
-        .detail-section {
-            padding: 6rem 2rem;
+        /* Featured Case Study */
+        .case-study-section {
+            background-color: var(--light-gray);
+            padding: 5rem 2rem;
         }
 
-        .detail-section:nth-child(even) {
-            background: var(--pure-white);
-        }
-
-        .detail-container {
+        .case-study-container {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
 
-        .detail-section:nth-child(even) .detail-container {
-            direction: rtl;
-        }
-
-        .detail-section:nth-child(even) .detail-content {
-            direction: ltr;
-        }
-
-        .detail-visual {
-            position: relative;
-            height: 500px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .detail-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .stats-overlay {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .stat {
+        .case-study-header {
             text-align: center;
+            margin-bottom: 4rem;
         }
 
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--forest-green);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        .detail-content h2 {
+        .case-study-header h2 {
             font-size: 2.5rem;
             color: var(--forest-green);
             margin-bottom: 1rem;
         }
 
-        .detail-subtitle {
+        .case-study-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .case-study-image {
+            position: relative;
+            min-height: 500px;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .case-study-badge {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .case-study-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .case-study-content h3 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .case-study-content .location {
             color: var(--champagne-gold);
             font-weight: 600;
-            font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .detail-content > p {
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .benefit-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .benefit-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .benefit-list li:last-child {
-            border-bottom: none;
-        }
-
-        .benefit-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--leaf-white);
-            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--forest-green);
-            flex-shrink: 0;
+            gap: 0.5rem;
         }
 
-        .benefit-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: var(--text-dark);
+        .case-study-content p {
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
-        .benefit-text p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin: 0;
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .case-study-box {
-            background: var(--leaf-white);
-            border-left: 4px solid var(--champagne-gold);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin-top: 2rem;
-        }
-
-        .case-study-box h4 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .stat-item h4 {
+            font-size: 2rem;
             color: var(--champagne-gold);
             margin-bottom: 0.5rem;
         }
 
-        .case-study-box p {
-            font-size: 0.95rem;
-            color: var(--text-gray);
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
             margin: 0;
-            font-style: italic;
         }
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-            color: var(--pure-white);
-            padding: 1rem 2rem;
+        .case-products {
+            margin-top: 2rem;
+        }
+
+        .case-products h4 {
+            margin-bottom: 1rem;
+            color: var(--forest-green);
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .product-tag {
+            background-color: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Related Products Section */
+        .related-products {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .related-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .related-header h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+        }
+
+        .products-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--champagne-gold) var(--light-gray);
+        }
+
+        .products-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .products-scroll::-webkit-scrollbar-track {
+            background: var(--light-gray);
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+        .products-scroll::-webkit-scrollbar-thumb {
+            background: var(--champagne-gold);
+            border-radius: 4px;
+        }
+
+        .product-mini-card {
+            min-width: 280px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .product-mini-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-mini-info {
+            padding: 1.5rem;
+        }
+
+        .product-mini-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .product-mini-info p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-small:hover {
+            background-color: var(--champagne-gold-hover);
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-            color: var(--pure-white);
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            padding: 5rem 2rem;
             text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(201,169,97,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
+            color: white;
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .cta-section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            color: var(--pure-white);
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: 2px solid var(--pure-white);
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--pure-white);
-            color: var(--forest-green);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--forest-dark);
-            color: var(--pure-white);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--champagne-gold);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--pure-white);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--champagne-gold);
-            border-color: var(--champagne-gold);
-        }
-
-        /* Inquiry Basket Panel */
-        .basket-panel {
+        /* Inquiry Sidebar */
+        .inquiry-sidebar {
             position: fixed;
             top: 0;
             right: -400px;
             width: 400px;
+            max-width: 100%;
             height: 100vh;
-            background: var(--pure-white);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 2000;
-            transition: right 0.4s ease;
+            background-color: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 3000;
+            transition: right 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
-        .basket-panel.active {
+        .inquiry-sidebar.active {
             right: 0;
         }
 
-        .basket-header {
-            background: var(--forest-green);
-            color: var(--pure-white);
+        .inquiry-header {
+            background-color: var(--forest-green);
+            color: white;
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .basket-header h3 {
-            font-size: 1.2rem;
-        }
-
-        .close-basket {
+        .close-inquiry {
             background: none;
             border: none;
-            color: var(--pure-white);
+            color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .basket-body {
-            flex: 1;
+        .inquiry-items {
+            flex-grow: 1;
             overflow-y: auto;
             padding: 1.5rem;
         }
 
-        .empty-basket {
-            text-align: center;
-            color: var(--text-gray);
-            padding: 3rem 0;
-        }
-
-        .basket-item {
+        .inquiry-item {
             display: flex;
             gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
-        .basket-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            background: var(--leaf-white);
+        .inquiry-item-details {
+            flex-grow: 1;
         }
 
-        .basket-item-info h4 {
-            font-size: 0.95rem;
+        .inquiry-item h4 {
+            font-size: 1rem;
             margin-bottom: 0.25rem;
         }
 
-        .basket-item-info p {
+        .inquiry-item p {
             font-size: 0.85rem;
-            color: var(--text-gray);
+            color: var(--dark-gray);
         }
 
-        .basket-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-light);
-            background: var(--leaf-white);
-        }
-
-        .basket-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--forest-green);
-            color: var(--pure-white);
+        .remove-item {
+            background: none;
             border: none;
-            border-radius: 4px;
-            font-weight: 600;
+            color: #E74C3C;
             cursor: pointer;
-            margin-bottom: 0.75rem;
-            transition: background 0.3s;
+            font-size: 1.2rem;
         }
 
-        .basket-btn:hover {
-            background: var(--forest-dark);
+        .inquiry-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
         }
 
-        .basket-btn.gold {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
+        .submit-inquiry {
+            width: 100%;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .basket-btn.gold:hover {
-            opacity: 0.9;
+        .submit-inquiry:hover {
+            background-color: var(--champagne-gold-hover);
         }
 
         .overlay {
@@ -841,448 +716,369 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2500;
+            display: none;
         }
 
         .overlay.active {
-            opacity: 1;
-            visibility: visible;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
+        @media (max-width: 968px) {
+            .case-study-card {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-image {
+                min-height: 300px;
+            }
+
+            .solutions-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .case-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-cta {
+                flex-direction: column;
+            }
+
             .solutions-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .detail-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .detail-section:nth-child(even) .detail-container {
-                direction: ltr;
-            }
-            
-            .detail-visual {
-                height: 350px;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .stats-overlay {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .basket-panel {
-                width: 100%;
-                right: -100%;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">LAYSUN</a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="customization.html">Design & Customization</a></li>
-                <li><a href="capabilities.html">Capabilities</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <div class="lang-switch">
-                    <button class="lang-btn">
-                        <span>EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
-                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
-                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
-                    </div>
-                </div>
-
-                <div class="inquiry-basket" onclick="toggleBasket()">
-                    <svg class="basket-icon" viewBox="0 0 24 24">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                    </svg>
-                    <span class="basket-count" id="basketCount">0</span>
-                </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">LAY<span>SUN</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Customization</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="inquiry-btn" onclick="toggleInquiry()">
+                    Project Inquiry
+                    <span class="inquiry-count" id="inquiryCount" style="display: none;">0</span>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>INDUSTRY SOLUTIONS</h1>
-            <p>Tailored Architectural-Grade greenery solutions for every commercial environment. Where Design Intelligence meets Manufacturing Precision.</p>
+    <section class="solutions-hero">
+        <h1>Tailored Solutions for Every Space</h1>
+        <p>From luxury hotels to retail giants, we engineer artificial horticulture systems that meet the world's toughest standards while exceeding aesthetic expectations.</p>
+        <div class="hero-cta">
+            <a href="#solutions" class="btn-primary">Explore Solutions</a>
+            <a href="customization.html" class="btn-secondary">Start Custom Project</a>
         </div>
     </section>
 
-    <!-- Solutions Overview -->
-    <section class="solutions-section">
-        <div class="section-header animate-in">
-            <h2>Three Pillars of Excellence</h2>
-            <p>Each solution is engineered to address specific industry challenges while delivering uncompromising aesthetic impact.</p>
+    <!-- Solutions Grid -->
+    <section class="solutions-container" id="solutions">
+        <div class="section-header">
+            <h2>Industry Solutions</h2>
+            <p>Specialized artificial greenery systems designed for the unique demands of each commercial environment</p>
         </div>
 
         <div class="solutions-grid">
-            <!-- Retail Solution -->
-            <div class="solution-card animate-in">
+            <!-- Hotel Solution -->
+            <article class="solution-card">
                 <div class="solution-image">
-                    <div class="solution-image-bg" style="background: linear-gradient(135deg, #c9a961 0%, #b8944f 100%);"></div>
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Luxury Hotel Lobby with Artificial Plants - Laysun Hospitality Solutions" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Hotels & Hospitality</h3>
+                        <p>Fire-safe elegance for luxury environments</p>
                     </div>
                 </div>
                 <div class="solution-content">
-                    <span class="solution-tag">Big-Box Retail</span>
-                    <h3>Retail-Ready Solutions</h3>
-                    <p>Optimized for turnover. Engineered for landed cost. Up to 15% savings through logistical optimization and PDQ packaging.</p>
+                    <p>Create unforgettable first impressions with NFPA 701 certified artificial plants that maintain perfect aesthetics without compromising safety standards required by luxury hospitality venues.</p>
                     <ul class="solution-features">
-                        <li>PDQ Display Packaging</li>
-                        <li>Barcode & Color Box Ready</li>
-                        <li>CBM Optimization</li>
-                        <li>Inventory Stability</li>
+                        <li>NFPA 701 Fire Retardant Certified</li>
+                        <li>Zero maintenance requirements</li>
+                        <li>Custom sizing for grand lobbies</li>
+                        <li>Realistic appearance guaranteed</li>
                     </ul>
-                    <a href="#retail-detail" class="solution-cta">Explore Solution →</a>
+                    <a href="case-study-hotel-la.html" class="solution-cta">View Hotel Case Studies →</a>
                 </div>
-            </div>
+            </article>
+
+            <!-- Retail Solution -->
+            <article class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Retail Store Interior with Artificial Plants - Laysun Retail Solutions" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Retail Spaces</h3>
+                        <p>Retail-ready botanical merchandising</p>
+                    </div>
+                </div>
+                <div class="solution-content">
+                    <p>Barcode-ready packaging and display-optimized designs that help retailers create immersive brand experiences while maintaining consistent quality across thousands of locations.</p>
+                    <ul class="solution-features">
+                        <li>Retail-ready packaging & barcoding</li>
+                        <li>UV stable for window displays</li>
+                        <li>Scalable global fulfillment</li>
+                        <li>Trend-forward designs</li>
+                    </ul>
+                    <a href="case-study-retail.html" class="solution-cta">View Retail Case Studies →</a>
+                </div>
+            </article>
 
             <!-- Commercial Solution -->
-            <div class="solution-card animate-in">
+            <article class="solution-card">
                 <div class="solution-image">
-                    <div class="solution-image-bg" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d2a 100%);"></div>
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                        </svg>
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Modern Office Building with Artificial Plants - Laysun Commercial Solutions" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Commercial Buildings</h3>
+                        <p>Large-scale biophilic integration</p>
                     </div>
                 </div>
                 <div class="solution-content">
-                    <span class="solution-tag">Commercial Real Estate</span>
-                    <h3>Commercial Interiors</h3>
-                    <p>Safety-first greenery for luxury hospitality and office spaces. NFPA 701/B1 certified with zero maintenance requirements.</p>
+                    <p>Architectural-grade solutions for corporate headquarters, mixed-use developments, and commercial complexes requiring consistent quality across extensive installations.</p>
                     <ul class="solution-features">
-                        <li>Inherently Fire Retardant</li>
-                        <li>Zero Maintenance</li>
-                        <li>Custom Spatial Branding</li>
-                        <li>Hypoallergenic & Clean</li>
+                        <li>Large volume capabilities</li>
+                        <li>Specification-grade documentation</li>
+                        <li>LEED contribution support</li>
+                        <li>Multi-site consistency</li>
                     </ul>
-                    <a href="#commercial-detail" class="solution-cta">Explore Solution →</a>
+                    <a href="case-study-commercial.html" class="solution-cta">View Commercial Case Studies →</a>
                 </div>
-            </div>
+            </article>
 
             <!-- Outdoor Solution -->
-            <div class="solution-card animate-in">
+            <article class="solution-card">
                 <div class="solution-image">
-                    <div class="solution-image-bg" style="background: linear-gradient(135deg, #4a7c59 0%, #2d5a3d 100%);"></div>
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Outdoor Commercial Space with UV Resistant Artificial Plants" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Outdoor Applications</h3>
+                        <p>Weather-resistant exterior solutions</p>
                     </div>
                 </div>
                 <div class="solution-content">
-                    <span class="solution-tag">Outdoor Engineering</span>
-                    <h3>Outdoor Landscapes</h3>
-                    <p>Weather-resistant aesthetics that refuse to fade. 5000h+ UV stability engineered for extreme climates and coastal environments.</p>
+                    <p>UV-stable and weather-resistant artificial plants engineered to withstand harsh outdoor conditions while maintaining color fidelity and structural integrity for years.</p>
                     <ul class="solution-features">
-                        <li>5000h+ UV Stability</li>
-                        <li>Thermal Resilience</li>
-                        <li>Wind Load Engineering</li>
-                        <li>Eco-Conscious Durability</li>
+                        <li>5000h+ UV stability rating</li>
+                        <li>Weather-resistant construction</li>
+                        <li>Drainage-optimized bases</li>
+                        <li>Wind-load tested</li>
                     </ul>
-                    <a href="#outdoor-detail" class="solution-cta">Explore Solution →</a>
+                    <a href="case-study-outdoor.html" class="solution-cta">View Outdoor Case Studies →</a>
                 </div>
-            </div>
+            </article>
+
+            <!-- Healthcare Solution -->
+            <article class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Hospital Interior with Artificial Plants - Laysun Healthcare Solutions" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Healthcare Facilities</h3>
+                        <p>Hypoallergenic healing environments</p>
+                    </div>
+                </div>
+                <div class="solution-content">
+                    <p>Create calming, maintenance-free environments that support patient wellbeing while meeting strict healthcare facility standards for cleanliness and safety.</p>
+                    <ul class="solution-features">
+                        <li>Antimicrobial treatments available</li>
+                        <li>Dust-resistant foliage</li>
+                        <li>No pollen or allergens</li>
+                        <li>Easy sanitization</li>
+                    </ul>
+                    <a href="case-study-healthcare.html" class="solution-cta">View Healthcare Case Studies →</a>
+                </div>
+            </article>
+
+            <!-- Event Solution -->
+            <article class="solution-card">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Event Venue with Artificial Plants - Laysun Events Solutions" loading="lazy">
+                    <div class="solution-overlay">
+                        <h3>Events & Exhibitions</h3>
+                        <p>Temporary installations, permanent impact</p>
+                    </div>
+                </div>
+                <div class="solution-content">
+                    <p>Rental and purchase options for trade shows, corporate events, and temporary installations with rapid deployment and professional installation services.</p>
+                    <ul class="solution-features">
+                        <li>Rental programs available</li>
+                        <li>Rapid deployment</li>
+                        <li>Installation services</li>
+                        <li>Reusable designs</li>
+                    </ul>
+                    <a href="case-study-events.html" class="solution-cta">View Events Portfolio →</a>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Retail Detail Section -->
-    <section class="detail-section" id="retail-detail">
-        <div class="detail-container">
-            <div class="detail-visual animate-in">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: var(--text-gray); font-size: 1.2rem;">Retail Environment Visualization</span>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat">
-                        <span class="stat-value">30%</span>
-                        <span class="stat-label">Labor Reduction</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">15%</span>
-                        <span class="stat-label">Cost Savings</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">99.5%</span>
-                        <span class="stat-label">On-Time Delivery</span>
-                    </div>
-                </div>
+    <!-- Featured Case Study -->
+    <section class="case-study-section">
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <h2>Featured Case Study</h2>
+                <p>See how we transformed a luxury Los Angeles hotel with our signature artificial horticulture solutions</p>
             </div>
-            <div class="detail-content animate-in">
-                <h2>Big-Box Retail Solutions</h2>
-                <span class="detail-subtitle">Optimized for High Turnover & Landed Cost</span>
-                <p>In the competitive world of Big-Box retail, an artificial plant is more than a product—it's a logistical headache and a high-stakes shelf-space investment. Laysun understands the pressures of retail buyers: from shipping efficiency to compliance risks.</p>
-                
-                <ul class="benefit-list">
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Retail-Ready Packaging (RRP)</h4>
-                            <p>PDQ display boxes and bespoke color box designs that cut in-store labor by up to 30% and maximize shelf visibility.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Logistical Optimization</h4>
-                            <p>CBM reduction through optimized product structure and nesting designs, cutting landed costs by up to 15%.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Strict Compliance</h4>
-                            <p>BSCI/SEDEX audited for ethical sourcing, ensuring your supply chain is bulletproof against regulatory risks.</p>
-                        </div>
-                    </li>
-                </ul>
 
-                <a href="contact.html" class="btn-primary">Request Retail Consultation</a>
-
-                <div class="case-study-box">
-                    <h4>Case Study: Global Big-Box Retail Holiday Collection</h4>
-                    <p>"Developed bespoke Retail-Ready Packaging that reduced in-store assembly time by 30% and optimized container loading capacity by 15%—directly cutting landed costs for our North American retail partner."</p>
+            <article class="case-study-card">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80" alt="Luxury Hotel Los Angeles Lobby with 9ft Artificial Olive Trees by Laysun" loading="lazy">
+                    <span class="case-study-badge">Featured Project</span>
                 </div>
-            </div>
+                <div class="case-study-content">
+                    <span class="location">📍 Los Angeles, California</span>
+                    <h3>Luxury Hotel Los Angeles</h3>
+                    <p>A prestigious five-star property in downtown Los Angeles required fire-retardant botanical solutions that met California's strict safety codes while delivering the luxury aesthetic their brand demanded. We installed custom 9-foot olive trees throughout the lobby and atrium spaces.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <h4>100%</h4>
+                            <p>Maintenance Cost Reduction</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>$12K</h4>
+                            <p>Annual Savings</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>18 Mo</h4>
+                            <p>Zero Issues</p>
+                        </div>
+                    </div>
+
+                    <div class="case-products">
+                        <h4>Products Used</h4>
+                        <div class="product-tags">
+                            <span class="product-tag">Signature Olive Tree 9ft</span>
+                            <span class="product-tag">Ficus Collection</span>
+                            <span class="product-tag">Custom Planters</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="case-study-hotel-la.html" class="btn-primary">Read Full Case Study</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Commercial Detail Section -->
-    <section class="detail-section" id="commercial-detail">
-        <div class="detail-container">
-            <div class="detail-visual animate-in">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #d4d2cd 0%, #b8b8b8 100%); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: var(--text-gray); font-size: 1.2rem;">Commercial Interior Visualization</span>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat">
-                        <span class="stat-value">10yr</span>
-                        <span class="stat-label">Aesthetic Lifespan</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">0</span>
-                        <span class="stat-label">Maintenance</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">100%</span>
-                        <span class="stat-label">Compliance</span>
-                    </div>
-                </div>
-            </div>
-            <div class="detail-content animate-in">
-                <h2>Commercial Interior Solutions</h2>
-                <span class="detail-subtitle">Safety First: Inherently Fire Retardant Greenery</span>
-                <p>In modern commercial architecture—from luxury hotel lobbies to Grade-A office atriums—greenery is no longer a luxury; it is an essential element of biophilic design that enhances human well-being and property value.</p>
-                
-                <ul class="benefit-list">
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Inherently Fire Retardant (IFR)</h4>
-                            <p>Technology integrated into the material, not topical sprays. Meets NFPA 701 (US) and B1 (Europe) standards.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Zero Maintenance OPEX</h4>
-                            <p>Eliminate ongoing costs of irrigation, pruning, and replacement. One-time investment with 10-year aesthetic lifespan.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Custom Spatial Branding</h4>
-                            <p>Bespoke installations from 12ft statement trees to intricate green walls that align with your interior's DNA.</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <a href="contact.html" class="btn-primary">Discuss Your Project</a>
-
-                <div class="case-study-box">
-                    <h4>Case Study: Dubai Luxury Hotel</h4>
-                    <p>"Provided 12ft Inherently Fire Retardant (IFR) Olive Trees certified to NFPA 701, ensuring zero-maintenance aesthetics without compromising building safety or guest experience in a 24/7 high-traffic environment."</p>
-                </div>
-            </div>
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="related-header">
+            <h2>Products for Hospitality</h2>
+            <p>Explore our most popular solutions for hotel and commercial spaces</p>
         </div>
-    </section>
-
-    <!-- Outdoor Detail Section -->
-    <section class="detail-section" id="outdoor-detail">
-        <div class="detail-container">
-            <div class="detail-visual animate-in">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #b8b8b8 0%, #969696 100%); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: var(--text-gray); font-size: 1.2rem;">Outdoor Resort Visualization</span>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat">
-                        <span class="stat-value">5000h</span>
-                        <span class="stat-label">UV Testing</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">3yr</span>
-                        <span class="stat-label">Color Warranty</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">150+</span>
-                        <span class="stat-label">Wind Load mph</span>
-                    </div>
+        
+        <div class="products-scroll">
+            <div class="product-mini-card">
+                <img src="https://images.unsplash.com/photo-1614594975525-e45852b8a0b5?w=600&q=80" alt="Signature Olive Tree 9ft">
+                <div class="product-mini-info">
+                    <h4>Signature Olive Tree 9ft</h4>
+                    <p>NFPA 701 Certified • UV Stable</p>
+                    <a href="product-detail.html?id=signature-olive-9ft" class="btn-small">View Details</a>
                 </div>
             </div>
-            <div class="detail-content animate-in">
-                <h2>Outdoor Engineering Solutions</h2>
-                <span class="detail-subtitle">Engineered for the Elements</span>
-                <p>Outdoor landscapes are the first touchpoint of any premium property, yet they are constantly under siege by UV radiation, humidity, and temperature fluctuations. Traditional artificial plants fail within months under the sun.</p>
-                
-                <ul class="benefit-list">
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Military-Grade UV Protection</h4>
-                            <p>Proprietary UV-Stable technology tested for over 5000 hours of accelerated weathering. Guaranteed color retention.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Thermal & Wind Resilience</h4>
-                            <p>Engineered to resist thermal expansion and withstand specific wind loads, ensuring public safety and durability.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <h4>Eco-Conscious Durability</h4>
-                            <p>Extended replacement cycles reduce waste and achieve long-term sustainability goals in landscape investments.</p>
-                        </div>
-                    </li>
-                </ul>
 
-                <a href="contact.html" class="btn-primary">Engineer Your Landscape</a>
+            <div class="product-mini-card">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600&q=80" alt="Ficus Tree 8ft">
+                <div class="product-mini-info">
+                    <h4>Ficus Tree 8ft</h4>
+                    <p>Fire Retardant • Natural Wood</p>
+                    <a href="product-detail.html?id=ficus-8ft" class="btn-small">View Details</a>
+                </div>
+            </div>
 
-                <div class="case-study-box">
-                    <h4>Case Study: Mediterranean Coastal Resort</h4>
-                    <p>"Engineered custom UV-Stable (5000h+) Palm series, maintaining color fidelity and structural integrity after 3 years of continuous exposure to extreme salt spray and intense UV radiation."</p>
+            <div class="product-mini-card">
+                <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=600&q=80" alt="Bird of Paradise 7ft">
+                <div class="product-mini-info">
+                    <h4>Bird of Paradise 7ft</h4>
+                    <p>Luxury Grade • UV 5000h+</p>
+                    <a href="product-detail.html?id=bird-paradise-7ft" class="btn-small">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-mini-card">
+                <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80" alt="Monstera Deliciosa 5ft">
+                <div class="product-mini-info">
+                    <h4>Monstera Deliciosa 5ft</h4>
+                    <p>Real Touch • Fire Safe</p>
+                    <a href="product-detail.html?id=monstera-5ft" class="btn-small">View Details</a>
+                </div>
+            </div>
+
+            <div class="product-mini-card">
+                <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600&q=80" alt="Dracaena Marginata 6ft">
+                <div class="product-mini-info">
+                    <h4>Dracaena Marginata 6ft</h4>
+                    <p>Commercial Grade • NFPA 701</p>
+                    <a href="product-detail.html?id=dracaena-6ft" class="btn-small">View Details</a>
                 </div>
             </div>
         </div>
@@ -1290,213 +1086,127 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content animate-in">
-            <h2>NOT SURE WHICH SOLUTION FITS?</h2>
-            <p>Our solution experts will analyze your project requirements and recommend the optimal Architectural-Grade greenery approach for your specific environment and compliance needs.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">SCHEDULE CONSULTATION</a>
-                <a href="products.html" class="btn-secondary">BROWSE ALL PRODUCTS</a>
-            </div>
-        </div>
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Let's discuss how our architectural-grade artificial horticulture solutions can elevate your commercial environment while meeting your safety and maintenance requirements.</p>
+        <a href="contact.html" class="btn-primary" style="background-color: var(--champagne-gold); color: var(--forest-green);">Schedule Consultation</a>
     </section>
+
+    <!-- Inquiry Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
+        </div>
+        <div class="inquiry-items" id="inquiryItems">
+            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
+        </div>
+        <div class="inquiry-footer">
+            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </aside>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Design & Customization</a></li>
+                    <li><a href="products.html?category=trees">Artificial Trees</a></li>
+                    <li><a href="products.html?category=plants">Artificial Plants</a></li>
+                    <li><a href="products.html?category=green-walls">Green Walls</a></li>
+                    <li><a href="products.html?category=custom">Custom Solutions</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Core Services</h4>
+            <div class="footer-section">
+                <h4>Solutions</h4>
                 <ul>
-                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
-                    <li><a href="solutions.html">Commercial Interiors</a></li>
-                    <li><a href="solutions.html">Outdoor Engineering</a></li>
-                    <li><a href="customization.html">Bespoke Design</a></li>
+                    <li><a href="solutions.html?type=hotel">Hotel & Hospitality</a></li>
+                    <li><a href="solutions.html?type=retail">Retail Spaces</a></li>
+                    <li><a href="solutions.html?type=commercial">Commercial Buildings</a></li>
+                    <li><a href="solutions.html?type=outdoor">Outdoor Applications</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
+            <div class="footer-section">
+                <h4>Company</h4>
                 <ul>
-                    <li><a href="#">Product Catalog</a></li>
-                    <li><a href="#">Technical Specifications</a></li>
-                    <li><a href="#">Compliance Certificates</a></li>
-                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#capabilities">Capabilities</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
+            <div class="footer-section">
+                <h4>Contact</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li>Email: info@laysun.com</li>
+                    <li>Tel: +86 xxx xxxx xxxx</li>
+                    <li>Manufacturing: Guangdong, China</li>
+                    <li>Global Distribution Network</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-            </div>
+            <p>&copy; 2026 Laysun. All rights reserved. | <a href="privacy.html" style="color: inherit;">Privacy Policy</a> | <a href="terms.html" style="color: inherit;">Terms of Service</a></p>
         </div>
     </footer>
 
-    <!-- Inquiry Basket Panel -->
-    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
-    <div class="basket-panel" id="basketPanel">
-        <div class="basket-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-basket" onclick="toggleBasket()">×</button>
-        </div>
-        <div class="basket-body" id="basketBody">
-            <div class="empty-basket">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <p>Your inquiry list is empty.</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
-            </div>
-        </div>
-        <div class="basket-footer">
-            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
-            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
-        </div>
-    </div>
-
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Inquiry System
+        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+
+        function updateInquiryCount() {
+            const count = document.getElementById('inquiryCount');
+            if (count) {
+                count.textContent = inquiryList.length;
+                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
             }
-        });
-
-        // Language switch
-        function changeLang(lang) {
-            console.log('Switching to language:', lang);
-            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
         }
 
-        // Inquiry Basket Logic
-        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
-        
-        function updateBasketCount() {
-            const count = basketItems.reduce((sum, item) => sum + (item.qty || 1), 0);
-            document.getElementById('basketCount').textContent = count;
-        }
-
-        function toggleBasket() {
-            const panel = document.getElementById('basketPanel');
+        function toggleInquiry() {
+            const sidebar = document.getElementById('inquirySidebar');
             const overlay = document.getElementById('overlay');
-            panel.classList.toggle('active');
+            sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
-            renderBasket();
+            updateInquirySidebar();
         }
 
-        function renderBasket() {
-            const body = document.getElementById('basketBody');
-            if (basketItems.length === 0) {
-                body.innerHTML = `
-                    <div class="empty-basket">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <p>Your inquiry list is empty.</p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
-                    </div>
-                `;
-            } else {
-                body.innerHTML = basketItems.map((item, index) => `
-                    <div class="basket-item">
-                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
-                        <div class="basket-item-info">
-                            <h4>${item.name}</h4>
-                            <p>${item.specs || ''}</p>
-                            <p style="color: var(--champagne-gold); font-weight: 600;">${item.id}</p>
-                        </div>
-                        <button onclick="removeItem(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">×</button>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function removeItem(index) {
-            basketItems.splice(index, 1);
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            renderBasket();
-        }
-
-        function downloadSpecs() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
+        function updateInquirySidebar() {
+            const container = document.getElementById('inquiryItems');
+            if (inquiryList.length === 0) {
+                container.innerHTML = '<p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>';
                 return;
             }
-            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+
+            container.innerHTML = inquiryList.map(item => `
+                <div class="inquiry-item">
+                    <div class="inquiry-item-details">
+                        <h4>${item.name}</h4>
+                        <p>Qty: ${item.quantity}</p>
+                    </div>
+                    <button class="remove-item" onclick="removeFromInquiry('${item.id}')">×</button>
+                </div>
+            `).join('');
+        }
+
+        function removeFromInquiry(id) {
+            inquiryList = inquiryList.filter(item => item.id !== id);
+            localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
+            updateInquiryCount();
+            updateInquirySidebar();
         }
 
         function submitInquiry() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
+            if (inquiryList.length === 0) {
+                alert('Please add products to your inquiry first.');
                 return;
             }
-            window.location.href = 'contact.html';
+            window.location.href = 'contact.html?inquiry=true';
         }
 
         // Initialize
-        updateBasketCount();
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateInquiryCount();
         });
     </script>
 </body>
