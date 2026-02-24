@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Laysun - Architectural-Grade Artificial Greenery</title>
+    <title>Architectural-Grade Artificial Plants | Laysun Commercial Solutions</title>
+    <meta name="description" content="Explore Laysun's collection of fire-retardant, UV-stable artificial plants for hotels, retail, and commercial spaces. NFPA 701 certified, wholesale available.">
+    <meta name="keywords" content="artificial horticulture systems, commercial botanical solutions, fire retardant artificial plants, UV resistant artificial plants, hotel greenery solutions">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Laysun Artificial Plants Collection",
+        "description": "Premium artificial horticulture solutions for commercial spaces",
+        "url": "https://laysun.com/products",
+        "brand": {
+            "@type": "Brand",
+            "name": "Laysun"
+        }
+    }
+    </script>
+
     <style>
         :root {
-            --forest-green: #2D5A3D;
-            --forest-dark: #1E3D2A;
             --champagne-gold: #C9A961;
-            --champagne-dark: #B8944F;
-            --leaf-white: #F7F5F0;
-            --pure-white: #FFFFFF;
-            --text-dark: #1A1A1A;
-            --text-gray: #666666;
-            --border-light: #E5E5E5;
+            --champagne-gold-hover: #B8944F;
+            --forest-green: #1F3D2B;
+            --forest-green-hover: #2B533B;
+            --dark-gray: #5F6466;
+            --charcoal: #1A1A1A;
+            --light-gray: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
         }
 
         * {
@@ -27,220 +47,141 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--leaf-white);
-            color: var(--text-dark);
+            font-family: 'Roboto', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 1.5rem 0;
         }
 
-        .navbar.scrolled {
-            background: rgba(45, 90, 61, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
+        .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--pure-white);
+            font-weight: 700;
+            color: var(--forest-green);
             text-decoration: none;
             letter-spacing: 2px;
         }
 
-        .nav-menu {
+        .logo span {
+            color: var(--champagne-gold);
+        }
+
+        nav ul {
             display: flex;
             list-style: none;
             gap: 2.5rem;
-            align-items: center;
         }
 
-        .nav-menu a {
-            color: var(--pure-white);
+        nav a {
             text-decoration: none;
-            font-size: 0.9rem;
+            color: var(--charcoal);
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
             position: relative;
         }
 
-        .nav-menu a::after {
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--champagne-gold);
-            transition: width 0.3s;
+            background-color: var(--champagne-gold);
+            transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover::after {
+        nav a:hover::after {
             width: 100%;
         }
 
-        .nav-right {
+        .header-actions {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
 
-        .lang-switch {
-            position: relative;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--pure-white);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--champagne-gold);
-        }
-
-        .lang-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--pure-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s;
-            min-width: 150px;
-        }
-
-        .lang-switch:hover .lang-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .lang-option {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.3s;
-        }
-
-        .lang-option:hover {
-            background: var(--leaf-white);
+        .inquiry-btn {
+            background-color: var(--champagne-gold);
             color: var(--forest-green);
-        }
-
-        .inquiry-basket {
-            position: relative;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .basket-icon {
-            width: 24px;
-            height: 24px;
-            stroke: var(--pure-white);
-            fill: none;
-            stroke-width: 2;
+        .inquiry-btn:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
         }
 
-        .basket-count {
+        .inquiry-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
+            background-color: var(--forest-green);
+            color: white;
             border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 50vh;
-            min-height: 400px;
-            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-dark) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(201,169,97,0.1)" stroke-width="0.5"/></svg>');
-            background-size: 300px;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
             text-align: center;
-            color: var(--pure-white);
-            padding: 0 2rem;
-            max-width: 800px;
         }
 
-        .hero h1 {
+        .page-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            letter-spacing: 3px;
+            font-weight: 700;
         }
 
-        .hero p {
-            font-size: 1.1rem;
+        .page-header p {
+            font-size: 1.2rem;
             opacity: 0.9;
-            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Main Layout */
@@ -253,148 +194,150 @@
             gap: 3rem;
         }
 
-        /* Sidebar Filters */
-        .sidebar {
+        /* Filter Sidebar */
+        .filter-sidebar {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            height: fit-content;
             position: sticky;
             top: 100px;
-            height: fit-content;
         }
 
         .filter-section {
-            background: var(--pure-white);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
         }
 
-        .filter-section h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .filter-section:last-child {
+            border-bottom: none;
+        }
+
+        .filter-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 1rem;
             color: var(--forest-green);
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
         .filter-option {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.5rem 0;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         .filter-option:hover {
-            color: var(--forest-green);
+            color: var(--champagne-gold);
         }
 
         .filter-option input[type="checkbox"] {
             width: 18px;
             height: 18px;
-            accent-color: var(--forest-green);
+            accent-color: var(--champagne-gold);
             cursor: pointer;
         }
 
         .filter-option label {
             cursor: pointer;
-            font-size: 0.9rem;
-            flex: 1;
-        }
-
-        .filter-count {
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            background: var(--leaf-white);
-            padding: 0.2rem 0.5rem;
-            border-radius: 12px;
+            font-size: 0.95rem;
         }
 
         .clear-filters {
-            width: 100%;
+            background-color: transparent;
+            border: 2px solid var(--forest-green);
+            color: var(--forest-green);
             padding: 0.75rem;
-            background: transparent;
-            border: 1px solid var(--border-light);
-            color: var(--text-gray);
-            border-radius: 4px;
+            width: 100%;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 0.9rem;
             transition: all 0.3s;
+            margin-top: 1rem;
         }
 
         .clear-filters:hover {
-            border-color: var(--forest-green);
-            color: var(--forest-green);
+            background-color: var(--forest-green);
+            color: white;
         }
 
         /* Product Grid */
-        .products-area {
-            min-height: 600px;
+        .products-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .products-header {
+        .results-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 1rem;
         }
 
         .results-count {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        .results-count strong {
-            color: var(--forest-green);
+            font-size: 1.1rem;
+            color: var(--dark-gray);
         }
 
         .sort-dropdown {
             padding: 0.5rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            background: var(--pure-white);
-            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
             cursor: pointer;
+            background-color: white;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         /* Product Card */
         .product-card {
-            background: var(--pure-white);
-            border-radius: 8px;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--champagne-gold);
         }
 
         .product-image {
             position: relative;
-            height: 300px;
-            background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%);
+            aspect-ratio: 4/3;
             overflow: hidden;
+            background-color: var(--light-gray);
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.5s ease;
         }
 
         .product-card:hover .product-image img {
@@ -419,374 +362,317 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-signature {
-            background: var(--champagne-gold);
-            color: var(--pure-white);
-        }
-
-        .badge-retail {
-            background: var(--forest-green);
-            color: var(--pure-white);
+        .badge-uv {
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
         }
 
         .badge-fire {
-            background: #dc3545;
-            color: var(--pure-white);
+            background-color: var(--forest-green);
+            color: white;
         }
 
-        .badge-uv {
-            background: #007bff;
-            color: var(--pure-white);
+        .badge-retail {
+            background-color: var(--dark-gray);
+            color: white;
         }
 
-        .quick-add {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
-            background: var(--pure-white);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .product-card:hover .quick-add {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .quick-add:hover {
-            background: var(--champagne-gold);
-            color: var(--pure-white);
+        .badge-case {
+            background-color: #E74C3C;
+            color: white;
         }
 
         .product-info {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .product-series {
-            font-size: 0.75rem;
+        .product-category {
+            font-size: 0.85rem;
+            color: var(--champagne-gold);
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--champagne-gold);
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
         .product-name {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+            line-height: 1.3;
         }
 
         .product-specs {
-            font-size: 0.85rem;
-            color: var(--text-gray);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             margin-bottom: 1rem;
         }
 
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .product-id {
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: var(--text-gray);
-        }
-
-        .product-link {
-            color: var(--forest-green);
-            text-decoration: none;
+        .spec-tag {
+            background-color: var(--light-gray);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
             font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            transition: color 0.3s;
+            color: var(--dark-gray);
+            border: 1px solid var(--border-color);
         }
 
-        .product-link:hover {
-            color: var(--champagne-gold);
-        }
-
-        /* Pagination */
-        .pagination {
+        .product-applications {
             display: flex;
-            justify-content: center;
             gap: 0.5rem;
-            margin-top: 4rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
-        .page-btn {
-            width: 40px;
-            height: 40px;
+        .app-tag {
+            font-size: 0.8rem;
+            color: var(--forest-green);
+            background-color: rgba(31, 61, 43, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+        }
+
+        .case-study-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--champagne-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            transition: gap 0.3s;
+        }
+
+        .case-study-link:hover {
+            gap: 0.75rem;
+        }
+
+        .product-actions {
+            margin-top: auto;
             display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
+            border: none;
+            padding: 0.875rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--champagne-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 0.875rem 1.25rem;
+            background-color: transparent;
+            border: 2px solid var(--forest-green);
+            color: var(--forest-green);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--border-light);
-            background: var(--pure-white);
-            color: var(--text-dark);
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s;
         }
 
-        .page-btn:hover, .page-btn.active {
-            background: var(--forest-green);
-            color: var(--pure-white);
-            border-color: var(--forest-green);
+        .btn-secondary:hover {
+            background-color: var(--forest-green);
+            color: white;
         }
 
         /* Mobile Filter Toggle */
         .mobile-filter-toggle {
             display: none;
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 100;
-            background: var(--forest-green);
-            color: var(--pure-white);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            cursor: pointer;
-            align-items: center;
-            gap: 0.5rem;
+            background-color: var(--forest-green);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            width: 100%;
         }
 
-        /* Footer */
-        footer {
-            background: var(--forest-dark);
-            color: var(--pure-white);
-            padding: 4rem 2rem 2rem;
+        /* Responsive */
+        @media (max-width: 968px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                z-index: 2000;
+                overflow-y: auto;
+                transition: left 0.3s ease;
+                border-radius: 0;
+            }
+
+            .filter-sidebar.active {
+                left: 0;
+            }
+
+            .mobile-filter-toggle {
+                display: block;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
         }
 
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
+        @media (max-width: 640px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .header-container {
+                padding: 1rem;
+            }
         }
 
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--champagne-gold);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--pure-white);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--champagne-gold);
-            border-color: var(--champagne-gold);
-        }
-
-        /* Inquiry Basket Panel */
-        .basket-panel {
+        /* Inquiry Sidebar */
+        .inquiry-sidebar {
             position: fixed;
             top: 0;
             right: -400px;
             width: 400px;
+            max-width: 100%;
             height: 100vh;
-            background: var(--pure-white);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            z-index: 2000;
-            transition: right 0.4s ease;
+            background-color: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            z-index: 3000;
+            transition: right 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
-        .basket-panel.active {
+        .inquiry-sidebar.active {
             right: 0;
         }
 
-        .basket-header {
-            background: var(--forest-green);
-            color: var(--pure-white);
+        .inquiry-header {
+            background-color: var(--forest-green);
+            color: white;
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .basket-header h3 {
-            font-size: 1.2rem;
+        .inquiry-header h3 {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .close-basket {
+        .close-inquiry {
             background: none;
             border: none;
-            color: var(--pure-white);
+            color: white;
             font-size: 1.5rem;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .basket-body {
-            flex: 1;
+        .inquiry-items {
+            flex-grow: 1;
             overflow-y: auto;
             padding: 1.5rem;
         }
 
-        .empty-basket {
-            text-align: center;
-            color: var(--text-gray);
-            padding: 3rem 0;
-        }
-
-        .basket-item {
+        .inquiry-item {
             display: flex;
             gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
-        .basket-item img {
+        .inquiry-item img {
             width: 80px;
             height: 80px;
             object-fit: cover;
-            border-radius: 4px;
-            background: var(--leaf-white);
+            border-radius: 6px;
         }
 
-        .basket-item-info h4 {
-            font-size: 0.95rem;
+        .inquiry-item-details {
+            flex-grow: 1;
+        }
+
+        .inquiry-item h4 {
+            font-size: 1rem;
             margin-bottom: 0.25rem;
         }
 
-        .basket-item-info p {
+        .inquiry-item p {
             font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        .basket-item-info .qty-control {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .qty-control button {
-            width: 24px;
-            height: 24px;
-            border: 1px solid var(--border-light);
-            background: var(--pure-white);
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .qty-control span {
-            font-size: 0.9rem;
-            min-width: 30px;
-            text-align: center;
+            color: var(--dark-gray);
         }
 
         .remove-item {
             background: none;
             border: none;
-            color: #999;
+            color: #E74C3C;
             cursor: pointer;
             font-size: 1.2rem;
-            margin-left: auto;
         }
 
-        .basket-footer {
+        .inquiry-footer {
             padding: 1.5rem;
-            border-top: 1px solid var(--border-light);
-            background: var(--leaf-white);
+            border-top: 1px solid var(--border-color);
         }
 
-        .basket-btn {
+        .submit-inquiry {
             width: 100%;
-            padding: 1rem;
-            background: var(--forest-green);
-            color: var(--pure-white);
+            background-color: var(--champagne-gold);
+            color: var(--forest-green);
             border: none;
-            border-radius: 4px;
-            font-weight: 600;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
             cursor: pointer;
-            margin-bottom: 0.75rem;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
-        .basket-btn:hover {
-            background: var(--forest-dark);
-        }
-
-        .basket-btn.gold {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-dark) 100%);
-        }
-
-        .basket-btn.gold:hover {
-            opacity: 0.9;
+        .submit-inquiry:hover {
+            background-color: var(--champagne-gold-hover);
         }
 
         .overlay {
@@ -795,867 +681,784 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2500;
+            display: none;
         }
 
         .overlay.active {
-            opacity: 1;
-            visibility: visible;
+            display: block;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                position: fixed;
-                left: -300px;
-                top: 0;
-                width: 280px;
-                height: 100vh;
-                background: var(--pure-white);
-                z-index: 999;
-                overflow-y: auto;
-                padding: 2rem;
-                transition: left 0.3s;
-                box-shadow: 2px 0 20px rgba(0,0,0,0.1);
-            }
-            
-            .sidebar.active {
-                left: 0;
-            }
-            
-            .mobile-filter-toggle {
-                display: flex;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
         }
 
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .basket-panel {
-                width: 100%;
-                right: -100%;
-            }
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
         }
 
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+        .footer-section h4 {
+            color: var(--champagne-gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+        .footer-section ul {
+            list-style: none;
         }
 
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">LAYSUN</a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="customization.html">Design & Customization</a></li>
-                <li><a href="capabilities.html">Capabilities</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <div class="lang-switch">
-                    <button class="lang-btn">
-                        <span>EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option" onclick="changeLang('en')">English</a>
-                        <a href="#" class="lang-option" onclick="changeLang('de')">Deutsch</a>
-                        <a href="#" class="lang-option" onclick="changeLang('ar')">العربية</a>
-                    </div>
-                </div>
-
-                <div class="inquiry-basket" onclick="toggleBasket()">
-                    <svg class="basket-icon" viewBox="0 0 24 24">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                    </svg>
-                    <span class="basket-count" id="basketCount">0</span>
-                </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">LAY<span>SUN</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customization.html">Customization</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="inquiry-btn" onclick="toggleInquiry()">
+                    Project Inquiry
+                    <span class="inquiry-count" id="inquiryCount">0</span>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>SIGNATURE COLLECTIONS</h1>
-            <p>20 Architectural-Grade Products. Engineered for the World's Toughest Environments.</p>
-        </div>
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Architectural-Grade Collections</h1>
+        <p>Discover our comprehensive range of fire-retardant, UV-stable artificial horticulture solutions engineered for global commercial standards</p>
     </section>
 
     <!-- Main Content -->
     <div class="main-container">
-        <!-- Sidebar Filters -->
-        <aside class="sidebar" id="sidebar">
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar" id="filterSidebar">
             <div class="filter-section">
-                <h3>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-                    </svg>
-                    Standard Compliance
-                </h3>
-                <div class="filter-option">
-                    <input type="checkbox" id="uv" value="uv" onchange="applyFilters()">
-                    <label for="uv">UV-Stable (2000h+)</label>
-                    <span class="filter-count">8</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="fire" value="fire" onchange="applyFilters()">
-                    <label for="fire">Fire-Retardant (NFPA 701/B1)</label>
-                    <span class="filter-count">6</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="retail" value="retail" onchange="applyFilters()">
-                    <label for="retail">Retail-Ready</label>
-                    <span class="filter-count">6</span>
+                <h3 class="filter-title">Standards & Certifications</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="uv" onchange="applyFilters()">
+                        <span>UV Resistant (5000h+)</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="fire" onchange="applyFilters()">
+                        <span>Fire Retardant (NFPA 701)</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="retail" onchange="applyFilters()">
+                        <span>Retail Ready</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="case" onchange="applyFilters()">
+                        <span>Case Study Available</span>
+                    </label>
                 </div>
             </div>
 
             <div class="filter-section">
-                <h3>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="9" y1="9" x2="15" y2="15"></line>
-                        <line x1="15" y1="9" x2="9" y2="15"></line>
-                    </svg>
-                    Application
-                </h3>
-                <div class="filter-option">
-                    <input type="checkbox" id="indoor" value="indoor" onchange="applyFilters()">
-                    <label for="indoor">Indoor</label>
-                    <span class="filter-count">14</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="outdoor" value="outdoor" onchange="applyFilters()">
-                    <label for="outdoor">Outdoor</label>
-                    <span class="filter-count">8</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="commercial" value="commercial" onchange="applyFilters()">
-                    <label for="commercial">Commercial</label>
-                    <span class="filter-count">12</span>
+                <h3 class="filter-title">Application</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="retail" onchange="applyFilters()">
+                        <span>Retail Spaces</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="commercial" onchange="applyFilters()">
+                        <span>Commercial Buildings</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="hotel" onchange="applyFilters()">
+                        <span>Hotels & Hospitality</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="outdoor" onchange="applyFilters()">
+                        <span>Outdoor Applications</span>
+                    </label>
                 </div>
             </div>
 
             <div class="filter-section">
-                <h3>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    Height/Size
-                </h3>
-                <div class="filter-option">
-                    <input type="checkbox" id="small" value="small" onchange="applyFilters()">
-                    <label for="small">Small (&lt;4ft)</label>
-                    <span class="filter-count">3</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="medium" value="medium" onchange="applyFilters()">
-                    <label for="medium">Medium (4-9ft)</label>
-                    <span class="filter-count">10</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="large" value="large" onchange="applyFilters()">
-                    <label for="large">Large (&gt;10ft)</label>
-                    <span class="filter-count">7</span>
+                <h3 class="filter-title">Height Range</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="small" onchange="applyFilters()">
+                        <span>Under 4ft</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="medium" onchange="applyFilters()">
+                        <span>4ft - 7ft</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="large" onchange="applyFilters()">
+                        <span>7ft - 10ft</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="xlarge" onchange="applyFilters()">
+                        <span>Over 10ft</span>
+                    </label>
                 </div>
             </div>
 
             <div class="filter-section">
-                <h3>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    Series
-                </h3>
-                <div class="filter-option">
-                    <input type="checkbox" id="signature" value="signature" onchange="applyFilters()">
-                    <label for="signature">Signature Series</label>
-                    <span class="filter-count">5</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="retail-series" value="retail-series" onchange="applyFilters()">
-                    <label for="retail-series">Retail Ready</label>
-                    <span class="filter-count">6</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="commercial-series" value="commercial-series" onchange="applyFilters()">
-                    <label for="commercial-series">Commercial & Fire Retardant</label>
-                    <span class="filter-count">6</span>
-                </div>
-                <div class="filter-option">
-                    <input type="checkbox" id="outdoor-series" value="outdoor-series" onchange="applyFilters()">
-                    <label for="outdoor-series">Outdoor & UV Engineering</label>
-                    <span class="filter-count">6</span>
+                <h3 class="filter-title">Material</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="silk-pe" onchange="applyFilters()">
+                        <span>Silk/PE Blend</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="polyester" onchange="applyFilters()">
+                        <span>Polyester</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="pvc" onchange="applyFilters()">
+                        <span>PVC</span>
+                    </label>
                 </div>
             </div>
 
-            <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+            <button class="clear-filters" onclick="clearAllFilters()">Clear All Filters</button>
         </aside>
 
-        <!-- Products Area -->
-        <div class="products-area">
-            <div class="products-header">
-                <div class="results-count">
-                    Showing <strong id="showingCount">20</strong> of <strong>20</strong> products
-                </div>
+        <!-- Products Section -->
+        <section class="products-section">
+            <button class="mobile-filter-toggle" onclick="toggleMobileFilters()">☰ Filter Products</button>
+            
+            <div class="results-header">
+                <span class="results-count">Showing <strong id="productCount">12</strong> products</span>
                 <select class="sort-dropdown" onchange="sortProducts(this.value)">
                     <option value="featured">Featured</option>
-                    <option value="name-asc">Name: A-Z</option>
-                    <option value="name-desc">Name: Z-A</option>
+                    <option value="newest">Newest Arrivals</option>
                     <option value="height-asc">Height: Low to High</option>
                     <option value="height-desc">Height: High to Low</option>
                 </select>
             </div>
 
             <div class="products-grid" id="productsGrid">
-                <!-- Products will be rendered by JavaScript -->
-            </div>
+                <!-- Product Card 1 -->
+                <article class="product-card" data-categories="uv fire retail commercial hotel" data-height="large" data-material="silk-pe">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45852b8a0b5?w=800&q=80" alt="Signature Olive Tree 9ft - Fire Retardant Artificial Plant for Commercial Use" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV 5000h+</span>
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Signature Collection</span>
+                        <h3 class="product-name">Signature Olive Tree 9ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">9ft Height</span>
+                            <span class="spec-tag">PE/Silk Blend</span>
+                            <span class="spec-tag">B1 Fire Rated</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Hotels</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <a href="case-study-hotel-la.html" class="case-study-link">
+                            View Hotel Case Study →
+                        </a>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('signature-olive-9ft', 'Signature Olive Tree 9ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=signature-olive-9ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="pagination">
-                <a href="#" class="page-btn active">1</a>
-                <a href="#" class="page-btn">2</a>
-                <a href="#" class="page-btn">3</a>
-                <span style="display: flex; align-items: center; padding: 0 0.5rem;">...</span>
-                <a href="#" class="page-btn">→</a>
+                <!-- Product Card 2 -->
+                <article class="product-card" data-categories="uv retail commercial" data-height="medium" data-material="polyester">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1597055181300-e30ba15247b5?w=800&q=80" alt="Fiddle Leaf Fig 4ft - UV Resistant Artificial Plant for Retail" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-uv">UV Stable</span>
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Retail Collection</span>
+                        <h3 class="product-name">Fiddle Leaf Fig 4ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">4ft Height</span>
+                            <span class="spec-tag">Polyester</span>
+                            <span class="spec-tag">Barcode Ready</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Retail</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('fiddle-fig-4ft', 'Fiddle Leaf Fig 4ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=fiddle-fig-4ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Card 3 -->
+                <article class="product-card" data-categories="fire uv commercial outdoor" data-height="xlarge" data-material="pvc">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80" alt="Bamboo Grove 10ft - Fire Retardant UV Resistant for Outdoor Commercial Use" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV 2000h+</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Outdoor Collection</span>
+                        <h3 class="product-name">Bamboo Grove 10ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">10ft Height</span>
+                            <span class="spec-tag">PVC</span>
+                            <span class="spec-tag">Weather Resistant</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Outdoor</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('bamboo-10ft', 'Bamboo Grove 10ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=bamboo-10ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Card 4 -->
+                <article class="product-card" data-categories="fire uv case hotel commercial" data-height="medium" data-material="silk-pe">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80" alt="Monstera Deliciosa 5ft - Fire Safe Artificial Plant for Hotels" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV Protected</span>
+                            <span class="badge badge-case">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Hospitality Collection</span>
+                        <h3 class="product-name">Monstera Deliciosa 5ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">5ft Height</span>
+                            <span class="spec-tag">PE/Silk Blend</span>
+                            <span class="spec-tag">Real Touch</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Hotels</span>
+                            <span class="app-tag">Hospitality</span>
+                        </div>
+                        <a href="case-study-resort-bali.html" class="case-study-link">
+                            View Resort Case Study →
+                        </a>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('monstera-5ft', 'Monstera Deliciosa 5ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=monstera-5ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Card 5 -->
+                <article class="product-card" data-categories="retail commercial small" data-height="small" data-material="polyester">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=80" alt="Succulent Garden - Retail Ready Artificial Plants for Commercial Spaces" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Tabletop Collection</span>
+                        <h3 class="product-name">Mixed Succulent Garden</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">12-18 inches</span>
+                            <span class="spec-tag">Polyester</span>
+                            <span class="spec-tag">MOQ: 50</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Retail</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('succulent-garden', 'Mixed Succulent Garden')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=succulent-garden" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Card 6 -->
+                <article class="product-card" data-categories="fire uv case hotel commercial large" data-height="large" data-material="silk-pe">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&q=80" alt="Ficus Tree 8ft - Fire Retardant Artificial Tree for Hotel Lobbies" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV 5000h+</span>
+                            <span class="badge badge-case">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Signature Collection</span>
+                        <h3 class="product-name">Ficus Tree 8ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">8ft Height</span>
+                            <span class="spec-tag">PE/Silk Blend</span>
+                            <span class="spec-tag">Natural Wood</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Hotels</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <a href="case-study-hotel-ny.html" class="case-study-link">
+                            View NYC Hotel Case →
+                        </a>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('ficus-8ft', 'Ficus Tree 8ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=ficus-8ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Additional Product Cards 7-12 -->
+                <article class="product-card" data-categories="fire outdoor commercial xlarge" data-height="xlarge" data-material="pvc">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Green Wall System - Fire Retardant Vertical Garden for Commercial Buildings" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Vertical Systems</span>
+                        <h3 class="product-name">Modular Green Wall System</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Custom Sizes</span>
+                            <span class="spec-tag">PVC Frame</span>
+                            <span class="spec-tag">Modular</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Commercial</span>
+                            <span class="app-tag">Outdoor</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('green-wall', 'Modular Green Wall System')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=green-wall" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="uv retail commercial medium" data-height="medium" data-material="polyester">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=800&q=80" alt="Snake Plant 4ft - UV Resistant Artificial Plant for Retail Display" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-uv">UV Stable</span>
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Retail Collection</span>
+                        <h3 class="product-name">Snake Plant 4ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">4ft Height</span>
+                            <span class="spec-tag">Polyester</span>
+                            <span class="spec-tag">MOQ: 100</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Retail</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('snake-plant-4ft', 'Snake Plant 4ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=snake-plant-4ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="fire uv hotel commercial case large" data-height="large" data-material="silk-pe">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?w=800&q=80" alt="Bird of Paradise 7ft - Fire Safe Artificial Plant for Luxury Hotels" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV 5000h+</span>
+                            <span class="badge badge-case">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Luxury Collection</span>
+                        <h3 class="product-name">Bird of Paradise 7ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">7ft Height</span>
+                            <span class="spec-tag">PE/Silk Blend</span>
+                            <span class="spec-tag">Premium Grade</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Hotels</span>
+                            <span class="app-tag">Luxury</span>
+                        </div>
+                        <a href="case-study-resort-maldives.html" class="case-study-link">
+                            View Maldives Case →
+                        </a>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('bird-paradise-7ft', 'Bird of Paradise 7ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=bird-paradise-7ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="retail small commercial" data-height="small" data-material="polyester">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&q=80" alt="Potted Orchid - Artificial Flowers for Retail and Commercial Decoration" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Floral Collection</span>
+                        <h3 class="product-name">Phalaenopsis Orchid Arrangement</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">24 inches</span>
+                            <span class="spec-tag">Polyester</span>
+                            <span class="spec-tag">Real Touch</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Retail</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('orchid-arrangement', 'Phalaenopsis Orchid Arrangement')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=orchid-arrangement" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="fire uv outdoor commercial xlarge" data-height="xlarge" data-material="pvc">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80" alt="Palm Tree 12ft - Fire Retardant UV Resistant for Outdoor Commercial Landscaping" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV 5000h+</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Outdoor Collection</span>
+                        <h3 class="product-name">Canary Palm Tree 12ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">12ft Height</span>
+                            <span class="spec-tag">PVC/Steel</span>
+                            <span class="spec-tag">Weatherproof</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Outdoor</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('palm-12ft', 'Canary Palm Tree 12ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=palm-12ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="uv fire case hotel commercial medium" data-height="medium" data-material="silk-pe">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=800&q=80" alt="Dracaena Marginata 6ft - Fire Safe Artificial Tree for Commercial Interiors" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-fire">NFPA 701</span>
+                            <span class="badge badge-uv">UV Protected</span>
+                            <span class="badge badge-case">Case Study</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Commercial Collection</span>
+                        <h3 class="product-name">Dracaena Marginata 6ft</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">6ft Height</span>
+                            <span class="spec-tag">PE/Silk Blend</span>
+                            <span class="spec-tag">Fire Rated</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Commercial</span>
+                            <span class="app-tag">Hotels</span>
+                        </div>
+                        <a href="case-study-office-sf.html" class="case-study-link">
+                            View SF Office Case →
+                        </a>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('dracaena-6ft', 'Dracaena Marginata 6ft')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=dracaena-6ft" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-categories="retail commercial small" data-height="small" data-material="polyester">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=800&q=80" alt="Herb Garden Set - Artificial Plants for Retail Display and Commercial Kitchens" loading="lazy">
+                        <div class="product-badges">
+                            <span class="badge badge-retail">Retail Ready</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Kitchen Collection</span>
+                        <h3 class="product-name">Culinary Herb Garden Set</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">6-10 inches</span>
+                            <span class="spec-tag">Polyester</span>
+                            <span class="spec-tag">Set of 6</span>
+                        </div>
+                        <div class="product-applications">
+                            <span class="app-tag">Retail</span>
+                            <span class="app-tag">Commercial</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary" onclick="addToInquiry('herb-set', 'Culinary Herb Garden Set')">Add to Inquiry</button>
+                            <a href="product-detail.html?id=herb-set" class="btn-secondary">Details</a>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </section>
+    </div>
+
+    <!-- Inquiry Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleInquiry()"></div>
+    <aside class="inquiry-sidebar" id="inquirySidebar">
+        <div class="inquiry-header">
+            <h3>Project Inquiry</h3>
+            <button class="close-inquiry" onclick="toggleInquiry()">×</button>
         </div>
-    </div>
-
-    <!-- Mobile Filter Toggle -->
-    <div class="mobile-filter-toggle" onclick="toggleSidebar()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-        </svg>
-        Filters
-    </div>
+        <div class="inquiry-items" id="inquiryItems">
+            <p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>
+        </div>
+        <div class="inquiry-footer">
+            <button class="submit-inquiry" onclick="submitInquiry()">Submit Inquiry</button>
+        </div>
+    </aside>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Products</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customization.html">Design & Customization</a></li>
+                    <li><a href="products.html?category=trees">Artificial Trees</a></li>
+                    <li><a href="products.html?category=plants">Artificial Plants</a></li>
+                    <li><a href="products.html?category=green-walls">Green Walls</a></li>
+                    <li><a href="products.html?category=custom">Custom Solutions</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Core Services</h4>
+            <div class="footer-section">
+                <h4>Solutions</h4>
                 <ul>
-                    <li><a href="solutions.html">Big-Box Retail Solutions</a></li>
-                    <li><a href="solutions.html">Commercial Interiors</a></li>
-                    <li><a href="solutions.html">Outdoor Engineering</a></li>
-                    <li><a href="customization.html">Bespoke Design</a></li>
+                    <li><a href="solutions.html?type=hotel">Hotel & Hospitality</a></li>
+                    <li><a href="solutions.html?type=retail">Retail Spaces</a></li>
+                    <li><a href="solutions.html?type=commercial">Commercial Buildings</a></li>
+                    <li><a href="solutions.html?type=outdoor">Outdoor Applications</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
+            <div class="footer-section">
+                <h4>Company</h4>
                 <ul>
-                    <li><a href="#">Product Catalog</a></li>
-                    <li><a href="#">Technical Specifications</a></li>
-                    <li><a href="#">Compliance Certificates</a></li>
-                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#capabilities">Capabilities</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
+            <div class="footer-section">
+                <h4>Contact</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
+                    <li>Email: info@laysun.com</li>
+                    <li>Tel: +86 xxx xxxx xxxx</li>
+                    <li>Manufacturing: Guangdong, China</li>
+                    <li>Global Distribution Network</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Facebook">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-            </div>
+            <p>&copy; 2026 Laysun. All rights reserved. | <a href="privacy.html" style="color: inherit;">Privacy Policy</a> | <a href="terms.html" style="color: inherit;">Terms of Service</a></p>
         </div>
     </footer>
 
-    <!-- Inquiry Basket Panel -->
-    <div class="overlay" id="overlay" onclick="toggleBasket()"></div>
-    <div class="basket-panel" id="basketPanel">
-        <div class="basket-header">
-            <h3>Project Inquiry</h3>
-            <button class="close-basket" onclick="toggleBasket()">×</button>
-        </div>
-        <div class="basket-body" id="basketBody">
-            <div class="empty-basket">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <p>Your inquiry list is empty.</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
-            </div>
-        </div>
-        <div class="basket-footer">
-            <button class="basket-btn gold" onclick="downloadSpecs()">Download Spec Sheets</button>
-            <button class="basket-btn" onclick="submitInquiry()">Submit Inquiry</button>
-        </div>
-    </div>
-
     <script>
-        // Product Data - 20 Core Products
-        const products = [
-            {
-                id: 'LS-2026-001',
-                name: 'Multi-Stem Olive Tree',
-                series: 'Signature Series',
-                height: '4ft - 9ft',
-                heightCategory: 'medium',
-                compliance: ['uv'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'signature',
-                specs: 'Natural Wood Trunk • 360° Visual Impact',
-                badge: 'signature'
-            },
-            {
-                id: 'LS-2026-002',
-                name: 'Premium Traveler\'s Banana',
-                series: 'Signature Series',
-                height: '7ft+',
-                heightCategory: 'large',
-                compliance: ['uv'],
-                application: ['indoor', 'outdoor', 'commercial'],
-                seriesFilter: 'signature',
-                specs: 'Commercial Grade • Dual Scene',
-                badge: 'signature'
-            },
-            {
-                id: 'LS-2026-003',
-                name: 'Bespoke Japanese Maple',
-                series: 'Signature Series',
-                height: '5ft - 8ft',
-                heightCategory: 'medium',
-                compliance: [],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'signature',
-                specs: 'Bespoke Design • Architectural Grade',
-                badge: 'signature'
-            },
-            {
-                id: 'LS-2026-004',
-                name: 'Set of Mini Succulents',
-                series: 'Retail Ready',
-                height: 'Desktop',
-                heightCategory: 'small',
-                compliance: ['retail'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'retail-series',
-                specs: 'PDQ Packaging • MOQ: 100 PCS',
-                badge: 'retail'
-            },
-            {
-                id: 'LS-2026-005',
-                name: '4ft Fiddle Leaf Fig',
-                series: 'Retail Ready',
-                height: '4ft',
-                heightCategory: 'medium',
-                compliance: ['retail'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'retail-series',
-                specs: 'Barcode Ready • Color Box',
-                badge: 'retail'
-            },
-            {
-                id: 'LS-2026-006',
-                name: 'Artificial Fruit Trees',
-                series: 'Retail Ready',
-                height: '5ft - 7ft',
-                heightCategory: 'medium',
-                compliance: ['retail'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'retail-series',
-                specs: 'Seasonal Decor • High Turnover',
-                badge: 'retail'
-            },
-            {
-                id: 'LS-2026-007',
-                name: 'Fire-Retardant Vertical Green Wall',
-                series: 'Commercial & Fire Retardant',
-                height: 'Custom Size',
-                heightCategory: 'large',
-                compliance: ['fire'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'commercial-series',
-                specs: 'NFPA 701 • B1 Certified',
-                badge: 'fire'
-            },
-            {
-                id: 'LS-2026-008',
-                name: 'Large Areca Palm',
-                series: 'Commercial & Fire Retardant',
-                height: '8ft - 10ft+',
-                heightCategory: 'large',
-                compliance: [],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'commercial-series',
-                specs: 'Commercial Engineered • Hotel Grade',
-                badge: 'fire'
-            },
-            {
-                id: 'LS-2026-009',
-                name: 'Topiary Boxwood Ball',
-                series: 'Commercial & Fire Retardant',
-                height: 'Custom Diameter',
-                heightCategory: 'medium',
-                compliance: ['fire'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'commercial-series',
-                specs: 'NFPA 701 • Public Space Ready',
-                badge: 'fire'
-            },
-            {
-                id: 'LS-2026-010',
-                name: 'UV-Stable Bamboo',
-                series: 'Outdoor & UV Engineering',
-                height: '6ft - 10ft',
-                heightCategory: 'medium',
-                compliance: ['uv'],
-                application: ['outdoor', 'commercial'],
-                seriesFilter: 'outdoor-series',
-                specs: '2000h+ UV Test • Outdoor Barrier',
-                badge: 'uv'
-            },
-            {
-                id: 'LS-2026-011',
-                name: 'Outdoor Cypress Column',
-                series: 'Outdoor & UV Engineering',
-                height: '8ft - 12ft',
-                heightCategory: 'large',
-                compliance: ['uv'],
-                application: ['outdoor', 'commercial'],
-                seriesFilter: 'outdoor-series',
-                specs: '2000h+ UV Test • Engineered Grade',
-                badge: 'uv'
-            },
-            {
-                id: 'LS-2026-012',
-                name: 'Commercial Outdoor Palm',
-                series: 'Outdoor & UV Engineering',
-                height: '10ft+',
-                heightCategory: 'large',
-                compliance: ['uv'],
-                application: ['outdoor', 'commercial'],
-                seriesFilter: 'outdoor-series',
-                specs: '2000h+ UV Test • Resort Grade',
-                badge: 'uv'
-            },
-            {
-                id: 'LS-2026-013',
-                name: 'Single-Stem Olive Tree',
-                series: 'Signature Series',
-                height: '6ft - 10ft',
-                heightCategory: 'large',
-                compliance: ['uv'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'signature',
-                specs: 'Natural Wood • Architectural',
-                badge: 'signature'
-            },
-            {
-                id: 'LS-2026-014',
-                name: 'Premium Fiddle Leaf Fig',
-                series: 'Signature Series',
-                height: '5ft - 7ft',
-                heightCategory: 'medium',
-                compliance: [],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'signature',
-                specs: 'High Fidelity • Designer Choice',
-                badge: 'signature'
-            },
-            {
-                id: 'LS-2026-015',
-                name: 'Mini Fiddle Leaf Fig',
-                series: 'Retail Ready',
-                height: '3ft',
-                heightCategory: 'small',
-                compliance: ['retail'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'retail-series',
-                specs: 'Compact Size • Display Ready',
-                badge: 'retail'
-            },
-            {
-                id: 'LS-2026-016',
-                name: 'Artificial Citrus Trees',
-                series: 'Retail Ready',
-                height: '5ft - 7ft',
-                heightCategory: 'medium',
-                compliance: ['retail'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'retail-series',
-                specs: 'Seasonal • Pomegranate',
-                badge: 'retail'
-            },
-            {
-                id: 'LS-2026-017',
-                name: 'Fire-Retardant Pothos Vine',
-                series: 'Commercial & Fire Retardant',
-                height: 'Custom Length',
-                heightCategory: 'medium',
-                compliance: ['fire'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'commercial-series',
-                specs: 'NFPA 701 • Wall Decor',
-                badge: 'fire'
-            },
-            {
-                id: 'LS-2026-018',
-                name: 'Fire-Retardant Rubber Plant',
-                series: 'Commercial & Fire Retardant',
-                height: '7ft - 9ft',
-                heightCategory: 'large',
-                compliance: ['fire'],
-                application: ['indoor', 'commercial'],
-                seriesFilter: 'commercial-series',
-                specs: 'NFPA 701 • Hotel Lobby',
-                badge: 'fire'
-            },
-            {
-                id: 'LS-2026-019',
-                name: 'UV-Stable Lady Palm',
-                series: 'Outdoor & UV Engineering',
-                height: '5ft - 8ft',
-                heightCategory: 'medium',
-                compliance: ['uv'],
-                application: ['outdoor', 'commercial'],
-                seriesFilter: 'outdoor-series',
-                specs: '2000h+ UV Test • Compact',
-                badge: 'uv'
-            },
-            {
-                id: 'LS-2026-020',
-                name: 'UV-Stable Coconut Palm',
-                series: 'Outdoor & UV Engineering',
-                height: '10ft - 13ft',
-                heightCategory: 'large',
-                compliance: ['uv'],
-                application: ['outdoor', 'commercial'],
-                seriesFilter: 'outdoor-series',
-                specs: '2000h+ UV Test • Large Scale',
-                badge: 'uv'
+        // Inquiry System
+        let inquiryList = JSON.parse(localStorage.getItem('inquiryList')) || [];
+
+        function updateInquiryCount() {
+            const count = document.getElementById('inquiryCount');
+            if (count) {
+                count.textContent = inquiryList.length;
+                count.style.display = inquiryList.length > 0 ? 'flex' : 'none';
             }
-        ];
+        }
 
-        let filteredProducts = [...products];
-        let basketItems = JSON.parse(localStorage.getItem('inquiryBasket')) || [];
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProducts();
-            updateBasketCount();
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+        function addToInquiry(id, name) {
+            if (!inquiryList.find(item => item.id === id)) {
+                inquiryList.push({ id, name, quantity: 1 });
+                localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
+                updateInquiryCount();
+                updateInquirySidebar();
+                
+                // Show feedback
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Added!';
+                btn.style.backgroundColor = '#2B533B';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }, 1500);
             } else {
-                navbar.classList.remove('scrolled');
+                alert('This product is already in your inquiry list.');
             }
-        });
+        }
 
-        // Render Products
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            const showingCount = document.getElementById('showingCount');
-            
-            showingCount.textContent = filteredProducts.length;
-            
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-gray);">No products match your selected filters.</div>';
+        function removeFromInquiry(id) {
+            inquiryList = inquiryList.filter(item => item.id !== id);
+            localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
+            updateInquiryCount();
+            updateInquirySidebar();
+        }
+
+        function updateInquirySidebar() {
+            const container = document.getElementById('inquiryItems');
+            if (inquiryList.length === 0) {
+                container.innerHTML = '<p style="color: var(--dark-gray); text-align: center; margin-top: 2rem;">Your inquiry list is empty. Start exploring our collections.</p>';
                 return;
             }
-            
-            grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card" data-id="${product.id}">
-                    <div class="product-image">
-                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #e8e6e1 0%, #d4d2cd 100%); display: flex; align-items: center; justify-content: center; color: var(--text-gray);">
-                            ${product.name}
-                        </div>
-                        <div class="product-badges">
-                            ${product.badge === 'signature' ? '<span class="badge badge-signature">Signature</span>' : ''}
-                            ${product.badge === 'retail' ? '<span class="badge badge-retail">Retail Ready</span>' : ''}
-                            ${product.badge === 'fire' ? '<span class="badge badge-fire">Fire Retardant</span>' : ''}
-                            ${product.badge === 'uv' ? '<span class="badge badge-uv">UV-Stable</span>' : ''}
-                        </div>
-                        <button class="quick-add" onclick="addToBasket('${product.id}')" title="Add to Inquiry">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                        </button>
+
+            container.innerHTML = inquiryList.map(item => `
+                <div class="inquiry-item">
+                    <div class="inquiry-item-details">
+                        <h4>${item.name}</h4>
+                        <p>Qty: <input type="number" value="${item.quantity}" min="1" style="width: 60px; padding: 0.25rem;" onchange="updateQuantity('${item.id}', this.value)"></p>
                     </div>
-                    <div class="product-info">
-                        <div class="product-series">${product.series}</div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-specs">${product.specs}</p>
-                        <div class="product-meta">
-                            <span class="product-id">${product.id}</span>
-                            <a href="#" class="product-link">View Details →</a>
-                        </div>
-                    </div>
+                    <button class="remove-item" onclick="removeFromInquiry('${item.id}')">×</button>
                 </div>
             `).join('');
         }
 
-        // Apply Filters
-        function applyFilters() {
-            const checkedFilters = {
-                compliance: Array.from(document.querySelectorAll('input[value="uv"], input[value="fire"], input[value="retail"]')).filter(cb => cb.checked).map(cb => cb.value),
-                application: Array.from(document.querySelectorAll('input[value="indoor"], input[value="outdoor"], input[value="commercial"]')).filter(cb => cb.checked).map(cb => cb.value),
-                height: Array.from(document.querySelectorAll('input[value="small"], input[value="medium"], input[value="large"]')).filter(cb => cb.checked).map(cb => cb.value),
-                series: Array.from(document.querySelectorAll('input[value="signature"], input[value="retail-series"], input[value="commercial-series"], input[value="outdoor-series"]')).filter(cb => cb.checked).map(cb => cb.value)
-            };
-
-            filteredProducts = products.filter(product => {
-                const matchCompliance = checkedFilters.compliance.length === 0 || checkedFilters.compliance.some(c => product.compliance.includes(c));
-                const matchApplication = checkedFilters.application.length === 0 || checkedFilters.application.some(a => product.application.includes(a));
-                const matchHeight = checkedFilters.height.length === 0 || checkedFilters.height.includes(product.heightCategory);
-                const matchSeries = checkedFilters.series.length === 0 || checkedFilters.series.includes(product.seriesFilter);
-                
-                return matchCompliance && matchApplication && matchHeight && matchSeries;
-            });
-
-            renderProducts();
-        }
-
-        // Clear Filters
-        function clearFilters() {
-            document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => cb.checked = false);
-            filteredProducts = [...products];
-            renderProducts();
-        }
-
-        // Sort Products
-        function sortProducts(sortValue) {
-            switch(sortValue) {
-                case 'name-asc':
-                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-                    break;
-                case 'name-desc':
-                    filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
-                    break;
-                case 'height-asc':
-                    filteredProducts.sort((a, b) => getHeightValue(a.heightCategory) - getHeightValue(b.heightCategory));
-                    break;
-                case 'height-desc':
-                    filteredProducts.sort((a, b) => getHeightValue(b.heightCategory) - getHeightValue(a.heightCategory));
-                    break;
-                default:
-                    filteredProducts = [...products];
-                    applyFilters();
-                    return;
+        function updateQuantity(id, qty) {
+            const item = inquiryList.find(i => i.id === id);
+            if (item) {
+                item.quantity = parseInt(qty);
+                localStorage.setItem('inquiryList', JSON.stringify(inquiryList));
             }
-            renderProducts();
         }
 
-        function getHeightValue(category) {
-            const values = { small: 1, medium: 2, large: 3 };
-            return values[category] || 0;
-        }
-
-        // Mobile Sidebar Toggle
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-
-        // Language switch
-        function changeLang(lang) {
-            console.log('Switching to language:', lang);
-            alert('Language switching to: ' + lang.toUpperCase() + ' (Demo only)');
-        }
-
-        // Inquiry Basket Functions
-        function updateBasketCount() {
-            const count = basketItems.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('basketCount').textContent = count;
-        }
-
-        function toggleBasket() {
-            const panel = document.getElementById('basketPanel');
+        function toggleInquiry() {
+            const sidebar = document.getElementById('inquirySidebar');
             const overlay = document.getElementById('overlay');
-            panel.classList.toggle('active');
+            sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
-            renderBasket();
-        }
-
-        function addToBasket(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-            
-            const existingItem = basketItems.find(item => item.id === productId);
-            if (existingItem) {
-                existingItem.qty++;
-            } else {
-                basketItems.push({
-                    id: product.id,
-                    name: product.name,
-                    specs: product.height,
-                    qty: 1,
-                    image: null
-                });
-            }
-            
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            
-            // Visual feedback
-            const btn = document.querySelector(`[data-id="${productId}"] .quick-add`);
-            btn.style.background = '#25D366';
-            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-            setTimeout(() => {
-                btn.style.background = '';
-                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>';
-            }, 1000);
-        }
-
-        function renderBasket() {
-            const body = document.getElementById('basketBody');
-            if (basketItems.length === 0) {
-                body.innerHTML = `
-                    <div class="empty-basket">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom: 1rem; opacity: 0.3;">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <p>Your inquiry list is empty.</p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Start exploring our collections.</p>
-                    </div>
-                `;
-            } else {
-                body.innerHTML = basketItems.map((item, index) => `
-                    <div class="basket-item">
-                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name}">
-                        <div class="basket-item-info" style="flex: 1;">
-                            <h4>${item.name}</h4>
-                            <p>${item.specs}</p>
-                            <div class="qty-control">
-                                <button onclick="updateQty(${index}, -1)">-</button>
-                                <span>${item.qty}</span>
-                                <button onclick="updateQty(${index}, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="remove-item" onclick="removeItem(${index})">×</button>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function updateQty(index, change) {
-            basketItems[index].qty += change;
-            if (basketItems[index].qty <= 0) {
-                basketItems.splice(index, 1);
-            }
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            renderBasket();
-        }
-
-        function removeItem(index) {
-            basketItems.splice(index, 1);
-            localStorage.setItem('inquiryBasket', JSON.stringify(basketItems));
-            updateBasketCount();
-            renderBasket();
-        }
-
-        function downloadSpecs() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
-                return;
-            }
-            alert('Generating integrated spec sheet for ' + basketItems.length + ' products... (Demo)');
+            updateInquirySidebar();
         }
 
         function submitInquiry() {
-            if (basketItems.length === 0) {
-                alert('Please add products to your inquiry list first.');
+            if (inquiryList.length === 0) {
+                alert('Please add products to your inquiry first.');
                 return;
             }
-            window.location.href = 'contact.html';
+            window.location.href = 'contact.html?inquiry=true';
         }
+
+        // Filter Functionality
+        function applyFilters() {
+            const checkboxes = document.querySelectorAll('.filter-option input:checked');
+            const selectedFilters = Array.from(checkboxes).map(cb => cb.value);
+            
+            const cards = document.querySelectorAll('.product-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const categories = card.dataset.categories || '';
+                const shouldShow = selectedFilters.length === 0 || selectedFilters.some(filter => categories.includes(filter));
+                
+                card.style.display = shouldShow ? 'flex' : 'none';
+                if (shouldShow) visibleCount++;
+            });
+
+            document.getElementById('productCount').textContent = visibleCount;
+        }
+
+        function clearAllFilters() {
+            const checkboxes = document.querySelectorAll('.filter-option input');
+            checkboxes.forEach(cb => cb.checked = false);
+            applyFilters();
+        }
+
+        function toggleMobileFilters() {
+            document.getElementById('filterSidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+
+        function sortProducts(criteria) {
+            const grid = document.getElementById('productsGrid');
+            const cards = Array.from(grid.children);
+            
+            cards.sort((a, b) => {
+                if (criteria === 'height-asc') {
+                    return parseInt(a.dataset.height) - parseInt(b.dataset.height);
+                } else if (criteria === 'height-desc') {
+                    return parseInt(b.dataset.height) - parseInt(a.dataset.height);
+                }
+                return 0;
+            });
+            
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateInquiryCount();
+        });
+
+        // Close mobile filters when clicking outside
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('filterSidebar');
+            const toggle = document.querySelector('.mobile-filter-toggle');
+            if (window.innerWidth <= 968 && sidebar.classList.contains('active')) {
+                if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                    toggleMobileFilters();
+                }
+            }
+        });
     </script>
 </body>
 </html>
