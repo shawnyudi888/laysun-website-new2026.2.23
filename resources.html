@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Documentation Center | LAYSUN Technical Library</title>
+    <meta name="description" content>Technical resources, white papers, CAD libraries, and installation guides for engineered artificial horticulture systems. Download commercial project documentation.</meta>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1F4D36;
+            --primary-green-dark: #16392A;
+            --accent-gold: #C9A961;
+            --accent-gold-dark: #B8944F;
+            --white: #FFFFFF;
+            --light-grey: #F4F6F5;
+            --border-grey: #E2E5E3;
+            --text-dark: #222222;
+            --text-grey: #666666;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s ease;
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 32px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-green-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border: 1.5px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-gold-dark);
+        }
+
+        .btn-small {
+            height: 40px;
+            padding: 0 24px;
+            font-size: 13px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            transition: var(--transition);
+            background: var(--primary-green);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 40px;
+        }
+
+        .page-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--accent-gold);
+        }
+
+        .page-header h1 {
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Search Bar */
+        .search-section {
+            background: var(--light-grey);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 60px;
+            padding: 0 60px 0 24px;
+            border: 2px solid var(--border-grey);
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--text-dark);
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: var(--primary-green);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Section Standard */
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-tab {
+            padding: 12px 24px;
+            background: var(--white);
+            border: 1.5px solid var(--border-grey);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-grey);
+            transition: var(--transition);
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        /* Resource Grid */
+        .resources-section {
+            background: var(--light-grey);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .resource-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border: 1px solid var(--border-grey);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .resource-preview {
+            height: 200px;
+            background: var(--primary-green);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .file-type {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .file-icon {
+            font-size: 48px;
+            opacity: 0.9;
+        }
+
+        .resource-content {
+            padding: 30px;
+        }
+
+        .resource-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 12px;
+            color: var(--text-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .resource-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .resource-content > p {
+            color: var(--text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .resource-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .file-size {
+            font-size: 13px;
+            color: var(--text-grey);
+        }
+
+        /* Featured Resource */
+        .featured-resource {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .featured-preview {
+            height: 500px;
+            background: var(--primary-green);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .featured-content h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .featured-content > p {
+            color: var(--text-grey);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .featured-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .featured-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-grey);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .featured-list li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .featured-meta-item {
+            text-align: center;
+        }
+
+        .featured-meta-item strong {
+            display: block;
+            font-size: 24px;
+            color: var(--primary-green);
+            margin-bottom: 4px;
+        }
+
+        .featured-meta-item span {
+            font-size: 13px;
+            color: var(--text-grey);
+        }
+
+        /* CAD Library Section */
+        .cad-section {
+            background: var(--primary-green-dark);
+            color: var(--white);
+        }
+
+        .cad-section h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .cad-section .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .cad-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .cad-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .cad-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        .cad-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .cad-item h4 {
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .cad-item p {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 16px;
+        }
+
+        .cad-item a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Video Resources */
+        .video-section {
+            background: var(--light-grey);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .video-thumbnail {
+            height: 280px;
+            background: var(--primary-green);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 32px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            background: var(--accent-gold-dark);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .video-content {
+            padding: 30px;
+        }
+
+        .video-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .video-content p {
+            color: var(--text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: var(--white);
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .newsletter-box {
+            background: var(--light-grey);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter-box h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .newsletter-box p {
+            color: var(--text-grey);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            height: 56px;
+            padding: 0 24px;
+            border: 2px solid var(--border-grey);
+            border-radius: 28px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--light-grey);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+
+        .modal-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .modal-content p {
+            color: var(--text-grey);
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .modal-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+        }
+
+        .modal-form input {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border: 1.5px solid var(--border-grey);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 15px;
+        }
+
+        .modal-form input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 32px; }
+            
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .cad-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px;
+            }
+            
+            h1 { font-size: 28px; }
+            h2 { font-size: 26px; }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cad-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-box {
+                padding: 40px 24px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            <ul class="nav-menu">
+                <li><a href="system-architecture.html">Systems</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="inquiry.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Resources</span>
+            </div>
+            <h1>Resources & Documentation Center</h1>
+            <p>Technical documentation, white papers, CAD libraries, and installation guides for commercial artificial horticulture systems. Professional resources for architects, engineers, and procurement teams.</p>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search documentation, white papers, CAD files...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Resource -->
+    <section class="featured-resource">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-preview fade-in">
+                    <span class="featured-badge">Most Downloaded</span>
+                    <div style="text-align: center;">
+                        <div style="font-size: 80px; margin-bottom: 20px;">📘</div>
+                        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 2px; text-transform: uppercase;">System Architecture White Paper</div>
+                    </div>
+                </div>
+                <div class="featured-content fade-in">
+                    <h2>Commercial Artificial Horticulture Systems: Technical Specification Guide</h2>
+                    <p>Comprehensive technical overview covering modular system design, load calculations, fire safety integration, and global compliance frameworks. Essential reading for project specification and procurement teams.</p>
+                    
+                    <ul class="featured-list">
+                        <li>Structural engineering principles and load-bearing calculations</li>
+                        <li>Fire safety integration and international certification standards</li>
+                        <li>Botanical assembly systems and modular replacement protocols</li>
+                        <li>Global deployment logistics and installation methodologies</li>
+                        <li>Lifecycle cost analysis and maintenance planning</li>
+                    </ul>
+
+                    <div class="featured-meta">
+                        <div class="featured-meta-item">
+                            <strong>48</strong>
+                            <span>Pages</span>
+                        </div>
+                        <div class="featured-meta-item">
+                            <strong>PDF</strong>
+                            <span>Format</span>
+                        </div>
+                        <div class="featured-meta-item">
+                            <strong>5.2 MB</strong>
+                            <span>Size</span>
+                        </div>
+                        <div class="featured-meta-item">
+                            <strong>2,400+</strong>
+                            <span>Downloads</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="openDownloadModal('System Architecture White Paper')">Download White Paper</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Documentation Library</h2>
+                <p>Download specifications, compliance documentation, and technical guides for your project requirements.</p>
+            </div>
+
+            <div class="category-tabs fade-in">
+                <button class="category-tab active">All Resources</button>
+                <button class="category-tab">White Papers</button>
+                <button class="category-tab">Compliance Docs</button>
+                <button class="category-tab">Installation Guides</button>
+                <button class="category-tab">Case Studies</button>
+                <button class="category-tab">BIM/CAD</button>
+            </div>
+
+            <div class="resources-grid">
+                <!-- Resource 1 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">PDF</span>
+                        <div class="file-icon">📄</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>White Paper</span>
+                            <span>24 Pages</span>
+                        </div>
+                        <h3>Fire Safety Engineering Guide</h3>
+                        <p>Comprehensive guide to fire ratings, testing standards, and compliance documentation for commercial installations.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">2.4 MB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Fire Safety Engineering Guide')">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 2 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">PDF</span>
+                        <div class="file-icon">📋</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>Compliance</span>
+                            <span>18 Pages</span>
+                        </div>
+                        <h3>Global Certification Matrix</h3>
+                        <p>Regional compliance requirements and certification standards for EU, US, Middle East, and Asia Pacific markets.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">1.8 MB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Global Certification Matrix')">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 3 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">ZIP</span>
+                        <div class="file-icon">🗂️</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>CAD Library</span>
+                            <span>156 Files</span>
+                        </div>
+                        <h3>Architectural Detail Library</h3>
+                        <p>CAD drawings, BIM objects, and technical details for structural integration and installation planning.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">45 MB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Architectural Detail Library')">Request Access</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 4 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">PDF</span>
+                        <div class="file-icon">🔧</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>Installation</span>
+                            <span>32 Pages</span>
+                        </div>
+                        <h3>Installation & Maintenance Manual</h3>
+                        <p>Step-by-step installation procedures, maintenance protocols, and troubleshooting guides for contractor teams.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">8.5 MB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Installation Manual')">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 5 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">XLS</span>
+                        <div class="file-icon">📊</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>Tool</span>
+                            <span>Template</span>
+                        </div>
+                        <h3>Project Estimation Calculator</h3>
+                        <p>Excel-based calculator for preliminary project costing, material lists, and labor estimates.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">850 KB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Project Estimation Calculator')">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource 6 -->
+                <div class="resource-card fade-in">
+                    <div class="resource-preview">
+                        <span class="file-type">PDF</span>
+                        <div class="file-icon">🏗️</div>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <span>Case Study</span>
+                            <span>12 Pages</span>
+                        </div>
+                        <h3>Global Retail Rollout: 45 Stores</h3>
+                        <p>Detailed case study of multi-country deployment, coordination strategies, and quality assurance protocols.</p>
+                        <div class="resource-footer">
+                            <span class="file-size">3.2 MB</span>
+                            <button class="btn btn-secondary btn-small" onclick="openDownloadModal('Retail Rollout Case Study')">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn btn-secondary">View All Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAD Library Section -->
+    <section class="cad-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>CAD & BIM Library</h2>
+                <p>Professional design files for architectural integration and technical specification.</p>
+            </div>
+
+            <div class="cad-grid fade-in">
+                <div class="cad-item">
+                    <div class="cad-icon">DWG</div>
+                    <h4>AutoCAD Files</h4>
+                    <p>2D plans, sections, and details</p>
+                    <a href="#">Browse Library →</a>
+                </div>
+                <div class="cad-item">
+                    <div class="cad-icon">RVT</div>
+                    <h4>Revit Families</h4>
+                    <p>BIM objects with parameters</p>
+                    <a href="#">Browse Library →</a>
+                </div>
+                <div class="cad-item">
+                    <div class="cad-icon">SKP</div>
+                    <h4>SketchUp Models</h4>
+                    <p>3D models for visualization</p>
+                    <a href="#">Browse Library →</a>
+                </div>
+                <div class="cad-item">
+                    <div class="cad-icon">IFC</div>
+                    <h4>IFC Format</h4>
+                    <p>Open BIM standard files</p>
+                    <a href="#">Browse Library →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Resources -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Video Resources</h2>
+                <p>Installation tutorials, system overviews, and project case study videos.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail">
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">12:45</span>
+                    </div>
+                    <div class="video-content">
+                        <h3>System Installation Overview</h3>
+                        <p>Complete walkthrough of modular system installation, from structural preparation to final botanical assembly.</p>
+                    </div>
+                </div>
+
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail">
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">8:30</span>
+                    </div>
+                    <div class="video-content">
+                        <h3>Fire Safety Integration</h3>
+                        <p>Technical explanation of fire-rated materials, testing procedures, and compliance documentation requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box fade-in">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to receive technical updates, new compliance standards, and industry insights for commercial artificial horticulture systems.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing. Please check your email to confirm your subscription.');">
+                    <input type="email" class="newsletter-input" placeholder="Enter your business email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p style="font-size: 12px; color: var(--text-grey); margin-top: 20px; margin-bottom: 0;">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 2px;">LAYSUN</h3>
+                    <p>LAYSUN delivers engineered artificial horticulture systems for commercial infrastructure worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">Technical Specs</a></li>
+                        <li><a href="#">CAD Library</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Installation Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Technical Support</a></li>
+                        <li><a href="#">Documentation Request</a></li>
+                        <li><a href="#">Training & Education</a></li>
+                        <li><a href="#">Global Offices</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LAYSUN Global Systems. All rights reserved.</p>
+                <p>Engineered for Commercial Infrastructure Worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDownloadModal()">×</button>
+            <h3>Download Resource</h3>
+            <p id="modalResourceName">Please provide your information to access this resource.</p>
+            <form class="modal-form" onsubmit="event.preventDefault(); closeDownloadModal(); alert('Thank you. Your download will begin shortly. A copy has also been sent to your email.');">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Business Email *</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Company Name *</label>
+                    <input type="text" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Download Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Category tabs
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Modal functions
+        function openDownloadModal(resourceName) {
+            document.getElementById('modalResourceName').textContent = `Please provide your information to download: ${resourceName}`;
+            document.getElementById('downloadModal').classList.add('active');
+        }
+
+        function closeDownloadModal() {
+            document.getElementById('downloadModal').classList.remove('active');
+        }
+
+        // Close modal on overlay click
+        document.getElementById('downloadModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDownloadModal();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
