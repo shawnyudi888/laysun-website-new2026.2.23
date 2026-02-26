@@ -3,42 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO 优化 (符合 File 6 要求) -->
-    <title>Solutions | Laysun - Artificial Horticulture for Commercial Spaces</title>
-    <meta name="description" content="Explore Laysun's tailored artificial horticulture solutions for hotels, retail, offices, and outdoor spaces. Real-world case studies included.">
-    <!-- 字体 (File 4) -->
+    <title>Commercial Application Systems | LAYSUN Global Artificial Horticulture</title>
+    <meta name="description" content="Engineered artificial horticulture systems for hospitality, retail, architecture and outdoor commercial environments. Fire-rated, scalable, compliance-ready infrastructure.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* ============================================
-           Laysun Solutions Page - 基于全站视觉与文案规范
-           包含: 解决方案概述、酒店案例、产品关联卡片 (File 1 & 5)
-           ============================================ */
-
-        /* --- 全局变量 (File 3 & 4) --- */
         :root {
-            --primary: #1F3D2B;      /* 深森林绿 */
-            --accent: #C5A059;       /* 香槟金 */
-            --bg-warm: #F9F8F5;       /* 暖白 */
-            --text-dark: #333333;     /* 炭灰 */
-            --text-light: #FFFFFF;
-            --text-gray: #6B6B6B;
-            --border-light: #EEEEEE;
-
-            --font-heading: 'Montserrat', 'Inter', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-
-            --space-xs: 8px;
-            --space-sm: 16px;
-            --space-md: 24px;
-            --space-lg: 32px;
-            --space-xl: 48px;
-            --space-2xl: 64px;
-
-            --container-max: 1440px;
-            --radius-btn: 4px;
-            --radius-card: 4px;
+            --primary-green: #1F4D36;
+            --primary-green-dark: #16392A;
+            --accent-gold: #C9A961;
+            --accent-gold-dark: #B8944F;
+            --white: #FFFFFF;
+            --light-grey: #F4F6F5;
+            --border-grey: #E2E5E3;
+            --text-dark: #222222;
+            --text-grey: #666666;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s ease;
+            --section-padding: 120px;
         }
 
         * {
@@ -47,179 +36,169 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
-            background-color: var(--bg-warm);
             line-height: 1.6;
-            font-size: 16px;
-            letter-spacing: 0.5px;
+            background: var(--white);
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
-        /* --- 字体系统 --- */
-        h1, h2, h3, .btn, .nav-link {
+        /* Typography */
+        h1, h2, h3, h4 {
             font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         h1 {
             font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            line-height: 1.2;
-            color: var(--text-light);
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         h2 {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            color: var(--text-dark);
+            font-size: 40px;
         }
 
         h3 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
-            color: var(--primary);
+            font-size: 26px;
+            font-weight: 600;
         }
 
-        /* --- UI 组件 --- */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: var(--radius-btn);
-            font-family: var(--font-heading);
-            font-size: 18px;
+        h4 {
+            font-size: 20px;
             font-weight: 600;
-            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 32px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            transition: var(--transition);
             cursor: pointer;
             border: none;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background-color: var(--primary);
-            color: var(--text-light);
+            background: var(--primary-green);
+            color: var(--white);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent);
-            transform: scale(0.98);
+            background: var(--primary-green-dark);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary-green);
+            border: 1.5px solid var(--primary-green);
         }
 
         .btn-secondary:hover {
-            background-color: var(--primary);
-            color: var(--text-light);
-            transform: scale(0.98);
+            background: var(--primary-green);
+            color: var(--white);
         }
 
-        /* 导航栏 (滚动变色) */
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-gold-dark);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+        .btn-white:hover {
+            background: var(--light-grey);
+        }
+
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
+            height: 80px;
             z-index: 1000;
-            padding: var(--space-sm) 0;
-            transition: background-color 0.3s ease;
-            background-color: transparent;
+            transition: var(--transition);
+            background: var(--primary-green);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .navbar.scrolled {
-            background-color: var(--bg-warm);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .navbar .container {
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
         }
 
-        .logo-svg {
-            display: block;
-            height: 40px;
-            width: auto;
-        }
-
-        .navbar .logo-svg path {
-            fill: var(--text-light);
-            transition: fill 0.3s ease;
-        }
-
-        .navbar.scrolled .logo-svg path {
-            fill: var(--primary);
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
         }
 
         .nav-menu {
             display: flex;
+            gap: 40px;
             list-style: none;
-            gap: var(--space-lg);
         }
 
-        .nav-link {
-            font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-light);
+        .nav-menu a {
+            color: var(--white);
             text-decoration: none;
-            padding-bottom: 4px;
-            transition: color 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
             position: relative;
+            padding: 5px 0;
         }
 
-        .navbar.scrolled .nav-link {
-            color: var(--primary);
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .nav-link::after {
+        .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+            background: var(--accent-gold);
+            transition: var(--transition);
         }
 
-        .nav-link:hover::after {
+        .nav-menu a:hover::after {
             width: 100%;
         }
 
-        /* 页面主要内容区 */
+        /* Page Header */
         .page-header {
-            height: 50vh;
-            min-height: 400px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%231F3D2B"/><circle cx="1200" cy="400" r="120" fill="%23C5A059" opacity="0.2"/><circle cx="500" cy="600" r="180" fill="%23FFFFFF" opacity="0.05"/><path d="M300,700 L450,500 L600,680 L750,550 L900,720 L1050,600 L1200,750 L1350,620 L1500,700 L1650,550 L1750,650" stroke="%23C5A059" stroke-width="2" opacity="0.3" fill="none"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 160px 0 80px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+            overflow: hidden;
         }
 
         .page-header::before {
@@ -227,476 +206,1266 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 40px;
         }
 
-        .page-header .container {
+        .page-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
             position: relative;
             z-index: 2;
         }
 
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--accent-gold);
+        }
+
         .page-header h1 {
-            margin-bottom: var(--space-sm);
+            margin-bottom: 20px;
+            max-width: 900px;
         }
 
         .page-header p {
-            font-size: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
             max-width: 700px;
+        }
+
+        /* Section Standard */
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 0 40px;
         }
 
-        .section {
-            padding: var(--space-2xl) 0;
-        }
-
-        .section-intro {
+        .section-header {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto var(--space-xl) auto;
+            margin: 0 auto 60px;
         }
 
-        .section-intro p {
-            color: var(--text-gray);
-            margin-top: var(--space-sm);
+        .section-header h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
         }
 
-        /* 解决方案卡片 (每个解决方案一个区块) */
-        .solution-block {
-            margin-bottom: var(--space-2xl);
-        }
-
-        .solution-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .solution-header {
-            margin-bottom: var(--space-lg);
-        }
-
-        .solution-header h3 {
-            font-size: 32px;
-            margin-bottom: var(--space-xs);
-        }
-
-        .solution-header p {
+        .section-header p {
+            color: var(--text-grey);
             font-size: 18px;
-            color: var(--text-gray);
+            line-height: 1.7;
         }
 
-        .product-grid {
+        /* Solutions Overview */
+        .solutions-overview {
+            background: var(--light-grey);
+            padding: 80px 0;
+        }
+
+        .overview-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin: var(--space-lg) 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
         }
 
-        .product-card {
-            background-color: white;
-            border-radius: var(--radius-card);
-            border: 1px solid var(--border-light);
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .overview-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
         }
 
-        .product-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+        .overview-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
         }
 
-        .product-image {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #e0e0e0;
-            background-image: linear-gradient(145deg, #2a5a3a, #b58a4b);
-            background-size: cover;
+        .overview-card.active {
+            border-color: var(--primary-green);
+            background: var(--primary-green);
+            color: var(--white);
         }
 
-        .product-info {
-            padding: var(--space-md);
+        .overview-card.active h3,
+        .overview-card.active p {
+            color: var(--white);
         }
 
-        .product-info h4 {
-            font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
-        }
-
-        .product-meta {
-            display: flex;
-            gap: var(--space-sm);
-            font-size: 14px;
-            color: var(--text-gray);
-            margin: var(--space-xs) 0;
-        }
-
-        .product-meta span {
+        .overview-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light-grey);
+            border-radius: 50%;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
+            font-size: 28px;
         }
 
-        .product-badge {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            font-size: 12px;
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin-right: var(--space-xs);
+        .overview-card.active .overview-icon {
+            background: var(--accent-gold);
         }
 
-        .case-link {
-            display: inline-block;
-            margin-top: var(--space-sm);
-            font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
+        .overview-card h3 {
+            color: var(--primary-green);
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
-        .case-link:hover {
-            border-bottom-color: var(--accent);
+        .overview-card p {
+            color: var(--text-grey);
+            font-size: 13px;
+            line-height: 1.5;
         }
 
-        /* 特色案例模块 (Luxury Hotel Los Angeles) */
-        .featured-case {
-            background-color: white;
-            border-radius: var(--radius-card);
-            border: 1px solid var(--border-light);
-            padding: var(--space-xl);
+        /* Industry Detail Sections */
+        .industry-detail {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .industry-detail:nth-child(even) {
+            background: var(--light-grey);
+        }
+
+        .industry-detail:last-of-type {
+            border-bottom: none;
+        }
+
+        .industry-header {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            gap: 60px;
             align-items: center;
-            margin: var(--space-2xl) 0;
+            margin-bottom: 60px;
         }
 
-        .case-image {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background-image: linear-gradient(135deg, #1F3D2B, #C5A059);
-            border-radius: var(--radius-card);
+        .industry-title h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
         }
 
-        .case-content h3 {
-            font-size: 28px;
-            margin-bottom: var(--space-sm);
+        .industry-title .subtitle {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
         }
 
-        .case-content p {
-            color: var(--text-gray);
-            margin-bottom: var(--space-md);
+        .industry-title > p {
+            color: var(--text-grey);
+            font-size: 17px;
+            line-height: 1.8;
         }
 
-        /* 信任条 (复用首页) */
-        .trust-strip {
+        .industry-visual {
+            height: 400px;
+            background: var(--primary-green);
+            border-radius: 20px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: var(--space-xl);
-            margin: var(--space-xl) 0;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            background-size: 20px;
+        }
+
+        /* Challenge-Approach Grid */
+        .challenge-approach {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .challenge-box, .approach-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .challenge-box h3, .approach-box h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 22px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .challenge-list, .approach-list {
+            list-style: none;
+        }
+
+        .challenge-list li, .approach-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .challenge-list li::before {
+            content: '▸';
+            color: #D64545;
+            font-weight: 700;
+        }
+
+        .approach-list li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        /* Technical Execution */
+        .technical-execution {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .technical-execution h3 {
+            color: var(--primary-green);
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 24px;
+            background: var(--light-grey);
+            border-radius: 12px;
+        }
+
+        .tech-value {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .tech-label {
+            font-size: 14px;
+            color: var(--text-grey);
+            font-weight: 500;
+        }
+
+        /* Procurement Advantage */
+        .procurement-advantage {
+            background: var(--primary-green);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--white);
+        }
+
+        .procurement-advantage h3 {
+            color: var(--white);
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .advantage-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .advantage-item p {
+            font-size: 13px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Case Study Highlight */
+        .case-highlight {
+            background: var(--light-grey);
+            padding: 80px 0;
+        }
+
+        .case-card-large {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .case-image-large {
+            background: var(--primary-green);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .case-content-large {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .case-meta-large {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
             flex-wrap: wrap;
         }
 
-        .trust-item {
+        .case-meta-item {
             display: flex;
-            align-items: center;
-            gap: var(--space-xs);
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .case-meta-item span {
+            font-size: 12px;
+            color: var(--text-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-meta-item strong {
+            font-size: 16px;
+            color: var(--primary-green);
+        }
+
+        .case-content-large h3 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+            font-size: 28px;
+        }
+
+        .case-content-large > p {
+            color: var(--text-grey);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* System Configurator CTA */
+        .configurator-cta {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 100px 0;
+        }
+
+        .configurator-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .configurator-content h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .configurator-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--white);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .comparison-table th {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 24px;
+            text-align: left;
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table td {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-grey);
+            background: var(--white);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: var(--light-grey);
+        }
+
+        .check-icon {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .cross-icon {
+            color: #D64545;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-top: 20px;
+            line-height: 1.8;
             font-size: 15px;
-            font-weight: 500;
-            color: var(--primary);
         }
 
-        .trust-item svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--accent);
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* 页脚 */
-        .footer {
-            background-color: var(--primary);
-            color: white;
-            padding: var(--space-xl) 0;
+        .footer-links ul {
+            list-style: none;
         }
 
-        .footer .logo-svg path {
-            fill: var(--accent);
+        .footer-links li {
+            margin-bottom: 12px;
         }
 
-        .footer a {
-            color: var(--bg-warm);
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
         }
 
-        /* 响应式 */
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            h1 { font-size: 42px; }
+            h1 { font-size: 36px; }
             h2 { font-size: 32px; }
-            h3 { font-size: 24px; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .featured-case { grid-template-columns: 1fr; }
+            
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .industry-header {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .challenge-approach {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .case-card-large {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 var(--space-sm); }
-            h1 { font-size: 32px; }
-            .nav-menu { display: none; }
-            .product-grid { grid-template-columns: 1fr; }
-            .trust-strip { gap: var(--space-md); }
+            :root {
+                --section-padding: 80px;
+            }
+            
+            h1 { font-size: 28px; }
+            h2 { font-size: 26px; }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 14px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 16px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 (与全局一致) -->
+
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html">
-                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
-                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
-                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
-                </svg>
-            </a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
             <ul class="nav-menu">
-                <li><a href="solutions.html" class="nav-link">SOLUTIONS</a></li>
-                <li><a href="products.html" class="nav-link">PRODUCTS</a></li>
-                <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
-                <li><a href="customization.html" class="nav-link">DESIGN</a></li>
-                <li><a href="about.html" class="nav-link">ABOUT</a></li>
-                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                <li><a href="system-architecture.html">Systems</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="index.html#cases">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- 页面标题区 -->
+    <!-- Page Header -->
     <header class="page-header">
-        <div class="container">
-            <h1>TAILORED SOLUTIONS FOR EVERY SPACE</h1>
-            <p>High-performance botanical solutions for commercial, retail, and outdoor applications worldwide.</p>
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Commercial Application Systems</span>
+            </div>
+            <h1>Commercial Application Systems</h1>
+            <p>Engineered solutions structured for specific commercial environments, ensuring optimal performance, regulatory compliance, and procurement efficiency.</p>
         </div>
     </header>
 
-    <!-- 主要内容 -->
-    <main>
-        <!-- 解决方案概述 (File 5) -->
-        <section class="section">
-            <div class="container">
-                <div class="section-intro">
-                    <h2>Our Capabilities</h2>
-                    <p>Laysun provides customized artificial horticulture solutions for a variety of commercial spaces, including hotels, retail stores, office buildings, exhibition halls, and more. Through highly realistic plants, trees, and greenery systems, we bring natural vitality and harmony to your space.</p>
-                </div>
-
-                <!-- 信任条 (体现专业认证) -->
-                <div class="trust-strip">
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" fill="none"/></svg>
-                        <span>NFPA 701 CERTIFIED</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 6V12L16 14" stroke="white" stroke-width="2" fill="none"/></svg>
-                        <span>UV RESISTANT</span>
-                    </div>
-                    <div class="trust-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M4 12H20" stroke="white" stroke-width="2"/><path d="M12 4V20" stroke="white" stroke-width="2"/></svg>
-                        <span>ZERO MAINTENANCE</span>
-                    </div>
-                </div>
-
-                <!-- 酒店解决方案 -->
-                <div class="solution-block">
-                    <div class="solution-header">
-                        <h3>Hotel & Hospitality</h3>
-                        <p>Elevate guest experiences with elegant, fire-safe greenery that requires no maintenance.</p>
-                    </div>
-                    <div class="product-grid">
-                        <!-- 产品卡片 1 -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #2a5a3a, #b58a4b);"></div>
-                            <div class="product-info">
-                                <h4>Signature Olive Tree 9ft</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                    <span>☀️ UV Resistant</span>
-                                </div>
-                                <div><span class="product-badge">Hotel Lobby</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <!-- 产品卡片 2 -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #2d5e44, #a77b3c);"></div>
-                            <div class="product-info">
-                                <h4>Palm Collection 12ft</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                </div>
-                                <div><span class="product-badge">Resort</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <!-- 产品卡片 3 -->
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #326b4a, #8f6935);"></div>
-                            <div class="product-info">
-                                <h4>Ficus Hedge Panels</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                    <span>☀️ UV Resistant</span>
-                                </div>
-                                <div><span class="product-badge">Restaurant</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 零售解决方案 -->
-                <div class="solution-block">
-                    <div class="solution-header">
-                        <h3>Retail & Commercial</h3>
-                        <p>Create inviting shopping environments with durable, retail-ready greenery.</p>
-                    </div>
-                    <div class="product-grid">
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #3b7555, #c29b5b);"></div>
-                            <div class="product-info">
-                                <h4>Topiary Spheres Set</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                </div>
-                                <div><span class="product-badge">Retail</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #b38d4d);"></div>
-                            <div class="product-info">
-                                <h4>Green Wall Modules</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                    <span>☀️ UV Resistant</span>
-                                </div>
-                                <div><span class="product-badge">Mall</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #a57842);"></div>
-                            <div class="product-info">
-                                <h4>Artificial Boxwood Hedges</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                </div>
-                                <div><span class="product-badge">Storefront</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 办公与户外解决方案 -->
-                <div class="solution-block">
-                    <div class="solution-header">
-                        <h3>Office & Outdoor</h3>
-                        <p>Bring biophilic design to workplaces and exteriors with weather-resistant plants.</p>
-                    </div>
-                    <div class="product-grid">
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #478f68, #dbb168);"></div>
-                            <div class="product-info">
-                                <h4>Large Ficus Trees 10ft+</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                    <span>☀️ UV Resistant</span>
-                                </div>
-                                <div><span class="product-badge">Outdoor</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #b38d4d);"></div>
-                            <div class="product-info">
-                                <h4>Planter Boxes with Grass</h4>
-                                <div class="product-meta">
-                                    <span>☀️ UV Resistant</span>
-                                </div>
-                                <div><span class="product-badge">Terrace</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-image" style="background-image: linear-gradient(145deg, #5da07e, #c7a159);"></div>
-                            <div class="product-info">
-                                <h4>Hanging Baskets</h4>
-                                <div class="product-meta">
-                                    <span>🔥 Fire Retardant</span>
-                                </div>
-                                <div><span class="product-badge">Office</span></div>
-                                <a href="#" class="case-link">View Case Study →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 特色案例：Luxury Hotel Los Angeles (File 1 & 5) -->
-                <div class="featured-case">
-                    <div class="case-image"></div>
-                    <div class="case-content">
-                        <h3>Luxury Hotel Los Angeles</h3>
-                        <p>Laysun provided custom 9ft olive trees for a five-star hotel in Los Angeles. The products meet California's strict fire safety standards and require zero maintenance. Since installation, the hotel lobby's greenery has remained in perfect condition, leaving a lasting impression on guests.</p>
-                        <a href="#" class="btn btn-primary">EXPLORE CASE STUDY</a>
-                    </div>
-                </div>
-
-                <!-- 额外的CTA -->
-                <div style="text-align: center; margin-top: var(--space-2xl);">
-                    <h3 style="margin-bottom: var(--space-md);">Ready to start your project?</h3>
-                    <a href="contact.html" class="btn btn-primary" style="margin-right: var(--space-sm);">CONTACT US</a>
-                    <a href="customization.html" class="btn btn-secondary">CUSTOMIZE YOUR SOLUTION</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 (与全局一致) -->
-    <footer class="footer">
+    <!-- Solutions Overview -->
+    <section class="solutions-overview">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
-                <!-- Logo 香槟金版本 -->
-                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
-                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
-                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
-                </svg>
-                <div style="display: flex; gap: var(--space-sm);">
-                    <a href="#" style="color: var(--accent);">in</a>
-                    <a href="#" style="color: var(--accent);">fb</a>
-                    <a href="#" style="color: var(--accent);">ig</a>
-                    <a href="#" style="color: var(--accent);">yt</a>
+            <div class="overview-grid">
+                <div class="overview-card active fade-in" onclick="scrollToSection('hospitality')">
+                    <div class="overview-icon">🏨</div>
+                    <h3>Hospitality</h3>
+                    <p>Hotels, resorts, cruise ships, and leisure environments requiring luxury-grade durability</p>
+                </div>
+                
+                <div class="overview-card fade-in" onclick="scrollToSection('retail')">
+                    <div class="overview-icon">🛍</div>
+                    <h3>Retail</h3>
+                    <p>Flagship stores, shopping centers, and high-traffic commercial spaces</p>
+                </div>
+                
+                <div class="overview-card fade-in" onclick="scrollToSection('architecture')">
+                    <div class="overview-icon">🏢</div>
+                    <h3>Architecture</h3>
+                    <p>Large-scale architectural integration and commercial building projects</p>
+                </div>
+                
+                <div class="overview-card fade-in" onclick="scrollToSection('outdoor')">
+                    <div class="overview-icon">🌳</div>
+                    <h3>Outdoor</h3>
+                    <p>Exterior commercial applications with UV and weather resistance</p>
                 </div>
             </div>
-            <hr style="border-color: var(--accent); opacity: 0.2; margin: var(--space-md) 0;">
-            <p style="text-align: center; color: var(--bg-warm);">&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Hospitality Section -->
+    <section class="industry-detail" id="hospitality">
+        <div class="container">
+            <div class="industry-header fade-in">
+                <div class="industry-title">
+                    <span class="subtitle">Application System 01</span>
+                    <h2>Hospitality Application System</h2>
+                    <p>Integrated vertical greenery and ceiling installations engineered for hotels, resorts, cruise ships, and leisure environments. Designed for 24/7 public access with minimal maintenance requirements.</p>
+                </div>
+                <div class="industry-visual">
+                    Hospitality Environment Visualization
+                </div>
+            </div>
+
+            <div class="challenge-approach fade-in">
+                <div class="challenge-box">
+                    <h3>Industry Challenge</h3>
+                    <ul class="challenge-list">
+                        <li>High guest traffic requiring durability and safety</li>
+                        <li>Strict fire safety regulations in public accommodations</li>
+                        <li>24/7 operation limiting maintenance windows</li>
+                        <li>Luxury aesthetic standards with consistent visual quality</li>
+                        <li>Humidity and temperature variations in atriums and lobbies</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-box">
+                    <h3>System Approach</h3>
+                    <ul class="approach-list">
+                        <li>Fire-rated assemblies meeting hospitality codes globally</li>
+                        <li>Modular replacement system for rapid maintenance</li>
+                        <li>UV-stable formulations preventing color degradation</li>
+                        <li>Structural engineering for high-ceiling atrium installations</li>
+                        <li>Anti-microbial treatments for high-humidity areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="technical-execution fade-in">
+                <h3>Technical Execution</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-value">B-s1,d0</div>
+                        <div class="tech-label">Fire Classification</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">5+ Years</div>
+                        <div class="tech-label">Color Stability</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">24h</div>
+                        <div class="tech-label">Module Replacement</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="procurement-advantage fade-in">
+                <h3>Procurement Advantage</h3>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">📋</div>
+                        <h4>Global Brand Standards</h4>
+                        <p>Consistent execution across international hotel chains</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🚚</div>
+                        <h4>Phased Delivery</h4>
+                        <p>Coordinated with renovation schedules and soft openings</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🔧</div>
+                        <h4>Maintenance Programs</h4>
+                        <p>Multi-year service contracts with replacement guarantees</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">📊</div>
+                        <h4>Total Cost Analysis</h4>
+                        <p>Lifecycle costing vs. natural plant maintenance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retail Section -->
+    <section class="industry-detail" id="retail">
+        <div class="container">
+            <div class="industry-header fade-in">
+                <div class="industry-title">
+                    <span class="subtitle">Application System 02</span>
+                    <h2>Retail Deployment System</h2>
+                    <p>Scalable botanical installations structured for flagship stores, shopping centers, and high-traffic retail environments. Engineered for rapid deployment across multiple locations.</p>
+                </div>
+                <div class="industry-visual">
+                    Retail Environment Visualization
+                </div>
+            </div>
+
+            <div class="challenge-approach fade-in">
+                <div class="challenge-box">
+                    <h3>Industry Challenge</h3>
+                    <ul class="challenge-list">
+                        <li>High foot traffic with potential for physical contact</li>
+                        <li>Rapid rollout requirements for new store openings</li>
+                        <li>Brand consistency across global locations</li>
+                        <li>Integration with VM (Visual Merchandising) schedules</li>
+                        <li>Seasonal refresh requirements and flexibility</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-box">
+                    <h3>System Approach</h3>
+                    <ul class="approach-list">
+                        <li>Impact-resistant structural design for public areas</li>
+                        <li>Standardized modules enabling rapid global replication</li>
+                        <li>Centralized manufacturing with regional distribution</li>
+                        <li>Tool-free installation for fast store setup</li>
+                        <li>Interchangeable components for seasonal updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="technical-execution fade-in">
+                <h3>Technical Execution</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-value">50kg/m²</div>
+                        <div class="tech-label">Impact Resistance</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">48h</div>
+                        <div class="tech-label">Installation Time</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">100%</div>
+                        <div class="tech-label">Brand Consistency</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="procurement-advantage fade-in">
+                <h3>Procurement Advantage</h3>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🌍</div>
+                        <h4>Global Rollout</h4>
+                        <p>Simultaneous deployment across multiple countries</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">📦</div>
+                        <h4>Retail Packaging</h4>
+                        <p>PDQ-ready packaging for efficient logistics</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🔄</div>
+                        <h4>Seasonal Flex</h4>
+                        <p>Modular swap-out for campaign updates</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">💰</div>
+                        <h4>Volume Pricing</h4>
+                        <p>Structured pricing for multi-store contracts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="industry-detail" id="architecture">
+        <div class="container">
+            <div class="industry-header fade-in">
+                <div class="industry-title">
+                    <span class="subtitle">Application System 03</span>
+                    <h2>Architectural Integration System</h2>
+                    <p>Custom-engineered horticulture assemblies designed to integrate into large-scale architectural projects, mixed-use developments, and commercial building infrastructure.</p>
+                </div>
+                <div class="industry-visual">
+                    Architectural Integration Visualization
+                </div>
+            </div>
+
+            <div class="challenge-approach fade-in">
+                <div class="challenge-box">
+                    <h3>Industry Challenge</h3>
+                    <ul class="challenge-list">
+                        <li>Complex structural integration with building systems</li>
+                        <li>Coordination with MEP (Mechanical/Electrical/Plumbing)</li>
+                        <li>Large-scale installation requiring crane access</li>
+                        <li>Long-term building lifecycle alignment (10+ years)</li>
+                        <li>Architectural specification and submittal requirements</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-box">
+                    <h3>System Approach</h3>
+                    <ul class="approach-list">
+                        <li>Structural engineering certification and PE stamps</li>
+                        <li>BIM (Building Information Modeling) integration</li>
+                        <li>Pre-fabricated large modules for efficient installation</li>
+                        <li>20-year durability specifications and warranties</li>
+                        <li>Complete submittal packages for architect review</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="technical-execution fade-in">
+                <h3>Technical Execution</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-value">12m+</div>
+                        <div class="tech-label">Height Capacity</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">20yr</div>
+                        <div class="tech-label">Design Life</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">BIM</div>
+                        <div class="tech-label">Integration Ready</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="procurement-advantage fade-in">
+                <h3>Procurement Advantage</h3>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🏗</div>
+                        <h4>GC Coordination</h4>
+                        <p>Direct contractor collaboration and site supervision</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">📐</div>
+                        <h4>Design Assist</h4>
+                        <p>Early involvement in design development phase</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">⚖️</div>
+                        <h4>Performance Spec</h4>
+                        <p>Specification writing for bid documents</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🛡️</div>
+                        <h4>Risk Transfer</h4>
+                        <p>Single-source responsibility for system performance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outdoor Section -->
+    <section class="industry-detail" id="outdoor">
+        <div class="container">
+            <div class="industry-header fade-in">
+                <div class="industry-title">
+                    <span class="subtitle">Application System 04</span>
+                    <h2>Outdoor Engineered System</h2>
+                    <p>UV-stable and weather-resistant artificial greenery systems designed for exterior commercial applications, including streetscapes, outdoor malls, and building facades.</p>
+                </div>
+                <div class="industry-visual">
+                    Outdoor Environment Visualization
+                </div>
+            </div>
+
+            <div class="challenge-approach fade-in">
+                <div class="challenge-box">
+                    <h3>Industry Challenge</h3>
+                    <ul class="challenge-list">
+                        <li>Extreme UV exposure causing color fading</li>
+                        <li>Temperature extremes (-20°C to +50°C)</li>
+                        <li>Wind loads and structural stability</li>
+                        <li>Rain, snow, and humidity degradation</li>
+                        <li>Public safety and liability concerns</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-box">
+                    <h3>System Approach</h3>
+                    <ul class="approach-list">
+                        <li>UV-stabilized polymers rated for 5000+ hours exposure</li>
+                        <li>Thermal expansion engineering for extreme climates</li>
+                        <li>Wind-resistant anchoring systems (up to 150km/h)</li>
+                        <li>Drainage-integrated modules preventing water retention</li>
+                        <li>Anti-bird and pest-resistant design features</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="technical-execution fade-in">
+                <h3>Technical Execution</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-value">5000h</div>
+                        <div class="tech-label">UV Resistance</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">-30°C</div>
+                        <div class="tech-label">Cold Climate</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-value">IP65</div>
+                        <div class="tech-label">Weather Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="procurement-advantage fade-in">
+                <h3>Procurement Advantage</h3>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">☀️</div>
+                        <h4>Climate Specific</h4>
+                        <p>Region-specific formulations for local conditions</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🔒</div>
+                        <h4>Theft Deterrent</h4>
+                        <p>Security fasteners and anti-tamper design</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🧽</div>
+                        <h4>Self-Cleaning</h4>
+                        <p>Rain-wash surface treatments reducing maintenance</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">📜</div>
+                        <h4>Warranty</h4>
+                        <p>5-year color retention guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Highlight -->
+    <section class="case-highlight">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Cross-Industry Project Example</h2>
+                <p>Integrated deployment demonstrating system adaptability across multiple application environments.</p>
+            </div>
+            
+            <div class="case-card-large fade-in">
+                <div class="case-image-large">
+                    Mixed-Use Development Visualization
+                </div>
+                <div class="case-content-large">
+                    <div class="case-meta-large">
+                        <div class="case-meta-item">
+                            <span>Location</span>
+                            <strong>Singapore</strong>
+                        </div>
+                        <div class="case-meta-item">
+                            <span>Type</span>
+                            <strong>Mixed-Use Development</strong>
+                        </div>
+                        <div class="case-meta-item">
+                            <span>Scale</span>
+                            <strong>12,000㎡ Total</strong>
+                        </div>
+                        <div class="case-meta-item">
+                            <span>Systems</span>
+                            <strong>4 Integrated</strong>
+                        </div>
+                    </div>
+                    
+                    <h3>Marina Bay Integrated Complex</h3>
+                    <p>Multi-system deployment combining Hospitality (hotel atriums), Retail (shopping podium), Architecture (office tower facades), and Outdoor (streetscape) applications. Unified procurement process with phased delivery coordinating with construction milestones.</p>
+                    
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary">View Full Case Study</a>
+                        <a href="#" class="btn btn-secondary">Download Project Brief</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>System Specification Comparison</h2>
+                <p>Technical parameters across application systems to guide specification decisions.</p>
+            </div>
+            
+            <table class="comparison-table fade-in">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Hospitality</th>
+                        <th>Retail</th>
+                        <th>Architecture</th>
+                        <th>Outdoor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fire Rating Standard</strong></td>
+                        <td>EN 13501-1 B-s1,d0</td>
+                        <td>NFPA 701 + ASTM E84</td>
+                        <td>Project-specific</td>
+                        <td>ASTM E84 Class A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UV Stability</strong></td>
+                        <td>Indoor only</td>
+                        <td>Indoor / Limited outdoor</td>
+                        <td>Indoor / Atrium</td>
+                        <td>5000h+ exposure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Impact Resistance</strong></td>
+                        <td>Standard</td>
+                        <td>High (public contact)</td>
+                        <td>Structural load</td>
+                        <td>Weather impact</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Installation Method</strong></td>
+                        <td>Ceiling / Wall</td>
+                        <td>Freestanding / Wall</td>
+                        <td>Structural integration</td>
+                        <td>Facade / Ground</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maintenance Access</strong></td>
+                        <td>Lift / Scaffold</td>
+                        <td>Floor level</td>
+                        <td>BMU / Scaffold</td>
+                        <td>Ground / Lift</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Warranty Period</strong></td>
+                        <td>3 years</td>
+                        <td>2 years</td>
+                        <td>5-10 years</td>
+                        <td>5 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Typical Lead Time</strong></td>
+                        <td>8-10 weeks</td>
+                        <td>6-8 weeks</td>
+                        <td>12-16 weeks</td>
+                        <td>8-10 weeks</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Configurator CTA -->
+    <section class="configurator-cta" id="contact">
+        <div class="container">
+            <div class="configurator-content fade-in">
+                <h2>Configure Your Application System</h2>
+                <p>Discuss your specific commercial environment requirements with our application engineering team. Receive a tailored system proposal including technical specifications, compliance documentation, and deployment timeline.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-gold">Request System Configuration</a>
+                    <a href="#" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Schedule Technical Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 2px;">LAYSUN</h3>
+                    <p>LAYSUN delivers engineered artificial horticulture systems for commercial infrastructure worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Application Systems</h4>
+                    <ul>
+                        <li><a href="#hospitality">Hospitality</a></li>
+                        <li><a href="#retail">Retail</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#outdoor">Outdoor</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">System Specifications</a></li>
+                        <li><a href="#">Installation Guides</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">BIM Objects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Application Engineering</a></li>
+                        <li><a href="#">Project Consultation</a></li>
+                        <li><a href="#">Global Offices</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LAYSUN Global Systems. All rights reserved.</p>
+                <p>Engineered for Commercial Infrastructure Worldwide</p>
+            </div>
         </div>
     </footer>
 
-    <!-- 滚动导航变色脚本 -->
     <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
+            
+            // Update active card
+            document.querySelectorAll('.overview-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
         });
     </script>
 </body>
