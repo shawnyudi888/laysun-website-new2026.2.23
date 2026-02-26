@@ -3,44 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO 优化 (符合 File 6) -->
-    <title>Products | Laysun - Artificial Plants for Commercial Spaces</title>
-    <meta name="description" content="Browse Laysun's collection of high-quality artificial plants, trees, and greenery for commercial spaces. Filter by UV resistance, fire retardant, size, and material.">
-    <!-- 字体 (File 4) -->
+    <title>Global Commercial Installations | LAYSUN Project Portfolio</title>
+    <meta name="description" content="Documented artificial horticulture system deployments across 35+ countries. Fire-rated commercial installations for hospitality, retail, and architectural projects.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* ============================================
-           Laysun Products Page - 产品列表页
-           基于 File 1, 3, 4, 5, 6 规范
-           ============================================ */
-
-        /* --- 全局变量 (File 3 & 4) --- */
         :root {
-            --primary: #1F3D2B;      /* 深森林绿 */
-            --accent: #C5A059;       /* 香槟金 */
-            --bg-warm: #F9F8F5;       /* 暖白 */
-            --text-dark: #333333;     /* 炭灰 */
-            --text-light: #FFFFFF;
-            --text-gray: #6B6B6B;
-            --border-light: #EEEEEE;
-            --input-bg: #F6F6F6;
-
-            --font-heading: 'Montserrat', 'Inter', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-
-            --space-xs: 8px;
-            --space-sm: 16px;
-            --space-md: 24px;
-            --space-lg: 32px;
-            --space-xl: 48px;
-            --space-2xl: 64px;
-
-            --container-max: 1440px;
-            --radius-btn: 4px;
-            --radius-card: 4px;
-            --radius-input: 4px;
+            --primary-green: #1F4D36;
+            --primary-green-dark: #16392A;
+            --accent-gold: #C9A961;
+            --accent-gold-dark: #B8944F;
+            --white: #FFFFFF;
+            --light-grey: #F4F6F5;
+            --border-grey: #E2E5E3;
+            --text-dark: #222222;
+            --text-grey: #666666;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s ease;
+            --section-padding: 120px;
         }
 
         * {
@@ -49,308 +36,169 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
-            background-color: var(--bg-warm);
             line-height: 1.6;
-            font-size: 16px;
-            letter-spacing: 0.5px;
+            background: var(--white);
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
-        /* --- 字体系统 --- */
-        h1, h2, h3, .btn, .nav-link, .filter-label {
+        /* Typography */
+        h1, h2, h3, h4 {
             font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         h1 {
             font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            line-height: 1.2;
-            color: var(--text-light);
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         h2 {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            color: var(--text-dark);
+            font-size: 40px;
         }
 
         h3 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
-            color: var(--primary);
+            font-size: 26px;
+            font-weight: 600;
         }
 
-        /* --- UI 组件 --- */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: var(--radius-btn);
-            font-family: var(--font-heading);
-            font-size: 18px;
+        h4 {
+            font-size: 20px;
             font-weight: 600;
-            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 32px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            transition: var(--transition);
             cursor: pointer;
             border: none;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background-color: var(--primary);
-            color: var(--text-light);
+            background: var(--primary-green);
+            color: var(--white);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent);
-            transform: scale(0.98);
+            background: var(--primary-green-dark);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary-green);
+            border: 1.5px solid var(--primary-green);
         }
 
         .btn-secondary:hover {
-            background-color: var(--primary);
-            color: var(--text-light);
-            transform: scale(0.98);
+            background: var(--primary-green);
+            color: var(--white);
         }
 
-        /* 筛选按钮样式 */
-        .filter-group {
-            margin-bottom: var(--space-lg);
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
         }
 
-        .filter-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .btn-gold:hover {
+            background: var(--accent-gold-dark);
         }
 
-        .filter-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-xs);
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-green);
         }
 
-        .filter-tag {
-            padding: 6px 16px;
-            background-color: white;
-            border: 1px solid var(--border-light);
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-dark);
-            cursor: pointer;
-            transition: all 0.2s;
+        .btn-white:hover {
+            background: var(--light-grey);
         }
 
-        .filter-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .filter-tag.active {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-
-        /* 产品卡片网格 */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-
-        .product-card {
-            background-color: white;
-            border-radius: var(--radius-card);
-            border: 1px solid var(--border-light);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
-        }
-
-        .product-image {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #e0e0e0;
-            background-image: linear-gradient(145deg, #2a5a3a, #b58a4b);
-            background-size: cover;
-        }
-
-        .product-info {
-            padding: var(--space-md);
-        }
-
-        .product-title {
-            font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
-        }
-
-        .product-meta {
-            display: flex;
-            gap: var(--space-sm);
-            font-size: 14px;
-            color: var(--text-gray);
-            margin: var(--space-xs) 0;
-        }
-
-        .product-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .product-badge {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            font-size: 12px;
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin-right: var(--space-xs);
-        }
-
-        .product-tags {
-            margin: var(--space-xs) 0;
-        }
-
-        .case-link {
-            display: inline-block;
-            margin-top: var(--space-sm);
-            font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .case-link:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        /* 导航栏 (滚动变色) */
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
+            height: 80px;
             z-index: 1000;
-            padding: var(--space-sm) 0;
-            transition: background-color 0.3s ease;
-            background-color: transparent;
+            transition: var(--transition);
+            background: var(--primary-green);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .navbar.scrolled {
-            background-color: var(--bg-warm);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .navbar .container {
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
         }
 
-        .logo-svg {
-            display: block;
-            height: 40px;
-            width: auto;
-        }
-
-        .navbar .logo-svg path {
-            fill: var(--text-light);
-            transition: fill 0.3s ease;
-        }
-
-        .navbar.scrolled .logo-svg path {
-            fill: var(--primary);
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
         }
 
         .nav-menu {
             display: flex;
+            gap: 40px;
             list-style: none;
-            gap: var(--space-lg);
         }
 
-        .nav-link {
-            font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-light);
+        .nav-menu a {
+            color: var(--white);
             text-decoration: none;
-            padding-bottom: 4px;
-            transition: color 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
             position: relative;
+            padding: 5px 0;
         }
 
-        .navbar.scrolled .nav-link {
-            color: var(--primary);
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .nav-link::after {
+        .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+            background: var(--accent-gold);
+            transition: var(--transition);
         }
 
-        .nav-link:hover::after {
+        .nav-menu a:hover::after {
             width: 100%;
         }
 
-        /* 页面头部 */
+        /* Page Header */
         .page-header {
-            height: 30vh;
-            min-height: 250px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%231F3D2B"/><circle cx="1200" cy="400" r="120" fill="%23C5A059" opacity="0.2"/><circle cx="500" cy="600" r="180" fill="%23FFFFFF" opacity="0.05"/><path d="M300,700 L450,500 L600,680 L750,550 L900,720 L1050,600 L1200,750 L1350,620 L1500,700 L1650,550 L1750,650" stroke="%23C5A059" stroke-width="2" opacity="0.3" fill="none"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 160px 0 80px;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+            overflow: hidden;
         }
 
         .page-header::before {
@@ -358,391 +206,1165 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 40px;
         }
 
-        .page-header .container {
+        .page-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
             position: relative;
             z-index: 2;
         }
 
-        .page-header h1 {
-            margin-bottom: var(--space-sm);
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            opacity: 0.8;
         }
 
-        /* 主要内容区 */
-        .section {
-            padding: var(--space-2xl) 0;
-        }
-
-        /* 筛选栏布局 */
-        .filter-bar {
-            background-color: white;
-            border-radius: var(--radius-card);
-            border: 1px solid var(--border-light);
-            padding: var(--space-lg);
-            margin-bottom: var(--space-xl);
-        }
-
-        /* 页脚 */
-        .footer {
-            background-color: var(--primary);
-            color: white;
-            padding: var(--space-xl) 0;
-        }
-
-        .footer .logo-svg path {
-            fill: var(--accent);
-        }
-
-        .footer a {
-            color: var(--bg-warm);
+        .breadcrumb a {
+            color: var(--white);
             text-decoration: none;
         }
 
-        /* 响应式 */
+        .breadcrumb span {
+            color: var(--accent-gold);
+        }
+
+        .page-header h1 {
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Standard */
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--light-grey);
+            padding: 30px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .filter-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--white);
+            border: 1.5px solid var(--border-grey);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-grey);
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        /* Projects Grid */
+        .projects-section {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border: 1px solid var(--border-grey);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            height: 240px;
+            background: var(--primary-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-country {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-year {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            color: var(--text-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .meta-value {
+            font-size: 14px;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .project-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .project-content > p {
+            color: var(--text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            background: var(--light-grey);
+            color: var(--primary-green);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Featured Project */
+        .featured-project {
+            background: var(--light-grey);
+            padding: 100px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .featured-image {
+            height: 500px;
+            background: var(--primary-green);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .featured-content h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .featured-content > p {
+            color: var(--text-grey);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .featured-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .featured-stat {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .featured-stat h4 {
+            color: var(--accent-gold);
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        .featured-stat span {
+            font-size: 14px;
+            color: var(--text-grey);
+        }
+
+        .featured-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .featured-details li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-grey);
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+        .featured-details li strong {
+            color: var(--primary-green);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 100px 0;
+        }
+
+        .map-section h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .map-container {
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+        }
+
+        .map-placeholder h3 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .map-placeholder p {
+            opacity: 0.7;
+            max-width: 500px;
+        }
+
+        .region-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .region-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .region-item h4 {
+            color: var(--accent-gold);
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .region-item span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Testimonial */
+        .testimonial-section {
+            background: var(--white);
+        }
+
+        .testimonial-card {
+            background: var(--light-grey);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            font-size: 24px;
+            line-height: 1.6;
+            color: var(--primary-green);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--primary-green);
+            font-size: 16px;
+        }
+
+        .author-info span {
+            color: var(--text-grey);
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
-            h1 { font-size: 42px; }
+            h1 { font-size: 36px; }
             h2 { font-size: 32px; }
-            h3 { font-size: 24px; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .featured-image {
+                height: 400px;
+            }
+            
+            .region-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 var(--space-sm); }
-            h1 { font-size: 32px; }
-            .nav-menu { display: none; }
-            .product-grid { grid-template-columns: 1fr; }
-            .filter-options { gap: 4px; }
-            .filter-tag { padding: 4px 12px; font-size: 13px; }
+            :root {
+                --section-padding: 80px;
+            }
+            
+            h1 { font-size: 28px; }
+            h2 { font-size: 26px; }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .region-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                padding: 40px 20px;
+            }
+            
+            .testimonial-quote {
+                font-size: 18px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 (与全局一致) -->
+
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html">
-                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
-                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
-                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
-                </svg>
-            </a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
             <ul class="nav-menu">
-                <li><a href="solutions.html" class="nav-link">SOLUTIONS</a></li>
-                <li><a href="products.html" class="nav-link">PRODUCTS</a></li>
-                <li><a href="projects.html" class="nav-link">PROJECTS</a></li>
-                <li><a href="customization.html" class="nav-link">DESIGN</a></li>
-                <li><a href="about.html" class="nav-link">ABOUT</a></li>
-                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                <li><a href="system-architecture.html">Systems</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- 页面标题区 -->
+    <!-- Page Header -->
     <header class="page-header">
-        <div class="container">
-            <h1>OUR PRODUCT COLLECTION</h1>
-            <p>High-performance artificial plants for commercial spaces</p>
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Global Commercial Installations</span>
+            </div>
+            <h1>Global Commercial Installations</h1>
+            <p>Documented project executions demonstrating system performance across diverse commercial environments, regulatory frameworks, and climate conditions worldwide.</p>
         </div>
     </header>
 
-    <!-- 主要内容 -->
-    <main>
-        <section class="section">
-            <div class="container">
-                <!-- 筛选栏 (File 1 要求) -->
-                <div class="filter-bar">
-                    <!-- 标准筛选: UV, Fire, Retail Ready -->
-                    <div class="filter-group">
-                        <span class="filter-label">STANDARD</span>
-                        <div class="filter-options" data-filter-type="standard">
-                            <span class="filter-tag" data-value="uv">UV Resistant</span>
-                            <span class="filter-tag" data-value="fire">Fire Retardant</span>
-                            <span class="filter-tag" data-value="retail-ready">Retail Ready</span>
-                        </div>
-                    </div>
-
-                    <!-- 应用筛选: Retail, Commercial, Outdoor -->
-                    <div class="filter-group">
-                        <span class="filter-label">APPLICATION</span>
-                        <div class="filter-options" data-filter-type="application">
-                            <span class="filter-tag" data-value="retail">Retail</span>
-                            <span class="filter-tag" data-value="commercial">Commercial</span>
-                            <span class="filter-tag" data-value="outdoor">Outdoor</span>
-                        </div>
-                    </div>
-
-                    <!-- 高度筛选: <4ft, 4–7ft, 7–10ft, 10ft+ -->
-                    <div class="filter-group">
-                        <span class="filter-label">HEIGHT</span>
-                        <div class="filter-options" data-filter-type="height">
-                            <span class="filter-tag" data-value="under4"><4ft</span>
-                            <span class="filter-tag" data-value="4-7">4–7ft</span>
-                            <span class="filter-tag" data-value="7-10">7–10ft</span>
-                            <span class="filter-tag" data-value="10plus">10ft+</span>
-                        </div>
-                    </div>
-
-                    <!-- 材质筛选: Silk/PE Blend, Polyester, PVC -->
-                    <div class="filter-group">
-                        <span class="filter-label">MATERIAL</span>
-                        <div class="filter-options" data-filter-type="material">
-                            <span class="filter-tag" data-value="silk-pe">Silk/PE Blend</span>
-                            <span class="filter-tag" data-value="polyester">Polyester</span>
-                            <span class="filter-tag" data-value="pvc">PVC</span>
-                        </div>
-                    </div>
-
-                    <!-- 按案例筛选 (File 1 新增) -->
-                    <div class="filter-group">
-                        <span class="filter-label">CASE STUDY</span>
-                        <div class="filter-options" data-filter-type="case">
-                            <span class="filter-tag" data-value="hotel">Hotel</span>
-                            <span class="filter-tag" data-value="retail">Retail Store</span>
-                            <span class="filter-tag" data-value="office">Office</span>
-                        </div>
-                    </div>
-
-                    <!-- 重置按钮 -->
-                    <div style="margin-top: var(--space-sm); text-align: right;">
-                        <button class="btn btn-secondary" id="resetFilters" style="padding: 6px 16px; font-size: 14px;">Reset Filters</button>
-                    </div>
-                </div>
-
-                <!-- 产品卡片网格 (静态示例数据) -->
-                <div class="product-grid" id="productGrid">
-                    <!-- 卡片 1: Signature Olive Tree 9ft (符合 File 5 文案) -->
-                    <div class="product-card" data-standard="fire uv" data-application="commercial hotel" data-height="7-10" data-material="silk-pe" data-case="hotel">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #1F3D2B, #C5A059);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Signature Olive Tree 9ft</h4>
-                            <div class="product-meta">
-                                <span>🔥 Fire</span>
-                                <span>☀️ UV</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Hotel</span>
-                                <span class="product-badge">Commercial</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 9ft | Silk/PE Blend</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-
-                    <!-- 卡片 2: Palm Collection 12ft -->
-                    <div class="product-card" data-standard="fire" data-application="commercial outdoor" data-height="10plus" data-material="polyester" data-case="resort">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #2d5e44, #a77b3c);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Palm Collection 12ft</h4>
-                            <div class="product-meta">
-                                <span>🔥 Fire</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Resort</span>
-                                <span class="product-badge">Outdoor</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 12ft | Polyester</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-
-                    <!-- 卡片 3: Ficus Hedge Panels -->
-                    <div class="product-card" data-standard="fire uv" data-application="commercial retail" data-height="4-7" data-material="pvc" data-case="retail">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #326b4a, #8f6935);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Ficus Hedge Panels</h4>
-                            <div class="product-meta">
-                                <span>🔥 Fire</span>
-                                <span>☀️ UV</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Retail</span>
-                                <span class="product-badge">Commercial</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 6ft | PVC</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-
-                    <!-- 卡片 4: Topiary Spheres Set -->
-                    <div class="product-card" data-standard="retail-ready" data-application="retail" data-height="under4" data-material="silk-pe" data-case="retail">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #3b7555, #c29b5b);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Topiary Spheres Set</h4>
-                            <div class="product-meta">
-                                <span>🛍️ Retail Ready</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Retail</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 3ft | Silk/PE Blend</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-
-                    <!-- 卡片 5: Green Wall Modules -->
-                    <div class="product-card" data-standard="fire uv" data-application="commercial office" data-height="4-7" data-material="polyester" data-case="office">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #3f7f5c, #b38d4d);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Green Wall Modules</h4>
-                            <div class="product-meta">
-                                <span>🔥 Fire</span>
-                                <span>☀️ UV</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Office</span>
-                                <span class="product-badge">Commercial</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 5ft | Polyester</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-
-                    <!-- 卡片 6: Large Ficus Trees 10ft+ -->
-                    <div class="product-card" data-standard="fire uv" data-application="outdoor commercial" data-height="10plus" data-material="pvc" data-case="hotel">
-                        <div class="product-image" style="background-image: linear-gradient(145deg, #478f68, #dbb168);"></div>
-                        <div class="product-info">
-                            <h4 class="product-title">Large Ficus Trees 10ft+</h4>
-                            <div class="product-meta">
-                                <span>🔥 Fire</span>
-                                <span>☀️ UV</span>
-                            </div>
-                            <div class="product-tags">
-                                <span class="product-badge">Outdoor</span>
-                                <span class="product-badge">Hotel</span>
-                            </div>
-                            <p style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">Height: 12ft | PVC</p>
-                            <a href="#" class="case-link">View Case Study →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 (与全局一致) -->
-    <footer class="footer">
+    <!-- Stats Bar -->
+    <div class="stats-bar">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
-                <!-- Logo 香槟金版本 -->
-                <svg class="logo-svg" width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 10 L30 30 L45 10 L60 30 L75 10 L90 30 L105 10" stroke="none" stroke-width="2" fill="currentColor"/>
-                    <rect x="10" y="10" width="8" height="20" fill="currentColor"/>
-                    <text x="20" y="25" font-family="Montserrat" font-size="14" fill="currentColor" font-weight="bold">LAY SUN</text>
-                </svg>
-                <div style="display: flex; gap: var(--space-sm);">
-                    <a href="#" style="color: var(--accent);">in</a>
-                    <a href="#" style="color: var(--accent);">fb</a>
-                    <a href="#" style="color: var(--accent);">ig</a>
-                    <a href="#" style="color: var(--accent);">yt</a>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>35+</h3>
+                    <p>Countries Served</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Commercial Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1.2M</h3>
+                    <p>Square Meters Deployed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>On-Time Delivery</p>
                 </div>
             </div>
-            <hr style="border-color: var(--accent); opacity: 0.2; margin: var(--space-md) 0;">
-            <p style="text-align: center; color: var(--bg-warm);">&copy; 2026 Laysun Co-Creation (Guangzhou) Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-container">
+            <span class="filter-label">Filter by:</span>
+            <button class="filter-btn active">All Projects</button>
+            <button class="filter-btn">Hospitality</button>
+            <button class="filter-btn">Retail</button>
+            <button class="filter-btn">Architecture</button>
+            <button class="filter-btn">Outdoor</button>
+            <button class="filter-btn">Europe</button>
+            <button class="filter-btn">Middle East</button>
+            <button class="filter-btn">Asia Pacific</button>
+        </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">Germany</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Retail Interior</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Retail Deployment</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">EN13501 Certified</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">3,200㎡</span>
+                            </div>
+                        </div>
+                        <h3>Frankfurt Flagship Store</h3>
+                        <p>Multi-level retail installation with integrated vertical systems and ceiling assemblies for luxury fashion brand.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Fire-Rated</span>
+                            <span class="project-tag">Modular</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">UAE</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Hospitality</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Hospitality Vertical</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">Civil Defense Approved</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">5,800㎡</span>
+                            </div>
+                        </div>
+                        <h3>Dubai Resort Atrium</h3>
+                        <p>Vertical greenery system spanning 12 floors in luxury hotel atrium with integrated irrigation management.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">High-Rise</span>
+                            <span class="project-tag">UV-Stable</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">USA</span>
+                        <span class="project-year">2022</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Architectural</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Architectural Integration</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">ASTM E84 Class A</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">2,400㎡</span>
+                            </div>
+                        </div>
+                        <h3>Los Angeles Office Tower</h3>
+                        <p>Facade-integrated system for commercial office building with custom structural engineering for seismic compliance.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Seismic</span>
+                            <span class="project-tag">Facade</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">Singapore</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Mixed-Use</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Multi-System</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">SCDF Approved</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">12,000㎡</span>
+                            </div>
+                        </div>
+                        <h3>Marina Bay Integrated Complex</h3>
+                        <p>Four-system deployment across hospitality, retail, office, and outdoor environments in single development.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Integrated</span>
+                            <span class="project-tag">Multi-System</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">UK</span>
+                        <span class="project-year">2022</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Retail</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Retail Deployment</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">BS 476 Certified</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">1,800㎡</span>
+                            </div>
+                        </div>
+                        <h3>London Department Store</h3>
+                        <p>Heritage building renovation with discreet structural integration preserving historical architectural elements.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Heritage</span>
+                            <span class="project-tag">Discrete</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <span class="project-country">Saudi Arabia</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Project Type</span>
+                                <span class="meta-value">Outdoor</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">System Used</span>
+                                <span class="meta-value">Outdoor Engineered</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Compliance</span>
+                                <span class="meta-value">SASO Standards</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Scale</span>
+                                <span class="meta-value">8,500㎡</span>
+                            </div>
+                        </div>
+                        <h3>Riyadh Entertainment District</h3>
+                        <p>Exterior streetscape installation with extreme heat resistance and sandstorm durability for desert climate.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Desert</span>
+                            <span class="project-tag">Extreme Climate</span>
+                        </div>
+                        <a href="#" class="project-link">View Project Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn btn-secondary">Load More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project">
+        <div class="container">
+            <div class="featured-grid">
+                <div class="featured-image fade-in">
+                    <span class="featured-badge">Featured Case Study</span>
+                </div>
+                <div class="featured-content fade-in">
+                    <h2>Global Retail Rollout: 45 Stores, 12 Countries</h2>
+                    <p>Standardized system deployment for international luxury brand across three continents, demonstrating scalable global execution capability with consistent quality and compliance adherence.</p>
+                    
+                    <div class="featured-stats">
+                        <div class="featured-stat">
+                            <h4>45</h4>
+                            <span>Locations</span>
+                        </div>
+                        <div class="featured-stat">
+                            <h4>12</h4>
+                            <span>Countries</span>
+                        </div>
+                        <div class="featured-stat">
+                            <h4>18</h4>
+                            <span>Months Duration</span>
+                        </div>
+                        <div class="featured-stat">
+                            <h4>100%</h4>
+                            <span>Brand Consistency</span>
+                        </div>
+                    </div>
+
+                    <ul class="featured-details">
+                        <li>
+                            <span>Project Type</span>
+                            <strong>Global Retail Rollout</strong>
+                        </li>
+                        <li>
+                            <span>Systems Deployed</span>
+                            <strong>Retail Deployment System</strong>
+                        </li>
+                        <li>
+                            <span>Compliance Scope</span>
+                            <strong>EU / US / Asia Pacific Standards</strong>
+                        </li>
+                        <li>
+                            <span>Total Area</span>
+                            <strong>22,500㎡ Combined</strong>
+                        </li>
+                        <li>
+                            <span>Key Challenge</span>
+                            <strong>Phased Coordination with Store Openings</strong>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Read Full Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Map -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="fade-in">Global Deployment Coverage</h2>
+            
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <h3>Interactive Project Map</h3>
+                    <p>Explore LAYSUN installations across 35+ countries. Filter by region, industry, or system type to find relevant project references.</p>
+                </div>
+            </div>
+
+            <div class="region-list fade-in">
+                <div class="region-item">
+                    <h4>18</h4>
+                    <span>Europe Projects</span>
+                </div>
+                <div class="region-item">
+                    <h4>12</h4>
+                    <span>Middle East Projects</span>
+                </div>
+                <div class="region-item">
+                    <h4>32</h4>
+                    <span>Asia Pacific Projects</span>
+                </div>
+                <div class="region-item">
+                    <h4>24</h4>
+                    <span>Americas Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-quote">"LAYSUN's systematic approach to global deployment allowed us to maintain consistent brand standards across 12 countries while adapting to local regulatory requirements. Their documentation and project management exceeded our expectations."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <strong>James Davidson</strong>
+                        <span>Global Director of Store Development, Luxury Retail Brand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="fade-in">Reference Projects in Your Region</h2>
+            <p class="fade-in">Connect with our project team to discuss relevant case studies and arrange site visits to completed installations in your market.</p>
+            <div class="fade-in" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn btn-gold">Request Project References</a>
+                <a href="#" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Schedule Site Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 2px;">LAYSUN</h3>
+                    <p>LAYSUN delivers engineered artificial horticulture systems for commercial infrastructure worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="#">Hospitality</a></li>
+                        <li><a href="#">Retail</a></li>
+                        <li><a href="#">Architecture</a></li>
+                        <li><a href="#">Outdoor</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Project References</a></li>
+                        <li><a href="#">Site Visit Request</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Project Team</a></li>
+                        <li><a href="#">Global Offices</a></li>
+                        <li><a href="#">Reference Request</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LAYSUN Global Systems. All rights reserved.</p>
+                <p>Engineered for Commercial Infrastructure Worldwide</p>
+            </div>
         </div>
     </footer>
 
-    <!-- 滚动导航变色脚本 + 筛选功能 -->
     <script>
-        // 导航栏滚动变色
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Filter button interaction
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
 
-        // 产品筛选功能 (基于数据属性)
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterTags = document.querySelectorAll('.filter-tag');
-            const productCards = document.querySelectorAll('.product-card');
-            const resetBtn = document.getElementById('resetFilters');
-
-            // 当前激活的筛选条件
-            let activeFilters = {
-                standard: null,
-                application: null,
-                height: null,
-                material: null,
-                case: null
-            };
-
-            // 为筛选标签添加点击事件
-            filterTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    const filterType = this.parentElement.getAttribute('data-filter-type');
-                    const value = this.getAttribute('data-value');
-
-                    // 切换激活状态
-                    const siblings = this.parentElement.querySelectorAll('.filter-tag');
-                    siblings.forEach(sib => sib.classList.remove('active'));
-
-                    if (activeFilters[filterType] === value) {
-                        // 如果点击已激活的标签，则取消激活
-                        activeFilters[filterType] = null;
-                    } else {
-                        this.classList.add('active');
-                        activeFilters[filterType] = value;
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
-
-                    // 执行筛选
-                    applyFilters();
-                });
+                }
             });
-
-            // 重置所有筛选
-            if (resetBtn) {
-                resetBtn.addEventListener('click', function() {
-                    // 清空所有激活状态
-                    filterTags.forEach(tag => tag.classList.remove('active'));
-                    activeFilters = {
-                        standard: null,
-                        application: null,
-                        height: null,
-                        material: null,
-                        case: null
-                    };
-                    applyFilters();
-                });
-            }
-
-            // 筛选逻辑
-            function applyFilters() {
-                productCards.forEach(card => {
-                    let show = true;
-
-                    // 检查每个筛选类型
-                    if (activeFilters.standard) {
-                        const standards = card.getAttribute('data-standard') || '';
-                        if (!standards.includes(activeFilters.standard)) show = false;
-                    }
-                    if (show && activeFilters.application) {
-                        const applications = card.getAttribute('data-application') || '';
-                        if (!applications.includes(activeFilters.application)) show = false;
-                    }
-                    if (show && activeFilters.height) {
-                        const height = card.getAttribute('data-height') || '';
-                        if (height !== activeFilters.height) show = false;
-                    }
-                    if (show && activeFilters.material) {
-                        const material = card.getAttribute('data-material') || '';
-                        if (material !== activeFilters.material) show = false;
-                    }
-                    if (show && activeFilters.case) {
-                        const caseVal = card.getAttribute('data-case') || '';
-                        if (!caseVal.includes(activeFilters.case)) show = false;
-                    }
-
-                    card.style.display = show ? 'block' : 'none';
-                });
-            }
         });
     </script>
 </body>
