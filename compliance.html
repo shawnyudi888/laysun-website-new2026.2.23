@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance & Certification Infrastructure | LAYSUN Global Systems</title>
+    <meta name="description" content="International fire safety, material safety and environmental compliance standards for engineered artificial horticulture systems. EN13501, ASTM E84, REACH, RoHS certified.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1F4D36;
+            --primary-green-dark: #16392A;
+            --accent-gold: #C9A961;
+            --accent-gold-dark: #B8944F;
+            --white: #FFFFFF;
+            --light-grey: #F4F6F5;
+            --border-grey: #E2E5E3;
+            --text-dark: #222222;
+            --text-grey: #666666;
+            --success-green: #2D6A4F;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s ease;
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 32px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-green-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border: 1.5px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-gold-dark);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+        .btn-white:hover {
+            background: var(--light-grey);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            transition: var(--transition);
+            background: var(--primary-green);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 40px;
+        }
+
+        .page-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--accent-gold);
+        }
+
+        .page-header h1 {
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Section Standard */
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Certification Hero Cards */
+        .cert-hero {
+            background: var(--light-grey);
+            padding: 80px 0;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .cert-card h3 {
+            color: var(--primary-green);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .cert-card .standard {
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .cert-card p {
+            color: var(--text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Fire Safety Deep Dive */
+        .fire-safety-section {
+            background: var(--white);
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .safety-content h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .safety-content > p {
+            color: var(--text-grey);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .test-parameter {
+            background: var(--light-grey);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .test-parameter h4 {
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .test-parameter p {
+            color: var(--text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .safety-visual {
+            background: var(--primary-green);
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--white);
+            height: 100%;
+        }
+
+        .safety-visual h3 {
+            color: var(--white);
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .rating-item:last-child {
+            border-bottom: none;
+        }
+
+        .rating-label {
+            font-size: 15px;
+        }
+
+        .rating-value {
+            background: var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Material Safety Section */
+        .material-safety {
+            background: var(--light-grey);
+        }
+
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .material-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .material-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(31, 77, 54, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-green);
+            font-size: 24px;
+        }
+
+        .material-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .material-card > p {
+            color: var(--text-grey);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .compliance-list {
+            list-style: none;
+        }
+
+        .compliance-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .compliance-list li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: 700;
+        }
+
+        /* Regional Compliance Map */
+        .regional-compliance {
+            background: var(--white);
+        }
+
+        .region-tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-grey);
+            padding-bottom: 20px;
+        }
+
+        .region-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1.5px solid var(--border-grey);
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-grey);
+            transition: var(--transition);
+        }
+
+        .region-tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .region-content {
+            display: none;
+        }
+
+        .region-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .region-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .region-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .region-info > p {
+            color: var(--text-grey);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .requirement-list {
+            list-style: none;
+        }
+
+        .requirement-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .req-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-grey);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .req-content h4 {
+            color: var(--primary-green);
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .req-content p {
+            color: var(--text-grey);
+            font-size: 14px;
+        }
+
+        .region-visual {
+            background: var(--light-grey);
+            border-radius: 20px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .cert-status {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .status-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+
+        .status-icon.pending {
+            background: var(--accent-gold);
+        }
+
+        .status-content h4 {
+            color: var(--primary-green);
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .status-content p {
+            color: var(--text-grey);
+            font-size: 13px;
+        }
+
+        /* Documentation Portal */
+        .doc-portal {
+            background: var(--primary-green-dark);
+            color: var(--white);
+        }
+
+        .doc-portal h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .doc-portal .section-header p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .doc-category {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .doc-category h3 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .doc-list {
+            list-style: none;
+        }
+
+        .doc-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .doc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .doc-list a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .doc-list a:hover {
+            color: var(--white);
+        }
+
+        .doc-tag {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Testing Process */
+        .testing-process {
+            background: var(--light-grey);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: var(--border-grey);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 3px solid var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .process-step h4 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-grey);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--white);
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .cta-box {
+            background: var(--primary-green);
+            border-radius: 20px;
+            padding: 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-box h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 32px; }
+            
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .safety-grid,
+            .region-detail {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .material-grid,
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .cta-box {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px;
+            }
+            
+            h1 { font-size: 28px; }
+            h2 { font-size: 26px; }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .region-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            <ul class="nav-menu">
+                <li><a href="system-architecture.html">Systems</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#cases">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Compliance Infrastructure</span>
+            </div>
+            <h1>Compliance & Certification Infrastructure</h1>
+            <p>Engineered to meet international fire safety, material safety and environmental standards required in commercial construction worldwide. Documentation packages available per project requirement.</p>
+        </div>
+    </header>
+
+    <!-- Certification Hero Cards -->
+    <section class="cert-hero">
+        <div class="container">
+            <div class="cert-grid">
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">EN</div>
+                    <h3>European Fire Standard</h3>
+                    <div class="standard">EN 13501-1</div>
+                    <p>Class B-s1,d0 fire classification for construction products. Reaction to fire testing for building elements.</p>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">ASTM</div>
+                    <h3>US Fire Standard</h3>
+                    <div class="standard">ASTM E84</div>
+                    <p>Surface burning characteristics of building materials. Class A rating for flame spread and smoke development.</p>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">REACH</div>
+                    <h3>Chemical Compliance</h3>
+                    <div class="standard">EC 1907/2006</div>
+                    <p>Registration, evaluation and authorization of chemicals in the European Union. SVHC compliance verified.</p>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">RoHS</div>
+                    <h3>Hazardous Substances</h3>
+                    <div class="standard">2011/65/EU</div>
+                    <p>Restriction of hazardous substances in electrical and electronic equipment. Lead, mercury, cadmium restricted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire Safety Deep Dive -->
+    <section class="fire-safety-section" id="fire-safety">
+        <div class="container">
+            <div class="safety-grid">
+                <div class="safety-content fade-in">
+                    <h2>Fire Safety Engineering</h2>
+                    <p>All fire-rated systems undergo rigorous third-party testing to ensure compliance with international building codes. Test reports and classification documents provided for regulatory submission.</p>
+                    
+                    <div class="test-parameter">
+                        <h4>Reaction to Fire Testing</h4>
+                        <p>EN 13501-1 evaluates ignitability, flame spread, heat release, smoke production, and burning droplets. LAYSUN systems achieve Class B-s1,d0 rating.</p>
+                    </div>
+                    
+                    <div class="test-parameter">
+                        <h4>Surface Burning Characteristics</h4>
+                        <p>ASTM E84 (Steiner Tunnel Test) measures flame spread index and smoke developed index. Systems rated Class A (FSI 0-25, SDI 0-450).</p>
+                    </div>
+                    
+                    <div class="test-parameter">
+                        <h4>Textile Fire Tests</h4>
+                        <p>NFPA 701 evaluates flame propagation of textiles and films. Method 1 for fabrics, Method 2 for vinyl-coated fabrics and barriers.</p>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary">Download Fire Test Reports</a>
+                </div>
+                
+                <div class="safety-visual fade-in">
+                    <h3>Fire Performance Ratings</h3>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Flame Spread Index</span>
+                        <span class="rating-value">Class A (≤25)</span>
+                    </div>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Smoke Developed Index</span>
+                        <span class="rating-value">Class A (≤450)</span>
+                    </div>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Heat Release Rate</span>
+                        <span class="rating-value">≤ 120 kW/m²</span>
+                    </div>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Ignitability</span>
+                        <span class="rating-value">FIGRA ≤ 120 W/s</span>
+                    </div>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Smoke Production</span>
+                        <span class="rating-value">S1 (Low Smoke)</span>
+                    </div>
+                    
+                    <div class="rating-item">
+                        <span class="rating-label">Burning Droplets</span>
+                        <span class="rating-value">d0 (None)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material Safety -->
+    <section class="material-safety">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Material Safety & Environmental Compliance</h2>
+                <p>Chemical composition verification and environmental impact assessment for safe deployment in commercial interiors.</p>
+            </div>
+            
+            <div class="material-grid">
+                <div class="material-card fade-in">
+                    <div class="material-icon">🧪</div>
+                    <h3>Chemical Compliance</h3>
+                    <p>Full material disclosure and chemical inventory management ensuring regulatory compliance across jurisdictions.</p>
+                    <ul class="compliance-list">
+                        <li>REACH SVHC screening</li>
+                        <li>RoHS restricted substances</li>
+                        <li>California Proposition 65</li>
+                        <li>CPSIA compliance (US)</li>
+                    </ul>
+                </div>
+                
+                <div class="material-card fade-in">
+                    <div class="material-icon">🌱</div>
+                    <h3>Environmental Standards</h3>
+                    <p>Sustainable material sourcing and lifecycle assessment supporting green building certification requirements.</p>
+                    <ul class="compliance-list">
+                        <li>ISO 14001 environmental mgmt</li>
+                        <li>LEED v4 material transparency</li>
+                        <li>BREEAM compliant materials</li>
+                        <li>Recyclability documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="material-card fade-in">
+                    <div class="material-icon">🏥</div>
+                    <h3>Indoor Air Quality</h3>
+                    <p>Low-emission material formulations ensuring healthy indoor environments for occupied commercial spaces.</p>
+                    <ul class="compliance-list">
+                        <li>CDPH Section 01350 (CA)</li>
+                        <li>LEED v4 low-emitting materials</li>
+                        <li>GREENGUARD Gold certified</li>
+                        <li>ISO 16000 VOC testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Compliance -->
+    <section class="regional-compliance" id="regional">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Regional Compliance Framework</h2>
+                <p>Pre-certified system configurations for major commercial markets with localized regulatory support.</p>
+            </div>
+            
+            <div class="region-tabs fade-in">
+                <button class="region-tab active" onclick="switchRegion('eu')">European Union</button>
+                <button class="region-tab" onclick="switchRegion('us')">North America</button>
+                <button class="region-tab" onclick="switchRegion('me')">Middle East</button>
+                <button class="region-tab" onclick="switchRegion('asia')">Asia Pacific</button>
+            </div>
+            
+            <!-- EU Content -->
+            <div id="eu" class="region-content active">
+                <div class="region-detail">
+                    <div class="region-info">
+                        <h3>European Union Standards</h3>
+                        <p>Comprehensive compliance with EU Construction Products Regulation (CPR) and chemical regulations. CE marking available for applicable system components.</p>
+                        
+                        <ul class="requirement-list">
+                            <li>
+                                <div class="req-icon">EN</div>
+                                <div class="req-content">
+                                    <h4>EN 13501-1 Fire Classification</h4>
+                                    <p>Reaction to fire classification for construction products and building elements</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">CE</div>
+                                <div class="req-content">
+                                    <h4>CE Marking (CPR 305/2011)</h4>
+                                    <p>Construction Products Regulation compliance for structural elements</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">RE</div>
+                                <div class="req-content">
+                                    <h4>REACH Regulation (EC 1907/2006)</h4>
+                                    <p>Chemical registration, evaluation, authorization and restriction</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">Ro</div>
+                                <div class="req-content">
+                                    <h4>RoHS Directive (2011/65/EU)</h4>
+                                    <p>Restriction of hazardous substances in electrical/electronic equipment</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-visual">
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>CE Marking Available</h4>
+                                <p>Structural components certified</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>DoP Documentation</h4>
+                                <p>Declaration of Performance prepared</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>Notified Body Testing</h4>
+                                <p>Third-party laboratory verified</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>ETA Assessment</h4>
+                                <p>European Technical Assessment pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- US Content -->
+            <div id="us" class="region-content">
+                <div class="region-detail">
+                    <div class="region-info">
+                        <h3>North American Standards</h3>
+                        <p>Compliance with US and Canadian building codes, fire safety standards, and material regulations. ICC-ES evaluation available.</p>
+                        
+                        <ul class="requirement-list">
+                            <li>
+                                <div class="req-icon">NF</div>
+                                <div class="req-content">
+                                    <h4>NFPA 701 Fire Tests</h4>
+                                    <p>Fire tests for flame-resistant textiles and films</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">AS</div>
+                                <div class="req-content">
+                                    <h4>ASTM E84 / UL 723</h4>
+                                    <p>Surface burning characteristics of building materials</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">CA</div>
+                                <div class="req-content">
+                                    <h4>California TB 117-2013</h4>
+                                    <p>Smolder resistant materials for upholstered furniture</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">UL</div>
+                                <div class="req-content">
+                                    <h4>UL Listed Components</h4>
+                                    <p>Safety certification for electrical and mechanical components</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-visual">
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>ASTM E84 Class A</h4>
+                                <p>Tested and certified</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>NFPA 701 Certified</h4>
+                                <p>Textile fire testing complete</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>California Compliance</h4>
+                                <p>TB 117-2013 applicable</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>ICC-ES Evaluation</h4>
+                                <p>Report pending for structural components</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Middle East Content -->
+            <div id="me" class="region-content">
+                <div class="region-detail">
+                    <div class="region-info">
+                        <h3>Middle East Standards</h3>
+                        <p>Civil Defense approvals and regional fire safety compliance for UAE, Saudi Arabia, and Qatar markets.</p>
+                        
+                        <ul class="requirement-list">
+                            <li>
+                                <div class="req-icon">CD</div>
+                                <div class="req-content">
+                                    <h4>UAE Civil Defense</h4>
+                                    <p>Fire safety approval for Dubai and Abu Dhabi</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">SA</div>
+                                <div class="req-content">
+                                    <h4>SASO Standards</h4>
+                                    <p>Saudi Standards, Metrology and Quality Organization</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">QB</div>
+                                <div class="req-content">
+                                    <h4>Qatar Civil Defense</h4>
+                                    <p>General Directorate of Civil Defense approval</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">BS</div>
+                                <div class="req-content">
+                                    <h4>BS 476 British Standards</h4>
+                                    <p>Fire tests on building materials and structures</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-visual">
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>Dubai Civil Defense</h4>
+                                <p>Approved for commercial use</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>Abu Dhabi DCD</h4>
+                                <p>Department of Culture and Tourism approved</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>Saudi SASO</h4>
+                                <p>SABER platform registration in progress</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>Qatar CD</h4>
+                                <p>Approval application submitted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Asia Pacific Content -->
+            <div id="asia" class="region-content">
+                <div class="region-detail">
+                    <div class="region-info">
+                        <h3>Asia Pacific Standards</h3>
+                        <p>Multi-jurisdictional compliance for Singapore, Hong Kong, Australia, and China markets with localized testing.</p>
+                        
+                        <ul class="requirement-list">
+                            <li>
+                                <div class="req-icon">SG</div>
+                                <div class="req-content">
+                                    <h4>SCDF Singapore</h4>
+                                    <p>Singapore Civil Defense Force fire safety standards</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">HK</div>
+                                <div class="req-content">
+                                    <h4>HKFSD Hong Kong</h4>
+                                    <p>Hong Kong Fire Services Department requirements</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">AU</div>
+                                <div class="req-content">
+                                    <h4>AS/NZS Standards</h4>
+                                    <p>Australian/New Zealand fire safety standards</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="req-icon">CN</div>
+                                <div class="req-content">
+                                    <h4>GB Standards China</h4>
+                                    <p>Guobiao national standards for fire safety</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-visual">
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>Singapore BCA</h4>
+                                <p>Building and Construction Authority approved</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon">✓</div>
+                            <div class="status-content">
+                                <h4>Hong Kong FSD</h4>
+                                <p>Fire Services Department compliant</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>Australia NATA</h4>
+                                <p>Testing laboratory accreditation pending</p>
+                            </div>
+                        </div>
+                        <div class="cert-status">
+                            <div class="status-icon pending">⏱</div>
+                            <div class="status-content">
+                                <h4>China GB 8624</h4>
+                                <p>Classification for burning behavior pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Portal -->
+    <section class="doc-portal">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Compliance Documentation Portal</h2>
+                <p>Access technical documentation, test reports, and certification packages for regulatory submission and project approval.</p>
+            </div>
+            
+            <div class="doc-grid fade-in">
+                <div class="doc-category">
+                    <h3>Fire Safety Reports</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">EN 13501-1 Test Report <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">ASTM E84 Test Results <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">NFPA 701 Certification <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">BS 476 Fire Tests <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">Fire Classification Summary <span class="doc-tag">PDF</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="doc-category">
+                    <h3>Material Safety Docs</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">REACH Compliance Statement <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">RoHS Declaration <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">Material Safety Data Sheets <span class="doc-tag">ZIP</span></a></li>
+                        <li><a href="#">VOC Test Reports <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">Chemical Inventory <span class="doc-tag">XLS</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="doc-category">
+                    <h3>Regional Certificates</h3>
+                    <ul class="doc-list">
+                        <li><a href="#">CE Marking Certificates <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">DoP Declaration <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">UAE Civil Defense Approval <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">Singapore BCA Approval <span class="doc-tag">PDF</span></a></li>
+                        <li><a href="#">ISO 14001 Certificate <span class="doc-tag">PDF</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn btn-white">Request Custom Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Process -->
+    <section class="testing-process">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Testing & Verification Process</h2>
+                <p>Rigorous quality assurance protocol ensuring consistent compliance across all system components and production batches.</p>
+            </div>
+            
+            <div class="process-steps fade-in">
+                <div class="process-step">
+                    <div class="step-icon">1</div>
+                    <h4>Material Screening</h4>
+                    <p>Incoming raw material testing for chemical composition and physical properties</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">2</div>
+                    <h4>Production Testing</h4>
+                    <p>In-process quality control and batch sampling during manufacturing</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">3</div>
+                    <h4>Third-Party Lab</h4>
+                    <p>Independent laboratory testing for fire performance and safety standards</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">4</div>
+                    <h4>Documentation</h4>
+                    <p>Certification issuance and compliance documentation package preparation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-box fade-in">
+                <h2>Need Compliance Documentation?</h2>
+                <p>Our technical team provides comprehensive documentation packages tailored to your project's regulatory requirements and jurisdiction.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-gold">Request Documentation Package</a>
+                    <a href="#" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Contact Compliance Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 2px;">LAYSUN</h3>
+                    <p>LAYSUN delivers engineered artificial horticulture systems for commercial infrastructure worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Compliance</h4>
+                    <ul>
+                        <li><a href="#">Fire Safety</a></li>
+                        <li><a href="#">Material Safety</a></li>
+                        <li><a href="#">Regional Standards</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Test Reports</a></li>
+                        <li><a href="#">Certificates</a></li>
+                        <li><a href="#">Technical Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Compliance Team</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                        <li><a href="#">Documentation Request</a></li>
+                        <li><a href="#">Global Offices</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LAYSUN Global Systems. All rights reserved.</p>
+                <p>Engineered for Commercial Infrastructure Worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Region Tab Switching
+        function switchRegion(regionId) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.region-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all content
+            document.querySelectorAll('.region-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Add active class to corresponding content
+            document.getElementById(regionId).classList.add('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
