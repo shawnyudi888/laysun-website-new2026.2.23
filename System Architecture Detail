@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture Framework | LAYSUN Global Artificial Horticulture Systems</title>
+    <meta name="description" content="Technical architecture of LAYSUN engineered horticulture systems: Structural Core, Botanical Assembly, Fire Safety Integration, and Deployment Protocols for commercial projects.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1F4D36;
+            --primary-green-dark: #16392A;
+            --accent-gold: #C9A961;
+            --accent-gold-dark: #B8944F;
+            --white: #FFFFFF;
+            --light-grey: #F4F6F5;
+            --border-grey: #E2E5E3;
+            --text-dark: #222222;
+            --text-grey: #666666;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --transition: all 0.4s ease;
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 32px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-green-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border: 1.5px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-gold-dark);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            transition: var(--transition);
+            background: var(--primary-green);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 40px;
+        }
+
+        .page-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--accent-gold);
+        }
+
+        .page-header h1 {
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        /* Section Standard */
+        section {
+            padding: var(--section-padding) 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* System Detail Sections */
+        .system-detail {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .system-detail:last-of-type {
+            border-bottom: none;
+        }
+
+        .system-detail:nth-child(even) {
+            background: var(--light-grey);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .detail-grid.reverse {
+            direction: rtl;
+        }
+
+        .detail-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .detail-content h2 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .detail-content .subtitle {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .detail-content > p {
+            color: var(--text-grey);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .spec-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .spec-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .spec-list li::before {
+            content: '—';
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .detail-visual {
+            position: relative;
+            height: 500px;
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--border-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .detail-visual::before {
+            content: attr(data-label);
+            position: absolute;
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--text-grey);
+            text-transform: uppercase;
+        }
+
+        .technical-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(31, 77, 54, 0.1);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Integration Flow */
+        .integration-flow {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 100px 0;
+        }
+
+        .integration-flow h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .flow-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: rgba(201, 169, 97, 0.3);
+            z-index: 1;
+        }
+
+        .flow-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            color: var(--white);
+        }
+
+        .flow-step h4 {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .flow-step p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Technical Specs Table */
+        .tech-specs {
+            background: var(--white);
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .specs-table th {
+            background: var(--light-grey);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .specs-table td {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .specs-table tr:hover td {
+            background: var(--light-grey);
+        }
+
+        /* Compliance Matrix */
+        .compliance-matrix {
+            background: var(--light-grey);
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .matrix-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .matrix-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 22px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .matrix-list {
+            list-style: none;
+        }
+
+        .matrix-list li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .matrix-list li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: var(--white);
+            border-top: 1px solid var(--border-grey);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .download-card {
+            background: var(--light-grey);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .download-card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        .download-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .download-info h4 {
+            color: var(--primary-green);
+            margin-bottom: 8px;
+        }
+
+        .download-info p {
+            color: var(--text-grey);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .download-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-grey);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green-dark);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 32px; }
+            
+            .detail-grid,
+            .detail-grid.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 40px;
+            }
+            
+            .detail-grid.reverse > * {
+                direction: ltr;
+            }
+            
+            .flow-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .flow-steps::before {
+                display: none;
+            }
+            
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px;
+            }
+            
+            h1 { font-size: 28px; }
+            h2 { font-size: 26px; }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs-table {
+                font-size: 14px;
+            }
+            
+            .specs-table th,
+            .specs-table td {
+                padding: 12px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LAYSUN</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#systems">Systems</a></li>
+                <li><a href="index.html#compliance">Compliance</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#cases">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>System Architecture</span>
+            </div>
+            <h1>System Architecture Framework</h1>
+            <p>Modular engineering infrastructure designed for scalable commercial deployment. Each system component is developed to integrate seamlessly with global building standards and procurement frameworks.</p>
+        </div>
+    </header>
+
+    <!-- Structural Core System -->
+    <section class="system-detail" id="structural-core">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content fade-in">
+                    <span class="subtitle">Module 01</span>
+                    <h2>Structural Core System</h2>
+                    <p>Load-bearing support structures engineered for long-term stability in commercial interiors and exterior environments. Designed to integrate with standard architectural frameworks while maintaining independent structural integrity.</p>
+                    
+                    <ul class="spec-list">
+                        <li>Steel-reinforced anchoring systems rated for commercial ceiling loads</li>
+                        <li>Modular frame assemblies supporting variable density configurations</li>
+                        <li>Corrosion-resistant coatings for high-humidity environments</li>
+                        <li>Seismic compliance options for earthquake-prone regions</li>
+                        <li>Concealed mounting systems preserving architectural aesthetics</li>
+                    </ul>
+                    
+                    <div class="technical-badge">
+                        <span>Load Capacity: 50kg/m² | Standard</span>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Request Technical Specifications</a>
+                </div>
+                <div class="detail-visual fade-in" data-label="Structural Framework Diagram">
+                    <!-- Engineering diagram placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botanical Assembly System -->
+    <section class="system-detail" id="botanical-assembly">
+        <div class="container">
+            <div class="detail-grid reverse">
+                <div class="detail-content fade-in">
+                    <span class="subtitle">Module 02</span>
+                    <h2>Botanical Assembly System</h2>
+                    <p>Modular foliage components designed for controlled density, replacement flexibility and visual consistency at scale. Engineered for rapid installation and long-term maintenance efficiency.</p>
+                    
+                    <ul class="spec-list">
+                        <li>Interchangeable foliage modules with standardized connection points</li>
+                        <li>UV-stabilized polymers rated for 2000+ hours outdoor exposure</li>
+                        <li>Inherently fire-retardant material formulations available</li>
+                        <li>Density calibration for optimal visual impact per square meter</li>
+                        <li>Tool-free replacement protocols reducing maintenance downtime</li>
+                    </ul>
+                    
+                    <div class="technical-badge">
+                        <span>Module Standard: 600mm x 600mm | Custom sizes available</span>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">View Assembly Options</a>
+                </div>
+                <div class="detail-visual fade-in" data-label="Modular Assembly Detail">
+                    <!-- Assembly detail placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire & Safety Integration -->
+    <section class="system-detail" id="fire-safety">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content fade-in">
+                    <span class="subtitle">Module 03</span>
+                    <h2>Fire & Safety Integration</h2>
+                    <p>Certified fire-rated materials integrated into structural assemblies to comply with international building regulations. Documentation packages support regulatory approval processes across jurisdictions.</p>
+                    
+                    <ul class="spec-list">
+                        <li>EN 13501-1 Class B-s1,d0 fire classification available</li>
+                        <li>ASTM E84 Class A surface burning characteristics</li>
+                        <li>NFPA 701 certified textile components</li>
+                        <li>Low smoke emission formulations for enclosed spaces</li>
+                        <li>Third-party testing documentation for all fire-rated systems</li>
+                    </ul>
+                    
+                    <div class="technical-badge">
+                        <span>Certification: Multi-region compliance standard</span>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Download Fire Test Reports</a>
+                </div>
+                <div class="detail-visual fade-in" data-label="Fire Safety Integration Detail">
+                    <!-- Safety integration placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment & Maintenance -->
+    <section class="system-detail" id="deployment">
+        <div class="container">
+            <div class="detail-grid reverse">
+                <div class="detail-content fade-in">
+                    <span class="subtitle">Module 04</span>
+                    <h2>Deployment & Maintenance Protocol</h2>
+                    <p>Standardized installation and maintenance procedures supporting global project execution and lifecycle management. Designed to minimize on-site complexity while ensuring consistent quality outcomes.</p>
+                    
+                    <ul class="spec-list">
+                        <li>Pre-engineered installation sequences reducing on-site labor</li>
+                        <li>Project-specific installation manuals with structural drawings</li>
+                        <li>Remote technical support during installation phase</li>
+                        <li>Scheduled maintenance protocols with replacement part availability</li>
+                        <li>Lifecycle cost analysis documentation for procurement teams</li>
+                    </ul>
+                    
+                    <div class="technical-badge">
+                        <span>Installation Rate: 100㎡ per day | Standard crew</span>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Request Deployment Guide</a>
+                </div>
+                <div class="detail-visual fade-in" data-label="Deployment Protocol Diagram">
+                    <!-- Deployment diagram placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Integration Flow -->
+    <section class="integration-flow">
+        <div class="container">
+            <h2 class="fade-in">System Integration Process</h2>
+            
+            <div class="flow-steps fade-in">
+                <div class="flow-step">
+                    <div class="step-number">01</div>
+                    <h4>Project Assessment</h4>
+                    <p>Technical review of architectural plans and compliance requirements</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">02</div>
+                    <h4>System Design</h4>
+                    <p>Custom configuration of modules to meet project specifications</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">03</div>
+                    <h4>Production</h4>
+                    <p>Manufacturing with quality control and compliance documentation</p>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">04</div>
+                    <h4>Global Deployment</h4>
+                    <p>Coordinated logistics and on-site installation support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="tech-specs">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Specifications</h2>
+                <p>Standard system parameters for procurement and engineering review. Custom specifications available for large-scale projects.</p>
+            </div>
+            
+            <table class="specs-table fade-in">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Standard Range</th>
+                        <th>Options</th>
+                        <th>Compliance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Height Range</td>
+                        <td>1.2m – 12m</td>
+                        <td>Custom engineering above 12m</td>
+                        <td>Structural engineer certified</td>
+                    </tr>
+                    <tr>
+                        <td>Fire Rating</td>
+                        <td>Standard / Fire-Retardant</td>
+                        <td>EN 13501 / ASTM E84 / NFPA 701</td>
+                        <td>Third-party tested</td>
+                    </tr>
+                    <tr>
+                        <td>UV Stability</td>
+                        <td>Indoor / Outdoor 2000h+</td>
+                        <td>Extended 5000h+ for extreme climates</td>
+                        <td>ISO 4892-2 tested</td>
+                    </tr>
+                    <tr>
+                        <td>Installation Type</td>
+                        <td>Ceiling / Wall / Freestanding</td>
+                        <td>Custom structural integration</td>
+                        <td>Local building code</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance Level</td>
+                        <td>Minimal / Low</td>
+                        <td>Scheduled replacement programs</td>
+                        <td>Lifecycle guaranteed</td>
+                    </tr>
+                    <tr>
+                        <td>Project Scale</td>
+                        <td>100㎡ – 50,000㎡+</td>
+                        <td>Multi-location rollouts</td>
+                        <td>Global execution capability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Compliance Matrix -->
+    <section class="compliance-matrix">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Regional Compliance Matrix</h2>
+                <p>Pre-certified system configurations for major commercial markets. Documentation packages available for regulatory submission.</p>
+            </div>
+            
+            <div class="matrix-grid">
+                <div class="matrix-card fade-in">
+                    <h3>European Union</h3>
+                    <ul class="matrix-list">
+                        <li>EN 13501-1 Fire Classification</li>
+                        <li>CE Marking Compliance</li>
+                        <li>REACH Chemical Regulation</li>
+                        <li>RoHS Hazardous Substances</li>
+                        <li>DIN Standards Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="matrix-card fade-in">
+                    <h3>North America</h3>
+                    <ul class="matrix-list">
+                        <li>ASTM E84 Surface Burning</li>
+                        <li>NFPA 701 Fire Tests</li>
+                        <li>California TB 117-2013</li>
+                        <li>UL Listed Components</li>
+                        <li>ADA Compliance Available</li>
+                    </ul>
+                </div>
+                
+                <div class="matrix-card fade-in">
+                    <h3>Middle East & Asia</h3>
+                    <ul class="matrix-list">
+                        <li>Civil Defense Approval (UAE)</li>
+                        <li>SASO Standards (Saudi)</li>
+                        <li>GB Standards (China)</li>
+                        <li>BCA Approval (Singapore)</li>
+                        <li>Custom regional testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Download -->
+    <section class="download-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Documentation</h2>
+                <p>Comprehensive system documentation for procurement teams, architects, and project managers.</p>
+            </div>
+            
+            <div class="download-grid fade-in">
+                <div class="download-card">
+                    <div class="download-icon">PDF</div>
+                    <div class="download-info">
+                        <h4>System Architecture White Paper</h4>
+                        <p>Complete technical overview of modular system design, load calculations, and integration protocols.</p>
+                        <div class="download-meta">
+                            <span>📄 24 pages</span>
+                            <span>⬇ 2.4 MB</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 16px; height: 40px; padding: 0 24px; font-size: 13px;">Download PDF</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">DWG</div>
+                    <div class="download-info">
+                        <h4>CAD Detail Library</h4>
+                        <p>Architectural CAD files for structural integration, including standard connection details and specifications.</p>
+                        <div class="download-meta">
+                            <span>📁 156 files</span>
+                            <span>⬇ 45 MB</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 16px; height: 40px; padding: 0 24px; font-size: 13px;">Request Access</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">DOC</div>
+                    <div class="download-info">
+                        <h4>Compliance Certification Guide</h4>
+                        <p>Comprehensive guide to international fire ratings, material safety standards, and testing protocols.</p>
+                        <div class="download-meta">
+                            <span>📄 18 pages</span>
+                            <span>⬇ 1.8 MB</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 16px; height: 40px; padding: 0 24px; font-size: 13px;">Download PDF</a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">XLS</div>
+                    <div class="download-info">
+                        <h4>Project Estimation Tool</h4>
+                        <p>Excel-based calculator for preliminary project costing, including material lists and labor estimates.</p>
+                        <div class="download-meta">
+                            <span>📊 Template</span>
+                            <span>⬇ 850 KB</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 16px; height: 40px; padding: 0 24px; font-size: 13px;">Download XLS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="fade-in">Configure Your System Architecture</h2>
+            <p class="fade-in">Connect with our engineering team to discuss project-specific requirements and receive a detailed system proposal.</p>
+            <div class="fade-in" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn btn-gold">Submit Project Requirements</a>
+                <a href="#" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Schedule Technical Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 2px;">LAYSUN</h3>
+                    <p>LAYSUN delivers engineered artificial horticulture systems for commercial infrastructure worldwide.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Systems</h4>
+                    <ul>
+                        <li><a href="#structural-core">Structural Core</a></li>
+                        <li><a href="#botanical-assembly">Botanical Assembly</a></li>
+                        <li><a href="#fire-safety">Fire Safety</a></li>
+                        <li><a href="#deployment">Deployment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Technical Specs</a></li>
+                        <li><a href="#">CAD Library</a></li>
+                        <li><a href="#">Compliance Docs</a></li>
+                        <li><a href="#">Installation Guides</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Engineering Team</a></li>
+                        <li><a href="#">Global Offices</a></li>
+                        <li><a href="#">Project Consultation</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 LAYSUN Global Systems. All rights reserved.</p>
+                <p>Engineered for Commercial Infrastructure Worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
